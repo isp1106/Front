@@ -6,6 +6,9 @@ module.exports = {
       animation: {
         bounce: 'bounce 0.3s infinite',
       },
+      colors: {
+        primary: 'var(--primary)',
+      },
     },
   },
   plugins: [],
