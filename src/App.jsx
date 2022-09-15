@@ -1,8 +1,27 @@
-import Header from "./components/layout/Header"
+import { Link, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Like from './pages/Like'
+import Onul from './pages/Onul'
+import Login from './pages/Login'
+import Cart from './pages/Cart'
+import MyPage from './pages/MyPage'
+import SignIn from './pages/SignIn'
 
-Header
 function App() {
-  return <div className="p-4 text-black text-2xl "><Header/></div>
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Home />} />
+        <Route path="/onul" element={<Onul />} />
+        <Route path="/like" element={<Like />} />
+        <Route path="/my" element={<MyPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </>
+  )
 }
 
 export default App
