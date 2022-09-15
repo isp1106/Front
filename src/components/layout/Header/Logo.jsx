@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Logo = () => {
+const Logo = (hideLogo) => {
+  console.log('hid', hideLogo)
   return (
-    <h1 className="flex items-center h-9">
+    <h1 className={'items-center h-9 ' + (hideLogo ? 'flex' : 'hidden')}>
       <img
         src="assets/logoSmall.svg"
         alt="로고이미지"

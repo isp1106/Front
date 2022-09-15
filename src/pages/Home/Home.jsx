@@ -2,7 +2,7 @@ import Header from '../../components/layout/Header'
 
 const Home = () => {
   return (
-    <div>
+    <div className="h-[5000px]">
       <Header />
     </div>
   )
