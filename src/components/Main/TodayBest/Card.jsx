@@ -1,11 +1,12 @@
 import React from 'react'
-import heart from '/public/assets/like.svg'
+import heart from '/public/assets/heart_icon_full.svg'
+import cart from '/public/assets/shoppingBag_icon_color.svg'
 
 const Card = ({ product, active }) => {
   return (
-    <div className="w-56 h-80">
+    <div className="w-[230px] h-80">
       <div
-        className="w-56 h-56 bg-cover bg-center rounded-full overflow-hidden"
+        className="w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden"
         style={active ? { border: '2px solid #D86145' } : { border: 'none' }}
       >
         <img src={product.src} alt={product.src} />
@@ -17,8 +18,9 @@ const Card = ({ product, active }) => {
           {product.price} ¥
         </div>
         {active ? (
-          <div className="absolute right-1 bottom-1">
-            <img src={heart} alt="heart" />
+          <div className="absolute flex right-1 bottom-0">
+            <img src={heart} alt="heart" className="h-5" />
+            <img src={cart} alt="cart" className="ml-6 h-5" />
           </div>
         ) : null}
       </div>
