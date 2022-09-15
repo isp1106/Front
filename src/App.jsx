@@ -1,9 +1,28 @@
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Like from './pages/Like'
+import Onul from './pages/Onul'
+import Login from './pages/Login'
+import Cart from './pages/Cart'
+import MyPage from './pages/MyPage'
+import SignIn from './pages/SignIn'
 import NavBottom from './components/layout/NavBottom'
+
 function App() {
   return (
-    <div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Home />} />
+        <Route path="/onul" element={<Onul />} />
+        <Route path="/like" element={<Like />} />
+        <Route path="/my" element={<MyPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
       <NavBottom />
-    </div>
+    </>
   )
 }
 
