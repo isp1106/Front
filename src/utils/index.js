@@ -1,3 +1,3 @@
-const cls = (...classnames) => classnames.join('')
+const cls = (...classnames) => classnames.join(' ')
 
 export { cls }
