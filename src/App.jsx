@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Cart from './pages/Cart'
 import MyPage from './pages/MyPage'
 import SignIn from './pages/SignIn'
+import 'swiper/swiper-bundle.css'
 
 function App() {
   return (
