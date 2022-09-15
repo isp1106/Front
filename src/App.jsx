@@ -1,5 +1,10 @@
+import NavBottom from './components/layout/NavBottom'
 function App() {
-  return <div className="p-4 text-black text-2xl ">Hello</div>
+  return (
+    <div>
+      <NavBottom />
+    </div>
+  )
 }
 
 export default App
