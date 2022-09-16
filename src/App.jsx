@@ -12,7 +12,7 @@ import NavBottom from './components/layout/NavBottom'
 
 function App() {
   return (
-    <>
+    <div className="pb-[64px]">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <NavBottom />
-    </>
+    </div>
   )
 }
 
