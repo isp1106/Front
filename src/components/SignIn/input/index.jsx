@@ -3,14 +3,15 @@ import './index.css'
 import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import { cls } from '../../../utils'
 
-const Input = ({ state, name, onChangeHandler }) => {
+const Input = ({ state, name, onChangeHandler, clear, value }) => {
   const [active, setActive] = useState(false)
 
   const inputHandler = () => {
     setActive(true)
   }
-  const inputBlurHandler = () => {
+  const inputBlurHandler = (e) => {
     setActive(false)
+    clear()
   }
   return (
     <div
@@ -27,6 +28,7 @@ const Input = ({ state, name, onChangeHandler }) => {
           className={cls('text-sm input ', active && 'active')}
           onClick={inputHandler}
           onChange={onChangeHandler}
+          value={value}
         />
         {active && <ClearIcon width="20px" onClick={inputBlurHandler} />}
         <label className={cls('text-xs label ', active && 'active')}>

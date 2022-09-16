@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { ReactComponent as GoBackIcon } from '/public/assets/back.svg'
 import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
@@ -19,7 +19,28 @@ const SignIn = () => {
     })
   }
 
-  console.log(inputValue)
+  const clear = (name) => {
+    setInputValue({
+      ...inputValue,
+      [name]: '',
+    })
+    console.log('실행!')
+    console.log(inputValue)
+  }
+
+  const invalidInput = useMemo(
+    () => inputValue.id.trim() !== '' && inputValue.pw.trim() !== '',
+  )
+
+  const loginHandler = () => {
+    if (invalidInput) {
+      //api연결 후 api 요청 로직 작성
+      console.log(inputValue)
+    } else {
+      alert('아이디와 패스워드를 확인해주세요')
+    }
+  }
+
   return (
     <>
       <div className="pt-3 pb-3 pl-3">
@@ -28,9 +49,27 @@ const SignIn = () => {
       <div className="pr-5 pl-5">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>
-        <Input state="아이디" name="id" onChangeHandler={onChangeHandler} />
-        <Input state="비밀번호" name="pw" onChangeHandler={onChangeHandler} />
-        <Button classprop="bg-primary text-white">로그인하기</Button>
+        <Input
+          state="아이디"
+          name="id"
+          onChangeHandler={onChangeHandler}
+          clear={() => clear('id')}
+          value={inputValue.id}
+        />
+        <Input
+          state="비밀번호"
+          name="pw"
+          onChangeHandler={onChangeHandler}
+          clear={() => clear('pw')}
+          value={inputValue.pw}
+        />
+        <Button
+          classprop="bg-primary text-white"
+          disabled={!invalidInput}
+          loginHandler={loginHandler}
+        >
+          로그인하기
+        </Button>
         <div className="flex justify-end mt-5 font-medium">
           <span className="text-xs text-black-400 cursor-pointer  pr-[12px] pl-[12px] border-r ">
             아이디 찾기
