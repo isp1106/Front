@@ -2,7 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Card from './Card'
 import 'swiper/swiper.min.css'
-import '~/swiper.css'
+import '~/todayBest_swiper.css'
 
 const SwiperContainer = () => {
   const bestList = [
