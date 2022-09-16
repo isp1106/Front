@@ -16,14 +16,14 @@ const NavBottom = () => {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50">
+    <div className="fixed bottom-0 left-0 right-0 z-50 ">
       <nav className="relative z-40">
-        <ul className="flex flex-wrap bg-neutral-100 justify-between p-3 items-center">
+        <ul className="flex flex-wrap bg-neutral-100 justify-between pt-1 pb-2 pl-3 pr-3 items-center">
           <li>
             <Link
               to="/category"
               className={cls(
-                'flex items-center flex-col gap-1 ',
+                'flex items-center flex-col ',
                 currentPath === '/category' ? 'text-primary' : '',
               )}
             >
@@ -32,56 +32,56 @@ const NavBottom = () => {
               ) : (
                 <CategoryIcon />
               )}
-              <span className="text-sm">CATEGORY</span>
+              <span className="text-xs text-black-400">CATEGORY</span>
             </Link>
           </li>
           <li>
             <Link
               to="/onul"
               className={cls(
-                'flex items-center flex-col gap-1 ',
+                'flex items-center flex-col  ',
                 currentPath === '/onul' ? 'text-primary' : '',
               )}
             >
               {currentPath === '/onul' ? <OnulIconOn /> : <OnulIcon />}
-              <span className="text-sm">ONUL</span>
+              <span className="text-xs text-black-400">ONUL</span>
             </Link>
           </li>
           <li>
             <Link
               to="/"
               className={cls(
-                'flex items-center flex-col gap-1 ',
+                'flex items-center flex-col  ',
                 currentPath === '/' ? 'text-primary' : '',
               )}
             >
               {currentPath === '/' ? <HomeIconOn /> : <HomeIcon />}
-              <span className="text-sm">HOME</span>
+              <span className="text-xs text-black-400">HOME</span>
             </Link>
           </li>
           <li>
             <Link
               to="/like"
               className={cls(
-                'flex items-center flex-col gap-1 ',
+                'flex items-center flex-col  ',
                 currentPath === '/like' ? 'text-primary' : '',
               )}
             >
               {currentPath === '/like' ? <LikeIconOn /> : <LikeIcon />}
 
-              <span className="text-sm">LIKE</span>
+              <span className="text-xs text-black-400">LIKE</span>
             </Link>
           </li>
           <li>
             <Link
               to="/my"
               className={cls(
-                'flex items-center flex-col gap-1 ',
+                'flex items-center flex-col  ',
                 currentPath === '/my' ? 'text-primary' : '',
               )}
             >
               {currentPath === '/my' ? <MyIconOn /> : <MyIcon />}
-              <span className="text-sm">MY</span>
+              <span className="text-xs text-black-400">MY</span>
             </Link>
           </li>
         </ul>
