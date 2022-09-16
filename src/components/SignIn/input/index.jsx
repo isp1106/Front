@@ -3,8 +3,9 @@ import './index.css'
 import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import { cls } from '../../../utils'
 
-const Input = ({ state }) => {
+const Input = ({ state, name, onChangeHandler }) => {
   const [active, setActive] = useState(false)
+
   const inputHandler = () => {
     setActive(true)
   }
@@ -22,9 +23,10 @@ const Input = ({ state }) => {
         <input
           type="text"
           placeholder={state}
-          name="id"
+          name={name}
           className={cls('text-sm input ', active && 'active')}
           onClick={inputHandler}
+          onChange={onChangeHandler}
         />
         {active && <ClearIcon width="20px" onClick={inputBlurHandler} />}
         <label className={cls('text-xs label ', active && 'active')}>

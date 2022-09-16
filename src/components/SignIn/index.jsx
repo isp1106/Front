@@ -6,12 +6,20 @@ import Input from './input'
 import Button from './Button'
 
 const SignIn = () => {
-  const [userInput, setUserInput] = useState({
+  const [inputValue, setInputValue] = useState({
     id: '',
     pw: '',
   })
-  const inputChangeHandler = (e) => {}
-  const inputHandler = () => {}
+
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    })
+  }
+
+  console.log(inputValue)
   return (
     <>
       <div className="pt-3 pb-3 pl-3">
@@ -20,8 +28,8 @@ const SignIn = () => {
       <div className="pr-5 pl-5">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>
-        <Input state="아이디" />
-        <Input state="비밀번호" />
+        <Input state="아이디" name="id" onChangeHandler={onChangeHandler} />
+        <Input state="비밀번호" name="pw" onChangeHandler={onChangeHandler} />
         <Button classprop="bg-primary text-white">로그인하기</Button>
         <div className="flex justify-end mt-5 font-medium">
           <span className="text-xs text-black-400 cursor-pointer  pr-[12px] pl-[12px] border-r ">
