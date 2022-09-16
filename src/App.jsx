@@ -9,7 +9,6 @@ import MyPage from './pages/MyPage'
 import SignIn from './pages/SignIn'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
-import 'swiper/swiper-bundle.css'
 
 function App() {
   return (
