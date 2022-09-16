@@ -5,7 +5,7 @@ import { ReactComponent as LikeIconOn } from '/public/assets/heart-on.svg'
 const TodayRecommended = () => {
   return (
     <div>
-      <h3 className="font-bold text-xl mb-5">
+      <h3 className="font-bold text-xl mb-5 pl-5">
         <strong className="text-primary">오늘</strong>의 추천브랜드
       </h3>
       <div className="grid grid-cols-2 grid-rows-3 border-t-2 border-b-2 border-primary">
@@ -36,7 +36,7 @@ const TodayRecommended = () => {
             backgroundImage: `url('https://img.29cm.co.kr/next-product/2019/11/07/f8dbe259a4f04e1ca709a75e32d6aa52_20191107153205.jpg?width=300')`,
           }}
         ></div>
-        <div className="col-span-2 pl-5 pr-5 pt-4 pb-4 flex justify-between items-center">
+        <div className="col-span-2 pl-5 pr-5 pt-2 pb-2 flex justify-between items-center">
           <span className="text-sm text-primary font-bold">원브릴리언트</span>
           <LikeIcon style={{ width: '20px' }} />
           {/* 나중에 if 처리하기 <LikeIconOn /> */}
