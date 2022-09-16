@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Magazine from './Magazine'
 import TabList from './TabList'
 import TodayBest from './TodayBest'
+import { TodayLank } from './TodayLank'
 import TodayRecommended from './TodayRecommended'
 const tablist = ['우먼', '맨', '라이프', '한국트렌드', '', '', '']
 
@@ -19,6 +20,7 @@ const Main = () => {
         setCategory={setCategory}
       />
       <TodayBest />
+      <TodayLank />
       <TodayRecommended category={category} />
     </>
   )
