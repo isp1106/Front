@@ -16,8 +16,6 @@ const SwiperMagazine = () => {
       style={StyleSwiperWrapper}
       spaceBetween={30}
       slidesPerView={1.5}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
       centeredSlides={false}
       autoplay
       loopedSlides={1}
