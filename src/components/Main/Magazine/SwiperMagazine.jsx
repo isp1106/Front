@@ -8,7 +8,7 @@ const SwiperMagazine = () => {
   SwiperCore.use([Autoplay])
   const StyleSwiperWrapper = {
     width: 'calc(100% - 3.75rem)',
-    margin: '2.5rem 2.5rem 1.875rem 2.5rem',
+    margin: '2.5rem 0 1.875rem 2.5rem',
   }
 
   return (
