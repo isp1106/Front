@@ -1,0 +1,49 @@
+.shawdowing {
+  box-shadow: 0 0 2px var(--primary);
+  border: none;
+}
+
+.container {
+  background-color: transparent;
+  border-radius: 1.2rem;
+  border: 1px solid rgb(228, 237, 242);
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out 0s;
+  appearance: inherit;
+  user-select: initial;
+  border: none;
+  background-color: inherit;
+  padding-left: 0.5rem;
+  caret-color: var(--primary);
+}
+
+.input.active {
+  opacity: 1;
+}
+
+.input.active:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgb(186, 186, 188);
+}
+
+.label {
+  position: absolute;
+  bottom: 1.3rem;
+  left: 0.6rem;
+  transition: transform 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s;
+  transform-origin: left top;
+  color: rgb(102, 108, 119);
+  transform: translate3d(0px, 8px, 0px) scale(1.2);
+}
+.label.active {
+  left: 0.2rem;
+  transform: translate3d(0px, 0px, 0px);
+}
