@@ -57,6 +57,7 @@ const SwiperContainer = () => {
         spaceBetween={30}
         slidesOffsetBefore={20}
         slidesOffsetAfter={20}
+        slideToClickedSlide={true}
         className="w-full"
       >
         {bestList.map((item) => (
