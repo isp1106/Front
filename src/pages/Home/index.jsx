@@ -1,11 +1,10 @@
-import React from 'react'
-import TodayRecommended from '../../components/Main/TodayRecommended'
+import Main from '../../components/Main'
 
 const Home = () => {
   return (
-    <div>
-      <TodayRecommended />
-    </div>
+    <>
+      <Main />
+    </>
   )
 }
 
