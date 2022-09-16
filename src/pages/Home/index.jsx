@@ -5,8 +5,8 @@ import TopSwiper from '../../components/Main/TopSwiper'
 const Home = () => {
   return (
     <div>
-      <TodayRecommended />
       <TopSwiper />
+      <TodayRecommended />
     </div>
   )
 }
