@@ -55,10 +55,8 @@ const SwiperContainer = () => {
         slidesPerView={'auto'}
         loop={true}
         spaceBetween={30}
-        slidesOffsetBefore={20}
-        slidesOffsetAfter={20}
         slideToClickedSlide={true}
-        className="w-full"
+        className="w-full px-5"
       >
         {bestList.map((item) => (
           <SwiperSlide key={item.src}>
