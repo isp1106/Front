@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const HeaderLink = () => {
   return (
-    <ul className="flex justify-center items-center h-9">
+    <ul className="fixed top-2.5 right-5 flex justify-center items-center h-9">
       <li className="mr-3.5">
         <Link to="/search">
           <img src="assets/search_icon.svg" className="w-6 " alt="검색" />
