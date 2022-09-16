@@ -24,8 +24,6 @@ const SignIn = () => {
       ...inputValue,
       [name]: '',
     })
-    console.log('실행!')
-    console.log(inputValue)
   }
 
   const invalidInput = useMemo(
