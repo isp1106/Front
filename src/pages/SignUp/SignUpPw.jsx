@@ -62,8 +62,6 @@ const SignUpPw = () => {
           })
     }
   }
-  console.log('here', alret.pw === '' && alret.pwCheck === '')
-
   return (
     <>
       <Title title="비밀번호" text="생성" />
@@ -81,7 +79,7 @@ const SignUpPw = () => {
           <input
             value={inputValue['pw']}
             onChange={ChangeHandler}
-            onClick={() => onFocusHandler}
+            onClick={onFocusHandler}
             onBlur={() => checkRegex('pw')}
             name="pw"
             type={type}
@@ -105,7 +103,7 @@ const SignUpPw = () => {
           <input
             value={inputValue['pwCheck']}
             onChange={ChangeHandler}
-            onClick={() => onFocusHandler}
+            onClick={onFocusHandler}
             onBlur={() => checkRegex('pwCheck')}
             type={type}
             name="pwCheck"
@@ -115,12 +113,7 @@ const SignUpPw = () => {
             className="pl-3 w-full border-none h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
           />
           <div className="absolute flex gap-1 right-2">
-            {active && (
-              <ClearIcon
-                width="20px"
-                onClick={() => onBlurHandler('pwCheck')}
-              />
-            )}
+            {active && <ClearIcon width="20px" onClick={onFocusHandler} />}
             <ViewIcon width="26px" onClick={changeTypeHandler} />
           </div>
         </div>
