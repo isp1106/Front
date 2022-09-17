@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { cls } from '../../utils'
 import TodayLank from './TodayLank'
+import NewStyle from './NewStyle'
 const list = ['인기', '최신', '팔로잉']
 
 const Category = () => {
@@ -9,7 +10,7 @@ const Category = () => {
   return (
     <>
       <div className="bg-primary pl-5 ">
-        <ul className="flex gap-3  py-3 text-xl">
+        <ul className="flex gap-3 py-3 text-xl">
           {list.map((item, index) => (
             <li
               key={index}
@@ -25,6 +26,7 @@ const Category = () => {
         </ul>
       </div>
       <TodayLank />
+      <NewStyle />
     </>
   )
 }
