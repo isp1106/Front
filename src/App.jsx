@@ -9,11 +9,14 @@ import MyPage from './pages/MyPage'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
-import NextBtn from './components/UserSignUp/NextBtn'
+import TermService from './pages/SignUp/TermService'
+import SignUpId from './pages/SignUp/SignUpId'
+import SignUpPw from './pages/SignUp/SignUpPw'
 
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
+  console.log(currentPath.includes('/signup'))
   return (
     <div className="pb-[64px]">
       <Routes>
@@ -23,10 +26,14 @@ function App() {
         <Route path="/like" element={<Like />} />
         <Route path="/my" element={<MyPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp />}>
+          <Route path="" element={<TermService />} />
+          <Route path="idform" element={<SignUpId />} />
+          <Route path="pwform" element={<SignUpPw />} />
+        </Route>
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      {currentPath !== '/signup' ? <NavBottom /> : <NextBtn />}
+      {!currentPath.includes('/signup') && <NavBottom />}
     </div>
   )
 }
