@@ -8,7 +8,7 @@ const SignUpIdForm = () => {
     <>
       <Title title="아이디" text="생성" />
       <div className="mt-36">
-        <Input text="아이디" />
+        <Input text="아이디" name="id" />
         <Button classprop=" border border-black-100 mt-6 gap-2">
           중복확인
         </Button>
