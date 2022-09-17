@@ -18,7 +18,6 @@ import Finish from './pages/SignUp/Finish'
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
-  console.log(currentPath.includes('/signup'))
   return (
     <div className="pb-[64px]">
       <Routes>
