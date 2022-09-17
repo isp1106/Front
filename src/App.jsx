@@ -12,6 +12,8 @@ import NavBottom from './components/layout/NavBottom'
 import TermService from './pages/SignUp/TermService'
 import SignUpId from './pages/SignUp/SignUpId'
 import SignUpPw from './pages/SignUp/SignUpPw'
+import UserInfo from './pages/SignUp/UserInfo'
+import Finish from './pages/SignUp/Finish'
 
 function App() {
   const location = useLocation()
@@ -30,6 +32,8 @@ function App() {
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />
           <Route path="pwform" element={<SignUpPw />} />
+          <Route path="infoform" element={<UserInfo />} />
+          <Route path="finish" element={<Finish />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
       </Routes>
