@@ -9,6 +9,7 @@ import MyPage from './pages/MyPage'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
+import NextBtn from './components/UserSignUp/NextBtn'
 
 function App() {
   const location = useLocation()
@@ -25,7 +26,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      {currentPath !== '/signup' && <NavBottom />}
+      {currentPath !== '/signup' ? <NavBottom /> : <NextBtn />}
     </div>
   )
 }
