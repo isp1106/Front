@@ -5,12 +5,18 @@ import { ReactComponent as ViewIcon } from '/public/assets/view.svg'
 import NextBtn from '../../components/SignUp/NextBtn'
 import Title from '../../components/SignUp/Title'
 import useInputValue from '../../hook/useInputValue'
+export const PW_REGEX = new RegExp('^[a-zA-Z0-9_-]{5,11}$')
 
 const SignUpPw = () => {
   const { state } = useLocation()
+  const [active, setActive, onFocusHandler] = useInputValue()
   const [type, setType] = useState('password')
   const [inputValue, setInputValue] = useState({
     id: state,
+    pw: '',
+    pwCheck: '',
+  })
+  const [alret, setAlret] = useState({
     pw: '',
     pwCheck: '',
   })
@@ -23,17 +29,40 @@ const SignUpPw = () => {
   }
   const ChangeHandler = useCallback((e) => {
     const { name, value } = e.target
-    name === 'id'
     setInputValue({
       ...inputValue,
       [name]: value,
     })
   })
 
-  const [active, setActive, onFocusHandler] = useInputValue()
   const changeTypeHandler = () => {
     type === 'password' ? setType('text') : setType('password')
   }
+
+  const checkRegex = (inputId) => {
+    if (inputId === 'pw') {
+      PW_REGEX.test(inputValue.pw)
+        ? setAlret({
+            ...alert,
+            pw: '',
+          })
+        : setAlret({
+            ...alret,
+            pw: '6~16 영문 대 소문자, 숫자를 사용하세요',
+          })
+    } else {
+      inputValue.pw === inputValue.pwCheck
+        ? setAlret({
+            ...alret,
+            pwCheck: '',
+          })
+        : setAlret({
+            ...alret,
+            pwCheck: '비밀번호가 일치하지 않습니다.',
+          })
+    }
+  }
+  console.log('here', alret.pw === '' && alret.pwCheck === '')
 
   return (
     <>
@@ -52,7 +81,8 @@ const SignUpPw = () => {
           <input
             value={inputValue['pw']}
             onChange={ChangeHandler}
-            onFocus={onFocusHandler}
+            onClick={() => onFocusHandler}
+            onBlur={() => checkRegex('pw')}
             name="pw"
             type={type}
             placeholder="6자 이상의 영문, 숫자로 입력해 주세요."
@@ -63,19 +93,20 @@ const SignUpPw = () => {
 
           <div className="absolute flex gap-1 right-2">
             {active && (
-              <ClearIcon
-                width="20px"
-                onClick={() => onBlurHandler(`${name}`)}
-              />
+              <ClearIcon width="20px" onClick={() => onBlurHandler('pw')} />
             )}
             <ViewIcon width="26px" onClick={changeTypeHandler} />
           </div>
         </div>
+        <p className="mb-[8px] font-[11px] text-red-600 text-[12px]">
+          {alret.pw}
+        </p>
         <div className="mt-2 relative  flex box-border h-[50px] border border-neutral-200 rounded justify-between items-center">
           <input
             value={inputValue['pwCheck']}
             onChange={ChangeHandler}
-            onFocus={onFocusHandler}
+            onClick={() => onFocusHandler}
+            onBlur={() => checkRegex('pwCheck')}
             type={type}
             name="pwCheck"
             placeholder="비밀번호를 재입력해주세요."
@@ -83,7 +114,6 @@ const SignUpPw = () => {
             minLength="6"
             className="pl-3 w-full border-none h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
           />
-
           <div className="absolute flex gap-1 right-2">
             {active && (
               <ClearIcon
@@ -94,12 +124,15 @@ const SignUpPw = () => {
             <ViewIcon width="26px" onClick={changeTypeHandler} />
           </div>
         </div>
-
-        <p className="mt-[8px] font-[11px] text-red-600">
-          dkdkdkdk{/* 오류내용 */}
+        <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+          {alret.pwCheck}
         </p>
       </div>
-      <NextBtn next="infoform" inputValue={inputValue} />
+      <NextBtn
+        next="infoform"
+        inputValue={inputValue}
+        disabled={alret.pw === '' && alret.pwCheck === ''}
+      />
     </>
   )
 }

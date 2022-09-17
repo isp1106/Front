@@ -4,7 +4,7 @@ import { cls } from '../../utils'
 const NextBtn = ({ next, inputValue, disabled }) => {
   const navigate = useNavigate()
   const ChangeRouter = () => {
-    navigate(`/signup/${next}`, { state: inputValue })
+    disabled && navigate(`/signup/${next}`, { state: inputValue })
   }
   return (
     <div
@@ -13,8 +13,8 @@ const NextBtn = ({ next, inputValue, disabled }) => {
     >
       <div
         className={cls(
-          'h-[83px] gap-4 w-full flex flex-col justify-center items-center text-white bg-primary ',
-          disabled && 'bg-sub-primary cursor-default',
+          'h-[83px] gap-4 w-full flex flex-col justify-center items-center text-white ',
+          !disabled ? 'bg-sub-primary' : 'bg-primary',
         )}
       >
         <div></div>

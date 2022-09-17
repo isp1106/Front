@@ -11,6 +11,7 @@ const ERROR_MSG = {
 
 const useInputValue = (initialState = false) => {
   const [active, setActive] = useState(false)
+  const [alret, setAlret] = useState('')
 
   const onFocusHandler = (e) => {
     setActive(true)

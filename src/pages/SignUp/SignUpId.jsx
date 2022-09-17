@@ -4,8 +4,11 @@ import Title from '../../components/SignUp/Title'
 import NextBtn from '../../components/SignUp/NextBtn'
 import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import useInputValue from '../../hook/useInputValue'
+export const ID_REGEX = new RegExp('^[a-z0-9_-]{6,11}$')
+
 const SignUpIdForm = () => {
   const [inputValue, setInputValue] = useState('')
+  const [alret, setAlret] = useState('')
   const [active, setActive, onFocusHandler] = useInputValue()
 
   const onBlurHandler = (e) => {
@@ -15,6 +18,11 @@ const SignUpIdForm = () => {
 
   const ChangeHandler = (e) => {
     setInputValue(e.target.value)
+  }
+
+  const checkRegex = () => {
+    !ID_REGEX.test(inputValue) &&
+      setAlret('6~11자의 영문 소문자와 숫자만 사용가능합니다.')
   }
 
   return (
@@ -34,7 +42,8 @@ const SignUpIdForm = () => {
           <input
             value={inputValue['id']}
             onChange={ChangeHandler}
-            onFocus={onFocusHandler}
+            onClick={() => onFocusHandler}
+            onBlur={checkRegex}
             name="id"
             placeholder="6자 이상의 영문, 숫자로 입력해 주세요."
             maxLength="11"
@@ -48,10 +57,15 @@ const SignUpIdForm = () => {
             )}
           </div>
         </div>
+        <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">{alret}</p>
         <Button classprop=" border border-black-100 mt-6 gap-2">
           중복확인
         </Button>
-        <NextBtn next="pwform" inputValue={inputValue} />
+        <NextBtn
+          next="pwform"
+          inputValue={inputValue}
+          disabled={alret === ''}
+        />
       </div>
     </>
   )
