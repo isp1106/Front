@@ -35,7 +35,7 @@ export const TodayLank = () => {
       </div>
       <div className="w-full grid grid-cols-2 border-t-2 border-primary">
         {lankUsers.map((user) => (
-          <Card data={user} />
+          <Card key={user.userId} data={user} />
         ))}
       </div>
     </div>
