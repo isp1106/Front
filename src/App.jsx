@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import Like from './pages/Like'
-import Onul from './pages/Onul'
+import Oneul from './pages/Oenul'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import MyPage from './pages/MyPage'
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/onul" element={<Onul />} />
+        <Route path="/oneul" element={<Oneul />} />
         <Route path="/like" element={<Like />} />
         <Route path="/my" element={<MyPage />} />
         <Route path="/login" element={<Login />} />
