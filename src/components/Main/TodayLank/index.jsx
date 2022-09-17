@@ -34,8 +34,8 @@ export const TodayLank = () => {
         <span className="text-primary">오늘</span>의 랭크
       </div>
       <div className="w-full grid grid-cols-2 border-t-2 border-primary">
-        {lankUsers.map((user) => (
-          <Card data={user} />
+        {lankUsers.map((user, index) => (
+          <Card data={user} key={index} />
         ))}
       </div>
     </div>
