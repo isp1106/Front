@@ -3,19 +3,20 @@ import heart from '/public/assets/heart_icon_full.svg'
 import cart from '/public/assets/shoppingBag_icon_color.svg'
 
 const Card = ({ product, active }) => {
+  const { src, title, sale, price } = product
   return (
     <div className="w-[230px] h-80 mb-24">
       <div
         className="w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden"
         style={active ? { border: '2px solid #D86145' } : { border: 'none' }}
       >
-        <img src={product.src} alt={product.src} />
+        <img src={src} alt={src} />
       </div>
       <div className="mt-8 relative">
-        <div className="text-sm text-[#4B4B4B] mt-7.5">[{product.title}]</div>
+        <div className="text-sm text-[#4B4B4B] mt-7.5">[{title}]</div>
         <div className="text-xl text-[#2B2B2B] font-bold mt-1.5">
-          <span className="text-primary mr-2.5">{product.sale}%</span>
-          {product.price} ¥
+          <span className="text-primary mr-2.5">{sale}%</span>
+          {price} ¥
         </div>
         {active ? (
           <div className="absolute flex right-1 bottom-0">
