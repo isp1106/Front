@@ -1,3 +1,13 @@
-.swiper-slide {
+.today .swiper-slide {
   width: 230px !important;
+}
+
+.tablist .swiper-slide {
+  width: 80px !important;
+}
+
+.tablist .swiper-slide span {
+  line-height: 1.6;
+  padding-left: 2px;
+  padding-right: 2px;
 }
