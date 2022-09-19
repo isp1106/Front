@@ -1,7 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from '../../components/common/Button'
 
 const Finish = () => {
+  const navigate = useNavigate()
+  const loginHandler = () => {
+    navigate('/login')
+  }
   return (
     <>
       <h2 className="text-[30px] font-medium mt-[35px]">
@@ -9,7 +14,10 @@ const Finish = () => {
         <br />
         축하드려요!
       </h2>
-      <Button classprop="mt-[291px] bg-primary text-white">
+      <Button
+        onClick={loginHandler}
+        classprop="mt-[291px] bg-primary text-white"
+      >
         로그인하러 가기
       </Button>
     </>
