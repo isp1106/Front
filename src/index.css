@@ -6,24 +6,29 @@
 #root,
 #docs-root {
   --primary: #d86145;
-  --sub-primary: rgba(216, 97, 69, 0.6);
+  --sub-primary: #e8a08f;
   --black-100: #252525;
   --black-800: #555555;
   --black-600: #676767;
   --black-400: #9c9c9c;
   --black-200: #c0c0c0;
+  --white-200: #f5f5f5;
 }
 
 body {
   color: var(--black-100);
 }
 
-.tab.swiper-slide-active {
+.tablist .swiper-slide-active {
   background-color: var(--primary);
   color: #fff;
 }
 
-/* input:focus {
-  outline: none;
-  border: 1px solid red;
-} */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

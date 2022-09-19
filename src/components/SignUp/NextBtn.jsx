@@ -13,7 +13,7 @@ const NextBtn = ({ next, inputValue, disabled }) => {
     >
       <div
         className={cls(
-          'h-[83px] gap-4 w-full flex flex-col justify-center items-center text-white ',
+          'h-[83px] gap-4 w-full flex flex-col justify-center items-center text-white-200 ',
           !disabled ? 'bg-sub-primary' : 'bg-primary',
         )}
       >

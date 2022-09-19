@@ -1,66 +1,47 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import SwiperCore, { Autoplay } from 'swiper'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { ReactComponent as LikeWhiteIcon } from '/public/assets/like-white.svg'
-const SwiperMagazine = () => {
+import {
+  magazineWoman,
+  magazineMan,
+  lifeMagize,
+  koreaMagazine,
+} from '../../../dummy/main'
+
+const SwiperMagazine = ({ category }) => {
   const [like, setLike] = useState(false)
-  SwiperCore.use([Autoplay])
-  const StyleSwiperWrapper = {
-    width: 'calc(100% - 3.75rem)',
-    margin: '2.5rem 0 1.875rem 2.5rem',
+  let list
+  switch (category) {
+    case '우먼':
+      list = magazineWoman
+      break
+    case '맨':
+      list = magazineMan
+      break
+    case '라이프':
+      list = lifeMagize
+      break
+    case '한국트렌드':
+      list = koreaMagazine
+      break
+    default:
+      return
   }
 
   return (
-    <Swiper
-      style={StyleSwiperWrapper}
-      spaceBetween={30}
-      slidesPerView={1.5}
-      centeredSlides={false}
-      autoplay
-      loopedSlides={1}
-    >
-      <SwiperSlide>
-        <img src="https://ifh.cc/g/DKN0O0.png" className="w-full" />
-        <button
-          className="absolute top-4 right-4"
-          onClick={() => setLike(!like)}
-        >
-          {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-          {/* 나중에 아이콘넣기 */}
-        </button>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://ifh.cc/g/DKN0O0.png" className="w-full" />
-        <button
-          className="absolute top-4 right-4"
-          onClick={() => setLike(!like)}
-        >
-          {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-          {/* 나중에 아이콘넣기 */}
-        </button>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://ifh.cc/g/DKN0O0.png" className="w-full" />
-        <button
-          className="absolute top-4 right-4"
-          onClick={() => setLike(!like)}
-        >
-          {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-          {/* 나중에 아이콘넣기 */}
-        </button>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://ifh.cc/g/DKN0O0.png" className="w-full" />
-        <button
-          className="absolute top-4 right-4"
-          onClick={() => setLike(!like)}
-        >
-          {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-          {/* 나중에 아이콘넣기 */}
-        </button>
-      </SwiperSlide>
-    </Swiper>
+    <div className="flex gap-4 overflow-x-scroll py-[39px]">
+      {list.map((item, index) => (
+        <React.Fragment key={index}>
+          <img src={item.url} width="150" />
+          <button
+            className="absolute top-4 right-4"
+            onClick={() => setLike(!like)}
+          >
+            {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
+            {/* 나중에 아이콘넣기 */}
+          </button>
+        </React.Fragment>
+      ))}
+    </div>
   )
 }
 

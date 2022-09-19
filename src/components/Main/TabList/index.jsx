@@ -2,15 +2,16 @@ import React from 'react'
 import { Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import './index.css'
 
 const TabList = ({ tablist, changeCateogry }) => {
   return (
     <Swiper
       // install Swiper modules
-      className="tablist pl-5 mt-4 mb-7"
+      className="pl-5 mt-4 mb-7"
       modules={[Scrollbar]}
+      slidesPerView={2}
       spaceBetween={50}
-      slidesPerView={3.7}
       scrollbar={{ draggable: true }}
       onSlideChange={(e) => changeCateogry(e)}
     >
@@ -22,7 +23,7 @@ const TabList = ({ tablist, changeCateogry }) => {
           }
           key={idx}
         >
-          <span> {item}</span>
+          {item}
         </SwiperSlide>
       ))}
     </Swiper>
