@@ -24,6 +24,12 @@ body {
   color: #fff;
 }
 
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
+
