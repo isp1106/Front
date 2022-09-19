@@ -32,10 +32,3 @@ select {
 ::-webkit-scrollbar {
   display: none;
 }
-
-/* tablist 스와이퍼 */
-.tablist .swiper-slide {
-  width: 74px !important;
-  line-height: 1.6 !important;
-  margin-right: 2.3rem;
-
