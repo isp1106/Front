@@ -6,6 +6,9 @@ const list = ['인기', '최신', '팔로잉']
 
 const Category = () => {
   const [select, setSelect] = useState(list[0])
+  const changeCategory = (item) => {
+    setSelect(item)
+  }
   return (
     <>
       <div className="bg-primary pl-5 ">
@@ -13,6 +16,7 @@ const Category = () => {
           {list.map((item, index) => (
             <li
               key={index}
+              onClick={() => changeCategory(item)}
               className={cls(
                 select === item
                   ? 'text-white font-bold'
@@ -24,8 +28,8 @@ const Category = () => {
           ))}
         </ul>
       </div>
-      <TodayLank />
-      <NewStyle />
+      <TodayLank category={select} />
+      <NewStyle category={select} />
     </>
   )
 }
