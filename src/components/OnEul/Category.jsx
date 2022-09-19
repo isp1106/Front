@@ -6,7 +6,6 @@ const list = ['인기', '최신', '팔로잉']
 
 const Category = () => {
   const [select, setSelect] = useState(list[0])
-  console.log(select === '인기')
   return (
     <>
       <div className="bg-primary pl-5 ">

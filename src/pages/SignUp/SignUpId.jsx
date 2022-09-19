@@ -12,8 +12,6 @@ const SignUpIdForm = () => {
   const [disabled, setDisabled] = useState(false)
   const [active, setActive, onFocusHandler] = useInputValue()
 
-  console.log(alret, 'alret')
-
   const onBlurHandler = (e) => {
     setActive(false)
     setInputValue('')

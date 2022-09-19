@@ -19,8 +19,8 @@ const Main = () => {
         changeCateogry={changeCateogry}
         setCategory={setCategory}
       />
-      <TodayBest />
-      <TodayLank />
+      <TodayBest category={category} />
+      <TodayLank category={category} />
       <TodayRecommended category={category} />
     </>
   )

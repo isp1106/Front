@@ -48,7 +48,6 @@ const UserInfo = () => {
             email: '올바르지 않은 이메일입니다.',
           })
     } else {
-      console.log(inputValue[inputId], 'here')
       inputValue[inputId] === '' && console.log('here', inputId)
       setAlret({
         ...alret,
