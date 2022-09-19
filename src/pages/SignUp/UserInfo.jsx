@@ -1,12 +1,15 @@
 import React, { useState, useCallback } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import NextBtn from '../../components/SignUp/NextBtn'
 import Title from '../../components/SignUp/Title'
+const EMAIL_REGEX =
+  /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+
 const UserInfo = () => {
   const { state } = useLocation()
   const [inputValue, setInputValue] = useState({
-    id: state,
-    pw: state,
+    ...state,
     email: '',
     firstName: '',
     lastName: '',
@@ -15,6 +18,7 @@ const UserInfo = () => {
     telNum: '',
     postNum: '',
   })
+  const [disabled, setDisabled] = useState(false)
 
   const ChangeHandler = useCallback((e) => {
     const { name, value } = e.target
@@ -24,19 +28,51 @@ const UserInfo = () => {
     })
   })
   const [alret, setAlret] = useState({
-    email: '',
-    lastName: '',
-    firstNameRuby: '',
-    lastNameRuby: '',
-    telNum: '',
-    postNum: '',
+    email: null,
+    lastName: null,
+    firstNameRuby: null,
+    lastNameRuby: null,
+    telNum: null,
+    postNum: null,
   })
-  
+
+  const checkRegex = (inputId) => {
+    if (inputId === 'email') {
+      EMAIL_REGEX.test(inputValue.email)
+        ? setAlret({
+            ...alert,
+            email: '',
+          })
+        : setAlret({
+            ...alret,
+            email: '올바르지 않은 이메일입니다.',
+          })
+    } else {
+      console.log(inputValue[inputId], 'here')
+      inputValue[inputId] === '' && console.log('here', inputId)
+      setAlret({
+        ...alret,
+        [inputId]: '필수 입력값입니다.',
+      })
+    }
+  }
+
+  useEffect(() => {
+    inputValue.email !== '' &&
+      inputValue.lastName !== '' &&
+      inputValue.firstNameRuby !== '' &&
+      inputValue.telNum !== '' &&
+      inputValue.postNum !== '' &&
+      setDisabled(true)
+  }, [alret])
+
+  console.log(inputValue)
+
   const telOptions = ['Japan(+81)', 'Korea(+82)']
   const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
   return (
     <>
-      <div className="px-5">
+      <div className="px-5 pb-[83px]">
         <Title title="정보" text="입력" />
         <div className="mt-16">
           <label
@@ -49,6 +85,7 @@ const UserInfo = () => {
             <input
               value={inputValue['email']}
               onChange={ChangeHandler}
+              onBlur={() => checkRegex('email')}
               name="email"
               placeholder="이메일을 입력해주세요."
               className="px-3 w-full border-none h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
@@ -57,6 +94,9 @@ const UserInfo = () => {
               중복확인
             </button>
           </div>
+          <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+            {alret.email}
+          </p>
           <label
             htmlFor="loginJoinMembershipName"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -68,17 +108,22 @@ const UserInfo = () => {
               name="firstName"
               value={inputValue['firstName']}
               onChange={ChangeHandler}
+              onBlur={() => checkRegex('firstName')}
               placeholder="성"
               className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
             />
             <input
               name="lastName"
               value={inputValue['lastName']}
+              onBlur={() => checkRegex('lastName')}
               onChange={ChangeHandler}
               placeholder="이름"
               className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
+          <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+            {alert.firstName} {alert.lastName}
+          </p>
           <label
             htmlFor="loginJoinMembershipName"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -90,17 +135,23 @@ const UserInfo = () => {
               name="firstNameRuby"
               value={inputValue['firstNameRuby']}
               onChange={ChangeHandler}
+              onBlur={() => checkRegex('firstNameRuby')}
               placeholder="성"
               className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
             />
             <input
               name="lastNameRuby"
               value={inputValue['lastNameRuby']}
+              onBlur={() => checkRegex('lastNameRuby')}
               onChange={ChangeHandler}
               placeholder="이름"
               className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
+          <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+            {alert.firstNameRuby} {alert.lastNameRuby}
+          </p>
+
           <label
             htmlFor="loginJoinMembershipTel"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -127,9 +178,14 @@ const UserInfo = () => {
               name="telNum"
               onChange={ChangeHandler}
               value={inputValue['telNum']}
+              onBlur={() => checkRegex('telNum')}
               className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
+          <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+            {alert.telNum}
+          </p>
+
           <label
             htmlFor="loginJoinMembershipNation"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -163,6 +219,7 @@ const UserInfo = () => {
               name="postNum"
               value={inputValue['postNum']}
               onChange={ChangeHandler}
+              onBlur={() => checkRegex('postNum')}
               placeholder="우편번호를 검색해 주세요."
               className="px-3 w-full border-none h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
@@ -170,9 +227,13 @@ const UserInfo = () => {
               우편번호검색
             </button>
           </div>
+
+          <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+            {alert.postNum}
+          </p>
         </div>
       </div>
-      <NextBtn next="finish" inputValue={inputValue} disabled={alret === ''} />
+      <NextBtn next="finish" inputValue={inputValue} disabled={disabled} />
     </>
   )
 }
