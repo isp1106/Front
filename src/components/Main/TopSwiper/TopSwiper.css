@@ -1,0 +1,20 @@
+.topslide .swiper-wrapper {
+  height: 100%;
+  width: 100vw;
+}
+.topslide .swiper-slide {
+  position: relative;
+}
+.topslide .swiper-pagination {
+  background-color: black;
+  width: 86px;
+  height: 32px;
+  color: #fff;
+  position: absolute;
+  bottom: 0px;
+  left: calc(100% - 86px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px 0px 0px 0px;
+}

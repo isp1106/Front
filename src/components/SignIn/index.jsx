@@ -63,7 +63,7 @@ const SignIn = () => {
         <Button
           classprop="bg-primary text-white"
           disabled={!invalidInput}
-          loginHandler={loginHandler}
+          onClick={loginHandler}
         >
           로그인하기
         </Button>
