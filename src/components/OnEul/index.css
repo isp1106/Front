@@ -1,0 +1,19 @@
+.product__list * {
+  box-sizing: border-box;
+}
+
+.product__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item {
+  border-top: 3px solid var(--primary);
+}
+.item:not(:nth-child(odd)) {
+  border-left: 1.5px solid var(--primary);
+}
+
+.item:not(:nth-child(2n)) {
+  border-right: 1.5px solid var(--primary);
+}
