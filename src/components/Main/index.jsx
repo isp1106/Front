@@ -4,6 +4,8 @@ import TabList from './TabList'
 import TodayBest from './TodayBest'
 import { TodayLank } from './TodayLank'
 import TodayRecommended from './TodayRecommended'
+import TopSwiper from './TopSwiper'
+
 const tablist = ['우먼', '맨', '라이프', '한국트렌드', '', '', '']
 
 const Main = () => {
@@ -13,6 +15,7 @@ const Main = () => {
   }
   return (
     <>
+      <TopSwiper />
       <Magazine category={category} />
       <TabList
         tablist={tablist}
