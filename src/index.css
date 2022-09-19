@@ -19,7 +19,7 @@ body {
   color: var(--black-100);
 }
 
-.tab.swiper-slide-active {
+.tablist .swiper-slide-active {
   background-color: var(--primary);
   color: #fff;
 }
@@ -33,13 +33,9 @@ select {
   display: none;
 }
 
-/* today best 스와이퍼 */
-.today-best .swiper-slide {
-  width: 230px !important;
-}
-
 /* tablist 스와이퍼 */
 .tablist .swiper-slide {
-  min-width: 74px;
-  line-height: 2;
+  width: 74px !important;
+  line-height: 1.6 !important;
+  margin-right: 2.3rem;
 }

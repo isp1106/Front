@@ -2,6 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Card from './Card'
 import 'swiper/css'
+import '~/todayBest_swiper.css'
 
 const SwiperContainer = () => {
   const bestList = [
@@ -55,7 +56,7 @@ const SwiperContainer = () => {
         loop={true}
         spaceBetween={30}
         slideToClickedSlide={true}
-        className="w-full px-5"
+        className="today-best w-full px-5"
       >
         {bestList.map((item) => (
           <SwiperSlide key={item.src}>
