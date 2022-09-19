@@ -24,7 +24,7 @@ body {
   color: #fff;
 }
 
-select{
+select {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -33,3 +33,13 @@ select{
   display: none;
 }
 
+/* today best 스와이퍼 */
+.today-best .swiper-slide {
+  width: 230px !important;
+}
+
+/* tablist 스와이퍼 */
+.tablist .swiper-slide {
+  min-width: 74px;
+  line-height: 2;
+}
