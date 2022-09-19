@@ -5,21 +5,20 @@ import { CATEGORY } from './constants'
 const Category = () => {
   return (
     <div>
-      <nav className="flex">
+      <nav className="flex ">
         <ul className="flex w-14 flex-col border-2 border-slate-700">
-          {CATEGORY.map((element, index) => {
-            console.log(element)
+          {CATEGORY.map(({ TopCategory }) => {
             return (
-              <li key={index}>
+              <li key={TopCategory}>
                 <Link
                   activeClass="active"
                   className=""
-                  to={element.TopCategory}
+                  to={TopCategory}
                   spy={true}
                   smooth={true}
                   duration={500}
                 >
-                  {element.TopCategory}
+                  {TopCategory}
                 </Link>
               </li>
             )
@@ -28,22 +27,37 @@ const Category = () => {
         <div className="grow">
           {CATEGORY.map(({ TopCategory, subCategory }, index) => {
             return (
-              <Element
-                name={TopCategory}
-                className="border-2 border-slate-700 h-96  "
-              >
-                <h3 className="text-red-500">{TopCategory}</h3>
-                {subCategory.map(({ name, list, obj, index }) => {
-                  console.log('obj', name, obj.women)
-                  console.log('list', name, list)
-                  return (
-                    <div key={(index, name)}>
-                      <h4>{name}</h4>
-                      {obj ? obj.women : list}
-                    </div>
-                  )
-                })}
-              </Element>
+              <div key={(index, TopCategory)}>
+                {TopCategory === '패션' && (
+                  <Element
+                    name={TopCategory}
+                    className="border-2 border-slate-700 h-full "
+                  >
+                    <h3 className="text-red-500">{TopCategory}</h3>
+                    {subCategory.map(({ name, obj }, index) => {
+                      return (
+                        <div key={index}>
+                          <h4 className="text-blue-500">{name}</h4>
+                          <div className="grid grid-cols-3 ">
+                            {obj.women.map((w, index) => (
+                              <div key={index} className="w-16">
+                                <img
+                                  src={w.imgSrc}
+                                  alt={w.subCategoryName}
+                                  className="h-16 w-full rounded-2xl"
+                                />
+                                <h5 className="text-center w-full">
+                                  {w.subCategoryName}
+                                </h5>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </Element>
+                )}
+              </div>
             )
           })}
         </div>
