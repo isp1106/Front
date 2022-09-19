@@ -77,10 +77,11 @@ const TopSwiper = () => {
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
         spaceBetween={0}
+        loop={true}
       >
         {postList.map((element, index) => {
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide className="topslide" key={index}>
               <Slide item={element} />
             </SwiperSlide>
           )

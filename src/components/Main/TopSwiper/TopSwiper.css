@@ -1,5 +1,5 @@
-.swiper-wrapper {
-  height: 100vw;
+.swiper-wrapper.topslide {
+  height: 100%;
   width: 100vw;
 }
 .swiper-slide {
