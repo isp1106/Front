@@ -3,14 +3,14 @@ import heart from '/public/assets/heart_icon_full.svg'
 import cart from '/public/assets/shoppingBag_icon_color.svg'
 
 const Card = ({ product, active }) => {
-  const { src, title, sale, price } = product
+  const { url, title, sale, price } = product
   return (
     <div className="w-[230px] h-80 mb-24">
       <div
         className="w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden"
         style={active ? { border: '2px solid #D86145' } : { border: 'none' }}
       >
-        <img src={src} alt={src} />
+        <img src={url} alt={url} />
       </div>
       <div className="mt-8 relative">
         <div className="text-sm text-[#4B4B4B] mt-7.5">[{title}]</div>

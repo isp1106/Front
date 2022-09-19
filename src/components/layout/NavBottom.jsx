@@ -37,13 +37,13 @@ const NavBottom = () => {
           </li>
           <li>
             <Link
-              to="/onul"
+              to="/oneul"
               className={cls(
                 'flex items-center flex-col  ',
-                currentPath === '/onul' ? 'text-primary' : '',
+                currentPath === '/oneul' ? 'text-primary' : '',
               )}
             >
-              {currentPath === '/onul' ? <OnulIconOn /> : <OnulIcon />}
+              {currentPath === '/oneul' ? <OnulIconOn /> : <OnulIcon />}
               <span className="text-xs text-black-400">ONUL</span>
             </Link>
           </li>

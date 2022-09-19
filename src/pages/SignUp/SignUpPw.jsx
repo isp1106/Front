@@ -10,6 +10,7 @@ export const PW_REGEX = new RegExp('^[a-zA-Z0-9_-]{5,11}$')
 const SignUpPw = () => {
   const { state } = useLocation()
   const [active, setActive, onFocusHandler] = useInputValue()
+
   const [type, setType] = useState('password')
   const [inputValue, setInputValue] = useState({
     id: state,
@@ -17,7 +18,7 @@ const SignUpPw = () => {
     pwCheck: '',
   })
   const [alret, setAlret] = useState({
-    pw: '',
+    pw: null,
     pwCheck: '',
   })
   const onBlurHandler = (name) => {
@@ -124,7 +125,7 @@ const SignUpPw = () => {
       <NextBtn
         next="infoform"
         inputValue={inputValue}
-        disabled={alret.pw === '' && alret.pwCheck === ''}
+        disabled={inputValue.pw === inputValue.pwCheck}
       />
     </>
   )
