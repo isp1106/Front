@@ -1,11 +1,11 @@
-.swiper-wrapper.topslide {
+.topslide .swiper-wrapper {
   height: 100%;
   width: 100vw;
 }
-.swiper-slide {
+.topslide .swiper-slide {
   position: relative;
 }
-.swiper-pagination {
+.topslide .swiper-pagination {
   background-color: black;
   width: 86px;
   height: 32px;

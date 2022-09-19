@@ -78,11 +78,12 @@ const TopSwiper = () => {
         slidesPerView={1}
         spaceBetween={0}
         loop={true}
+        className="topslide"
       >
         {postList.map((element, index) => {
           return (
             <SwiperSlide className="topslide" key={index}>
-              <Slide item={element} />
+              <Slide className="topslide" item={element} />
             </SwiperSlide>
           )
         })}
