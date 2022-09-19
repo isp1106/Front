@@ -1,9 +1,9 @@
 import Main from '../../components/Main'
-
+import Category from '../Category'
 const Home = () => {
   return (
     <>
-      <Main />
+      <Category />
     </>
   )
 }

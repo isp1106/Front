@@ -1,10 +1,10 @@
-export const categoryName = {
-  0: {
+export const CATEGORY = [
+  {
     TopCategory: '패션',
     subCategory: [
       {
         name: '의류',
-        list: {
+        obj: {
           women: [
             {
               subCategoryName: '전제',
@@ -93,7 +93,7 @@ export const categoryName = {
       },
       {
         name: '가방',
-        list: {
+        obj: {
           women: [
             {
               subCategoryName: '전제',
@@ -222,7 +222,7 @@ export const categoryName = {
       },
       {
         name: '신발',
-        list: {
+        obj: {
           women: [
             {
               subCategoryName: '전제',
@@ -311,7 +311,7 @@ export const categoryName = {
       },
       {
         name: '엑세사리',
-        list: {
+        obj: {
           women: [
             {
               subCategoryName: '전제',
@@ -380,7 +380,7 @@ export const categoryName = {
       },
       {
         name: '소품',
-        list: {
+        obj: {
           women: [
             {
               subCategoryName: '전제',
@@ -449,7 +449,7 @@ export const categoryName = {
       },
     ],
   },
-  1: {
+  {
     TopCategory: '뷰티',
     subCategory: [
       {
@@ -649,7 +649,7 @@ export const categoryName = {
       },
     ],
   },
-  2: {
+  {
     TopCategory: '헬스',
     subCategory: [
       {
@@ -729,7 +729,7 @@ export const categoryName = {
       },
     ],
   },
-  3: {
+  {
     TopCategory: '컬처',
     subCategory: [
       {
@@ -809,7 +809,7 @@ export const categoryName = {
       },
     ],
   },
-  4: {
+  {
     TopCategory: '인테리어',
     subCategory: [
       {
@@ -889,7 +889,7 @@ export const categoryName = {
       },
     ],
   },
-  5: {
+  {
     TopCategory: '리빙',
     subCategory: [
       {
@@ -969,7 +969,7 @@ export const categoryName = {
       },
     ],
   },
-  6: {
+  {
     TopCategory: '테크',
     subCategory: [
       {
@@ -1049,4 +1049,4 @@ export const categoryName = {
       },
     ],
   },
-}
+]
