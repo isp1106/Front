@@ -3,7 +3,8 @@ import { ReactComponent as GoBackIcon } from '/public/assets/back.svg'
 import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 import Input from './input'
-import Button from './Button'
+import Button from '../common/Button'
+import GoBack from '../common/GoBack'
 
 const SignIn = () => {
   const [inputValue, setInputValue] = useState({
@@ -24,8 +25,6 @@ const SignIn = () => {
       ...inputValue,
       [name]: '',
     })
-    console.log('실행!')
-    console.log(inputValue)
   }
 
   const invalidInput = useMemo(
@@ -43,9 +42,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="pt-3 pb-3 pl-3">
-        <GoBackIcon />
-      </div>
+      <GoBack />
       <div className="pr-5 pl-5">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>

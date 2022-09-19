@@ -7,8 +7,8 @@ import '~/todayBest_swiper.css'
 const SwiperContainer = () => {
   const bestList = [
     {
-      src: 'https://image.msscdn.net/images/goods_img/20200810/1543796/1543796_3_500.jpg?t=20200901141136',
-      title: 'TGT HAIRPIN_MIX',
+      src: 'https://image.msscdn.net/images/prd_img/20210203/1774458/detail_1774458_1_500.jpg',
+      title: 'TGT PAISLEY HAIR BAND',
       sale: 10,
       price: 1100,
     },
