@@ -5,6 +5,7 @@ import Button from '../../components/common/Button'
 const Finish = () => {
   const navigate = useNavigate()
   const loginHandler = () => {
+    // api전송로직 추가
     navigate('/login')
   }
   return (

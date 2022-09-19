@@ -2,7 +2,6 @@ import React from 'react'
 import { cls } from '../../utils'
 
 const Button = ({ classprop, children, onClick, disabled }) => {
-  console.log(!disabled)
   return (
     <div
       onClick={!disabled ? onClick : null}
