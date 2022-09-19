@@ -56,7 +56,7 @@ const SwiperContainer = () => {
         loop={true}
         spaceBetween={30}
         slideToClickedSlide={true}
-        className="w-full px-5"
+        className="today-best w-full px-5"
       >
         {bestList.map((item) => (
           <SwiperSlide key={item.src}>

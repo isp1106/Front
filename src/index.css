@@ -19,12 +19,12 @@ body {
   color: var(--black-100);
 }
 
-.tab.swiper-slide-active {
+.tablist .swiper-slide-active {
   background-color: var(--primary);
   color: #fff;
 }
 
-select{
+select {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -33,3 +33,9 @@ select{
   display: none;
 }
 
+/* tablist 스와이퍼 */
+.tablist .swiper-slide {
+  width: 74px !important;
+  line-height: 1.6 !important;
+  margin-right: 2.3rem;
+}
