@@ -29,10 +29,10 @@ const SwiperMagazine = ({ category }) => {
   }
 
   return (
-    <div className="flex gap-4 overflow-x-scroll py-[39px] relative">
+    <div className="flex overflow-x-scroll py-[39px] relative">
       {list.map((item, index) => (
-        <div key={index} className="relative">
-          <img src={item.url} className="magazine-img" />
+        <div key={index} className="relative ml-[40px]">
+          <img src={item.url} className="] magazine-img" />
           {item.liked ? (
             <LikeWhiteIconOn
               className="absolute top-2 right-2"

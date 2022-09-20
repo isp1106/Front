@@ -7,13 +7,11 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.item {
-  border-top: 3px solid var(--primary);
-}
-.item:not(:nth-child(odd)) {
-  border-left: 1.5px solid var(--primary);
+.item__list:nth-child(odd) {
+  border-right: 2px solid var(--primary);
 }
 
-.item:not(:nth-child(2n)) {
-  border-right: 1.5px solid var(--primary);
+.item {
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
