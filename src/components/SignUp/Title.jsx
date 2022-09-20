@@ -2,7 +2,7 @@ import React from 'react'
 
 const Title = ({ title, text }) => {
   return (
-    <h2 className="text-[30px] font-medium mt-[35px]">
+    <h2 className="text-[30px] font-medium">
       <strong className="font-bold">{title}</strong>를 <br />
       {text}해주세요!
     </h2>

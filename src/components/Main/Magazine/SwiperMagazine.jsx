@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { ReactComponent as LikeWhiteIcon } from '/public/assets/like-white.svg'
+import { ReactComponent as LikeWhiteIcon } from '/public/assets/heart-white.svg'
+import { ReactComponent as LikeWhiteIconOn } from '/public/assets/heart-white-on.svg'
 import {
   magazineWoman,
   magazineMan,
@@ -28,18 +29,24 @@ const SwiperMagazine = ({ category }) => {
   }
 
   return (
-    <div className="flex gap-4 overflow-x-scroll py-[39px]">
+    <div className="flex gap-4 overflow-x-scroll py-[39px] relative">
       {list.map((item, index) => (
-        <React.Fragment key={index}>
-          <img src={item.url} width="150" />
-          <button
-            className="absolute top-4 right-4"
-            onClick={() => setLike(!like)}
-          >
-            {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-            {/* 나중에 아이콘넣기 */}
-          </button>
-        </React.Fragment>
+        <div key={index} className="relative">
+          <img src={item.url} className="magazine-img" />
+          {item.liked ? (
+            <LikeWhiteIconOn
+              className="absolute top-2 right-2"
+              width="23px"
+              height="23px"
+            />
+          ) : (
+            <LikeWhiteIcon
+              className="absolute top-2 right-2"
+              width="23px"
+              height="23px"
+            />
+          )}
+        </div>
       ))}
     </div>
   )
