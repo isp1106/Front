@@ -3,43 +3,52 @@ export const magazineWoman = [
   {
     month: 1,
     url: 'http://image.kyobobook.co.kr/images/book/large/129/l4910178330129.jpg',
+    liked: false,
   },
   {
     monh: 2,
     url: 'http://image.kyobobook.co.kr/images/book/large/228/l4910178330228.jpg',
+    liked: true,
   },
   {
     month: 3,
     url: 'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
+    liked: true,
   },
   {
     month: 4,
-
     url: 'http://image.kyobobook.co.kr/images/book/large/426/l4910178330426.jpg',
+    liked: true,
   },
   {
     month: 5,
     url: 'http://image.kyobobook.co.kr/images/book/large/525/l4910178330525.jpg',
+    liked: true,
   },
   {
     month: 6,
     url: 'http://image.kyobobook.co.kr/images/book/large/624/l4910178330624.jpg',
+    liked: false,
   },
   {
     month: 7,
     url: 'http://image.kyobobook.co.kr/images/book/large/723/l4910178330723.jpg',
+    liked: false,
   },
   {
     month: 8,
     url: 'http://image.kyobobook.co.kr/images/book/large/822/l4910178330822.jpg',
+    liked: true,
   },
   {
     month: 9,
     url: 'http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=JNT&mallGb=JAP&barcode=4910178330921&orderClick=LAG&Kc=#N',
+    liked: true,
   },
   {
     month: 10,
     url: 'http://image.kyobobook.co.kr/images/book/large/027/l4910178331027.jpg',
+    liked: true,
   },
 ]
 
@@ -48,39 +57,52 @@ export const magazineMan = [
   {
     month: 1,
     url: 'http://image.kyobobook.co.kr/images/book/large/426/l4910186250426.jpg',
+    liked: true,
   },
-  { month: 2, url: 'https://www.ichigo.co.kr:5030/data/22/17833-220200_m.jpg' },
+  {
+    month: 2,
+    url: 'https://www.ichigo.co.kr:5030/data/22/17833-220200_m.jpg',
+    liked: true,
+  },
   {
     month: 3,
     url: 'http://image.kyobobook.co.kr/images/book/large/327/l4910186250327.jpg',
+    liked: false,
   },
   {
     month: 4,
     url: 'http://image.kyobobook.co.kr/images/book/large/426/l4910186250426.jpg',
+    liked: true,
   },
   {
     month: 5,
     url: 'http://image.kyobobook.co.kr/images/book/large/525/l4910186250525.jpg',
+    liked: true,
   },
   {
     month: 6,
     url: 'http://image.kyobobook.co.kr/images/book/large/624/l4910186250624.jpg',
+    liked: false,
   },
   {
     month: 7,
     url: 'http://image.kyobobook.co.kr/images/book/large/723/l4910186250723.jpg',
+    liked: false,
   },
   {
     month: 8,
     url: 'http://image.kyobobook.co.kr/images/book/large/822/l4910186250822.jpg',
+    liked: true,
   },
   {
     month: 9,
     url: 'https://search.pstatic.net/common/?url=http%3A%2F%2Fblogfiles.naver.net%2F20160830_49%2Ffelling790_1472532573961C6VEb_JPEG%2FErae_1016.jpg&type=sc960_832',
+    liked: true,
   },
   {
     month: 10,
     url: 'http://image.kyobobook.co.kr/images/book/large/027/l4910186251027.jpg',
+    liked: true,
   },
 ]
 
@@ -88,14 +110,17 @@ export const lifeMagize = [
   {
     month: 1,
     url: 'http://image.kyobobook.co.kr/images/book/large/676/l3904000315676.jpg',
+    liked: false,
   },
   {
     month: 2,
     url: 'https://simage.kyobobook.co.kr/images/book/large/607/l3904000328607.jpg',
+    liked: true,
   },
   {
     month: 3,
     url: 'https://simage.kyobobook.co.kr/images/book/large/762/l3904000317762.jpg',
+    liked: true,
   },
 ]
 
@@ -103,14 +128,17 @@ export const koreaMagazine = [
   {
     month: 1,
     url: 'https://simage.kyobobook.co.kr/images/book/large/055/l3904000080055.jpg',
+    liked: false,
   },
   {
     month: 2,
     url: 'https://simage.kyobobook.co.kr/images/book/large/048/l3904000080048.jpg',
+    liked: false,
   },
   {
     month: 3,
     url: 'https://simage.kyobobook.co.kr/images/book/large/232/l3904000328232.jpg',
+    liked: true,
   },
 ]
 
