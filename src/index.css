@@ -53,3 +53,13 @@ select {
   width: auto;
   max-width: none;
 }
+
+.ratingStar {
+  display: inline-block;
+  width: 56.6px;
+  height: 14px;
+  background-image: url(/public/assets/star.png);
+  background-repeat: no-repeat;
+
+  background-size: 56.6px;
+}

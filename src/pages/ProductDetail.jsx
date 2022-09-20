@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../components/layout/Header'
-
+import Detail from '../components/Detail'
 const ProductDetail = () => {
   return (
     <div>
       <Header />
-      <div className="pt-[54px]">디테일 페이지</div>
+      <div className="pt-[54px]">
+        <Detail />
+      </div>
     </div>
   )
 }
