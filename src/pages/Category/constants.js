@@ -54,7 +54,7 @@ export const CATEGORY = [
                 'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
             },
             {
-              subCategoryName: '상의',
+              subCategoryName: '상의m',
               imgSrc:
                 'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
             },
@@ -163,7 +163,7 @@ export const CATEGORY = [
                 'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
             },
             {
-              subCategoryName: '백팩',
+              subCategoryName: '백팩m',
               imgSrc:
                 'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
             },
@@ -458,27 +458,27 @@ export const CATEGORY = [
           {
             subCategoryName: 'Dr.esthe',
             imgSrc:
-              'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
           },
           {
             subCategoryName: 'Etude House',
             imgSrc:
-              'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
           },
           {
             subCategoryName: '3CE',
             imgSrc:
-              'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
           },
           {
             subCategoryName: 'CLIO',
             imgSrc:
-              'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
           },
           {
             subCategoryName: 'HERA',
             imgSrc:
-              'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
           },
         ],
       },
