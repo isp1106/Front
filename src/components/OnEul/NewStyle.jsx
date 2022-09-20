@@ -25,9 +25,14 @@ const NewStyle = ({ category }) => {
       <h4 className="font-bold mb-5 pl-5">오늘의 뉴 스타일</h4>
       <div className="product__list">
         {list.map((item, index) => (
-          <div key={index} className="item">
-            <img src={item.imgUrl} />
-            <div className="flex gap-3 item py-2 pl-2">
+          <div key={index} className="item__list">
+            <div
+              className="item w-[50vw] h-[50vw] h bg-cover"
+              style={{
+                backgroundImage: `url(${item.imgUrl})`,
+              }}
+            ></div>
+            <div className="flex gap-3 py-2 pl-2">
               <div
                 className="w-[43px] h-[43px] bg-cover"
                 style={{

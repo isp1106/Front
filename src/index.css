@@ -17,6 +17,7 @@
 
 body {
   color: var(--black-100);
+  font-family: ;
 }
 
 .tablist .swiper-slide-active {
