@@ -34,7 +34,7 @@ const NewStyle = ({ category }) => {
             ></div>
             <div className="flex gap-3 py-2 pl-2">
               <div
-                className="w-[43px] h-[43px] bg-cover"
+                className="w-[43px] h-[43px] bg-cover rounded-lg "
                 style={{
                   backgroundImage: `url(${item.brnadurl})`,
                 }}
