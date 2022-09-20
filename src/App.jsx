@@ -14,6 +14,8 @@ import SignUpId from './pages/SignUp/SignUpId'
 import SignUpPw from './pages/SignUp/SignUpPw'
 import UserInfo from './pages/SignUp/UserInfo'
 import Finish from './pages/SignUp/Finish'
+import Product from './pages/Product'
+import ProductDetail from './pages/ProductDetail'
 
 function App() {
   const location = useLocation()
@@ -27,6 +29,11 @@ function App() {
         <Route path="/like" element={<Like />} />
         <Route path="/my" element={<MyPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/product" element={<Product />} />
+
+        {/*실제사용 아래 임시 <Route path="/product/:id" element={<DetailPage />} /> */}
+        <Route path="/product/detail" element={<ProductDetail />} />
+
         <Route path="/signup" element={<SignUp />}>
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />

@@ -43,7 +43,7 @@ const SignIn = () => {
   return (
     <>
       <GoBack />
-      <div className="pr-5 pl-5">
+      <div className="pr-5 pl-5 pt-[90px]">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>
         <Input

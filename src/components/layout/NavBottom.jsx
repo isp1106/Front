@@ -18,7 +18,7 @@ const NavBottom = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 ">
       <nav className="relative z-40">
-        <ul className="flex flex-wrap bg-neutral-100 justify-between pt-1 pb-2 pl-3 pr-3 items-center">
+        <ul className="flex flex-wrap bg-neutral-100 justify-between pt-1 pb-4 pl-5 pr-5 items-center">
           <li>
             <Link
               to="/category"
@@ -32,7 +32,6 @@ const NavBottom = () => {
               ) : (
                 <CategoryIcon />
               )}
-              <span className="text-xs text-black-400">CATEGORY</span>
             </Link>
           </li>
           <li>
@@ -44,7 +43,6 @@ const NavBottom = () => {
               )}
             >
               {currentPath === '/oneul' ? <OnulIconOn /> : <OnulIcon />}
-              <span className="text-xs text-black-400">ONUL</span>
             </Link>
           </li>
           <li>
@@ -56,7 +54,6 @@ const NavBottom = () => {
               )}
             >
               {currentPath === '/' ? <HomeIconOn /> : <HomeIcon />}
-              <span className="text-xs text-black-400">HOME</span>
             </Link>
           </li>
           <li>
@@ -68,8 +65,6 @@ const NavBottom = () => {
               )}
             >
               {currentPath === '/like' ? <LikeIconOn /> : <LikeIcon />}
-
-              <span className="text-xs text-black-400">LIKE</span>
             </Link>
           </li>
           <li>
@@ -81,7 +76,6 @@ const NavBottom = () => {
               )}
             >
               {currentPath === '/my' ? <MyIconOn /> : <MyIcon />}
-              <span className="text-xs text-black-400">MY</span>
             </Link>
           </li>
         </ul>
