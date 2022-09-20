@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as CartIcon } from '/public/assets/shoppingBag_icon_line.svg'
+import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
 import { ReactComponent as SetIcon } from '/public/assets/setting_icon.svg'
 const Header = () => {
   return (
