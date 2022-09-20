@@ -8,7 +8,7 @@ const NextBtn = ({ next, inputValue, disabled }) => {
   }
   return (
     <div
-      className="cursor-pointer fixed bottom-0 left-0 right-0 z-50 "
+      className="hover:cursor-pointer fixed bottom-0 left-0 right-0 z-50 "
       onClick={ChangeRouter}
     >
       <div
@@ -17,9 +17,7 @@ const NextBtn = ({ next, inputValue, disabled }) => {
           !disabled ? 'bg-sub-primary' : 'bg-primary',
         )}
       >
-        <div></div>
-        <p>다음</p>
-        <div className="rounded pt-1 w-[129px] bg-white "></div>
+        <p className="mb-6">다음</p>
       </div>
     </div>
   )
