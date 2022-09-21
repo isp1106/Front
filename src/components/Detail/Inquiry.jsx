@@ -10,7 +10,7 @@ const Inquiry = () => {
         </h4>
         <div>
           {detailProducts.Inquiry.map((item, idx) => (
-            <div className="py-5  border-b border-black-400">
+            <div className="py-5  border-b border-black-400" key={idx}>
               <div className="pl-5 text-xs text-black-600 ">
                 <div className="flex gap-3">
                   <span>{item.date}</span>

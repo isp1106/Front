@@ -11,9 +11,9 @@ const Review = () => {
         </h4>
         <div className="flex gap-5 overflow-x-scroll">
           {detailProducts.review.reviews.map(({ imgUrl, desc, star }, idx) => (
-            <>
-              {imgUrl.map((item) => (
-                <div key={idx}>
+            <React.Fragment key={desc[idx]}>
+              {imgUrl.map((item, index) => (
+                <div key={index}>
                   <div
                     className="w-[127px] h-[127px] bg-cover"
                     style={{
@@ -22,13 +22,13 @@ const Review = () => {
                   ></div>
                 </div>
               ))}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>
       <div>
         {detailProducts.review.reviews.map((item, idx) => (
-          <div className="px-5 pb-5 border-b border-black-400">
+          <div className="px-5 pb-5 border-b border-black-400" key={idx}>
             <div className="flex justify-between items-center text-xs text-black-600 py-5">
               <div>
                 <div

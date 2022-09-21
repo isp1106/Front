@@ -9,7 +9,7 @@ const Another = () => {
       <h4 className="font-bold my-4">비슷한 상품</h4>
       <div className="flex gap-5 overflow-x-scroll">
         {detailProducts.another.map((item, idx) => (
-          <div>
+          <div key={idx}>
             <div
               className="new-style w-[142px] h-[142px] bg-cover rounded-full overflow-hidden border-primary border"
               style={{
