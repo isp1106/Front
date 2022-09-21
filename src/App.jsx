@@ -21,7 +21,7 @@ function App() {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <div className="pb-[64px]">
+    <div className="pb-[75px]">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />

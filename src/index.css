@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: 'NotoSans';
-  src: url('/assets/fonts/NotoSansKR-Medium.otf');
+  src: url('/public/fonts/NotoSansKR-Medium.otf');
 }
 
 @font-face {
   font-family: 'NotoSans-Bold';
-  src: url('/assets/fonts/NotoSansKR-Bold.otf');
+  src: url('/public/fonts/NotoSansKR-Bold.otf');
 }
 
 .root,
@@ -62,4 +62,12 @@ select {
   background-repeat: no-repeat;
 
   background-size: 56.6px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

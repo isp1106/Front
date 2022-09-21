@@ -13,27 +13,30 @@ export const detailProducts = {
   delivery: 'free',
   color: ['https://ifh.cc/g/Q2DWwQ.png', 'https://ifh.cc/g/33lRxC.png'],
   desc_url:
-    'https://images.seoulstore.com/products/1f599b85a66019e634adf23596cda9d3.jpg',
-  magazine:
-    'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
+    'https://images.seoulstore.com/products/97aa4585eda28bfaaa0fe6b9660f5176.jpg',
+  magazine: {
+    url: 'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
+    title: 'NO.05 Cherry heart',
+  },
   snap: [
     {
-      userId: 'wh._.p__ch',
+      id: 1,
       profile:
-        'https://www.cosmeticsdesign-asia.com/var/wrbm_gb_food_pharma/storage/images/publications/cosmetics/cosmeticsdesign-asia.com/headlines/brand-innovation/pilgrim-tapping-into-korean-beauty-trends-and-making-them-accessible-to-domestic-market/12882011-1-eng-GB/Pilgrim-tapping-into-Korean-beauty-trends-and-making-them-accessible-to-domestic-market.jpg',
-      liked: true,
+        'https://image.msscdn.net/display/images/usersnap/2022/09/19/d49f6441a98b4ddaa38422cc0a3b4e97_main.jpg',
+      userId: '0seo8',
+      liked: 2042,
     },
     {
       userId: 'seon.nna',
       profile:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLM4wPStDu0JVJz4RIf71RkjlOgna26kipUg&usqp=CAU',
-      liked: false,
+      liked: 1322,
     },
     {
       userId: 'wh._.p__ch',
       profile:
         'https://www.cosmeticsdesign-asia.com/var/wrbm_gb_food_pharma/storage/images/publications/cosmetics/cosmeticsdesign-asia.com/headlines/brand-innovation/pilgrim-tapping-into-korean-beauty-trends-and-making-them-accessible-to-domestic-market/12882011-1-eng-GB/Pilgrim-tapping-into-Korean-beauty-trends-and-making-them-accessible-to-domestic-market.jpg',
-      liked: true,
+      liked: 254,
     },
   ],
   similiar: [
@@ -45,6 +48,7 @@ export const detailProducts = {
       name: 'RABITA FUR CARDIGAN_plum',
       price: 980,
       liked: false,
+      discount: 30,
     },
     {
       id: 2,
@@ -54,6 +58,7 @@ export const detailProducts = {
       name: 'Island Flower Cardigan(BLACK)',
       price: 720,
       liked: true,
+      discount: 20,
     },
     {
       id: 3,
@@ -63,6 +68,7 @@ export const detailProducts = {
       name: 'BUSTIER CARDIGAN SET - BLACK',
       price: 790,
       liked: false,
+      discount: 30,
     },
     {
       id: 4,
@@ -72,6 +78,7 @@ export const detailProducts = {
       name: '[파인울100%] 로아즈 울 프린지 니트 가디건 R12K02-IV',
       price: 230,
       liked: true,
+      discount: 10,
     },
   ],
   another: [
@@ -114,21 +121,74 @@ export const detailProducts = {
   ],
   review: {
     count: 128,
-    reviws: [
+    reviews: [
       {
         id: 1,
-        url: 'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
+        imgUrl: [
+          'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
+          'https://ifh.cc/g/GFBkp0.png',
+          'https://ifh.cc/g/G85L5x.png',
+          'https://ifh.cc/g/G85L5x.png',
+        ],
         userId: 'onuel12356',
         desc: '두껍고 따뜻하고 색깔도 화면과 같아요. 사이즈도 넉넉하고 어던옷과 입어도 잘 매치됩니다. 세일해서 저렴하고 구매했어요!',
         star: 4.5,
+        date: '2022-04-21',
+      },
+      {
+        id: 1,
+        imgUrl: [
+          'https://ifh.cc/g/GFBkp0.png',
+          'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
+          'https://ifh.cc/g/G85L5x.png',
+          'https://ifh.cc/g/G85L5x.png',
+        ],
+        userId: 'onuel12356',
+        desc: '데일리로 입기 편한 티셔츠예요 완전 귀엽습니다. 너무 젊은 브랜드 아닐까 생각했지만 귀여우니 그냥 입으려고요',
+        star: 4,
+        date: '2022-04-21',
       },
     ],
   },
-  Inquiry: {
-    id: 1,
-    date: '2022.09.20',
-    userId: 'onuel12356',
-    category: '배송문의',
-    desc: '한번에 결제하고 각각 다른 주소로 보내고 싶어요',
-  },
+  Inquiry: [
+    {
+      id: 1,
+      date: '2022.09.20',
+      userId: 'onuel12356',
+      category: '배송문의',
+      desc: '한번에 결제하고 각각 다른 주소로 보내고 싶어요',
+    },
+  ],
 }
+
+export const review = [
+  {
+    member: {
+      createdAt: null,
+      modifiedAt: null,
+      id: 1,
+      username: 'wnsdn4875',
+      password: 'joon1234',
+      email: 'devjoon@nate.com',
+      gender: 'FEMALE',
+      birthInfo: '1997-05-31T15:00:00.000+00:00',
+      role: 'USER',
+    },
+    product: {
+      createdAt: null,
+      modifiedAt: null,
+      id: 1,
+      productName: '나이키모자',
+      price: 10000,
+      brand: '나이키',
+      count: 3,
+      category: '모자',
+      cartItems: [],
+      favoriteItems: [],
+      orderItems: [],
+    },
+    title: '맘에 듭니다.',
+    content: '예뻐요!!',
+    createdDate: null,
+  },
+]
