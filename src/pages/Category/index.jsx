@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { Link, Element } from 'react-scroll'
 import CategoryItem from './CategoryItem'
-import { CATEGORY } from './constants'
+import { CATEGORY } from '../../dummy/constants'
 import FastionTab from './FastionTab'
 import './Category.css'
 
 const Category = () => {
   const [openWomenTab, setOpenWemenTab] = useState(true)
-  const [beautyBrands, setBeautyBrands] = useState([])
+  const [beautyBrands, setBeautyBrands] = useState('')
   const getTabData = (isWomenTab) => {
     setOpenWemenTab(isWomenTab)
   }
   return (
     <div>
-      <nav className="border-t-2 border-primary">
-        {/* <div>
+      <nav className="border-t-2 border-primary flex flex-col ">
+        <div className="">
           <h5 className="block p-5 text-sm font-bold">브랜드</h5>
           <div className="px-5">
             {CATEGORY.map(({ TopCategory, subCategory }, index) => {
@@ -49,7 +49,7 @@ const Category = () => {
               )
             })}
           </div>
-        </div> */}
+        </div>
         <div className="flex ">
           <ul className="flex w-28 flex-col fixed">
             {CATEGORY.map(({ TopCategory }) => {
@@ -62,6 +62,9 @@ const Category = () => {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    onClick={() => {
+                      setBeautyBrands(TopCategory)
+                    }}
                   >
                     {TopCategory}
                   </Link>
