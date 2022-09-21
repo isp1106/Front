@@ -2,9 +2,9 @@ import React from 'react'
 
 const UserInfo = () => {
   return (
-    <div className="px-5 pb-5 flex flex-wrap items-center border-b-[1px] border-primary">
+    <div className="px-5 pb-5 pt-[4.125rem] flex flex-wrap items-center border-b-[1px] border-primary">
       <div className="w-10 h-10 rounded-full bg-[#ebebeb] mr-[1.125rem]">
-        <img src="" alt="" />
+        <img src="" alt="user" className='w-full h-full' />
       </div>
       <div className="flex-auto">
         <span className="block font-medium">User ID</span>
