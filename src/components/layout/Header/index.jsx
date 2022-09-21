@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import HeaderLink from './HeaderLink'
 import Logo from './Logo'
 import { ReactComponent as BackIcon } from '/public/assets/back-on.svg'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function Header() {
   const location = useLocation()
   const currentPath = location.pathname
+  const navigate = useNavigate()
   return (
     <>
       <header className="border-b-2 border-primary fixed w-full h-14 bg-white top-0 z-50 box-shadow-custom">
@@ -14,7 +15,7 @@ function Header() {
           {currentPath === '/' ? (
             <Logo className="absolute z-50" />
           ) : (
-            <BackIcon />
+            <BackIcon onClick={() => navigate(-1)} />
           )}
           <div className="flex-grow"></div>
           <HeaderLink />
