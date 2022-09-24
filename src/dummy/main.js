@@ -574,7 +574,7 @@ export const oneulBestList = [
     brnad: '스티그마',
     price: 1080,
     discount: 10,
-    like: 4412,
+    liked: 4412,
   },
   {
     id: 2,
@@ -585,7 +585,7 @@ export const oneulBestList = [
     brnad: '마하그리드',
     price: 5310,
     discount: 10,
-    like: 3620,
+    liked: 3620,
   },
   {
     id: 3,
@@ -596,7 +596,7 @@ export const oneulBestList = [
     brnad: '디파이클럽로버스',
     price: 3680,
     discount: 20,
-    like: 3251,
+    liked: 3251,
   },
   {
     id: 4,
@@ -607,7 +607,7 @@ export const oneulBestList = [
     brnad: '마리떼',
     price: 4900,
     discount: 0,
-    like: 2688,
+    liked: 2688,
   },
   {
     id: 5,
@@ -618,7 +618,7 @@ export const oneulBestList = [
     brnad: '커스텀에이드',
     price: 9265,
     discount: 15,
-    like: 2477,
+    liked: 2477,
   },
   {
     id: 6,
@@ -629,7 +629,7 @@ export const oneulBestList = [
     brnad: '엠엘비',
     price: 3600,
     discount: 0,
-    like: 2313,
+    liked: 2313,
   },
 ]
 export const oneulLastestList = [
@@ -642,7 +642,7 @@ export const oneulLastestList = [
     brnad: '언더컨트롤',
     price: 3680,
     discount: 10,
-    like: 389,
+    liked: 389,
   },
   {
     id: 2,
@@ -653,7 +653,7 @@ export const oneulLastestList = [
     brnad: '두마로',
     price: 5310,
     discount: 10,
-    like: 3620,
+    liked: 3620,
   },
   {
     id: 3,
@@ -664,7 +664,7 @@ export const oneulLastestList = [
     brnad: '파르티멘토',
     price: 4990,
     discount: 20,
-    like: 212,
+    liked: 212,
   },
   {
     id: 4,
@@ -675,7 +675,7 @@ export const oneulLastestList = [
     brnad: '클락스',
     price: 4900,
     discount: 0,
-    like: 2688,
+    liked: 2688,
   },
 ]
 export const oneulFollowingList = [
@@ -688,7 +688,7 @@ export const oneulFollowingList = [
     brnad: '어나더레이어',
     price: 5580,
     discount: 10,
-    like: 234,
+    liked: 234,
   },
   {
     id: 2,
@@ -699,6 +699,6 @@ export const oneulFollowingList = [
     brnad: '필로그램',
     price: 5310,
     discount: 10,
-    like: 3620,
+    liked: 3620,
   },
 ]
