@@ -6,9 +6,12 @@ import {
   lifeMagize,
   koreaMagazine,
 } from '../../../dummy/main'
+import { useNavigate } from 'react-router-dom'
 
 const SwiperMagazine = ({ category }) => {
   const [like, setLike] = useState(false)
+  const navigate = useNavigate()
+
   let list
   switch (category) {
     case '우먼':
@@ -30,7 +33,12 @@ const SwiperMagazine = ({ category }) => {
   return (
     <div className="flex overflow-x-scroll py-[39px] relative">
       {list.map((item, index) => (
-        <div key={index} className="relative ml-[40px]">
+        <div
+          key={index}
+          className="relative ml-[40px]"
+          //추후 id 값 넣기
+          onClick={() => navigate('/magazine/id')}
+        >
           <img src={item.url} className="] magazine-img" />
           <div className="absolute top-2 right-2">
             <HeartIcon size="23px" fill="#ffffff" off={item.liked} />

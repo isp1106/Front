@@ -15,7 +15,7 @@ function Header() {
           {currentPath === '/' ? (
             <Logo className="absolute z-50" />
           ) : (
-            <BackIcon onClick={() => navigate(-1)} />
+            <BackIcon onClick={() => navigate(-1)} width="24px" height="24px" />
           )}
           <div className="flex-grow"></div>
           <HeaderLink />

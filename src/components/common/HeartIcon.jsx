@@ -1,8 +1,9 @@
 import React from 'react'
 
-const HeartIcon = ({ fill = '#D86145', size = 36, off = false }) => {
+const HeartIcon = ({ fill = '#D86145', size = 36, off = false, className }) => {
   return off ? (
     <svg
+      className={className}
       width={size}
       height={size}
       viewBox="0 0 36 36"
@@ -28,6 +29,7 @@ const HeartIcon = ({ fill = '#D86145', size = 36, off = false }) => {
     </svg>
   ) : (
     <svg
+      className={className}
       width={size}
       height={size}
       viewBox="0 0 36 36"
