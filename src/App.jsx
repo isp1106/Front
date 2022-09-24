@@ -45,9 +45,9 @@ function App() {
         </Route>
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      {!currentPath.includes('/signup') && !currentPath.includes('/detail') && (
-        <NavBottom />
-      )}
+      {!currentPath.includes('/signup') &&
+        !currentPath.includes('/detail') &&
+        !currentPath.includes('/cart') && <NavBottom />}
     </div>
   )
 }
