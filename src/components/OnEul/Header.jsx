@@ -6,7 +6,7 @@ const Header = () => {
     <div className="flex justify-between items-center pl-5 pr-5 h-[66px]">
       <h2 className="text-xl font-bold">오늘</h2>
       <div>
-        <SearchIconOn className="cursor-pointer" />
+        <SearchIconOn className="cursor-pointer" width="28" height="28" />
       </div>
     </div>
   )

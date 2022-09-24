@@ -21,8 +21,8 @@ const NewStyle = ({ category }) => {
       return
   }
   return (
-    <div className="mt-[35px]">
-      <h4 className="font-bold mb-5 pl-5">오늘의 뉴 스타일</h4>
+    <div className="mt-10">
+      <h4 className="pl-5 font-bold mb-5 text-xl">오늘의 뉴 스타일</h4>
       <div className="product__list">
         {list.map((item, index) => (
           <div key={index} className="item__list">
