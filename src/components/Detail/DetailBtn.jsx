@@ -1,8 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '../../utils'
-import { ReactComponent as HeartIcon } from '/public/assets/heart-white.svg'
-import { ReactComponent as HeartIconOn } from '/public/assets/heart-white-on.svg'
+import HeartIcon from '../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 
 const NextBtn = () => {
@@ -28,12 +27,12 @@ const NextBtn = () => {
     <div className="hover:cursor-pointer fixed bottom-0 left-0 right-0 z-50 ">
       <div
         className={cls(
-          'h-[78px] gap-4 w-full flex flex-col justify-center items-center text-white-200 bg-primary pb-4',
+          'h-[78px] gap-4 w-full flex flex-col justify-center items-center text-white-200 bg-point pb-4',
         )}
       >
         <div className="flex justify-between w-full px-5 items-center">
           <div className="flex gap-3">
-            <HeartIcon width="24" height="24" />
+            <HeartIcon size="24" fill="#ffffff" />
             <LinkIcon width="24" height="24" onClick={copyUrl} />
           </div>
           <div className="flex gap-3 items-center">

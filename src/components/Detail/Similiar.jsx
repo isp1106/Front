@@ -1,7 +1,6 @@
 import React from 'react'
 import { detailProducts } from '../../dummy/detail'
-import { ReactComponent as HeartIcon } from '/public/assets/heart.svg'
-import { ReactComponent as HeartIconOn } from '/public/assets/heart-on.svg'
+import HeartIcon from '../common/HeartIcon'
 
 const Similiar = () => {
   return (
@@ -19,9 +18,9 @@ const Similiar = () => {
             <div className="flex justify-between items-center mt-1 px-2">
               <span className="text-sm font-bold">{item.brnad}</span>
               {item.liked ? (
-                <HeartIconOn width="15" height="15" />
+                <HeartIcon size="15" />
               ) : (
-                <HeartIcon width="15" height="15" />
+                <HeartIcon size="15" off />
               )}
             </div>
             <div className="text-[10px] text-black-800 truncate w-[125px] px-2 mt-2">

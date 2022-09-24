@@ -175,6 +175,7 @@ export const womanBestList = [
     title: 'TGT PAISLEY HAIR BAND',
     sale: 10,
     price: 1100,
+    liked: false,
   },
   {
     id: 12,
@@ -182,6 +183,7 @@ export const womanBestList = [
     title: 'Bowling bag_lemon',
     sale: 12,
     price: 5700,
+    liked: true,
   },
   {
     id: 13,
@@ -189,6 +191,7 @@ export const womanBestList = [
     title: 'TGT x RC Crop Blazer',
     sale: 15,
     price: 14600,
+    liked: false,
   },
   {
     id: 14,
@@ -196,6 +199,7 @@ export const womanBestList = [
     title: 'Candy bag_mint',
     sale: 12,
     price: 6400,
+    liked: true,
   },
   {
     id: 15,
@@ -203,6 +207,7 @@ export const womanBestList = [
     title: 'Sally bag_ivory',
     sale: 20,
     price: 3900,
+    liked: false,
   },
   {
     id: 16,
@@ -210,6 +215,7 @@ export const womanBestList = [
     title: 'troi bag_black',
     sale: 10,
     price: 4900,
+    liked: true,
   },
   {
     id: 17,
@@ -217,6 +223,7 @@ export const womanBestList = [
     title: 'Painting bag_blue',
     sale: 30,
     price: 3800,
+    liked: false,
   },
 ]
 export const manBestList = [
