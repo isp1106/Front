@@ -18,6 +18,7 @@ import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
+import Search from './pages/Search'
 
 function App() {
   const location = useLocation()
@@ -46,6 +47,7 @@ function App() {
           <Route path="finish" element={<Finish />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
       {!currentPath.includes('/signup') && !currentPath.includes('/detail') && (
         <NavBottom />
