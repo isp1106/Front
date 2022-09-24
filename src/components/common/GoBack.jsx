@@ -6,7 +6,7 @@ const GoBack = () => {
   const navigate = useNavigate()
   return (
     <div
-      className="pt-12 pb-3 pl-3 fixed overflow-hidden bg-white w-full"
+      className="h-[66px]  pl-3 fixed overflow-hidden bg-white w-full flex items-center"
       onClick={() => navigate(-1)}
     >
       <GoBackIcon />
