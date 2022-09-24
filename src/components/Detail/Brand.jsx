@@ -17,11 +17,7 @@ const Brand = () => {
               </span>
               <GoBackIcon className="rotate-180 w-[14px] h-[22px] ml-1" />
             </div>
-            {detailProducts.liked ? (
-              <HeartIcon size="22px" />
-            ) : (
-              <HeartIcon size="22px" off />
-            )}
+            <HeartIcon size="22px" off={detailProducts.liked} />
           </div>
           <h2 className="pl-3 mt-2 font-bold">키르시</h2>
         </div>

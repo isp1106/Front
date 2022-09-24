@@ -17,11 +17,7 @@ const Similiar = () => {
             ></div>
             <div className="flex justify-between items-center mt-1 px-2">
               <span className="text-sm font-bold">{item.brnad}</span>
-              {item.liked ? (
-                <HeartIcon size="15" />
-              ) : (
-                <HeartIcon size="15" off />
-              )}
+              <HeartIcon size="15" off={item.liked} />
             </div>
             <div className="text-[10px] text-black-800 truncate w-[125px] px-2 mt-2">
               {item.name}
