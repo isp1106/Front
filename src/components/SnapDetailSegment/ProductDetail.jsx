@@ -1,13 +1,11 @@
 import React from 'react'
-import { snapDetailList } from '../../dummy/relatedProduct'
-const ProductDetail = () => {
-  const list = snapDetailList
+const ProductDetail = ({active, list, cls}) => {
   return (
-    <ul className="mt-5 flex justify-between">
+    <ul className="mt-5 flex gap-5 overflow-x-scroll">
       {list.map((item, index) => (
         <li className="" key={index}>
           <div
-            className="w-[5.375rem] h-[5.375rem] rounded-[0.313rem]"
+            className={cls('w-[5.375rem] h-[5.375rem] rounded-[0.313rem] bg-no-repeat bg-center', active === index ? 'border-2 border-primary' : 'border-none')}
             style={{
               backgroundImage: `url(${item.imgUrl})`,
             }}
