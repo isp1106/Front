@@ -6,7 +6,7 @@ const SignUp = () => {
   return (
     <div>
       <GoBack />
-      <div className="pl-5 pr-5">
+      <div className="px-5 pt-32 pb-12">
         <Outlet />
       </div>
     </div>

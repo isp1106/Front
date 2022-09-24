@@ -1,4 +1,6 @@
 import TodayMagazine from './TodayMagazine'
+import { ReactComponent as WomanIcon } from '/public/assets/woman.svg'
+
 const Latest = () => {
   return (
     <div className="relative bg-primary h-[37.5rem] before:content-[attr(before)] before:absolute before:w-full before:h-48 before:bg-[#FEF1DD] before:bottom-0 z-1">
@@ -14,8 +16,8 @@ const Latest = () => {
           aliquip ex ea
         </p>
         <TodayMagazine />
-        {/* 누끼이미지추가예정 */}
       </div>
+      <WomanIcon className="absolute left-1 bottom-0" />
     </div>
   )
 }

@@ -9,7 +9,7 @@ const TabList = ({ tablist, changeCateogry }) => {
       // install Swiper modules
       className="tablist pl-5 mt-4 mb-7"
       modules={[Scrollbar]}
-      spaceBetween={50}
+      spaceBetween={60}
       slidesPerView={3.7}
       scrollbar={{ draggable: true }}
       onSlideChange={(e) => changeCateogry(e)}
@@ -22,7 +22,7 @@ const TabList = ({ tablist, changeCateogry }) => {
           }
           key={idx}
         >
-          {item}
+          <span> {item}</span>
         </SwiperSlide>
       ))}
     </Swiper>

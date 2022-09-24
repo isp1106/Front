@@ -1,6 +1,5 @@
 import { cls } from '../../utils'
 const SwitchBtn = ({ category, changeHandler, active }) => {
-  console.log(active === category[0], active)
   return (
     <div className="transition fixed rounded-lg shadow-md flex flex-col justify-evenly items-center top-[420px] right-2 text-[12px] font-bold overflow-hidden">
       {category.map((item, index) => (
