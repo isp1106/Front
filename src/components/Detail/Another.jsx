@@ -1,7 +1,6 @@
 import React from 'react'
 import { detailProducts } from '../../dummy/detail'
-import { ReactComponent as HeartIcon } from '/public/assets/heart.svg'
-import { ReactComponent as HeartIconOn } from '/public/assets/heart-on.svg'
+import HeartIcon from '../common/HeartIcon'
 
 const Another = () => {
   return (
@@ -26,11 +25,7 @@ const Another = () => {
                 </span>
                 <span className="text-sm">{item.price} ¥</span>
               </div>
-              {item.liked ? (
-                <HeartIconOn width="15" height="15" />
-              ) : (
-                <HeartIcon width="15" height="15" />
-              )}
+              <HeartIcon size="15" off={item.liked} />
             </div>
           </div>
         ))}

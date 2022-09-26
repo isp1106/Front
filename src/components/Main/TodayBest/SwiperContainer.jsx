@@ -39,7 +39,7 @@ const SwiperContainer = ({ category }) => {
         className="w-full px-5 today"
       >
         {list.map((item) => (
-          <SwiperSlide key={item.if}>
+          <SwiperSlide key={item.id}>
             {({ isActive }) => <Card product={item} active={isActive}></Card>}
           </SwiperSlide>
         ))}

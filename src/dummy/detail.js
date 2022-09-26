@@ -4,6 +4,7 @@ export const detailProducts = {
     'https://images.seoulstore.com/products/05114e87573eaa474d88f4f473d8355f.jpg',
   ],
   brand: 'Kirsh',
+  liked: true,
   brand_img_url: 'https://ifh.cc/g/nGCNgk.png',
   product_name: 'BIG CHERRY FLEECE CROP HOOD',
   star: 4.5,

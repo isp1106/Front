@@ -1,6 +1,6 @@
 import React from 'react'
 import { detailProducts } from '../../dummy/detail'
-import { ReactComponent as HeartIconOn } from '/public/assets/heart-white-on.svg'
+import HeartIcon from '../common/HeartIcon'
 const Snap = () => {
   return (
     <div className="pl-5">
@@ -15,7 +15,7 @@ const Snap = () => {
               }}
             >
               <div className="absolute right-2 bottom-2 flex flex-col justify-center items-center">
-                <HeartIconOn width="22px" height="22px" />
+                <HeartIcon size="22px" />
                 <span className="text-white text-[14px]">{item.liked}</span>
               </div>
             </div>
