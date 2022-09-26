@@ -17,7 +17,6 @@ export const TermCard = ({ accept, check, setCheck }) => {
   }, [terms])
 
   useEffect(() => {
-    console.log(modalTerms)
     if (modalTerms.current) {
       modalTerms.current.innerText = terms
     }
