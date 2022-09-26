@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { ReactComponent as LikeWhiteIcon } from '/public/assets/like-white.svg'
+import HeartIcon from '../../common/HeartIcon'
 import {
   magazineWoman,
   magazineMan,
   lifeMagize,
   koreaMagazine,
 } from '../../../dummy/main'
+import { useNavigate } from 'react-router-dom'
 
 const SwiperMagazine = ({ category }) => {
   const [like, setLike] = useState(false)
+  const navigate = useNavigate()
+
   let list
   switch (category) {
     case '우먼':
@@ -28,18 +31,19 @@ const SwiperMagazine = ({ category }) => {
   }
 
   return (
-    <div className="flex gap-4 overflow-x-scroll py-[39px]">
+    <div className="flex overflow-x-scroll py-[39px] relative">
       {list.map((item, index) => (
-        <React.Fragment key={index}>
-          <img src={item.url} width="150" />
-          <button
-            className="absolute top-4 right-4"
-            onClick={() => setLike(!like)}
-          >
-            {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-            {/* 나중에 아이콘넣기 */}
-          </button>
-        </React.Fragment>
+        <div
+          key={index}
+          className="relative ml-[40px]"
+          //추후 id 값 넣기
+          onClick={() => navigate('/magazine/id')}
+        >
+          <img src={item.url} className="] magazine-img" />
+          <div className="absolute top-2 right-2">
+            <HeartIcon size="23px" fill="#ffffff" off={item.liked} />
+          </div>
+        </div>
       ))}
     </div>
   )

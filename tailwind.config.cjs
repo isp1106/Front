@@ -15,6 +15,7 @@ module.exports = {
         'black-400': 'var(--black-400)',
         'black-200': 'var(--black-200)',
         'white-200': 'var(--white-200)',
+        point: 'var(--point)',
       },
     },
   },
