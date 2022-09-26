@@ -1,6 +1,5 @@
 import React from 'react'
-import { ReactComponent as LikeIcon } from '/public/assets/heart.svg'
-import { ReactComponent as LikeIconOn } from '/public/assets/heart-on.svg'
+import HeartIcon from '../../common/HeartIcon'
 import {
   womanRecommended,
   manRecommended,
@@ -26,8 +25,6 @@ const TodayRecommended = ({ category }) => {
     default:
       return
   }
-
-  console.log('here', list.img1)
   return (
     <div>
       <h3 className="font-bold text-xl mb-5 pl-5">
@@ -57,11 +54,7 @@ const TodayRecommended = ({ category }) => {
         ></div>
         <div className="col-span-2 pl-5 pr-5 pt-2 pb-2 flex justify-between items-center">
           <span className="text-sm text-primary font-bold">{list.brand}</span>
-          {list.liked ? (
-            <LikeIconOn style={{ width: '20px' }} />
-          ) : (
-            <LikeIcon style={{ width: '20px' }} />
-          )}
+          <HeartIcon size="20px" off={list.liked} />
         </div>
       </div>
     </div>

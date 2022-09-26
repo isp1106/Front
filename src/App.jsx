@@ -16,12 +16,15 @@ import UserInfo from './pages/SignUp/UserInfo'
 import Finish from './pages/SignUp/Finish'
 import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
+import SnapDetail from './pages/SnapDetail'
+import MagazineDetail from './pages/MagazineDetail'
+import Search from './pages/Search'
 
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <div className="pb-[64px]">
+    <div className="pb-[75px]">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
@@ -31,8 +34,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Product />} />
 
-        {/*실제사용 아래 임시 <Route path="/product/:id" element={<DetailPage />} /> */}
+        {/*실제사용 아래 임시 <Route path="/product/detail/:id" element={<DetailPage />} /> */}
         <Route path="/product/detail" element={<ProductDetail />} />
+        <Route path="/oneul/detail" element={<SnapDetail />} />
+        <Route path="/magazine/id" element={<MagazineDetail />} />
 
         <Route path="/signup" element={<SignUp />}>
           <Route path="" element={<TermService />} />
@@ -42,8 +47,11 @@ function App() {
           <Route path="finish" element={<Finish />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
-      {!currentPath.includes('/signup') && <NavBottom />}
+      {!currentPath.includes('/signup') &&
+        !currentPath.includes('/detail') &&
+        !currentPath.includes('/cart') && <NavBottom />}
     </div>
   )
 }
