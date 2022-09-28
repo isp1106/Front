@@ -5,10 +5,6 @@ import Liked from '../components/Liked'
 const Like = () => {
   return (
     <div>
-      <div className="flex justify-between items-center mx-5 h-[66px]">
-        <div className="text-xl font-bold">찜</div>
-        <HeaderLink />
-      </div>
       <Liked />
     </div>
   )
