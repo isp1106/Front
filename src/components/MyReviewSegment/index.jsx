@@ -11,6 +11,7 @@ const MyReviewSegment = () => {
   const reviewDataComplete = reviewComplete
   const [tab, setTab] = useState(0)
   const [reviewCount, setReviewCount] = useState(0)
+  const [reviewCompleteCount, setReviewCompleteCount] = useState(0)
   return (
     <>
       <Header />
@@ -20,6 +21,10 @@ const MyReviewSegment = () => {
         setTab={setTab}
         reviewCount={reviewCount}
         setReviewCount={setReviewCount}
+        reviewData={reviewData}
+        reviewDataComplete={reviewDataComplete}
+        reviewCompleteCount={reviewCompleteCount}
+        setReviewCompleteCount={setReviewCompleteCount}
       />
       <TabContent
         tab={tab}
