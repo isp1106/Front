@@ -14,8 +14,7 @@ const Category = () => {
   return (
     <div>
       <nav className="border-t-2 border-primary flex flex-col ">
-        <div></div>
-        {/* {category === '뷰티' ? (
+        {/* {category === '뷰티' && (
           <div className="">
             <h5 className="block p-5 text-sm font-bold">브랜드</h5>
             <div className="px-5">
@@ -52,8 +51,7 @@ const Category = () => {
               })}
             </div>
           </div>
-        ) : (
-          ''
+        
         )} */}
         <div className="flex ">
           <ul className="flex w-28 flex-col fixed">
