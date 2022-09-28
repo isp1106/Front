@@ -4,6 +4,11 @@
 
 @font-face {
   font-family: 'NotoSans';
+  src: url('/public/fonts/NotoSansKR-Regular.otf');
+}
+
+@font-face {
+  font-family: 'NotoSans-Medium';
   src: url('/public/fonts/NotoSansKR-Medium.otf');
 }
 
