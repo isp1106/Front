@@ -7,49 +7,54 @@ import './Category.css'
 
 const Category = () => {
   const [openWomenTab, setOpenWemenTab] = useState(true)
-  const [beautyBrands, setBeautyBrands] = useState('')
+  const [category, setCategory] = useState('')
   const getTabData = (isWomenTab) => {
     setOpenWemenTab(isWomenTab)
   }
   return (
     <div>
       <nav className="border-t-2 border-primary flex flex-col ">
-        <div className="">
-          <h5 className="block p-5 text-sm font-bold">브랜드</h5>
-          <div className="px-5">
-            {CATEGORY.map(({ TopCategory, subCategory }, index) => {
-              return (
-                <div key={index}>
-                  {TopCategory === '뷰티' && (
-                    <div className="flex">
-                      {subCategory[0].list.map(
-                        ({ subCategoryName, imgSrc }) => {
-                          console.log(
-                            'subCategoryName',
-                            subCategoryName,
-                            imgSrc,
-                          )
-                          return (
-                            <div className="p-2">
-                              <img
-                                src={imgSrc}
-                                alt={subCategoryName}
-                                className="h-16 w-16 rounded-full flex justify-center items-center bg-white"
-                              />
-                              <h5 className="text-center w-full">
-                                {subCategoryName}
-                              </h5>
-                            </div>
-                          )
-                        },
-                      )}
-                    </div>
-                  )}
-                </div>
-              )
-            })}
+        <div></div>
+        {/* {category === '뷰티' ? (
+          <div className="">
+            <h5 className="block p-5 text-sm font-bold">브랜드</h5>
+            <div className="px-5">
+              {CATEGORY.map(({ TopCategory, subCategory }, index) => {
+                return (
+                  <div key={index}>
+                    {TopCategory === '뷰티' && (
+                      <div className="flex">
+                        {subCategory[0].list.map(
+                          ({ subCategoryName, imgSrc }) => {
+                            console.log(
+                              'subCategoryName',
+                              subCategoryName,
+                              imgSrc,
+                            )
+                            return (
+                              <div className="p-2">
+                                <img
+                                  src={imgSrc}
+                                  alt={subCategoryName}
+                                  className="h-16 w-16 rounded-full flex justify-center items-center bg-white"
+                                />
+                                <h5 className="text-center w-full">
+                                  {subCategoryName}
+                                </h5>
+                              </div>
+                            )
+                          },
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        ) : (
+          ''
+        )} */}
         <div className="flex ">
           <ul className="flex w-28 flex-col fixed">
             {CATEGORY.map(({ TopCategory }) => {
@@ -63,7 +68,7 @@ const Category = () => {
                     smooth={true}
                     duration={500}
                     onClick={() => {
-                      setBeautyBrands(TopCategory)
+                      setCategory(TopCategory)
                     }}
                   >
                     {TopCategory}
@@ -73,7 +78,7 @@ const Category = () => {
             })}
           </ul>
           <div className="w-28"></div>
-          <div className="grow">
+          <div className="grow h-full">
             {CATEGORY.map(({ TopCategory, subCategory }, index) => {
               return (
                 <div key={(index, TopCategory)}>
