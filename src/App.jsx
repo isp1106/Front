@@ -19,7 +19,7 @@ import ProductDetail from './pages/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
-
+import RequireAuth from './components/RequireAuth'
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
@@ -29,10 +29,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
         <Route path="/oneul" element={<Oneul />} />
-        <Route path="/like" element={<Like />} />
-        <Route path="/my" element={<MyPage />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Product />} />
+
+        {/* 로그인이후에 접근할 수 있는 페이지 */}
+        <Route element={<RequireAuth />}>
+          <Route path="/like" element={<Like />} />
+          <Route path="/my" element={<MyPage />} />
+        </Route>
 
         {/*실제사용 아래 임시 <Route path="/product/detail/:id" element={<DetailPage />} /> */}
         <Route path="/product/detail" element={<ProductDetail />} />
