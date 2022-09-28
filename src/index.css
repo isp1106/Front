@@ -72,8 +72,15 @@ select {
   height: 14px;
   background-image: url(/public/assets/star.png);
   background-repeat: no-repeat;
-
   background-size: 56.6px;
+}
+.ratingStarReview {
+  display: inline-block;
+  width: 88px;
+  height: 16px;
+  background-image: url(/public/assets/star2.png);
+  background-repeat: no-repeat;
+  background-size: 88px;
 }
 
 .ellipsis {

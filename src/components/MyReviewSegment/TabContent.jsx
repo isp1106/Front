@@ -1,11 +1,11 @@
 import React from 'react'
 import WritalbleReviews from './WritableReviews'
 import CompletedReviews from './CompletedReviews'
-const TabContent = ({tab}) => {
+const TabContent = ({tab, reviewData, reviewDataComplete, ratingStarReview}) => {
   return (
-    <div className='mt-5'>
+    <div>
       {
-        tab === 0 ? <WritalbleReviews /> : <CompletedReviews />
+        tab === 0 ? <WritalbleReviews reviewData={reviewData} /> : <CompletedReviews reviewDataComplete={reviewDataComplete} ratingStarReview={ratingStarReview} />
       }
     </div>
   )
