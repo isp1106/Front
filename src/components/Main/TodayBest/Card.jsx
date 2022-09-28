@@ -1,16 +1,22 @@
 import React from 'react'
-import heart from '/public/assets/heart_icon_full.svg'
-import cart from '/public/assets/shoppingBag_icon_color.svg'
+import heart from '/public/assets/heart-on.svg'
+// import HeartIcon from '../../common/HeartIcon'
+import cart from '/public/assets/bag-on.svg'
+import { useNavigate } from 'react-router-dom'
 
 const Card = ({ product, active }) => {
-  const { src, title, sale, price } = product
+  const { url, title, sale, price, liked } = product
+  const navigate = useNavigate()
   return (
-    <div className="w-[230px] h-80 mb-24">
+    <div
+      className="w-[230px] h-80 mb-24"
+      onClick={() => navigate('/product/detail')}
+    >
       <div
         className="w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden"
         style={active ? { border: '2px solid #D86145' } : { border: 'none' }}
       >
-        <img src={src} alt={src} />
+        <img src={url} alt={url} />
       </div>
       <div className="mt-8 relative">
         <div className="text-sm text-[#4B4B4B] mt-7.5">[{title}]</div>
@@ -19,9 +25,10 @@ const Card = ({ product, active }) => {
           {price} ¥
         </div>
         {active ? (
-          <div className="absolute flex right-1 bottom-0">
-            <img src={heart} alt="heart" className="h-5" />
-            <img src={cart} alt="cart" className="ml-6 h-5" />
+          <div className="absolute flex right-1 bottom-0 gap-2">
+            <img src={heart} alt="heart" width="30" hegiht="30" />
+            {/* 물어보고 수정하기! <HeartIcon size="30" off={liked} /> */}
+            <img src={cart} alt="cart" width="30" hegiht="30" />
           </div>
         ) : null}
       </div>

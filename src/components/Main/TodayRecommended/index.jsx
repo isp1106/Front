@@ -1,8 +1,30 @@
 import React from 'react'
-import { ReactComponent as LikeIcon } from '/public/assets/heart.svg'
-import { ReactComponent as LikeIconOn } from '/public/assets/heart-on.svg'
+import HeartIcon from '../../common/HeartIcon'
+import {
+  womanRecommended,
+  manRecommended,
+  lifeRecommended,
+  koreaRecommended,
+} from '../../../dummy/main'
 
-const TodayRecommended = () => {
+const TodayRecommended = ({ category }) => {
+  let list
+  switch (category) {
+    case '우먼':
+      list = womanRecommended
+      break
+    case '맨':
+      list = manRecommended
+      break
+    case '라이프':
+      list = lifeRecommended
+      break
+    case '한국트렌드':
+      list = koreaRecommended
+      break
+    default:
+      return
+  }
   return (
     <div>
       <h3 className="font-bold text-xl mb-5 pl-5">
@@ -12,34 +34,27 @@ const TodayRecommended = () => {
         <div
           className="col-span-2 border-b-2 border-primary h-[226px] bg-cover"
           style={{
-            backgroundImage: `url("https://img.29cm.co.kr/next-product/2020/10/08/58b43e8961ef404cb86307ff7d3681ac_20201008122852.jpg?width=700")`,
+            backgroundImage: `url(${list.img1})`,
           }}
         ></div>
         <div className="row-span-2 border-b-2 border-primary border-r-2 text-color-800 text-xl">
-          <p className="text-[12px] p-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse
-          </p>
+          <p className="text-[12px] p-4">{list.desc}</p>
         </div>
         <div
           className="border-b-2 border-primary bg-cover"
           style={{
-            backgroundImage: `url('https://img.29cm.co.kr/next-product/2020/05/12/c531a0cf89354410976b4248c6a83fc2_20200512121312.jpg?width=700')`,
+            backgroundImage: `url(${list.img2})`,
           }}
         ></div>
         <div
           className="border-b-2 border-primary bg-cover"
           style={{
-            backgroundImage: `url('https://img.29cm.co.kr/next-product/2019/11/07/f8dbe259a4f04e1ca709a75e32d6aa52_20191107153205.jpg?width=300')`,
+            backgroundImage: `url(${list.img3})`,
           }}
         ></div>
         <div className="col-span-2 pl-5 pr-5 pt-2 pb-2 flex justify-between items-center">
-          <span className="text-sm text-primary font-bold">원브릴리언트</span>
-          <LikeIcon style={{ width: '20px' }} />
-          {/* 나중에 if 처리하기 <LikeIconOn /> */}
+          <span className="text-sm text-primary font-bold">{list.brand}</span>
+          <HeartIcon size="20px" off={list.liked} />
         </div>
       </div>
     </div>
