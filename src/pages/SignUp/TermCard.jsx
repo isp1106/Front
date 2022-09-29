@@ -8,19 +8,7 @@ import { useState } from 'react'
 
 export const TermCard = ({ accept, check, setCheck }) => {
   const { title, essential, terms } = accept
-  const setTerms = useRef(null)
-  const modalTerms = useRef(null)
   const [modal, setModal] = useState(false)
-
-  useEffect(() => {
-    setTerms.current.innerText = terms
-  }, [terms])
-
-  useEffect(() => {
-    if (modalTerms.current) {
-      modalTerms.current.innerText = terms
-    }
-  }, [modal])
 
   useEffect(() => {
     setCheck(check)
@@ -48,9 +36,7 @@ export const TermCard = ({ accept, check, setCheck }) => {
         </div>
       </div>
       <div className="w-full h-[120px] min-w-[240px] border border-black-200 rounded-[5px] overflow-y-auto">
-        <div ref={setTerms} className="mx-5 my-3.5 text-sm">
-          {terms}
-        </div>
+        <div className="mx-5 my-3.5 text-sm whitespace-pre-wrap">{terms}</div>
       </div>
       {/* Modal view all assign */}
       {modal ? (
@@ -65,8 +51,8 @@ export const TermCard = ({ accept, check, setCheck }) => {
             <div className="h-[70px] ml-5 flex items-center text-xl font-bold">
               <div>{title}</div>
             </div>
-            <div className="px-5 py-3.5 h-[calc(100vh-185px)] overflow-hidden text-sm font-extralight  h-full">
-              <div ref={modalTerms} className="h-full overflow-y-scroll">
+            <div className="px-5 py-3.5 h-[calc(100vh-185px)] overflow-hidden text-sm font-extralight">
+              <div className="h-full overflow-y-scroll whitespace-pre-wrap">
                 {terms}
               </div>
             </div>
