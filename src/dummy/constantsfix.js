@@ -6,9 +6,9 @@ export const CATEGORY = [
         name: '의류',
         imgSrc:
           'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
-        obj: {
+        list: {
           women: [
-            '전제',
+            '전체',
             '상의',
             '하의',
             '원피스',
@@ -18,7 +18,7 @@ export const CATEGORY = [
             '기타',
           ],
           men: [
-            '전제',
+            '전체',
             '상의',
             '하의',
             '점프수트',
@@ -33,9 +33,9 @@ export const CATEGORY = [
         name: '가방',
         imgSrc:
           'https://static.goldengoose.com/image/upload/w_610,c_scale,dpr_1.0,f_auto/v1637677473/Style/ECOMM/GMA00230.A000340-35674',
-        obj: {
+        list: {
           women: [
-            '전제',
+            '전체',
             '백팩',
             '숄더백',
             '토트백',
@@ -49,7 +49,7 @@ export const CATEGORY = [
             '파우치',
           ],
           men: [
-            '전제',
+            '전체',
             '백팩',
             '숄더백',
             '토트백',
@@ -68,9 +68,9 @@ export const CATEGORY = [
         name: '신발',
         imgSrc:
           'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
-        obj: {
+        list: {
           women: [
-            '전제',
+            '전체',
             '힐',
             '단화',
             '부츠',
@@ -80,7 +80,7 @@ export const CATEGORY = [
             '슬리퍼',
           ],
           men: [
-            '전제',
+            '전체',
             '힐',
             '단화',
             '부츠',
@@ -95,9 +95,9 @@ export const CATEGORY = [
         name: '엑세사리',
         imgSrc:
           'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
-        obj: {
-          women: ['전제', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
-          men: ['전제', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
+        list: {
+          women: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
+          men: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
         },
       },
     ],
