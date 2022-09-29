@@ -17,7 +17,7 @@ const Coupon = (props) => {
         onClick={toggleBtn}
       >
         <p className="flex-grow font-bold">
-          {currentPath === '/order' ? '최대혜택가' : '쿠폰 / 적립금'}
+          {currentPath === '/order' ? '쿠폰 / 적립금' : '최대혜택가'}
         </p>
         <div className="flex items-center">
           {props.children}
