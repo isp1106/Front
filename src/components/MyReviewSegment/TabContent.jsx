@@ -6,11 +6,13 @@ const TabContent = ({
   reviewData,
   reviewDataComplete,
   ratingStarReview,
+  reviewAddChk,
+  setReviewAddChk
 }) => {
   return (
-    <div>
+    <div className='pb-10'>
       {tab === 0 ? (
-        <WritalbleReviews reviewData={reviewData} />
+        <WritalbleReviews reviewData={reviewData} reviewAddChk={reviewAddChk} setReviewAddChk={setReviewAddChk} />
       ) : (
         <CompletedReviews
           reviewDataComplete={reviewDataComplete}

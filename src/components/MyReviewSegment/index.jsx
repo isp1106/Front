@@ -7,6 +7,7 @@ import TabContent from './TabContent'
 import { reviewContent, reviewComplete } from '../../dummy/review'
 import { ratingStarReview } from '../../utils/star'
 const MyReviewSegment = () => {
+  const [reviewAddChk, setReviewAddChk] = useState(false)
   const reviewData = reviewContent
   const reviewDataComplete = reviewComplete
   const [tab, setTab] = useState(0)
@@ -14,7 +15,7 @@ const MyReviewSegment = () => {
   const [reviewCompleteCount, setReviewCompleteCount] = useState(0)
   return (
     <>
-      <Header />
+      <Header reviewAddChk={reviewAddChk}/>
       <TabList
         cls={cls}
         tab={tab}
@@ -25,12 +26,15 @@ const MyReviewSegment = () => {
         reviewDataComplete={reviewDataComplete}
         reviewCompleteCount={reviewCompleteCount}
         setReviewCompleteCount={setReviewCompleteCount}
+        reviewAddChk={reviewAddChk}
       />
       <TabContent
         tab={tab}
         reviewData={reviewData}
         reviewDataComplete={reviewDataComplete}
         ratingStarReview={ratingStarReview}
+        reviewAddChk={reviewAddChk}
+        setReviewAddChk={setReviewAddChk}
       />
     </>
   )

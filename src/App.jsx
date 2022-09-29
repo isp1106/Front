@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Cart from './pages/Cart'
 import MyPage from './pages/MyPage'
 import MyReview from './pages/MyReview'
+import MyReviewWrite from './pages/MyReviewWrite'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
@@ -32,15 +33,15 @@ function App() {
         <Route path="/oneul" element={<Oneul />} />
         <Route path="/like" element={<Like />} />
         <Route path="/my" element={<MyPage />} />
+        <Route path="/my/review" element={<MyReview />} />
+        <Route path="/my/review/write" element={<MyReviewWrite />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Product />} />
-
         {/*실제사용 아래 임시 <Route path="/product/detail/:id" element={<DetailPage />} /> */}
         <Route path="/product/detail" element={<ProductDetail />} />
         <Route path="/oneul/detail" element={<SnapDetail />} />
         <Route path="/magazine/id" element={<MagazineDetail />} />
-        <Route path="/my/review" element={<MyReview />} />
-        <Route path="/signup" element={<SignUp />}>a
+        <Route path="/signup" element={<SignUp />}>
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />
           <Route path="pwform" element={<SignUpPw />} />
