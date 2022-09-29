@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NextBtn from '../../components/SignUp/NextBtn'
 import allNotChecked from '/public/assets/allNotCheck.svg'
 import allChecked from '/public/assets/allCheck.svg'
-import { accepts } from '~/utils/accepts.js'
+import { accepts } from '~/dummy/accepts.js'
 import { TermCard } from './TermCard'
 
 const TermService = () => {
