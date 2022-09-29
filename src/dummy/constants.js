@@ -310,7 +310,7 @@ export const CATEGORY = [
         },
       },
       {
-        name: '엑세사리',
+        name: '액세사리',
         obj: {
           women: [
             {

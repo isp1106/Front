@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { CATEGORY } from '~/dummy/constantsfix'
 import { cls } from '../../utils'
+import SelectFilter from './SelectFilter'
 
 function CategoryList() {
   const [selectTop, setSelectTop] = useState('패션')
@@ -53,7 +54,7 @@ function CategoryList() {
   }, [selectSub, subCategoryList])
 
   return (
-    <div>
+    <div className="fixed top-0 overflow-hidden bg-white z-50">
       <div className="flex overflow-x-auto">
         {CATEGORY.map((top) => (
           <div
@@ -95,6 +96,7 @@ function CategoryList() {
             </div>
           ))}
       </div>
+      <SelectFilter />
     </div>
   )
 }
