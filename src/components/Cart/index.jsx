@@ -16,7 +16,6 @@ const Cart = () => {
     0,
   )
   const totalCount = cartItems.reduce((acc, cur) => cur.count + acc, 0)
-
   return (
     <>
       <div className="pb-[10px]">
@@ -41,3 +40,4 @@ const Cart = () => {
 }
 
 export default Cart
+

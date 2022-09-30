@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { ReactComponent as Checked } from '/public/assets/allNotCheck.svg'
 import { ReactComponent as Nochecked } from '/public/assets/allCheck.svg'
 
+
 const Card = ({ item, setCartItems }) => {
   const { url, brand, name, price, discount, sale, stock, count } = item
   const [checked, setChecked] = useState(false)
   const checkedHandler = () => {
     setChecked((prev) => !prev)
   }
+
   const changeCartItemCount = (idx) => {
     //카드 수량 변경 로직
     console.log('클릭')

@@ -7,7 +7,8 @@ const EMAIL_REGEX =
   /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
 
 const UserInfo = () => {
-  const { state } = useLocation()
+  const { state, pathname } = useLocation()
+
   const [inputValue, setInputValue] = useState({
     ...state,
     email: '',
@@ -17,6 +18,8 @@ const UserInfo = () => {
     lastNameRuby: '',
     telNum: '',
     postNum: '',
+    address: '',
+    detail: '',
   })
   const [disabled, setDisabled] = useState(false)
 
@@ -34,6 +37,8 @@ const UserInfo = () => {
     lastNameRuby: null,
     telNum: null,
     postNum: null,
+    address: null,
+    detail: null,
   })
 
   const checkRegex = (inputId) => {
@@ -71,31 +76,35 @@ const UserInfo = () => {
   const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
   return (
     <>
-      <div className="px-5 pb-[83px]">
-        <Title title="정보" text="입력" />
-        <div className="mt-16">
-          <label
-            htmlFor="loginJoinMembershipEmail"
-            className="inline-block font-bold leading-4 mb-8"
-          >
-            이메일
-          </label>
-          <div className="relative flex box-border border border-neutral-200 rounded items-center border-box">
-            <input
-              value={inputValue['email']}
-              onChange={ChangeHandler}
-              onBlur={() => checkRegex('email')}
-              name="email"
-              placeholder="이메일을 입력해주세요."
-              className="px-3 w-full border-none h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
-            />
-            <button className="absolute right-[0.625rem] w-[5.438rem] h-[1.563rem] text-xs border border-primary text-primary rounded font-medium">
-              중복확인
-            </button>
-          </div>
-          <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
-            {alret.email}
-          </p>
+      <div className="px-5 ">
+        {pathname.includes('/signup') && (
+          <>
+            <Title title="정보" text="입력" />
+            <label
+              htmlFor="loginJoinMembershipEmail"
+              className="mt-[77px] inline-block font-bold leading-4 mb-8"
+            >
+              이메일
+            </label>
+            <div className="relative flex box-border border border-neutral-200 rounded items-center border-box">
+              <input
+                value={inputValue['email']}
+                onChange={ChangeHandler}
+                onBlur={() => checkRegex('email')}
+                name="email"
+                placeholder="이메일을 입력해주세요."
+                className="px-3 border-none h-[3rem] flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
+              />
+              <button className="absolute right-[0.625rem] w-[5.438rem] h-[1.563rem] text-xs border border-primary text-primary rounded font-medium">
+                중복확인
+              </button>
+            </div>
+            <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
+              {alret.email}
+            </p>
+          </>
+        )}
+        <div>
           <label
             htmlFor="loginJoinMembershipName"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -211,28 +220,50 @@ const UserInfo = () => {
             htmlFor="loginJoinMembershipPostNumber"
             className="inline-block font-bold leading-4 mb-8 mt-9"
           >
-            우편번호
+            주소
           </label>
-          <div className="relative flex box-border border border-neutral-200 rounded items-center border-box">
+          <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
               name="postNum"
               value={inputValue['postNum']}
               onChange={ChangeHandler}
               onBlur={() => checkRegex('postNum')}
               placeholder="우편번호를 검색해 주세요."
-              className="px-3 w-full border-none h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
+              className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
             <button className="absolute right-[0.625rem] whitespace-nowrap p-[0.313rem] w-[5.438rem] h-[1.563rem] text-xs border border-primary text-primary rounded font-medium">
               우편번호검색
             </button>
           </div>
-
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
             {alert.postNum}
           </p>
+          <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
+            <input
+              name="address"
+              value={inputValue['address']}
+              onChange={ChangeHandler}
+              onBlur={() => checkRegex('address')}
+              placeholder="주소를 입력 해 주세요."
+              className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
+            />
+          </div>
+
+          <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
+            <input
+              name="detail"
+              value={inputValue['detail']}
+              onChange={ChangeHandler}
+              onBlur={() => checkRegex('detail')}
+              placeholder="상세 주소를 입력 해 주세요."
+              className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
+            />
+          </div>
         </div>
       </div>
-      <NextBtn next="finish" inputValue={inputValue} disabled={disabled} />
+      {pathname.includes('/signup') && (
+        <NextBtn next="finish" inputValue={inputValue} disabled={disabled} />
+      )}
     </>
   )
 }
