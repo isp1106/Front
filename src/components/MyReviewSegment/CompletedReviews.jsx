@@ -1,8 +1,8 @@
 import React from 'react'
-
-const CompletedReviews = () => {
+import CardComplete from './CardComplete'
+const CompletedReviews = ({ reviewDataComplete, ratingStarReview }) => {
   return (
-    <div>CompletedReviews</div>
+    <CardComplete reviewDataComplete={reviewDataComplete} ratingStarReview={ratingStarReview}/>
   )
 }
 
