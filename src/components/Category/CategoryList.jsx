@@ -54,7 +54,7 @@ function CategoryList() {
   }, [selectSub, subCategoryList])
 
   return (
-    <div className="fixed top-0 overflow-hidden bg-white z-50">
+    <div className="fixed top-0 w-full max-w-[600px] overflow-hidden bg-white z-50">
       <div className="flex overflow-x-auto">
         {CATEGORY.map((top) => (
           <div
