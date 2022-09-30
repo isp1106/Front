@@ -1,7 +1,12 @@
 import React from 'react'
+import CategoryFashion from '../components/Category'
 
 const Category = () => {
-  return <div>Category</div>
+  return (
+    <div>
+      <CategoryFashion />
+    </div>
+  )
 }
 
 export default Category
