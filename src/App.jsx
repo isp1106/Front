@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Cart from './pages/Cart'
 import MyPage from './pages/MyPage'
 import MyReview from './pages/MyReview'
+import MyReviewWrite from './pages/MyReviewWrite'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
@@ -20,6 +21,7 @@ import ProductDetail from './pages/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
+import Order from './pages/Order'
 
 function App() {
   const location = useLocation()
@@ -32,9 +34,10 @@ function App() {
         <Route path="/oneul" element={<Oneul />} />
         <Route path="/like" element={<Like />} />
         <Route path="/my" element={<MyPage />} />
+        <Route path="/my/review" element={<MyReview />} />
+        <Route path="/my/review/write" element={<MyReviewWrite />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Product />} />
-
         {/*실제사용 아래 임시 <Route path="/product/detail/:id" element={<DetailPage />} /> */}
         <Route path="/product/detail" element={<ProductDetail />} />
         <Route path="/oneul/detail" element={<SnapDetail />} />
@@ -49,6 +52,7 @@ function App() {
         </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
       {!currentPath.includes('/signup') &&
         !currentPath.includes('/detail') &&
