@@ -1,8 +1,9 @@
 import React from 'react'
-import CartComp from '../components/Cart'
+import CartList from '../components/Cart'
+
 
 const Cart = () => {
-  return <CartComp />
+  return <CartList />
 }
 
 export default Cart
