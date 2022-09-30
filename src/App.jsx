@@ -6,6 +6,7 @@ import Oneul from './pages/Oneul'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import MyPage from './pages/MyPage'
+import MyReview from './pages/MyReview'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
@@ -38,7 +39,7 @@ function App() {
         <Route path="/product/detail" element={<ProductDetail />} />
         <Route path="/oneul/detail" element={<SnapDetail />} />
         <Route path="/magazine/id" element={<MagazineDetail />} />
-
+        <Route path="/my/review" element={<MyReview />} />
         <Route path="/signup" element={<SignUp />}>
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />
