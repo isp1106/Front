@@ -44,7 +44,6 @@ function App() {
         <Route path="/magazine/id" element={<MagazineDetail />} />
         <Route path="/my/review" element={<MyReview />} />
         <Route path="/signup" element={<SignUp />}>
-          a
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />
           <Route path="pwform" element={<SignUpPw />} />
