@@ -21,6 +21,7 @@ import ProductDetail from './pages/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
+import Order from './pages/Order'
 
 function App() {
   const location = useLocation()
@@ -41,7 +42,9 @@ function App() {
         <Route path="/product/detail" element={<ProductDetail />} />
         <Route path="/oneul/detail" element={<SnapDetail />} />
         <Route path="/magazine/id" element={<MagazineDetail />} />
+        <Route path="/my/review" element={<MyReview />} />
         <Route path="/signup" element={<SignUp />}>
+          a
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />
           <Route path="pwform" element={<SignUpPw />} />
@@ -50,6 +53,7 @@ function App() {
         </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
       {!currentPath.includes('/signup') &&
         !currentPath.includes('/detail') &&

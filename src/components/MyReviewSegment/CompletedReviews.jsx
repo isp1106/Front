@@ -7,3 +7,4 @@ const CompletedReviews = ({ reviewDataComplete, ratingStarReview }) => {
 }
 
 export default CompletedReviews
+
