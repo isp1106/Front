@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../../components/common/Button'
-import MyPageSegment from '../../components/MyPageSegment'
+import MyPageSegment from '../../components/My/MyPageSegment'
 const MyPage = () => {
   const logoutHandler = () => {
     //로그아웃 api작성 예정
