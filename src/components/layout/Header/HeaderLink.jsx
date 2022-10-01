@@ -1,7 +1,7 @@
 import React from 'react'
+import CartIcon from '../../common/CartIcon'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { ReactComponent as SearchIcon } from '/public/assets/search_icon.svg'
-import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
 import { ReactComponent as Home } from '/public/assets/homeIcon.svg'
 
 const HeaderLink = () => {
@@ -20,9 +20,7 @@ const HeaderLink = () => {
         </Link>
       </li>
       <li>
-        <Link to="/cart">
-          <CartIcon onClick={() => navigate('/cart')} />
-        </Link>
+        <CartIcon />
       </li>
       {useLocation === '/product/detail' && (
         <li>
