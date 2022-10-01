@@ -1,5 +1,5 @@
 import React from 'react'
-import { cls } from '../../utils'
+import { cls } from '../../../utils'
 import { useState } from 'react'
 const Process = () => {
   const [active, setActive] = useState(0)
@@ -11,7 +11,7 @@ const Process = () => {
       <li
         className={cls(
           'relative z-1 bg-white flex flex-col gap-3 border w-1/3 h-[6.125rem] items-center justify-center rounded shadow-[0_4px_2px_1px_rgba(85,85,85,0.15)]',
-          active === 0 ? 'border-primary' : 'border-black-200'
+          active === 0 ? 'border-primary' : 'border-black-200',
         )}
       >
         <span className="text-2xl font-medium leading-none">0</span>
@@ -24,8 +24,8 @@ const Process = () => {
       <li
         className={cls(
           'relative z-1 bg-white flex flex-col gap-3 border w-1/3 h-[6.125rem] items-center justify-center rounded shadow-[0_4px_2px_1px_rgba(85,85,85,0.15)]',
-          active === 1 ? 'border-primary' : 'border-black-200'
-          )}
+          active === 1 ? 'border-primary' : 'border-black-200',
+        )}
       >
         <span className="text-2xl font-medium leading-none">1</span>
         <span className="text-xs">
@@ -37,7 +37,7 @@ const Process = () => {
         active={true}
         className={cls(
           'relative z-1 bg-white flex flex-col gap-3 border w-1/3 h-[6.125rem] items-center justify-center rounded shadow-[0_4px_2px_1px_rgba(85,85,85,0.15)]',
-          active === 2 ? 'border-primary' : 'border-black-200'
+          active === 2 ? 'border-primary' : 'border-black-200',
         )}
       >
         <span className="text-2xl font-medium leading-none">0</span>

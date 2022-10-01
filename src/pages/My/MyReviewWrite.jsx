@@ -1,5 +1,5 @@
 import React from 'react'
-import Write from '../../components/MyReviewSegment/Write'
+import Write from '../../components/My/MyReviewSegment/Write'
 const MyReviewWrite = () => {
   return (
     <>
