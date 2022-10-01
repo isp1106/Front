@@ -8,10 +8,13 @@ const DetailDesc = () => {
   const moreHnadler = () => {
     setOpen((prev) => !prev)
   }
+  const { detailList } = detailProducts
   return (
     <div className="px-5">
-      <div className={cls('overflow-hidden ', open ? '' : 'h-[700px]')}>
-        <img src={detailProducts.desc_url} />
+      <div className={cls('overflow-hidden ', open ? '' : 'h-[4000px]')}>
+        {detailList.map((item, idx) => (
+          <img src={item} key={idx} />
+        ))}
       </div>
       <div
         onClick={moreHnadler}

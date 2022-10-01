@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { ReactComponent as Checked } from '/public/assets/allNotCheck.svg'
 import { ReactComponent as Nochecked } from '/public/assets/allCheck.svg'
 
-
 const Card = ({ item, setCartItems }) => {
-  const { url, brand, name, price, discount, sale, stock, count } = item
+  const { image, brand, product, price, sale, stock, count } = item
   const [checked, setChecked] = useState(false)
   const checkedHandler = () => {
     setChecked((prev) => !prev)
@@ -20,7 +19,7 @@ const Card = ({ item, setCartItems }) => {
       <div
         className="relative flex-shrink w-[167px] h-[167px] bg-cover  overflow-hidden "
         style={{
-          backgroundImage: `url(${url})`,
+          backgroundImage: `url(${image})`,
         }}
         onClick={checkedHandler}
       >
@@ -31,7 +30,7 @@ const Card = ({ item, setCartItems }) => {
       <div className="ml-[19px] grow-1 py-1">
         <div className="font-bold leading-[20px] ">{brand}</div>
         <div className="w-[169px] h-[36px] text-xs text-black-800 leading-[18px]">
-          {name}
+          {product}
         </div>
         <div className="flex justify-between mt-1">
           <div className="h-[20px] self-end bg-black-200 rounded flex text-center items-center justify-center">
@@ -49,7 +48,9 @@ const Card = ({ item, setCartItems }) => {
             <div className=" text-xs text-black-600 line-through">
               {price * count} ¥
             </div>
-            <div className="text-[14px]">{discount * count} ¥</div>
+            <div className="text-[14px]">
+              {parseInt((price * (100 - sale)) / 100) * count} ¥
+            </div>
           </div>
         </div>
 

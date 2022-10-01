@@ -1,22 +1,26 @@
 export const detailProducts = {
-  main_img: [
+  detailThumList: [
     'https://images.seoulstore.com/products/546e7653a3284eab33eae8d2c1c81675.jpg',
     'https://images.seoulstore.com/products/05114e87573eaa474d88f4f473d8355f.jpg',
   ],
   brand: 'Kirsh',
+  brandKo: '키르시',
+  brandImg: 'https://ifh.cc/g/nGCNgk.png',
   liked: true,
-  brand_img_url: 'https://ifh.cc/g/nGCNgk.png',
-  product_name: 'BIG CHERRY FLEECE CROP HOOD',
+  product: 'BIG CHERRY FLEECE CROP HOOD',
   star: 4.5,
-  review_count: 128,
-  discount: 30,
+  reviewCount: 128,
+  sale: 30,
   price: 6500,
-  delivery: 'free',
   color: ['https://ifh.cc/g/Q2DWwQ.png', 'https://ifh.cc/g/33lRxC.png'],
-  desc_url:
+  detailList: [
     'https://images.seoulstore.com/products/97aa4585eda28bfaaa0fe6b9660f5176.jpg',
+  ],
+  thumnail:
+    'https://images.seoulstore.com/products/546e7653a3284eab33eae8d2c1c81675.jpg',
   magazine: {
-    url: 'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
+    thumnail:
+      'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
     title: 'NO.05 Cherry heart',
   },
   snap: [
@@ -40,83 +44,83 @@ export const detailProducts = {
       liked: 254,
     },
   ],
-  similiar: [
-    {
-      id: 1,
-      imgurl:
-        'https://img.29cm.co.kr/next-product/2021/09/14/adfd4334b548443887f311521fc3efbd_20210914214925.jpg?width=300',
-      brnad: '페인오어플레져',
-      name: 'RABITA FUR CARDIGAN_plum',
-      price: 980,
-      liked: false,
-      discount: 30,
-    },
-    {
-      id: 2,
-      imgurl:
-        'https://img.29cm.co.kr/next-product/2022/09/02/91ef52eb39f34fd3bf678d5e4d911cb7_20220902114700.jpg?width=300',
-      brnad: '메인부스',
-      name: 'Island Flower Cardigan(BLACK)',
-      price: 720,
-      liked: true,
-      discount: 20,
-    },
-    {
-      id: 3,
-      imgurl:
-        'https://img.29cm.co.kr/next-product/2022/08/18/b8ed61509a6a4276b70574a86a6f3a4d_20220818161350.jpg?width=300',
-      brnad: '엔오르',
-      name: 'BUSTIER CARDIGAN SET - BLACK',
-      price: 790,
-      liked: false,
-      discount: 30,
-    },
-    {
-      id: 4,
-      imgurl:
-        'https://img.29cm.co.kr/next-product/2021/10/15/888d56110d744e09a058b22a8d578d56_20211015014905.jpg?width=300',
-      brand: '로아즈',
-      name: '[파인울100%] 로아즈 울 프린지 니트 가디건 R12K02-IV',
-      price: 230,
-      liked: true,
-      discount: 10,
-    },
-  ],
+  // similiar: [
+  //   {
+  //     id: 1,
+  //     imgurl:
+  //       'https://img.29cm.co.kr/next-product/2021/09/14/adfd4334b548443887f311521fc3efbd_20210914214925.jpg?width=300',
+  //     brnad: '페인오어플레져',
+  //     name: 'RABITA FUR CARDIGAN_plum',
+  //     price: 980,
+  //     liked: false,
+  //     discount: 30,
+  //   },
+  //   {
+  //     id: 2,
+  //     imgurl:
+  //       'https://img.29cm.co.kr/next-product/2022/09/02/91ef52eb39f34fd3bf678d5e4d911cb7_20220902114700.jpg?width=300',
+  //     brnad: '메인부스',
+  //     name: 'Island Flower Cardigan(BLACK)',
+  //     price: 720,
+  //     liked: true,
+  //     discount: 20,
+  //   },
+  //   {
+  //     id: 3,
+  //     imgurl:
+  //       'https://img.29cm.co.kr/next-product/2022/08/18/b8ed61509a6a4276b70574a86a6f3a4d_20220818161350.jpg?width=300',
+  //     brnad: '엔오르',
+  //     name: 'BUSTIER CARDIGAN SET - BLACK',
+  //     price: 790,
+  //     liked: false,
+  //     discount: 30,
+  //   },
+  //   {
+  //     id: 4,
+  //     imgurl:
+  //       'https://img.29cm.co.kr/next-product/2021/10/15/888d56110d744e09a058b22a8d578d56_20211015014905.jpg?width=300',
+  //     brand: '로아즈',
+  //     name: '[파인울100%] 로아즈 울 프린지 니트 가디건 R12K02-IV',
+  //     price: 230,
+  //     liked: true,
+  //     discount: 10,
+  //   },
+  // ],
   another: [
     {
       id: 11,
-      imgurl:
+      thumnail:
         'https://img.29cm.co.kr/next-product/2022/08/09/7495d01194a94992a4e6f208151abe9b_20220809164857.jpg?width=300',
-      name: 'GRUNGE STRIPE KNIT SWEATER KA [KHAKI]',
+      product: 'GRUNGE STRIPE KNIT SWEATER KA [KHAKI]',
       price: 370,
-      discount: 4,
+      sale: 4,
       liked: true,
     },
     {
       id: 12,
-      imgurl:
+      thumnail:
         'https://img.29cm.co.kr/next-product/2021/09/24/a7bf49f4235845c4be4d6b6bbb4b063e_20210924184330.jpg?width=300',
-      name: 'WITTY BUNNY CROP KNIT KA [OLIVE]',
+      product: 'WITTY BUNNY CROP KNIT KA [OLIVE]',
       price: 720,
-      discount: 5,
+      sale: 5,
       liked: false,
     },
     {
       id: 13,
-      imgurl:
+      thumnail:
         'https://img.29cm.co.kr/next-product/2022/04/25/5009ad650aa84c6a95f0087f5a648a03_20220425123828.jpg?width=300',
-      name: 'MIDDLE CHERRY KNIT SLIM CARDIGAN [CHARCOAL]',
+      product: 'MIDDLE CHERRY KNIT SLIM CARDIGAN [CHARCOAL]',
       price: 630,
-      discount: 5,
+      sale: 5,
       liked: false,
     },
     {
       id: 14,
-      imgurl:
+      thumnail:
         'https://img.29cm.co.kr/next-product/2022/04/25/81cbfdccf296407986c514644dac806d_20220425124351.jpg?width=300',
-      name: '체리 숏 슬리브 폴로 니트 [화이트]',
+      product: '체리 숏 슬리브 폴로 니트 [화이트]',
       price: '620',
-      discount: 4,
+      sale: 4,
       liked: true,
     },
   ],
