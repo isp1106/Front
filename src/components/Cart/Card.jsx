@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import CountBtn from './CountBtn'
 import { ReactComponent as Checked } from '/public/assets/allNotCheck.svg'
 import { ReactComponent as Nochecked } from '/public/assets/allCheck.svg'
 
 const Card = ({ item, setCartItems }) => {
-  const { image, brand, product, price, sale, stock, count } = item
+  const { thumbnail, brand, product, price, sale, stock, count } = item
   const [checked, setChecked] = useState(false)
   const checkedHandler = () => {
     setChecked((prev) => !prev)
@@ -19,7 +20,7 @@ const Card = ({ item, setCartItems }) => {
       <div
         className="relative flex-shrink w-[167px] h-[167px] bg-cover  overflow-hidden "
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${thumbnail})`,
         }}
         onClick={checkedHandler}
       >
@@ -33,17 +34,7 @@ const Card = ({ item, setCartItems }) => {
           {product}
         </div>
         <div className="flex justify-between mt-1">
-          <div className="h-[20px] self-end bg-black-200 rounded flex text-center items-center justify-center">
-            <span className="w-[20px] " onChange={changeCartItemCount}>
-              -
-            </span>
-            <span className="bg-white w-[20px] leading-[18px] text-black-600 text-xs">
-              {count}
-            </span>
-            <span className="w-[20px]" onClick={changeCartItemCount}>
-              +
-            </span>
-          </div>
+          <CountBtn count={count} changeCartItemCount={changeCartItemCount} />
           <div className="text-center">
             <div className=" text-xs text-black-600 line-through">
               {price * count} ¥

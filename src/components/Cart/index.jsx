@@ -11,8 +11,9 @@ const Cart = () => {
     (acc, cur) => cur.price * cur.count + acc,
     0,
   )
+  //parseInt((price * (100 - sale)) / 100)
   const discountPrice = cartItems.reduce(
-    (acc, cur) => (cur.price - cur.discount) * cur.count + acc,
+    (acc, cur) => (cur.price - cur.sale) * cur.count + acc,
     0,
   )
   const totalCount = cartItems.reduce((acc, cur) => cur.count + acc, 0)
@@ -40,4 +41,3 @@ const Cart = () => {
 }
 
 export default Cart
-

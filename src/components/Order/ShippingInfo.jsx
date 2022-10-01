@@ -5,6 +5,7 @@ import UserInfo from '../../pages/SignUp/UserInfo'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 
 const ShippingInfo = () => {
+  const token = localStorage.getItem('accessToken')
   const [open, setOpen] = useState(false)
   const toggleBtn = () => {
     setOpen((prev) => !prev)
@@ -20,13 +21,7 @@ const ShippingInfo = () => {
             className={cls('mr-5', open ? 'rotate-90' : '-rotate-90')}
           />
         </div>
-        {open && (
-          <>
-            {/* 비회원인지 로그인 회원인지 구분 필요  */}
-            <MemberInfo />
-            {/* <UserInfo /> */}
-          </>
-        )}
+        {open && <>{token ? <MemberInfo /> : <UserInfo />}</>}
       </div>
     </>
   )
