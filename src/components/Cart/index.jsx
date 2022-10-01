@@ -91,6 +91,7 @@ const Cart = () => {
         )
       )}
       <CartBtn
+        checkedItems={checkedItems}
         totalPrice={calculation.totalPrice}
         totalCount={calculation.totalCount}
       />
