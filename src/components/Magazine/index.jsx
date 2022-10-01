@@ -6,7 +6,9 @@ const Magazine = () => {
   return (
     <>
       <Header />
-      <Main className="pt-[54px]" />
+      <div className="pt-[54px] pb-[66px]">
+        <Main />
+      </div>
     </>
   )
 }

@@ -22,7 +22,7 @@ const HeaderLink = () => {
       <li>
         <CartIcon />
       </li>
-      {useLocation === '/product/detail' && (
+      {currentPath.includes('/product') && (
         <li>
           <Link to="/">
             <Home />

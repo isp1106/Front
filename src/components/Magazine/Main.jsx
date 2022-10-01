@@ -1,61 +1,30 @@
 import React from 'react'
-import { magazine as list } from '../../dummy/magaineDetail'
+import { useNavigate } from 'react-router-dom'
+import { magazineDummy as list } from '../../dummy/magaineDetail'
 import Brand from './Brand'
 import Plus from './Plus'
 
 const TopMain = () => {
+  const { title, thumbnail, items } = list
+  const navigate = useNavigate()
+  const onClickHandler = (id) => {
+    navigate(`/product/${id}`)
+  }
   return (
     <>
-      <div>{list.title}</div>
-      <div
-        className="w-full h-[465px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img1})`,
-        }}
-      ></div>
-      <div
-        className="relative w-full h-[762px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img2})`,
-        }}
-      >
-        <Plus
-          className="absolute bottom-[260px] left-[100px]"
-          //추후 상품 id 넣기
-        />
-        <Plus
-          className="absolute bottom-[360px] right-[40px]"
-          //추후 상품 id 넣기
-        />
+      <div className="h-[76px] bg-point text-white font-bold flex items-center justify-center">
+        {title}
       </div>
-      <div
-        className="w-full h-[579px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img3})`,
-        }}
-      ></div>
+      <div className="relative">
+        <img src={thumbnail[0]} className="w-full " />
+        <Plus className={`absolute ${items[0].className}`} id={items[0].id} />
+        <Plus className={`absolute ${items[1].className}`} id={items[1].id} />
+      </div>
       <Brand />
-      <div
-        className="relative w-full h-[777px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img4})`,
-        }}
-      >
-        <Plus
-          className="absolute bottom-[230px] left-[120px]"
-          //추후 상품 id 넣기
-        />
-      </div>
-      <div
-        className="relative w-full h-[373px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img5})`,
-        }}
-      >
-        <Plus
-          className="absolute bottom-[150px] right-[70px]"
-          //추후 상품 id 넣기
-        />
+      <div className="relative">
+        <img src={thumbnail[1]} className="relative w-full " />
+        <Plus className={`absolute ${items[2].className}`} id={items[2].id} />
+        <Plus className={`absolute ${items[3].className}`} id={items[3].id} />
       </div>
     </>
   )
