@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { cartApi } from './slices/cartSlice'
+import { cartApi } from './api/cartApiSlice'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
 export const store = configureStore({

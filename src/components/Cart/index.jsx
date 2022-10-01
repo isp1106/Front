@@ -1,32 +1,59 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../layout/Header'
-import CartList from './CartList'
+import CartItem from './CartItem'
 import Total from './Total'
 import CartBtn from './CartBtn'
-import {
-  useGetCartItemsQuery,
-  useDeleteCartItemMutation,
-  useChangeCountMutation,
-} from '../../store/slices/cartSlice'
+import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
 
 const Cart = () => {
-  const { data: cartItems, isLoading, isError } = useGetCartItemsQuery()
-  const [changeCount] = useChangeCountMutation()
+  const {
+    data: cartItems,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useGetCartItemsQuery()
 
-  const totalPrice = cartItems?.reduce(
-    (acc, cur) => cur.price * cur.count + acc,
-    0,
-  )
-  const discountPrice = cartItems?.reduce(
-    (acc, cur) => (cur.price - cur.sale) * cur.count + acc,
-    0,
-  )
-  const totalCount = cartItems?.reduce((acc, cur) => cur.count + acc, 0)
+  const [checkedItems, setCheckedItems] = useState()
+  const [calculation, setCalculation] = useState({
+    totalPrice: 0,
+    discountPrice: 0,
+    totalCount: 0,
+  })
 
-  const changeCountHandler = (id, flag) => {
-    changeCount({
-      //api명세서 확인 한 후 +/- 구분 정리하기
+  useEffect(() => {
+    setCheckedItems(cartItems)
+    setCalculation({
+      totalPrice: cartItems?.reduce(
+        (acc, cur) => cur.price * cur.count + acc,
+        0,
+      ),
+      discountPrice: cartItems?.reduce(
+        (acc, cur) => (cur.price - cur.sale) * cur.count + acc,
+        0,
+      ),
+      totalCount: cartItems?.reduce((acc, cur) => cur.count + acc, 0),
     })
+  }, [isSuccess])
+
+  useEffect(() => {
+    setCalculation({
+      totalPrice: checkedItems?.reduce(
+        (acc, cur) =>
+          parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
+        0,
+      ),
+      discountPrice: checkedItems?.reduce(
+        (acc, cur) => parseInt((cur.price * cur.sale) / 100) * cur.count + acc,
+        0,
+      ),
+      totalCount: checkedItems?.reduce((acc, cur) => cur.count + acc, 0),
+    })
+  }, [checkedItems])
+
+  const onCheckedHandler = (item) => {
+    checkedItems.includes(item)
+      ? setCheckedItems(checkedItems.filter((product) => product !== item))
+      : setCheckedItems(checkedItems.concat(item))
   }
 
   return (
@@ -37,28 +64,36 @@ const Cart = () => {
         <span>에러발생</span>
       ) : (
         cartItems && (
-          <>
-            <div className="pb-[10px]">
-              <Header />
-              <div className="pt-[54px] ">
-                <div className="flex justify-between px-5 my-[14px]">
-                  <div className="text-black-400 text-xs">
-                    전체 {cartItems.length}개
-                  </div>
-                  <div className="text-point text-xs">선택 삭제</div>
+          <div className="pb-[80px]">
+            <Header />
+            <div className="pt-[54px] ">
+              <div className="flex justify-between px-5 my-[14px]">
+                <div className="text-black-400 text-xs">
+                  전체 {cartItems.length}개
                 </div>
-                {!cartItems && <div>장바구니에 상품이 없습니다.</div>}
-                <CartList
-                  cartItems={cartItems}
-                  changeCountHandler={changeCountHandler}
-                />
+                <div className="text-point text-xs">선택 삭제</div>
               </div>
-              <Total totalPrice={totalPrice} discountPrice={discountPrice} />
+              {!cartItems && <div>장바구니에 상품이 없습니다.</div>}
+              {cartItems.map((item) => (
+                <CartItem
+                  item={item}
+                  key={item.id}
+                  onCheckedHandler={() => onCheckedHandler(item)}
+                />
+              ))}
             </div>
-            <CartBtn totalPrice={totalPrice} totalCount={totalCount} />
-          </>
+            <Total
+              totalPrice={calculation.totalPrice}
+              discountPrice={calculation.discountPrice}
+              totalCount={calculation.totalCount}
+            />
+          </div>
         )
       )}
+      <CartBtn
+        totalPrice={calculation.totalPrice}
+        totalCount={calculation.totalCount}
+      />
     </>
   )
 }
