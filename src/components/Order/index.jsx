@@ -9,16 +9,19 @@ import OrderBtn from './OrderBtn'
 
 const index = () => {
   const { state } = useLocation()
+  const paynowHandler = () => {
+    alert('결제가 정상적으로 처리되었습니다.')
+  }
   return (
     <>
-      <div className="">
+      <div className="pb-[80px]">
         <ShippingInfo />
         <ProductInfo items={state} />
         <Coupon />
         <PayWay />
         <TotalPrice items={state} />
       </div>
-      <OrderBtn />
+      <OrderBtn items={state} paynowHandler={paynowHandler} />
     </>
   )
 }

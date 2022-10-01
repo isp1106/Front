@@ -6,7 +6,7 @@ import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 
 const ShippingInfo = () => {
   const token = localStorage.getItem('accessToken')
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const toggleBtn = () => {
     setOpen((prev) => !prev)
   }
