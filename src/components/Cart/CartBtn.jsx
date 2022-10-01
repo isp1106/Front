@@ -2,10 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '../../utils'
 
-const CartBtn = ({ totalCount, totalPrice, checkedItems }) => {
+const CartBtn = ({ items }) => {
   const navigate = useNavigate()
   const OrderToHandler = () => {
-    navigate(`/order`, { state: checkedItems })
+    navigate(`/order`, { state: items })
   }
 
   return (
@@ -16,9 +16,18 @@ const CartBtn = ({ totalCount, totalPrice, checkedItems }) => {
         )}
         onClick={OrderToHandler}
       >
-        <span className="px-1">총 {totalCount}개</span>
+        <span className="px-1">
+          총 {items?.reduce((acc, cur) => cur.count + acc, 0)}개
+        </span>
         <div className="w-[1px] h-[18px] bg-white"></div>
-        <span className="px-1">{totalPrice}¥ 결제하기</span>
+        <span className="px-1">
+          {items?.reduce(
+            (acc, cur) =>
+              parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
+            0,
+          )}
+          ¥ 결제하기
+        </span>
       </div>
     </div>
   )

@@ -14,41 +14,10 @@ const Cart = () => {
   } = useGetCartItemsQuery()
 
   const [checkedItems, setCheckedItems] = useState()
-  const [calculation, setCalculation] = useState({
-    totalPrice: 0,
-    discountPrice: 0,
-    totalCount: 0,
-  })
 
   useEffect(() => {
     setCheckedItems(cartItems)
-    setCalculation({
-      totalPrice: cartItems?.reduce(
-        (acc, cur) => cur.price * cur.count + acc,
-        0,
-      ),
-      discountPrice: cartItems?.reduce(
-        (acc, cur) => (cur.price - cur.sale) * cur.count + acc,
-        0,
-      ),
-      totalCount: cartItems?.reduce((acc, cur) => cur.count + acc, 0),
-    })
   }, [isSuccess])
-
-  useEffect(() => {
-    setCalculation({
-      totalPrice: checkedItems?.reduce(
-        (acc, cur) =>
-          parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
-        0,
-      ),
-      discountPrice: checkedItems?.reduce(
-        (acc, cur) => parseInt((cur.price * cur.sale) / 100) * cur.count + acc,
-        0,
-      ),
-      totalCount: checkedItems?.reduce((acc, cur) => cur.count + acc, 0),
-    })
-  }, [checkedItems])
 
   const onCheckedHandler = (item) => {
     checkedItems.includes(item)
@@ -82,19 +51,11 @@ const Cart = () => {
                 />
               ))}
             </div>
-            <Total
-              totalPrice={calculation.totalPrice}
-              discountPrice={calculation.discountPrice}
-              totalCount={calculation.totalCount}
-            />
+            <Total items={checkedItems} />
           </div>
         )
       )}
-      <CartBtn
-        checkedItems={checkedItems}
-        totalPrice={calculation.totalPrice}
-        totalCount={calculation.totalCount}
-      />
+      <CartBtn items={checkedItems} />
     </>
   )
 }

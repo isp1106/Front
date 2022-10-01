@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TotalPrice = () => {
+const TotalPrice = ({ items }) => {
   return (
     <div className="">
       <div className=" px-5 border-b border-primary py-5">
@@ -8,7 +8,7 @@ const TotalPrice = () => {
         <div className="border-b border-t border-black-400 py-2">
           <div className="flex justify-between py-3 text-[14px]">
             <div className="text-black-400">주문 상품 수</div>
-            <div>총 1개</div>
+            <div>총 {items.reduce((acc, cur) => cur.count + acc, 0)}개</div>
           </div>
           <div className="flex justify-between py-3 text-[14px]">
             <div className="text-black-400">배송비</div>
@@ -21,7 +21,9 @@ const TotalPrice = () => {
         </div>
         <div className="mt-[20px] text-[20px] font-bold flex justify-between">
           <span className="text-primary">결제금액</span>
-          <span>4,550¥</span>
+          <span>
+            {items.reduce((acc, cur) => cur.price * cur.count + acc, 0)}¥
+          </span>
         </div>
       </div>
       <div className="py-5 text-black-400 text-center text-[14px]">
