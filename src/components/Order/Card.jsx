@@ -1,14 +1,14 @@
 import React from 'react'
 
 const Card = ({ item }) => {
-  const { url, brand, name, price, discount, sale, stock, count } = item
+  const { thumbnail, brand, name, price, discount, sale, stock, count } = item
 
   return (
     <div className="flex text-[14px] mb-[12px] pl-5">
       <div
         className=" flex-shrink w-[148px] h-[148px] bg-cover  overflow-hidden "
         style={{
-          backgroundImage: `url(${url})`,
+          backgroundImage: `url(${thumbnail})`,
         }}
       ></div>
       <div className="ml-[19px] grow-1 py-1">
@@ -22,9 +22,11 @@ const Card = ({ item }) => {
           </div>
           <div className="text-center">
             <div className=" text-xs text-black-600 line-through">
-              {price} ¥
+              {price * count} ¥
             </div>
-            <div className="text-[14px]">{discount} ¥</div>
+            <div className="text-[14px]">
+              {parseInt((price * (100 - sale)) / 100) * count} ¥
+            </div>
           </div>
         </div>
       </div>

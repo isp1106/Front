@@ -29,8 +29,9 @@ const PayWay = () => {
         <div className="grid grid-rows-2 grid-cols-2 px-5 py-5 gap-5">
           {payway.map((item, idx) => (
             <div
+              key={idx}
               className={cls(
-                'flex items-center justify-center w-[162px] h-[52px] border border-black-400',
+                'rounded flex items-center justify-center w-[162px] h-[52px] border border-black-400',
                 select === item
                   ? 'bg-point text-white-200 '
                   : 'bg-white-200 text-black-800 ',

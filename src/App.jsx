@@ -1,4 +1,6 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store'
 import './App.css'
 import Home from './pages/Home'
 import Like from './pages/Like'
@@ -29,7 +31,7 @@ function App() {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <div className="pb-[75px]">
+    <Provider store={store} className="pb-[75px]">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
@@ -61,7 +63,7 @@ function App() {
       {!currentPath.includes('/signup') &&
         !currentPath.includes('/detail') &&
         !currentPath.includes('/cart') && <NavBottom />}
-    </div>
+    </Provider>
   )
 }
 
