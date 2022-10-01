@@ -16,10 +16,10 @@ export const detailProducts = {
   detailList: [
     'https://images.seoulstore.com/products/97aa4585eda28bfaaa0fe6b9660f5176.jpg',
   ],
-  thumnail:
+  thumbnail:
     'https://images.seoulstore.com/products/546e7653a3284eab33eae8d2c1c81675.jpg',
   magazine: {
-    thumnail:
+    thumbnail:
       'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
     title: 'NO.05 Cherry heart',
   },
@@ -89,7 +89,7 @@ export const detailProducts = {
   another: [
     {
       id: 11,
-      thumnail:
+      thumbnail:
         'https://img.29cm.co.kr/next-product/2022/08/09/7495d01194a94992a4e6f208151abe9b_20220809164857.jpg?width=300',
       product: 'GRUNGE STRIPE KNIT SWEATER KA [KHAKI]',
       price: 370,
@@ -98,7 +98,7 @@ export const detailProducts = {
     },
     {
       id: 12,
-      thumnail:
+      thumbnail:
         'https://img.29cm.co.kr/next-product/2021/09/24/a7bf49f4235845c4be4d6b6bbb4b063e_20210924184330.jpg?width=300',
       product: 'WITTY BUNNY CROP KNIT KA [OLIVE]',
       price: 720,
@@ -107,7 +107,7 @@ export const detailProducts = {
     },
     {
       id: 13,
-      thumnail:
+      thumbnail:
         'https://img.29cm.co.kr/next-product/2022/04/25/5009ad650aa84c6a95f0087f5a648a03_20220425123828.jpg?width=300',
       product: 'MIDDLE CHERRY KNIT SLIM CARDIGAN [CHARCOAL]',
       price: 630,
@@ -116,7 +116,7 @@ export const detailProducts = {
     },
     {
       id: 14,
-      thumnail:
+      thumbnail:
         'https://img.29cm.co.kr/next-product/2022/04/25/81cbfdccf296407986c514644dac806d_20220425124351.jpg?width=300',
       product: '체리 숏 슬리브 폴로 니트 [화이트]',
       price: '620',

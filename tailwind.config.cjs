@@ -14,6 +14,7 @@ module.exports = {
         'black-600': 'var(--black-600)',
         'black-400': 'var(--black-400)',
         'black-200': 'var(--black-200)',
+        'white-400': 'var(--white-400)',
         'white-200': 'var(--white-200)',
         'modal-mask': 'var(--modal)',
         point: 'var(--point)',

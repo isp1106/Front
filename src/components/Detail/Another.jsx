@@ -8,12 +8,12 @@ const Another = () => {
       <h4 className="font-bold my-4">비슷한 상품</h4>
       <div className="flex gap-5 overflow-x-scroll">
         {detailProducts.another.map(
-          ({ id, thumnail, product, price, sale, liked }) => (
+          ({ id, thumbnail, product, price, sale, liked }) => (
             <div key={id}>
               <div
                 className="new-style w-[142px] h-[142px] bg-cover rounded-full overflow-hidden border-primary border"
                 style={{
-                  backgroundImage: `url(${thumnail})`,
+                  backgroundImage: `url(${thumbnail})`,
                 }}
               ></div>
               <p className="px-2 mt-3 text-[10px] text-black-800 truncate w-[142px]">
