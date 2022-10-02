@@ -18,7 +18,7 @@ const TopMain = () => {
       <div className="relative">
         {thumbnail.map((item, idx) => (
           <React.Fragment key={idx}>
-            <img src={item} className="w-full " />
+            <img src={item} className="w-full" />
             {idx === 0 && <Brand />}
           </React.Fragment>
         ))}
