@@ -1,40 +1,32 @@
 export const magazineDummy = {
-  title: 'Magazine NO.7 ',
-  cover: 'https://ifh.cc/g/gs9flK.jpg',
+  option: 2,
+  title: 'Magazine NO.6',
+  cover: 'https://ifh.cc/g/RF7j5L.jpg',
   thumbnail: [
-    'https://ifh.cc/g/5j6XAD.jpg',
-    'http://asq.kr/Y1olLQQsLH',
-    'http://asq.kr/xP7b9Oi5k',
-    'http://asq.kr/zhvoqZEXkC',
-    'http://asq.kr/ygr3bkAeA',
-    'http://asq.kr/ZAo7iYaEr',
-    'http://asq.kr/zMEualXiVO',
+    'https://image.wconcept.co.kr/images/img/event/20220919_city/mo_01-2.jpg',
+    'https://image.wconcept.co.kr/images/img/event/20220919_city/mo_02.jpg',
+    'https://image.wconcept.co.kr/images/img/event/20220919_city/mo_04.jpg',
   ],
-  brandImg: 'https://ifh.cc/g/LKYFDb.png',
-  brand: 'KUME',
-  brandKo: '쿠메',
+  brandImg: 'https://ifh.cc/g/FxTvCy.png',
+  brand: 'CITYBREEZE for MEN',
+  brandKo: '시티브리즈 포 맨',
   liked: false,
   items: [
     {
-      //상품명에 맞춰 ID 수정 부탁드려요~
-      //상품명 : Ami bag_black
-      id: 1,
-      className: 'bottom-[930px] left-[120px]',
+      id: 211,
+      className: 'top-[1300px] right-[152px]',
     },
     {
-      //상품명 : Wrinkle bag_ivory
-      id: 2,
-      className: 'bottom-[870px] right-[85px]',
+      id: 212,
+      className: 'top-[3032px] right-[10px]',
     },
     {
-      //상품명 : Sally bag_ivory
-      id: 3,
-      className: 'bottom-[580px] left-[90px]',
+      id: 213,
+      className: 'top-[3281px] left-[159px]',
     },
     {
-      //상품명 : Sally bag_ivory
-      id: 3,
-      className: 'bottom-[120px] right-[80px]',
+      id: 214,
+      className: 'bottom-[300px] left-[154px]',
     },
   ],
 }

@@ -13,20 +13,23 @@ const TopMain = () => {
   return (
     <>
       <div className="h-[76px] bg-point text-white font-bold flex items-center justify-center">
-        {title}
+        {list.title}
       </div>
-      {thumbnail.map((item, idx) => (
-        <div className="relative" key={idx}>
-          <img src={item} className="w-full " />
-          {items.map((target, idx) => (
-            <Plus
-              className={`absolute ${target.className}`}
-              id={target.id}
-              key={idx}
-            />
-          ))}
-        </div>
-      ))}
+      <div className="relative">
+        {thumbnail.map((item, idx) => (
+          <React.Fragment key={idx}>
+            <img src={item} className="w-full " />
+            {idx === 0 && <Brand />}
+          </React.Fragment>
+        ))}
+        {items.map((item, idx) => (
+          <Plus
+            className={`absolute ${item.className}`}
+            id={items.id}
+            key={idx}
+          />
+        ))}
+      </div>
     </>
   )
 }
