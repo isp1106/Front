@@ -1,32 +1,40 @@
 export const magazineDummy = {
-  title: 'Magazine NO.9 ',
-  thumbnail: ['https://ifh.cc/g/1JPtKk.jpg', 'https://ifh.cc/g/9n2HZf.jpg'],
-  brandImg:
-    'https://aroundann.jp/web/upload/category/editor/2021/11/03/34113214691ad533e76facd4df88e8d3.png',
-  brand: 'aroundAnn',
-  brandKo: '어라운드앤',
+  title: 'Magazine NO.7 ',
+  cover: 'https://ifh.cc/g/gs9flK.jpg',
+  thumbnail: [
+    'https://ifh.cc/g/5j6XAD.jpg',
+    'http://asq.kr/Y1olLQQsLH',
+    'http://asq.kr/xP7b9Oi5k',
+    'http://asq.kr/zhvoqZEXkC',
+    'http://asq.kr/ygr3bkAeA',
+    'http://asq.kr/ZAo7iYaEr',
+    'http://asq.kr/zMEualXiVO',
+  ],
+  brandImg: 'https://ifh.cc/g/LKYFDb.png',
+  brand: 'KUME',
+  brandKo: '쿠메',
   liked: false,
   items: [
     {
       //상품명에 맞춰 ID 수정 부탁드려요~
-      //상품명 : troi bag_black
+      //상품명 : Ami bag_black
       id: 1,
-      className: 'bottom-[880px] left-[110px]',
+      className: 'bottom-[930px] left-[120px]',
     },
     {
       //상품명 : Wrinkle bag_ivory
       id: 2,
-      className: 'bottom-[960px] right-[30px]',
+      className: 'bottom-[870px] right-[85px]',
     },
     {
-      //상품명 : Double bag_brown
+      //상품명 : Sally bag_ivory
       id: 3,
-      className: 'bottom-[600px] left-[120px]',
+      className: 'bottom-[580px] left-[90px]',
     },
     {
-      //상품명 : Double bag_brown
+      //상품명 : Sally bag_ivory
       id: 3,
-      className: 'bottom-[150px] right-[70px]',
+      className: 'bottom-[120px] right-[80px]',
     },
   ],
 }
