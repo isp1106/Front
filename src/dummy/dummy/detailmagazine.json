@@ -1,8 +1,3 @@
-// id는 상품 테이블 id입니다. 아직 상품 id를 몰라 위에 상품 명 적어두었어요~
-//(상품테이블에 디테일 상품 정보 클릭시 해당 매거진 필터링위한 컬럼?이필요할것 같아요)
-// 매거진의 경우 현재 맨/우먼/라이프/한국트랜드로 바뀔때마다 바뀌어야하는데,
-// 일단 맨/우먼만 한다고 생각하고 옵션 1: 여자 ,  2: 남자, 3: 공통으로 넣어놨어요
-
 [
   {
     "option": 1,
@@ -15,23 +10,18 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
-        //상품명 : troi bag_black
         "id": 1,
         "className": "top-[250px] left-[100px]"
       },
       {
-        //상품명 : Wrinkle bag_ivory
         "id": 2,
         "className": "top-[900px] right-[30px]"
       },
       {
-        //상품명 : Wrinkle bag_ivory
         "id": 2,
         "className": "bottom-[1400px] right-[70px]"
       },
       {
-        //상품명 : Double bag_brown
         "id": 3,
         "className": "bottom-[570px] left-[120px]"
       }
@@ -52,23 +42,18 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
-        //상품명 : Ami bag_black
         "id": 1,
         "className": "top-[1030px] left-[140px]"
       },
       {
-        //상품명 : Wrinkle bag_ivory
         "id": 2,
         "className": "top-[1120px] right-[85px]"
       },
       {
-        //상품명 : Sally bag_ivory
         "id": 3,
         "className": "bottom-[580px] left-[90px]"
       },
       {
-        //상품명 : Sally bag_ivory
         "id": 3,
         "className": "bottom-[120px] right-[80px]"
       }
@@ -89,23 +74,18 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
-        //상품명 : TWEED BOMBER JACKET, BLACK
         "id": 111,
         "className": "top-[1964px] right-[42px]"
       },
       {
-        //상품명 : FRAYED SEMI-WIDE DENIM PANTS, BLACK
         "id": 112,
         "className": "top-[2032px] left-[194px]"
       },
       {
-        //상품명 : FRAYED SEMI-WIDE DENIM PANTS, IVORY
         "id": 113,
         "className": "top-[3281px] left-[189px]"
       },
       {
-        //상품명 :DOUBLE POCKET DENIM BLOUSE, MEDIUM BLUE
         "id": 114,
         "className": "top-[3485px] left-[154px]"
       }
@@ -137,23 +117,18 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
-        //상품명 : 스티치 포인트 데님 자켓_INDIGO
         "id": 211,
         "className": "top-[1300px] right-[152px]"
       },
       {
-        //상품명 : 알파카 오버핏 카라 니트_BEIGE
         "id": 212,
         "className": "top-[3032px] right-[10px]"
       },
       {
-        //상품명 : [22CW] 알파카 오버핏 니트 가디건 _BLACK
         "id": 213,
         "className": "top-[3281px] left-[159px]"
       },
       {
-        //상품명 로고 자수 베이직 후드 스웻 셔츠_MELANGE GREY
         "id": 214,
         "className": "bottom-[300px] left-[154px]"
       }
