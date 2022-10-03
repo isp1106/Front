@@ -37,7 +37,7 @@ const SwiperMagazine = ({ category }) => {
           key={index}
           className="relative ml-[40px]"
           //추후 id 값 넣기
-          onClick={() => navigate('/magazine/id')}
+          onClick={() => navigate(`/magazine/${item.id}`)}
         >
           <img src={item.cover} className="] magazine-img" />
           <div className="absolute top-2 right-2">

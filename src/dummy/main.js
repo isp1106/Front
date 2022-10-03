@@ -2,73 +2,39 @@
 export const magazineWoman = [
   {
     id: 1,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/129/l4910178330129.jpg',
+    cover: 'https://ifh.cc/g/KC4trp.png',
     liked: false,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.9 ', //추후 상품 디테일에서 쓰여요!
   },
   {
-    monh: 2,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/228/l4910178330228.jpg',
-    liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    id: 2,
+    cover: 'https://ifh.cc/g/mnM2v8.jpg',
+    liked: false,
+    title: 'Magazine NO.8 ', //추후 상품 디테일에서 쓰여요!
   },
   {
     id: 3,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
+    cover: 'https://ifh.cc/g/gs9flK.jpg',
     liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.7', //추후 상품 디테일에서 쓰여요!
   },
   {
     id: 4,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/426/l4910178330426.jpg',
+    cover: 'https://ifh.cc/g/F5Vh3Y.jpg',
     liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.6', //추후 상품 디테일에서 쓰여요!
   },
   {
     id: 5,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/525/l4910178330525.jpg',
+    cover: 'https://ifh.cc/g/RF7j5L.jpg',
     liked: true,
     title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
   },
   {
     id: 6,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/624/l4910178330624.jpg',
-    liked: false,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
-  },
-  {
-    id: 7,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/723/l4910178330723.jpg',
-    liked: false,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
-  },
-  {
-    id: 8,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/822/l4910178330822.jpg',
+    cover: 'https://ifh.cc/g/MdfR22.jpg',
     liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
-  },
-  {
-    id: 9,
-    cover:
-      'http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=JNT&mallGb=JAP&barcode=4910178330921&orderClick=LAG&Kc=#N',
-    liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
-  },
-  {
-    id: 10,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/027/l4910178331027.jpg',
-    liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.5', //추후 상품 디테일에서 쓰여요!
   },
 ]
 

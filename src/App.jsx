@@ -48,7 +48,7 @@ function App() {
         {/*실제사용 아래 임시 <Route path="/product/detail/:id" element={<DetailPage />} /> */}
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/oneul/detail" element={<SnapDetail />} />
-        <Route path="/magazine/id" element={<MagazineDetail />} />
+        <Route path="/magazine/:id" element={<MagazineDetail />} />
         <Route path="/signup" element={<SignUp />}>
           <Route path="" element={<TermService />} />
           <Route path="idform" element={<SignUpId />} />
