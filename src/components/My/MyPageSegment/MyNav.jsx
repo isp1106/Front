@@ -18,7 +18,7 @@ const MyNav = () => {
       </h2>
       <ul className="flex flex-wrap">
         <li className="text-sm w-1/2 py-1">
-          <Link to="#">1:1 문의</Link>
+          <Link to="/my/qna">1:1 문의</Link>
         </li>
         <li className="text-sm w-1/2 py-1">
           <Link to="">FAQ</Link>

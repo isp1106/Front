@@ -75,7 +75,7 @@ const UserInfo = () => {
   const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
   return (
     <>
-      <div className="px-5 ">
+      <div className="info px-5 ">
         {pathname.includes('/signup') && (
           <>
             <Title title="정보" text="입력" />
