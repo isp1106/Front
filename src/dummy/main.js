@@ -28,30 +28,35 @@ export const magazineWoman = [
     id: 5,
     cover: 'https://ifh.cc/g/RF7j5L.jpg',
     liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.5', //추후 상품 디테일에서 쓰여요!
   },
   {
     id: 6,
     cover: 'https://ifh.cc/g/MdfR22.jpg',
     liked: true,
-    title: 'Magazine NO.5', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.4', //추후 상품 디테일에서 쓰여요!
   },
 ]
 
 //최근 매거진 맨
 export const magazineMan = [
   {
-    id: 1,
-    cover:
-      'http://image.kyobobook.co.kr/images/book/large/426/l4910186250426.jpg',
+    id: 5,
+    cover: 'https://ifh.cc/g/RF7j5L.jpg',
     liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.5', //추후 상품 디테일에서 쓰여요!
   },
   {
-    id: 2,
-    cover: 'https://www.ichigo.co.kr:5030/data/22/17833-220200_m.jpg',
+    id: 6,
+    cover: 'https://ifh.cc/g/MdfR22.jpg',
     liked: true,
-    title: '매거진 이름', //추후 상품 디테일에서 쓰여요!
+    title: 'Magazine NO.4', //추후 상품 디테일에서 쓰여요!
+  },
+  {
+    id: 4,
+    cover: 'https://ifh.cc/g/F5Vh3Y.jpg',
+    liked: false,
+    title: 'Magazine NO.6', //추후 상품 디테일에서 쓰여요!
   },
   {
     id: 3,

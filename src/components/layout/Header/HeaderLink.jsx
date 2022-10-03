@@ -19,10 +19,8 @@ const HeaderLink = () => {
           />
         </Link>
       </li>
-      <li>
-        <CartIcon />
-      </li>
-      {currentPath.includes('/product') && (
+      <li>{currentPath !== '/cart' && <CartIcon />}</li>
+      {(currentPath.includes('/product') || currentPath.includes('/cart')) && (
         <li>
           <Link to="/">
             <Home />

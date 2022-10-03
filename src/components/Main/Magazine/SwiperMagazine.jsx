@@ -41,7 +41,7 @@ const SwiperMagazine = ({ category }) => {
         >
           <img src={item.cover} className="] magazine-img" />
           <div className="absolute top-2 right-2">
-            <HeartIcon size="23px" fill="#ffffff" off={item.liked} />
+            <HeartIcon size="23px" fill="#ffffff" off={!item.liked} />
           </div>
         </div>
       ))}

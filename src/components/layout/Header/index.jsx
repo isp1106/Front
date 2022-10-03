@@ -21,10 +21,13 @@ function Header(props) {
                 width="24px"
                 height="24px"
               />
-              <h2 className="font-bold ml-2">{props.children}</h2>
             </>
           )}
-          <div className="flex-grow"></div>
+          <div className="flex-grow">
+            <h2 className="text-[20px] font-bold ml-2 pl-6">
+              {props.children}
+            </h2>
+          </div>
           <HeaderLink />
         </div>
       </header>
