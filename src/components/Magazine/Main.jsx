@@ -8,8 +8,6 @@ import { useGetMagazineQuery } from '../../store/api/magazineSlice'
 const TopMain = () => {
   // const { title, thumbnail, items } = list
   const params = useParams()
-  console.log(params.id)
-  console.log(useGetMagazineQuery(params.id))
   const navigate = useNavigate()
   const { data: list, isLoading, isError } = useGetMagazineQuery(params.id)
   const onClickHandler = (id) => {
