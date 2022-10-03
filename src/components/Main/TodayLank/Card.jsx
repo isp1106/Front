@@ -12,7 +12,7 @@ export const Card = ({ data }) => {
         </div>
       </div>
       <div className="flex justify-between px-5 py-3.5 border-y-2 border-primary text-primary text-sm">
-        <div>@ {userId}</div>
+        <div className="truncate">@ {userId}</div>
         {liked ? (
           <img src={heartOn} alt="heart on" width="24px" height="24px" />
         ) : (
