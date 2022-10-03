@@ -1,62 +1,50 @@
 import React from 'react'
-import { magazine as list } from '../../dummy/magaineDetail'
+import { useNavigate, useParams } from 'react-router-dom'
+import { magazineDummy as list } from '../../dummy/magaineDetail'
 import Brand from './Brand'
 import Plus from './Plus'
+import { useGetMagazineQuery } from '../../store/api/magazineSlice'
 
 const TopMain = () => {
+  // const { title, thumbnail, items } = list
+  const params = useParams()
+  console.log(params.id)
+  console.log(useGetMagazineQuery(params.id))
+  const navigate = useNavigate()
+  const { data: list, isLoading, isError } = useGetMagazineQuery(params.id)
+  const onClickHandler = (id) => {
+    navigate(`/product/${id}`)
+  }
   return (
     <>
-      <div>{list.title}</div>
-      <div
-        className="w-full h-[465px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img1})`,
-        }}
-      ></div>
-      <div
-        className="relative w-full h-[762px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img2})`,
-        }}
-      >
-        <Plus
-          className="absolute bottom-[260px] left-[100px]"
-          //추후 상품 id 넣기
-        />
-        <Plus
-          className="absolute bottom-[360px] right-[40px]"
-          //추후 상품 id 넣기
-        />
-      </div>
-      <div
-        className="w-full h-[579px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img3})`,
-        }}
-      ></div>
-      <Brand />
-      <div
-        className="relative w-full h-[777px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img4})`,
-        }}
-      >
-        <Plus
-          className="absolute bottom-[230px] left-[120px]"
-          //추후 상품 id 넣기
-        />
-      </div>
-      <div
-        className="relative w-full h-[373px] bg-cover overflow-hidden"
-        style={{
-          backgroundImage: `url(${list.img5})`,
-        }}
-      >
-        <Plus
-          className="absolute bottom-[150px] right-[70px]"
-          //추후 상품 id 넣기
-        />
-      </div>
+      {isLoading ? (
+        <span>로딩중...</span>
+      ) : isError ? (
+        <span>에러발생</span>
+      ) : (
+        list && (
+          <>
+            <div className="h-[76px] bg-point text-white font-bold flex items-center justify-center">
+              {list.title}
+            </div>
+            <div className="relative">
+              {list.thumbnail.map((item, idx) => (
+                <React.Fragment key={idx}>
+                  <img src={item} className="w-full" />
+                  {idx === 0 && <Brand />}
+                </React.Fragment>
+              ))}
+              {list.items.map((item, idx) => (
+                <Plus
+                  className={`absolute ${item.className}`}
+                  id={item.id}
+                  key={idx}
+                />
+              ))}
+            </div>
+          </>
+        )
+      )}
     </>
   )
 }
