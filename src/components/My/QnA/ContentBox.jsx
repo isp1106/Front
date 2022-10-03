@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import BackIcon from '../../common/BackIcon'
+import Card from './Card'
 
 const ContentBox = ({ item }) => {
   const navigate = useNavigate()
+
   return (
     <>
       <div className="mb-5 px-5">
@@ -25,23 +27,9 @@ const ContentBox = ({ item }) => {
           <div className="text-xs">{item.title}</div>
         </div>
 
-        {item.prdouct && (
+        {item.product && (
           <div className="pt-4 border-t border-black-200 ">
-            <div className="flex mb-4 gap-2">
-              <div
-                className="relative flex-shrink w-[56px] h-[56px] bg-cover rounded-md overflow-hidden "
-                style={{
-                  backgroundImage: `url(${item.prdouct?.thumbnail})`,
-                }}
-              ></div>
-              <div className="text-xs flex flex-col gap-1">
-                <div className="font-bold">{item.prdouct?.brand}</div>
-                <div className="text-black-800">{item.prdouct?.product}</div>
-                <div className="text-black-600">
-                  수량 : {item.prdouct?.count}
-                </div>
-              </div>
-            </div>
+            <Card item={item.product} />
           </div>
         )}
       </div>

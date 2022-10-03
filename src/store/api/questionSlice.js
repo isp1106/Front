@@ -11,7 +11,10 @@ export const questionApi = createApi({
     getQuestions: builder.query({
       query: () => 'question',
     }),
+    getQustion: builder.query({
+      query: (id) => `question/${id}`,
+    }),
   }),
 })
 
-export const { useGetQuestionsQuery } = questionApi
+export const { useGetQuestionsQuery, useGetQustionQuery } = questionApi
