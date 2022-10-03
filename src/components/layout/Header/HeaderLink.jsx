@@ -9,8 +9,8 @@ const HeaderLink = () => {
   const currentPath = location.pathname
   const navigate = useNavigate()
   return (
-    <ul className=" top-2.5 right-5 flex justify-center items-center h-9 z-50 ">
-      <li className="mr-3.5 ">
+    <ul className=" top-2.5 right-5 flex justify-center items-center h-9 z-50 gap-2">
+      <li>
         <Link to="/search">
           <SearchIcon
             className="w-6 "

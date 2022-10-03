@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-import Header from './Header'
+import Header from '../layout/Header'
 import Picture from './Picture'
 import Category from './Category'
 const OnEul = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Picture />
-      <Category />
-    </div>
+      <div className="mt-[54px]">
+        <Picture />
+        <Category />
+      </div>
+    </>
   )
 }
 
