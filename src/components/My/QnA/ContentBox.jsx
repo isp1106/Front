@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
-import { cls } from '../../../utils'
+import { useNavigate } from 'react-router-dom'
 import BackIcon from '../../common/BackIcon'
 
 const ContentBox = ({ item }) => {
+  const navigate = useNavigate()
   return (
     <>
       <div className="mb-5 px-5">
         <div className="flex items-center justify-between py-4 ">
           <p className="font-bold">{item.createdDate}</p>
           <div className="flex items-center gap-1">
-            <span className="text-xs">답변상세보기</span>
+            <span
+              className="text-xs"
+              onClick={() => navigate(`/my/qna/${item.id}`)}
+            >
+              답변상세보기
+            </span>
             <BackIcon fill="#252525" size={14} className="rotate-180" />
           </div>
         </div>
