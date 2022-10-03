@@ -11,13 +11,15 @@ const HeaderLink = () => {
   return (
     <ul className=" top-2.5 right-5 flex justify-center items-center h-9 z-50 gap-2">
       <li>
-        <Link to="/search">
-          <SearchIcon
-            className="w-6 "
-            alt="검색"
-            onClick={() => navigate('/search')}
-          />
-        </Link>
+        {!currentPath.includes('/my') && (
+          <Link to="/search">
+            <SearchIcon
+              className="w-6 "
+              alt="검색"
+              onClick={() => navigate('/search')}
+            />
+          </Link>
+        )}
       </li>
       <li>{currentPath !== '/cart' && <CartIcon />}</li>
       {(currentPath.includes('/product') || currentPath.includes('/cart')) && (
