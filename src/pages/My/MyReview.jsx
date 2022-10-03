@@ -1,5 +1,5 @@
 import React from 'react'
-import MyReviewSegment from '../components/MyReviewSegment'
+import MyReviewSegment from '../../components/My/MyReviewSegment'
 const MyReview = () => {
   return (
     <div>

@@ -12,7 +12,6 @@ import Inquiry from './Inquiry'
 import ProductCode from './ProductCode'
 import DeliveryNotice from './DeliveryNotice'
 import ExchangeRefund from './ExchangeRefund'
-import ProductInfo from './ProductInfo'
 import SellerInfo from './SellerInfo'
 
 const Detail = () => {
@@ -28,8 +27,8 @@ const Detail = () => {
       <Relation />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
       <Snap />
-      <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Similiar />
+      {/* <div className="w-full h-[10px] bg-white-200 my-8"></div>
+      <Similiar /> */}
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
       <Another />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
@@ -40,7 +39,6 @@ const Detail = () => {
       <ProductCode />
       <DeliveryNotice />
       <ExchangeRefund />
-      <ProductInfo />
       <SellerInfo />
     </>
   )

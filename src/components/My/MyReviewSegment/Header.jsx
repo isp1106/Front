@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ReactComponent as BackPoint } from '/public/assets/back-small-point.svg'
 const Header = ({ reviewAdd }) => {
+
   const navigate = useNavigate()
   return (
     <div>
