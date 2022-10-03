@@ -1,6 +1,5 @@
 import React from 'react'
-import CardWrite from './CardWrite'
-
+import Header from './Header'
 const Write = () => {
   return (
     <div>

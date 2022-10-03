@@ -1,9 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Write from './Write'
-const CardWrite = ({ reviewData, reviewAddChk, setReviewAddChk }) => {
-  const reviewAddChkHandler = () => {
-    setReviewAddChk(true)
+const CardWrite = ({ reviewData, reviewAddChk}) => {
+  const navigate = useNavigate()
+  const goToWrite = () => {
+    navigate('/my/review/write')
   }
   return (
     <>
@@ -30,10 +31,7 @@ const CardWrite = ({ reviewData, reviewAddChk, setReviewAddChk }) => {
                 </li>
               </ul>
               <button
-                onClick={()=>{
-                  reviewAddChkHandler();
-                }
-              }
+                onClick={goToWrite}
                 className="bg-point text-white w-[5.188rem] rounded p-0.5"
               >
                 리뷰 작성
