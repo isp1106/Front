@@ -26,6 +26,9 @@ import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
 import Order from './pages/Order'
 import QnA from './pages/My/QnA'
+import QnAComp from './components/My/QnA'
+import QnADetail from './components/My/QnADetail'
+import QnAWrite from './components/My/QnAWrite'
 
 function App() {
   const location = useLocation()
@@ -40,13 +43,16 @@ function App() {
           <Route path="/like" element={<Like />} />
           <Route path="/my" element={<My />}>
             <Route path="" element={<MyPage />} />
-            <Route path="qna" element={<QnA />} />
             <Route path="review" element={<MyReview />} />
             <Route path="review/write" element={<MyReviewWrite />} />
+            <Route path="qna" element={<QnA />}>
+              <Route path="" element={<QnAComp />} />
+              <Route path=":id" element={<QnADetail />} />
+              <Route path="write" element={<QnAWrite />} />
+            </Route>
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/product" element={<Product />} />
-          {/*실제사용 아래 임시 <Route path="/product/detail/:id" element={<DetailPage />} /> */}
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/oneul/detail" element={<SnapDetail />} />
           <Route path="/magazine/:id" element={<MagazineDetail />} />

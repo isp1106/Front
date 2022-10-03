@@ -15,24 +15,23 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
-        //상품명 : troi bag_black
-        "id": 1,
+        //troi bag_black
+        "id": 1000,
         "className": "top-[250px] left-[100px]"
       },
       {
-        //상품명 : Wrinkle bag_ivory
-        "id": 2,
+        //Wrinkle bag_ivory
+        "id": 1001,
         "className": "top-[900px] right-[30px]"
       },
       {
-        //상품명 : Wrinkle bag_ivory
-        "id": 2,
+        //Wrinkle bag_ivory
+        "id": 1001,
         "className": "bottom-[1400px] right-[70px]"
       },
       {
-        //상품명 : Double bag_brown
-        "id": 3,
+        //Double bag_brown
+        "id": 1002,
         "className": "bottom-[570px] left-[120px]"
       }
     ]
@@ -52,24 +51,23 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
-        //상품명 : Ami bag_black
-        "id": 1,
+        //Ami bag_black
+        "id": 1003,
         "className": "top-[1030px] left-[140px]"
       },
       {
-        //상품명 : Wrinkle bag_ivory
-        "id": 2,
+        //Wrinkle bag_ivory
+        "id": 1001,
         "className": "top-[1120px] right-[85px]"
       },
       {
-        //상품명 : Sally bag_ivory
-        "id": 3,
+        //Sally bag_ivory
+        "id": 1004,
         "className": "bottom-[580px] left-[90px]"
       },
       {
-        //상품명 : Sally bag_ivory
-        "id": 3,
+        //Sally bag_ivory
+        "id": 1004,
         "className": "bottom-[120px] right-[80px]"
       }
     ]
@@ -89,7 +87,6 @@
     "liked": false,
     "items": [
       {
-        //상품명에 맞춰 ID 수정 부탁드려요~
         //상품명 : TWEED BOMBER JACKET, BLACK
         "id": 111,
         "className": "top-[1964px] right-[42px]"
