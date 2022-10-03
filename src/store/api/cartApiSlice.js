@@ -14,7 +14,7 @@ export const cartApi = createApi({
   endpoints: (builder) => ({
     //카드 상품 불러오기
     getCartItems: builder.query({
-      query: () => 'cart',
+      query: () => 'carts',
       providesTags: (result, error, arg) =>
         result
           ? [...result.map(({ id }) => ({ type: 'Cart', id })), 'Cart']
@@ -22,14 +22,14 @@ export const cartApi = createApi({
     }),
     deleteCartItem: builder.mutation({
       query: (id) => ({
-        url: `cart/${id}`,
+        url: `carts/${id}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Cart'],
     }),
     changeCount: builder.mutation({
       query: ({ data }) => ({
-        url: 'cart',
+        url: 'carts',
         method: 'POST',
         body: data,
       }),
