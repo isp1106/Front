@@ -28,7 +28,7 @@ const Category = () => {
               />
               <SearchIcon className="w-6" />
             </div>
-            <Link to="/cart" className="p-2 ">
+            <Link to="/cart" className="p-2  ">
               <CartIcon className="w-8" onClick={() => navigate('/cart')} />
             </Link>
           </div>
