@@ -49,7 +49,7 @@ const AddPicture = ({ uploadThumbnail, showImage }) => {
           파일당 최대 10MB 의 용량 제한이 있습니다.
         </li>
         <li className="relative before:absolute  before:content-['']  before:bg-black-200  before:w-[3px]  before:h-[3px]  before:rounded-full  before:top-[5px] before:left-[-6px]">
-          첨부파일은 최대 2개까지 등록 가능합니다.
+          첨부파일은 최대 1개까지 등록 가능합니다.
         </li>
       </ul>
     </div>

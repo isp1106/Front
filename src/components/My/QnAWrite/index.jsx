@@ -3,6 +3,7 @@ import { types } from '../../../utils/questions'
 import Type from './Type'
 import Content from './Content'
 import AddPicture from './AddPicture'
+import QnABtn from './QnABtn'
 import { useEffect } from 'react'
 
 const index = () => {
@@ -12,7 +13,12 @@ const index = () => {
     title: '',
     content: '',
   })
-  const [imageFile, setImageFile] = useState(null)
+
+  const [imageFile, setImageFile] = useState({
+    file: null,
+    thumbnail: null,
+    type: null,
+  })
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target
@@ -22,6 +28,7 @@ const index = () => {
     })
     name === 'content' && setCount(value.length)
   }
+
   const onChangeCheckedHandler = (idx) => {
     setUserValue({
       ...userValue,
@@ -29,8 +36,23 @@ const index = () => {
     })
   }
 
+  const uploadThumbnail = (e) => {
+    const fileList = e.target.files
+    if (fileList && fileList[0]) {
+      setImageFile({
+        file: fileList[0],
+        thumbnail: URL.createObjectURL(fileList[0]),
+        type: fileList[0].type.slice(0, 5),
+      })
+    }
+  }
+
+  const removeThumbnail = () => {
+    setImageFile(null)
+  }
+
   const showImage = useMemo(() => {
-    if (!imageFile && imageFile === null) return
+    if (imageFile.thumbnail === null) return
 
     return (
       <div
@@ -38,22 +60,18 @@ const index = () => {
         style={{
           backgroundImage: `url(${imageFile.thumbnail})`,
         }}
+        onClick={removeThumbnail}
       ></div>
     )
   })
 
-  const uploadThumbnail = (e) => {
-    const fileList = e.target.files
-    const length = fileList?.length
-    if (fileList && fileList[0]) {
-      const url = URL.createObjectURL(fileList[0])
-
-      setImageFile({
-        file: fileList[0],
-        thumbnail: url,
-        type: fileList[0].type.slice(0, 5),
-      })
+  const AddQuestionHandler = () => {
+    const data = {
+      ...userValue,
+      image: imageFile.thumbnail,
     }
+
+    console.log(data)
   }
 
   useEffect(() => {
@@ -70,6 +88,7 @@ const index = () => {
       />
       <Content count={count} onChangeHandler={onChangeHandler} />
       <AddPicture uploadThumbnail={uploadThumbnail} showImage={showImage} />
+      <QnABtn onClick={AddQuestionHandler} />
     </div>
   )
 }
