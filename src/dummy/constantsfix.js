@@ -67,7 +67,7 @@ export const CATEGORY = [
       {
         name: '신발',
         imgSrc:
-          'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
+          'https://m.naturestore.co.kr/data/goods/21/02/07/1000004221/1000004221_detail_032.jpg',
         list: {
           women: [
             '전체',
@@ -94,7 +94,7 @@ export const CATEGORY = [
       {
         name: '엑세사리',
         imgSrc:
-          'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
+          'https://image.koibito.co.kr/product_photo/202101/1611131944_b_1_1574237684_b_2_3_70.jpg',
         list: {
           women: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
           men: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
@@ -103,7 +103,7 @@ export const CATEGORY = [
     ],
   },
   {
-    TopCategory: '코스매틱',
+    TopCategory: '코스메',
     subCategory: [
       {
         name: '브랜드',
@@ -138,7 +138,7 @@ export const CATEGORY = [
       {
         name: '스킨케어',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2747621453/B.jpg?396000000',
         list: [
           '전체',
           '스킨토너',
@@ -153,13 +153,13 @@ export const CATEGORY = [
       {
         name: '메이크업',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://cafe24img.poxo.com/nandaglobal/web/product/big/202209/d0fffa8c344e3b8675db25df6c0db6aa.png',
         list: ['전체', '포인트 메이크업', '베이스 메이크업', '기타'],
       },
       {
         name: '헤어',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://cdn.wadiz.kr/ft/images/green001/2020/0623/20200623201909435_67.jpg/wadiz/format/jpg/quality/80/optimize',
         list: ['전체', '샴푸/린스', '탈모케어', '스타일링', '기타'],
       },
       {
@@ -173,7 +173,7 @@ export const CATEGORY = [
         name: '이너뷰티',
         list: ['전체', '다이어트', '비타민', '건강', '가글'],
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://img.dogpre.com/mobile/dogpre/product/87/86845_originalView_01315914.jpg',
       },
     ],
   },
@@ -181,16 +181,16 @@ export const CATEGORY = [
     TopCategory: '헬스',
     subCategory: [
       {
-        name: '스포츠웨어',
+        name: '운동복',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://www.ocokorea.com//upload/images/product/163/163726/Product_1648683794533.jpg',
 
         list: ['전체', '상의', '하의', '기타'],
       },
       {
         name: '레저',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://mblogthumb-phinf.pstatic.net/MjAxNjExMDhfOCAg/MDAxNDc4NTk0NDI5MzIx.F69IFSCABnWjdbSNOyvEdRoh8U7htF7xuoYflHKghMcg.F-a6q9X0upquwtMWurBtxgzw9ogmsgeinYwVHFkCw84g.JPEG.doldoly2002/%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%2C_%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%ED%8A%9C%EB%8B%9D%2C_%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%EC%8A%A4%ED%8B%B0%EC%BB%A4%2C_%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%ED%8A%9C.jpg?type=w2',
 
         list: ['전체', '캠핑', '수영', '골프', '기타'],
       },
@@ -220,13 +220,13 @@ export const CATEGORY = [
       {
         name: '키친',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
-        list: ['전체', '색상', '리빙', '침대', '기타'],
+          'https://cafe24img.poxo.com/theapplehouse/web/product/big/202102/7973bdb787f6f5de8d3a6d8477ef50d9.jpg',
+        list: ['전체', '주방가전', '주방용품', '그릇', '기타'],
       },
       {
         name: '패브릭',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'http://m.likegagu.com/web/product/medium/201808/4e50e5f8009288d8dc8ff30d82548d51.jpg',
         list: ['전체', '색상', '리빙', '침대', '기타'],
       },
     ],
@@ -237,14 +237,14 @@ export const CATEGORY = [
       {
         name: '아트',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://cdn.eronnews.co.kr/news/photo/202109/13852_25022_507.jpg',
         list: ['전체', '공예품', '굿즈', '아트프린트', '아트북', '기타'],
       },
       {
         name: '문구',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
-        list: ['전체', '공예품', '굿즈', '아트프린트', '아트북', '기타'],
+          'http://www.edkg.co.kr/shopimages/dkgmall/047008000053.jpg?1656308544',
+        list: ['전체', '필기류', '노트', '다이어리', '데코', '기타'],
       },
     ],
   },
