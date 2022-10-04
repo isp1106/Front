@@ -4,14 +4,13 @@ import Type from './Type'
 import Content from './Content'
 import AddPicture from './AddPicture'
 import QnABtn from './QnABtn'
-import { useEffect } from 'react'
 
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
     type: types[0],
-    title: '',
-    content: '',
+    title: null,
+    content: null,
   })
 
   const [imageFile, setImageFile] = useState({
@@ -56,7 +55,7 @@ const index = () => {
 
     return (
       <div
-        className="w-[86px] h-[86px] bg-cover rounded overflow-hidden "
+        className="relative w-[86px] h-[86px] bg-cover rounded overflow-hidden "
         style={{
           backgroundImage: `url(${imageFile.thumbnail})`,
         }}
@@ -66,18 +65,17 @@ const index = () => {
   })
 
   const AddQuestionHandler = () => {
+    if (!userValue.title || !userValue.content) {
+      alert('제목과 내용은 필수로 입력해야합니다.')
+    }
+
     const data = {
       ...userValue,
       image: imageFile.thumbnail,
     }
-
+    //api연결(question등록)
     console.log(data)
   }
-
-  useEffect(() => {
-    console.log(userValue)
-    console.log(imageFile)
-  }, [userValue, imageFile])
 
   return (
     <div className="px-5">
