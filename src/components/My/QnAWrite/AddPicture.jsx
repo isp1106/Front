@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
-const AddPicture = ({ selectThumbnail }) => {
+const AddPicture = ({ uploadThumbnail, showImage }) => {
+  const fileInputRef = useRef()
   return (
     <div className="mb-4">
       <h3 className="font-bold pb-5">사진등록</h3>
 
-      <div className="relative">
+      <div className="relative flex gap-2">
+        {showImage}
         <label
           htmlFor="formFile"
           className="w-[86px] h-[86px] bg-black-200 rounded flex items-center justify-center"
@@ -27,11 +29,15 @@ const AddPicture = ({ selectThumbnail }) => {
             />
           </svg>
         </label>
+
         <input
           id="formFile"
           className="w-[1px] h-[1px] overflow-hidden"
           type="file"
-          onChange={selectThumbnail}
+          accept="image/jpg, image/jpeg, image/png"
+          onChange={uploadThumbnail}
+          multiple
+          ref={fileInputRef}
         />
       </div>
 

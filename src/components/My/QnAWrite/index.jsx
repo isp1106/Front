@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { types } from '../../../utils/questions'
 import Type from './Type'
 import Content from './Content'
@@ -11,8 +11,9 @@ const index = () => {
     type: types[0],
     title: '',
     content: '',
-    thumbnailBase64: '',
   })
+  const [imageFile, setImageFile] = useState(null)
+
   const onChangeHandler = (e) => {
     const { name, value } = e.target
     setUserValue({
@@ -28,17 +29,37 @@ const index = () => {
     })
   }
 
-  const selectThumbnail = (e) => {
-    const fileReader = new FileReader()
-    fileReader.readAsDataURL(e.target.files[0])
-    fileReader.addEventListener('load', () => {
-      console.log(fileReader.result)
-    })
+  const showImage = useMemo(() => {
+    if (!imageFile && imageFile === null) return
+
+    return (
+      <div
+        className="w-[86px] h-[86px] bg-cover rounded overflow-hidden "
+        style={{
+          backgroundImage: `url(${imageFile.thumbnail})`,
+        }}
+      ></div>
+    )
+  })
+
+  const uploadThumbnail = (e) => {
+    const fileList = e.target.files
+    const length = fileList?.length
+    if (fileList && fileList[0]) {
+      const url = URL.createObjectURL(fileList[0])
+
+      setImageFile({
+        file: fileList[0],
+        thumbnail: url,
+        type: fileList[0].type.slice(0, 5),
+      })
+    }
   }
 
   useEffect(() => {
     console.log(userValue)
-  }, [userValue])
+    console.log(imageFile)
+  }, [userValue, imageFile])
 
   return (
     <div className="px-5">
@@ -48,7 +69,7 @@ const index = () => {
         onChangeCheckedHandler={onChangeCheckedHandler}
       />
       <Content count={count} onChangeHandler={onChangeHandler} />
-      <AddPicture selectThumbnail={selectThumbnail} />
+      <AddPicture uploadThumbnail={uploadThumbnail} showImage={showImage} />
     </div>
   )
 }
