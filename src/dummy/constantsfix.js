@@ -103,7 +103,7 @@ export const CATEGORY = [
     ],
   },
   {
-    TopCategory: '코스매',
+    TopCategory: '코스매틱',
     subCategory: [
       {
         name: '브랜드',

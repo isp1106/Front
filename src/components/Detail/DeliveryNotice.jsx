@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
+import { cls } from '../../utils'
 
 const DeliveryNotice = () => {
   const [open, setOpen] = useState(false)
@@ -7,9 +9,14 @@ const DeliveryNotice = () => {
   }
   return (
     <div className="px-5 my-5 border-b border-primary pb-5">
-      <h4 className="font-bold" onClick={openHandler}>
-        배송정보
-      </h4>
+      <div className="flex justify-between items-center" onClick={openHandler}>
+        <h4 className="font-bold">배송정보</h4>
+        <GoBackIcon
+          width="14px"
+          height="14px"
+          className={cls(open ? 'rotate-90' : '-rotate-90')}
+        />
+      </div>
       <div className={open ? 'mt-3 block' : 'hidden'}>
         <span className="text-xs leading-normal text-black-100">
           <p className="text-black-600">配送方法 : 宅配</p>
