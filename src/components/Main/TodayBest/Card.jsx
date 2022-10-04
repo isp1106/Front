@@ -5,12 +5,12 @@ import cart from '/public/assets/bag-on.svg'
 import { useNavigate } from 'react-router-dom'
 
 const Card = ({ product, active }) => {
-  const { url, title, sale, price, liked } = product
+  const { url, title, sale, price, liked, id } = product
   const navigate = useNavigate()
   return (
     <div
       className="w-[230px] h-80 mb-24"
-      onClick={() => navigate('/product/detail')}
+      onClick={() => navigate(`/product/${id}`)}
     >
       <div
         className="w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden"

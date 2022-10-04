@@ -4,12 +4,23 @@
 
 @font-face {
   font-family: 'NotoSans';
-  src: url('/public/fonts/NotoSansKR-Medium.otf');
+  font-style: normal;
+  font-weight: 400;
+  src: url('/public/fonts/notokr-regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'NotoSans-Bold';
-  src: url('/public/fonts/NotoSansKR-Bold.otf');
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/notokr-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/notokr-bold.woff') format('woff');
 }
 
 .root,
@@ -22,13 +33,15 @@
   --black-600: #676767;
   --black-400: #9c9c9c;
   --black-200: #c0c0c0;
+  --white-400: #fafafa;
   --white-200: #f5f5f5;
   --point: #020202;
+  --modal: #0000008c;
 }
 
 body {
   color: var(--black-100);
-  font-family: 'NotoSans';
+  font-family: 'NotoSans', sans-serif;
 }
 
 .tablist .swiper-slide-active {
@@ -61,8 +74,15 @@ select {
   height: 14px;
   background-image: url(/public/assets/star.png);
   background-repeat: no-repeat;
-
   background-size: 56.6px;
+}
+.ratingStarReview {
+  display: inline-block;
+  width: 88px;
+  height: 16px;
+  background-image: url(/public/assets/star2.png);
+  background-repeat: no-repeat;
+  background-size: 88px;
 }
 
 .ellipsis {

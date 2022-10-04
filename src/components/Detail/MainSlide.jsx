@@ -6,6 +6,7 @@ import 'swiper/css/pagination'
 import { detailProducts } from '../../dummy/detail'
 
 const MainSlide = () => {
+  const { detailThumList } = detailProducts
   return (
     <Swiper
       pagination={{
@@ -21,7 +22,7 @@ const MainSlide = () => {
       loop={true}
       className="topslide"
     >
-      {detailProducts.main_img.map((item, idx) => {
+      {detailThumList.map((item, idx) => {
         return (
           <SwiperSlide className="topslide" key={idx}>
             <div className="w-full relative">
