@@ -88,12 +88,12 @@ const Category = () => {
                         </div>
                       </Element>
                     )}
-                    {TopCategory == '뷰티' && (
+                    {TopCategory === '코스메' && (
                       <Element
                         name={TopCategory}
-                        className="border-x-2 border-primary h-full bg-[#f3f3f3] "
+                        className="box-border border-x-2 border-primary h-full bg-[#f3f3f3] "
                       >
-                        <h3 className="text-sm  h-12  font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-0  bg-white z-10 ">
+                        <h3 className="text-sm  h-12  font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary   sticky top-0 bg-white z-10  ">
                           {TopCategory}
                         </h3>
                         <div className="grid grid-cols-3 place-items-center border-b-2  border-primary">
@@ -107,46 +107,51 @@ const Category = () => {
                             )
                           })}
                         </div>
-
-                        {/* {subCategory.slice(1).map(({ name, list }, index) => {
-                          return (
-                            <div key={index}>
-                              <h4 className=" h-12  text-sm font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-12 bg-white">
-                                {name}
-                              </h4>
-                              <div className="grid grid-cols-3 place-items-center border-b-2  border-primary">
-                                {list.map((item, index) => (
-                                  <CategoryItem key={index} item={item} />
-                                ))}
-                              </div>
-                            </div>
-                          )
-                        })} */}
                       </Element>
                     )}
-                    {TopCategory !== '패션' && TopCategory !== '뷰티' && (
+
+                    {TopCategory !== '패션' && TopCategory !== '코스메' && (
                       <Element
                         name={TopCategory}
-                        className="border-x-2 border-primary h-full bg-[#f3f3f3] "
+                        className="box-border border-x-2 border-primary h-full bg-[#f3f3f3] "
                       >
-                        <h3 className="text-sm  h-12  font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-0  bg-white z-10 ">
+                        <h3 className="text-sm  h-12  font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary   sticky top-0 bg-white z-10  ">
                           {TopCategory}
                         </h3>
-                        {subCategory.map(({ name, list }, index) => {
-                          return (
-                            <div key={index}>
-                              <h4 className=" h-12  text-sm font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-12 bg-white">
-                                {name}
-                              </h4>
-                              <div className="grid grid-cols-3 place-items-center border-b-2  border-primary">
-                                {list.map((item, index) => (
+                        <div className="grid grid-cols-3 place-items-center border-b-2  border-primary">
+                          {subCategory.map((item, index) => {
+                            return (
+                              <div key={index}>
+                                <div>
                                   <CategoryItem key={index} item={item} />
-                                ))}
+                                </div>
                               </div>
-                            </div>
-                          )
-                        })}
+                            )
+                          })}
+                        </div>
                       </Element>
+                      // <Element
+                      //   name={TopCategory}
+                      //   className="border-x-2 border-primary h-full bg-[#f3f3f3] "
+                      // >
+                      //   <h3 className="text-sm  h-12  font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-0  bg-white z-10 ">
+                      //     {TopCategory}
+                      //   </h3>
+                      //   {subCategory.map(({ name, list }, index) => {
+                      //     return (
+                      //       <div key={index}>
+                      //         <h4 className=" h-12  text-sm font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-12 bg-white">
+                      //           {name}
+                      //         </h4>
+                      //         <div className="grid grid-cols-3 place-items-center border-b-2  border-primary">
+                      //           {list.map((item, index) => (
+                      //             <CategoryItem key={index} item={item} />
+                      //           ))}
+                      //         </div>
+                      //       </div>
+                      //     )
+                      //   })}
+                      // </Element>
                     )}
                   </div>
                 )
@@ -313,3 +318,35 @@ const Category = () => {
 }
 
 export default Category
+
+// import React from 'react'
+// import CategoryFashion from '../components/Category'
+// import C from './Category'
+
+// const Category = () => {
+//   return (
+//     <div>
+//       <C />
+//       {/* <CategoryFashion /> */}
+//     </div>
+//   )
+// }
+
+// export default Category
+
+{
+  /* {subCategory.slice(1).map(({ name, list }, index) => {
+                          return (
+                            <div key={index}>
+                              <h4 className=" h-12  text-sm font-bold uppercase text-primary px-5 py-3 block border-b-2  border-primary sticky top-12 bg-white">
+                                {name}
+                              </h4>
+                              <div className="grid grid-cols-3 place-items-center border-b-2  border-primary">
+                                {list.map((item, index) => (
+                                  <CategoryItem key={index} item={item} />
+                                ))}
+                              </div>
+                            </div>
+                          )
+                        })} */
+}
