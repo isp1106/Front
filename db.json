@@ -243,6 +243,7 @@
       "type": "시스템문의",
       "title": "자꾸 로그인이 안되어요...",
       "product": null,
+      "images": null,
       "content": "자꾸 로그인이 안되는데 확인 한번 부탁드립니다.",
       "answer": null
     },
@@ -253,6 +254,7 @@
       "type": "이벤트문의",
       "title": "메인이벤트 관련해서 질문드려요~",
       "product": null,
+      "images": null,
       "content": "이벤트문의관련 해서 질문드리니다. 어쩌구저쩌구 저어어어쩌구",
       "answer": null
     }
