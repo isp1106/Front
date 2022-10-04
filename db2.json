@@ -1,0 +1,62 @@
+{
+  "id": 2,
+  "member": {
+    "createdAt": null,
+    "modifiedAt": null,
+    "id": 1,
+    "username": "wnsdn4875",
+    "password": "joon1234",
+    "email": "devjoon@nate.com",
+    "gender": "FEMALE",
+    "birthInfo": "1997-05-31T15:00:00.000+00:00",
+    "role": "USER",
+    "roleList": ["USER"]
+  },
+  "product": {
+    "createdAt": null,
+    "modifiedAt": null,
+    "id": 1,
+    "sellStatus": null,
+    "summary": null,
+    "productName": "나이키모자",
+    "productOption": null,
+    "price": 10000,
+    "point": 500,
+    "brand": "나이키",
+    "stock": 3,
+    "category": "모자",
+    "detailImage": null,
+    "listImage": null,
+    "smallListImage": null,
+    "iconImage": null,
+    "cartItems": [],
+    "favoriteItems": [],
+    "orderItems": []
+  },
+  "title": "사이즈 재고 문의",
+  "content": "44 사이즈 재고 있나요?",
+  "answer": {
+    "id": 1,
+    "member": {
+      "createdAt": null,
+      "modifiedAt": null,
+      "id": 1,
+      "username": "wnsdn4875",
+      "password": "joon1234",
+      "email": "devjoon@nate.com",
+      "gender": "FEMALE",
+      "birthInfo": "1997-05-31T15:00:00.000+00:00",
+      "role": "USER",
+      "roleList": ["USER"]
+    },
+    "content": "있습니다.",
+    "createdDate": null
+  },
+  "images": [
+    "https://image.wconcept.co.kr/productimg/image/img0/45/301852145_add1_GQ87761.jpg"
+  ],
+  "privateYn": "공개",
+  "answerYn": "답변 완료",
+  "password": null,
+  "createdDate": null
+}
