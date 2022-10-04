@@ -1,4 +1,5 @@
 {
+  "id": 2,
   "member": {
     "createdAt": null,
     "modifiedAt": null,
@@ -51,6 +52,9 @@
     "content": "있습니다.",
     "createdDate": null
   },
+  "images": [
+    "https://image.wconcept.co.kr/productimg/image/img0/45/301852145_add1_GQ87761.jpg"
+  ],
   "privateYn": "공개",
   "answerYn": "답변 완료",
   "password": null,
