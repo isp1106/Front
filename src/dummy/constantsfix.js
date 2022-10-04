@@ -5,7 +5,7 @@ export const CATEGORY = [
       {
         name: '의류',
         imgSrc:
-          'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
+          'https://image.msscdn.net/images/goods_img/20220124/2321863/2321863_1_500.jpg',
         list: {
           women: [
             '전체',
@@ -32,7 +32,7 @@ export const CATEGORY = [
       {
         name: '가방',
         imgSrc:
-          'https://static.goldengoose.com/image/upload/w_610,c_scale,dpr_1.0,f_auto/v1637677473/Style/ECOMM/GMA00230.A000340-35674',
+          'https://image.msscdn.net/images/goods_img/20220206/2342342/2342342_1_500.jpg?t=20220206125426',
         list: {
           women: [
             '전체',
@@ -67,7 +67,7 @@ export const CATEGORY = [
       {
         name: '신발',
         imgSrc:
-          'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
+          'https://image.msscdn.net/images/prd_img/20200102/1260533/detail_1260533_1_500.jpg',
         list: {
           women: [
             '전체',
@@ -92,9 +92,9 @@ export const CATEGORY = [
         },
       },
       {
-        name: '엑세사리',
+        name: '액세사리',
         imgSrc:
-          'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
+          'https://image.msscdn.net/images/goods_img/20220927/2820749/2820749_1_500.jpg?t=20220927101651',
         list: {
           women: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
           men: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
@@ -109,19 +109,13 @@ export const CATEGORY = [
         name: '브랜드',
         list: [
           {
-            subCategoryName: 'Dr.esthe',
-            imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
-          },
-          {
             subCategoryName: 'Etude House',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'https://www.etude.com/wp-content/uploads/2022/07/0128-Play_Color_Eyes_Bakehouse-4.jpg',
           },
           {
             subCategoryName: '3CE',
-            imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+            imgSrc: 'https://stylenanda.com/2017/3ce1/200619-LITTLE(10).jpg',
           },
           {
             subCategoryName: 'CLIO',
@@ -132,6 +126,11 @@ export const CATEGORY = [
             subCategoryName: 'HERA',
             imgSrc:
               'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+          },
+          {
+            subCategoryName: 'Peripera',
+            imgSrc:
+              'https://img.clubclio.co.kr/uploadFolder/WT_PRODUCT/500/A0LX3R3YD3VU2OZNC73B.jpg',
           },
         ],
       },

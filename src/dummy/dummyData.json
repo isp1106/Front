@@ -640,7 +640,7 @@
     "brandImg": "https://image.msscdn.net/images/goods_img/20210902/2106705/2106705_1_500.jpg",
     "price": 4190,
     "sale": 5,
-    "tags": ["패션", "의류", "상의", "women", "men", "올리브"],
+    "tags": ["패션", "의류", "상의", "women", "men", "올리브", "후드"],
     "detailThumbList": [
       "https://image.msscdn.net/images/goods_img/20210902/2106705/2106705_1_500.jpg"
     ],
@@ -652,6 +652,101 @@
       "https://efairplay.img2.kr/TWN/2021/02_21FW/20210812_twn_slake_image_jh_05.jpg",
       "https://efairplay.img2.kr/TWN/2021/02_21FW/20210812_twn_slake_model_jh_16.jpg",
       "https://efairplay.img2.kr/TWN/2021/02_21FW/20210812_twn_slake_detail_olive_jh_02.jpg"
+    ]
+  },
+  {
+    "brand": "Dr.esthe",
+    "brandKo": "닥터에스떼",
+    "product": "Whitening A Serum 50ml",
+    "brandImg": "http://shop2.dresthemall.com/web/upload/malllab/images/comm_logoTop.png",
+    "price": 5990,
+    "sale": 5,
+    "tags": ["코스매틱", "스킨케어", "세럼", "화이트닝"],
+    "detailThumbList": [
+      "http://shop2.dresthemall.com/web/product/big/202203/151901584778f58df194323f2239fe58.png"
+    ],
+    "detailList": [
+      "http://shop2.dresthemall.com/web/upload/NNEditor/20220628/5BEN5DED9994EC9DB4ED8AB8EB8B9DAEC84B8EB9FBC.jpg"
+    ]
+  },
+  {
+    "brand": "ETUDE",
+    "brandKo": "에뛰드",
+    "product": "NEW Double Lasting Poundation",
+    "brandImg": "https://image.msscdn.net/mfile_s01/_brand/free_medium/etude.png?202206291707",
+    "price": 2200,
+    "sale": 40,
+    "tags": ["코스매틱", "메이크업", "베이스 메이크업", "파운데이션"],
+    "detailThumbList": [
+      "https://image.msscdn.net/images/goods_img/20210224/1812484/1812484_12_500.jpg?t=20220203164128"
+    ],
+    "detailList": [
+      "https://etude.speedgabia.com/webcatalogue/2020/06/double/images/double_img1.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2020/06/double/images/double_img2.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2020/06/double/images/double_img3.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2020/06/double/images/double_img4.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2020/06/double/images/double_img5.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2020/06/double/images/double_img6.jpg"
+    ]
+  },
+  {
+    "brand": "ETUDE",
+    "brandKo": "에뛰드",
+    "product": "Soon Jung pH 5.5 Relief Toner",
+    "brandImg": "https://image.msscdn.net/mfile_s01/_brand/free_medium/etude.png?202206291707",
+    "price": 3000,
+    "sale": 30,
+    "tags": [
+      "코스매틱",
+      "스킨케어",
+      "스킨토너",
+      "순정",
+      "비건",
+      "토너",
+      "약산성",
+      "저자극",
+      "진정"
+    ],
+    "detailThumbList": [
+      "https://image.msscdn.net/images/goods_img/20210607/1986512/1986512_34_500.jpg",
+      "https://image.msscdn.net/images/prd_img/20210607/1986512/detail_1986512_21_500.jpg"
+    ],
+    "detailList": [
+      "https://etude.speedgabia.com/webcatalogue/2021/06/Soonjung_toner500/image/Line_up.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/06/Soonjung_toner500/image/SJ_Toner500_2.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/06/Soonjung_toner500/image/SJ_Toner500_3.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/06/Soonjung_toner500/image/SJ_Toner500_4.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/06/Soonjung_toner500/image/SJ_Toner500_6.jpg"
+    ]
+  },
+  {
+    "brand": "ETUDE",
+    "brandKo": "에뛰드",
+    "product": "Soon Jung 10 Free Moist Emulsion",
+    "brandImg": "https://image.msscdn.net/mfile_s01/_brand/free_medium/etude.png?202206291707",
+    "price": 3000,
+    "sale": 30,
+    "tags": [
+      "코스매틱",
+      "스킨케어",
+      "에센스",
+      "순정",
+      "비건",
+      "에멀전",
+      "무첨가",
+      "저자극",
+      "진정"
+    ],
+    "detailThumbList": [
+      "https://image.msscdn.net/images/prd_img/20210225/1814055/detail_1814055_16_500.jpg",
+      "https://image.msscdn.net/images/prd_img/20210225/1814055/detail_1814055_13_500.jpg"
+    ],
+    "detailList": [
+      "https://etude.speedgabia.com/webcatalogue/2021/06/Soonjung_toner500/image/Line_up.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/05/Soonjung_2021AD/3_AD_EMULSION/image/SJ_Emulsion_3.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/05/Soonjung_2021AD/3_AD_EMULSION/image/SJ_Emulsion_4.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/05/Soonjung_2021AD/3_AD_EMULSION/image/SJ_Emulsion_5.jpg",
+      "https://etude.speedgabia.com/webcatalogue/2021/05/Soonjung_2021AD/3_AD_EMULSION/image/SJ_Emulsion_6.jpg"
     ]
   }
 ]
