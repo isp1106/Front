@@ -7,10 +7,11 @@ import Like from './pages/Like'
 import Oneul from './pages/Oneul'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
-import My from './pages/My'
 import MyPage from './pages/My/MyPage'
+import MyPageComp from './components/My/MyPage'
 import MyReview from './pages/My/MyReview'
-import MyReviewWrite from './pages/My/MyReviewWrite'
+import MyReviewComp from './components/My/MyReview'
+import MyReviewWrite from './components/My/MyReview/Write'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
@@ -30,6 +31,7 @@ import QnAComp from './components/My/QnA'
 import QnADetail from './components/My/QnADetail'
 import QnAWrite from './components/My/QnAWrite'
 
+
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
@@ -41,10 +43,12 @@ function App() {
           <Route path="/category" element={<Category />} />
           <Route path="/oneul" element={<Oneul />} />
           <Route path="/like" element={<Like />} />
-          <Route path="/my" element={<My />}>
-            <Route path="" element={<MyPage />} />
-            <Route path="review" element={<MyReview />} />
-            <Route path="review/write" element={<MyReviewWrite />} />
+          <Route path="/my" element={<MyPage />}>
+            <Route path="" element={<MyPageComp />} />
+            <Route path="review" element={<MyReview />} >
+              <Route path="" element={<MyReviewComp />} />
+              <Route path="write" element={<MyReviewWrite />} />
+            </Route>
             <Route path="qna" element={<QnA />}>
               <Route path="" element={<QnAComp />} />
               <Route path=":id" element={<QnADetail />} />

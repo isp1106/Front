@@ -1,14 +1,15 @@
 import React from 'react'
-import { useState } from 'react'
-import Write from './Write'
-const CardWrite = ({ reviewData, reviewAddChk, setReviewAddChk }) => {
-  const reviewAddChkHandler = () => {
-    setReviewAddChk(true)
+import { useNavigate } from 'react-router-dom'
+const CardWrite = ({ reviewData, reviewAddChk }) => {
+  const navigate = useNavigate()
+  const goToWrite = () => {
+    navigate('/my/review/write')
   }
+ 
   return (
     <>
       {reviewAddChk ? (
-        <Write />
+        <div>작성 가능한 리뷰가 없습니다.</div>
       ) : (
         <ul className="px-5">
           {reviewData.map((review, index) => (
@@ -30,10 +31,7 @@ const CardWrite = ({ reviewData, reviewAddChk, setReviewAddChk }) => {
                 </li>
               </ul>
               <button
-                onClick={()=>{
-                  reviewAddChkHandler();
-                }
-              }
+                onClick={goToWrite}
                 className="bg-point text-white w-[5.188rem] rounded p-0.5"
               >
                 리뷰 작성

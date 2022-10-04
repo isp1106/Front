@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ReactComponent as BackPoint } from '/public/assets/back-small-point.svg'
-const Header = ({ reviewAdd }) => {
+const Header = () => {
 
   const navigate = useNavigate()
   return (
@@ -11,9 +11,7 @@ const Header = ({ reviewAdd }) => {
         onClick={() => navigate(-1)}
       >
         <BackPoint className="absolute left-[1.625rem]" />
-        <h2 className="text-xl font-bold">
-          {!reviewAdd ? '리뷰' : '리뷰 쓰기'}
-        </h2>
+        <h2 className="text-xl font-bold">리뷰</h2>
       </div>
     </div>
   )
