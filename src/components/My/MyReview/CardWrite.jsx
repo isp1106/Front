@@ -1,15 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Write from './Write'
-const CardWrite = ({ reviewData, reviewAddChk}) => {
+const CardWrite = ({ reviewData, reviewAddChk }) => {
   const navigate = useNavigate()
   const goToWrite = () => {
     navigate('/my/review/write')
   }
+ 
   return (
     <>
       {reviewAddChk ? (
-        <Write />
+        <div>작성 가능한 리뷰가 없습니다.</div>
       ) : (
         <ul className="px-5">
           {reviewData.map((review, index) => (
