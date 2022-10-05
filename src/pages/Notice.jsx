@@ -1,9 +1,9 @@
 import React from 'react'
+import NoticeBbs from '../components/Notice'
+
 
 const Notice = () => {
-  return (
-    <div>Notice</div>
-  )
+  return <NoticeBbs />
 }
 
 export default Notice
