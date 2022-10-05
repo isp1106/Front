@@ -1,0 +1,260 @@
+{
+  "carts": [
+    {
+      "id": 11,
+      "thumbnail": "https://img.29cm.co.kr/next-product/2021/03/05/d22e8b4eb5fd4d52aa32a65b29b3c25f_20210305180022.jpg?width=300",
+      "brand": "TGT PAISLEY HAIR BAND",
+      "product": "TGT PAISLEY HAIR BAND",
+      "price": 1100,
+      "sale": 10,
+      "stock": 6,
+      "count": 1
+    },
+    {
+      "id": 12,
+      "thumbnail": "https://aroundann.co.kr/web/product/big/202204/3f23c91dd6c296170e071a503abfe4f3.jpg",
+      "brand": "aroundann",
+      "product": "Bowling bag_lemon",
+      "price": 570,
+      "sale": 12,
+      "stock": 2,
+      "count": 3
+    }
+  ],
+  "magazines": [
+    {
+      "id": 1,
+      "option": 1,
+      "title": "Magazine NO.9 ",
+      "cover": "https://ifh.cc/g/KC4trp.png",
+      "thumbnail": [
+        "https://ifh.cc/g/1JPtKk.jpg",
+        "https://ifh.cc/g/9n2HZf.jpg"
+      ],
+      "brandImg": "https://aroundann.jp/web/upload/category/editor/2021/11/03/34113214691ad533e76facd4df88e8d3.png",
+      "brand": "aroundAnn",
+      "brandKo": "어라운드앤",
+      "liked": false,
+      "items": [
+        {
+          "id": 1,
+          "className": "top-[255px] right-[100px]"
+        },
+        {
+          "id": 2,
+          "className": "top-[900px] right-[30px]"
+        },
+        {
+          "id": 2,
+          "className": "bottom-[1400px] right-[70px]"
+        },
+        {
+          "id": 3,
+          "className": "bottom-[570px] left-[120px]"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "option": 1,
+      "title": "Magazine NO.8 ",
+      "cover": "https://ifh.cc/g/mnM2v8.jpg",
+      "thumbnail": [
+        "https://ifh.cc/g/mnM2v8.jpg",
+        "https://ifh.cc/g/cgVfWV.jpg",
+        "https://ifh.cc/g/38lJb3.jpg"
+      ],
+      "brandImg": "https://aroundann.jp/web/upload/category/editor/2021/11/03/34113214691ad533e76facd4df88e8d3.png",
+      "brand": "aroundAnn",
+      "brandKo": "어라운드앤",
+      "liked": false,
+      "items": [
+        {
+          "id": 1,
+          "className": "top-[1030px] left-[140px]"
+        },
+        {
+          "id": 2,
+          "className": "top-[1120px] right-[85px]"
+        },
+        {
+          "id": 3,
+          "className": "bottom-[580px] left-[90px]"
+        },
+        {
+          "id": 3,
+          "className": "bottom-[120px] right-[80px]"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "option": 1,
+      "title": "Magazine NO.7",
+      "cover": "https://ifh.cc/g/gs9flK.jpg",
+      "thumbnail": [
+        "https://ifh.cc/g/5j6XAD.jpg",
+        "http://asq.kr/Y1olLQQsLH",
+        "http://asq.kr/xP7b9Oi5k"
+      ],
+      "brandImg": "https://ifh.cc/g/LKYFDb.png",
+      "brand": "KUME",
+      "brandKo": "쿠메",
+      "liked": false,
+      "items": [
+        {
+          "id": 111,
+          "className": "top-[1964px] right-[42px]"
+        },
+        {
+          "id": 112,
+          "className": "top-[2032px] left-[194px]"
+        },
+        {
+          "id": 113,
+          "className": "top-[3281px] left-[189px]"
+        },
+        {
+          "id": 114,
+          "className": "top-[3485px] left-[154px]"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "option": 3,
+      "title": "Magazine NO.6",
+      "cover": "https://ifh.cc/g/F5Vh3Y.jpg",
+      "thumbnail": ["https://ifh.cc/g/hjcVnc.jpg"],
+      "brandImg": "https://ifh.cc/g/rqCx2r.png",
+      "brand": "LUCKY LE MATCH",
+      "brandKo": "럭키 르 매치",
+      "liked": false,
+      "items": []
+    },
+    {
+      "id": 5,
+      "option": 2,
+      "title": "Magazine NO.5",
+      "cover": "https://ifh.cc/g/RF7j5L.jpg",
+      "thumbnail": [
+        "https://image.wconcept.co.kr/images/img/event/20220919_city/mo_01-2.jpg",
+        "https://image.wconcept.co.kr/images/img/event/20220919_city/mo_02.jpg",
+        "https://image.wconcept.co.kr/images/img/event/20220919_city/mo_04.jpg"
+      ],
+      "brandImg": "https://ifh.cc/g/FxTvCy.png",
+      "brand": "CITYBREEZE for MEN",
+      "brandKo": "시티브리즈 포 맨",
+      "liked": false,
+      "items": [
+        {
+          "id": 211,
+          "className": "top-[1300px] right-[152px]"
+        },
+        {
+          "id": 212,
+          "className": "top-[3032px] right-[10px]"
+        },
+        {
+          "id": 213,
+          "className": "top-[3281px] left-[159px]"
+        },
+        {
+          "id": 214,
+          "className": "bottom-[300px] left-[154px]"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "option": 2,
+      "title": "Magazine NO.5",
+      "cover": "https://ifh.cc/g/MdfR22.jpg",
+      "thumbnail": [
+        "https://ifh.cc/g/RgF64m.jpg",
+        "https://ifh.cc/g/x3WpZL.jpg"
+      ],
+      "brandImg": "https://blog.kakaocdn.net/dn/b1wXtr/btqy9FuRasZ/cDK7B3KaFX42XUkytKjKW0/img.jpg",
+      "brand": "ONITSUKA TIGER",
+      "brandKo": "오니츠카 타이거",
+      "liked": true,
+      "items": [
+        {
+          "className": "top-[1250px] left-[86px]"
+        },
+        {
+          "className": "top-[1244px] left-[196px]"
+        },
+        {
+          "id": 313,
+          "className": "top-[1745px] left-[200px]"
+        },
+        {
+          "id": 314,
+          "className": "top-[2045px] left-[210px]"
+        }
+      ]
+    }
+  ],
+  "question": [
+    {
+      "id": 1,
+      "createdDate": "2022.09.25",
+      "answerYn": "답변완료",
+      "type": "교환문의",
+      "product": {
+        "thumbnail": "https://img.29cm.co.kr/next-product/2021/03/05/d22e8b4eb5fd4d52aa32a65b29b3c25f_20210305180022.jpg?width=300",
+        "brand": "TGT",
+        "product": "TGT PAISLEY HAIR BAND",
+        "price": 1100,
+        "count": 1
+      },
+      "images": [
+        "https://ifh.cc/g/YxCr1R.jpg",
+        "https://img.29cm.co.kr/next-product/2022/09/26/1d5795536cf247ae9cd2fd577eafbf6d_20220926160037.jpeg?width=800"
+      ],
+      "title": "가방에 구멍이 나 있어서 다른 상품으로 교환하고 싶습니다",
+      "content": "가방에 구멍이 나 있어서 다른 상품으로 교환하고 싶습니다. 빠른 처리 부탁드려요. 가방에 구멍이 나 있어서 다른 상품으로 교환하고 싶습니다. 빠른 처리 부탁드려요. 가방에 구멍이 나 있어서 다른 상품으로 교환하고 싶습니다. 빠른 처리 부탁드려요.",
+      "answer": "안녕하세요. 000(아이디)님 내 손 안의 매거진, 오늘의 쇼텐입니다. 브랜드 측에서 확인하고 최대한 빠르게 교환 해드리도록 하겠습니다. 감사합니다 :)"
+    },
+    {
+      "id": 2,
+      "createdDate": "2022.09.25",
+      "answerYn": "미답변",
+      "type": "배송문의",
+      "product": {
+        "thumbnail": "http://asq.kr/XHkPC05q4U",
+        "brand": "KUME",
+        "product": "TWEED BOMBER JACKET, BLACK",
+        "price": 1100,
+        "count": 1
+      },
+      "images": [
+        "https://image.wconcept.co.kr/productimg/image/img0/45/301852145_add1_GQ87761.jpg"
+      ],
+      "title": "이번 주 안에 받아보고 싶은데 가능할까요?",
+      "content": "이번 주 안에 받아보고 싶은데 가능할까요?",
+      "answer": null
+    },
+    {
+      "id": 3,
+      "createdDate": "2022.10.25",
+      "answerYn": "답변완료",
+      "type": "시스템문의",
+      "title": "자꾸 로그인이 안되어요...",
+      "product": null,
+      "content": "자꾸 로그인이 안되는데 확인 한번 부탁드립니다.",
+      "answer": null
+    },
+    {
+      "id": 4,
+      "createdDate": "2022.10.25",
+      "answerYn": "미답변",
+      "type": "이벤트문의",
+      "title": "메인이벤트 관련해서 질문드려요~",
+      "product": null,
+      "content": "이벤트문의관련 해서 질문드리니다. 어쩌구저쩌구 저어어어쩌구",
+      "answer": null
+    }
+  ]
+}
