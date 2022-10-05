@@ -4,7 +4,6 @@ import { CATEGORY } from '../../dummy/constantsfix'
 import { cls } from '../../utils'
 import GenderTab from './GenderTab'
 import CategoryItem from './CategoryItem'
-import './Category.css'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -56,7 +55,6 @@ function MainCategory() {
               return (
                 <li className="h-12" key={TopCategory}>
                   <ScrollLink
-                    activeClass="active"
                     className={cls(
                       'px-5 py-3 flex items-center w-full h-full border-box text-black-600 ',
                       topCategory === TopCategory &&
