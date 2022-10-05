@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import BackIcon from '../../common/BackIcon'
 import PublicContent from './PublicContent'
 import PrivateContent from './PrivateContent'
+import Modal from '../../common/Modal'
 
-const ContentBox = ({ item }) => {
+const ContentBox = ({ item, ModalControlHandler }) => {
+  const [modalOpen, setModalOpen] = useState(false)
   const navigate = useNavigate()
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+  const closeModal = () => {
+    setModalOpen(false)
+  }
   const viewDetail = () => {
     if (item.privateYn === '비공개') {
-      alert('비공개 글입니다.')
+      return ModalControlHandler()
     }
     navigate(`/my/qna/${item?.id}`)
   }
@@ -19,7 +28,7 @@ const ContentBox = ({ item }) => {
         <div className="flex items-center justify-between py-4 ">
           <p className="font-bold">{item?.createdDate}</p>
           <div className="flex items-center gap-1">
-            <span className="text-xs" onClick={viewDetail}>
+            <span className="text-xs" onClick={() => viewDetail()}>
               답변상세보기
             </span>
             <BackIcon fill="#252525" size={14} className="rotate-180" />
