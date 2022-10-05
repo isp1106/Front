@@ -177,15 +177,17 @@ export const CATEGORY = [
     TopCategory: '헬스',
     subCategory: [
       {
-        name: '운동복',
+        name: '스포츠웨어',
         imgSrc:
           'https://image.msscdn.net/images/prd_img/20220614/2613602/detail_2613602_11_500.jpg',
+
         list: ['전체', '상의', '하의', '기타'],
       },
       {
         name: '레저',
         imgSrc:
           'https://image.msscdn.net/images/goods_img/20220802/2692714/2692714_1_500.jpg',
+
         list: ['전체', '캠핑', '수영', '골프', '기타'],
       },
     ],
@@ -197,7 +199,7 @@ export const CATEGORY = [
       {
         name: '가구',
         imgSrc:
-          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164801902358952420.jpg?gif=1&w=850&h=850&c=c&webp=1',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/166389201788449700.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '책생', '의자', '침대', '기타'],
       },
       {
@@ -214,13 +216,13 @@ export const CATEGORY = [
       {
         name: '키친',
         imgSrc:
-          'https://cafe24img.poxo.com/theapplehouse/web/product/big/202102/7973bdb787f6f5de8d3a6d8477ef50d9.jpg',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164999800889962184.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '주방가전', '주방용품', '그릇', '기타'],
       },
       {
         name: '생활용품',
         imgSrc:
-          'http://m.likegagu.com/web/product/medium/201808/4e50e5f8009288d8dc8ff30d82548d51.jpg',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1589869900_100574_1.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '세탁', '청소', '수납', '잡화'],
       },
     ],
@@ -231,13 +233,13 @@ export const CATEGORY = [
       {
         name: '아트',
         imgSrc:
-          'https://cdn.eronnews.co.kr/news/photo/202109/13852_25022_507.jpg',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/162815649354238229.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '공예품', '굿즈', '아트프린트', '아트북', '기타'],
       },
       {
         name: '문구',
         imgSrc:
-          'http://www.edkg.co.kr/shopimages/dkgmall/047008000053.jpg?1656308544',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1553840476176_IYWB4o.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '필기류', '노트', '다이어리', '데코', '기타'],
       },
     ],
