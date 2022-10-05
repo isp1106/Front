@@ -68,6 +68,7 @@ function MainCategory() {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    containerId="containerElement"
                     onClick={() => {
                       setTopCategory(TopCategory)
                     }}
@@ -79,7 +80,10 @@ function MainCategory() {
             })}
           </ul>
         </div>
-        <div className="overflow-scroll border-t-2 border-primary">
+        <Element
+          className="overflow-scroll border-t-2 border-primary"
+          id="containerElement"
+        >
           <div>
             {CATEGORY.map(({ TopCategory, subCategory }, index) => {
               return (
@@ -164,7 +168,7 @@ function MainCategory() {
               )
             })}
           </div>
-        </div>
+        </Element>
       </div>
     </div>
   )
