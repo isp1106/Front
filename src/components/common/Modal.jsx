@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Modal = ({ children, ModalControlHandler }) => {
+const Modal = ({ title, onClick, children }) => {
   return (
     <>
       <div
@@ -25,12 +25,15 @@ const Modal = ({ children, ModalControlHandler }) => {
           ></path>
         </svg>
         <div className="flex flex-col items-center gap-5">
-          <h3 className="w-full px-5 text-center">{children}</h3>
-          <div
-            className="border border-black-200 px-3 py-1 rounded"
-            onClick={() => ModalControlHandler()}
-          >
-            확인
+          <h3 className="w-full px-5 text-center">{title}</h3>
+          <div>
+            <div
+              className="border border-black-200 px-3 py-1 rounded"
+              onClick={onClick}
+            >
+              확인
+            </div>
+            {children}
           </div>
         </div>
       </div>

@@ -16,9 +16,7 @@ const QnAList = ({ questions }) => {
         />
       ))}
       {isOpen && (
-        <Modal ModalControlHandler={ModalControlHandler}>
-          작성자만 볼 수 있습니다.
-        </Modal>
+        <Modal onClick={ModalControlHandler} title="작성자만 볼 수 있습니다." />
       )}
     </>
   )

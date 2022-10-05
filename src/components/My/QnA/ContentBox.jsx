@@ -6,15 +6,8 @@ import PrivateContent from './PrivateContent'
 import Modal from '../../common/Modal'
 
 const ContentBox = ({ item, ModalControlHandler }) => {
-  const [modalOpen, setModalOpen] = useState(false)
   const navigate = useNavigate()
 
-  const openModal = () => {
-    setModalOpen(true)
-  }
-  const closeModal = () => {
-    setModalOpen(false)
-  }
   const viewDetail = () => {
     if (item.privateYn === '비공개') {
       return ModalControlHandler()

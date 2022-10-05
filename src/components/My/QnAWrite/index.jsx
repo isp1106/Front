@@ -21,7 +21,7 @@ const index = () => {
     type: null,
   })
 
-  const [isOpen, setIsOpen] = useModalControl()
+  const [isOpen, ModalControlHandler] = useModalControl()
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target
@@ -70,7 +70,7 @@ const index = () => {
 
   const AddQuestionHandler = () => {
     if (!userValue.title || !userValue.content) {
-      alert('제목과 내용은 필수로 입력해야합니다.')
+      ModalControlHandler()
     }
 
     const data = {
@@ -82,16 +82,24 @@ const index = () => {
   }
 
   return (
-    <div className="px-5">
-      <Type
-        types={types}
-        userValue={userValue}
-        onChangeCheckedHandler={onChangeCheckedHandler}
-      />
-      <Content count={count} onChangeHandler={onChangeHandler} />
-      <AddPicture uploadThumbnail={uploadThumbnail} showImage={showImage} />
-      <QnABtn onClick={AddQuestionHandler} />
-    </div>
+    <>
+      <div className="px-5">
+        <Type
+          types={types}
+          userValue={userValue}
+          onChangeCheckedHandler={onChangeCheckedHandler}
+        />
+        <Content count={count} onChangeHandler={onChangeHandler} />
+        <AddPicture uploadThumbnail={uploadThumbnail} showImage={showImage} />
+        <QnABtn onClick={AddQuestionHandler} />
+      </div>
+      {isOpen && (
+        <Modal
+          onClick={ModalControlHandler}
+          title="제목과 내용은 필수로 입력해야합니다."
+        />
+      )}
+    </>
   )
 }
 
