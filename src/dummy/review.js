@@ -6,14 +6,6 @@ export const reviewContent = [
     product_name: 'UNIVERSE TUBETOP',
     product_option: 'FF',
     color: ['https://ifh.cc/g/Q2DWwQ.png', 'https://ifh.cc/g/33lRxC.png'],
-  },
-  {
-    id:2,
-    brand: '아쎄이',
-    brand_img_url: 'https://ifh.cc/g/rvBlPp.png',
-    product_name: 'UNIVERSE TUBETOP',
-    product_option: 'FF',
-    color: ['https://ifh.cc/g/Q2DWwQ.png', 'https://ifh.cc/g/33lRxC.png'],
   }
 ]
 

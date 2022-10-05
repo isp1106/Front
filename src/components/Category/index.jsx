@@ -1,10 +1,18 @@
 import React from 'react'
-import CategoryContainer from './CategoryContainer'
+import CategoryList from './CategoryList'
+import Container from './Container'
+import Capsule from './Capsule'
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 function CategoryFashion() {
+  const { topCG, subCG } = useParams()
+
   return (
     <div>
-      <CategoryContainer />
+      <CategoryList topCG={topCG} subCG={subCG} />
+      <Container />
+      <Capsule />
     </div>
   )
 }

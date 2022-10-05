@@ -1,12 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import { cls } from '../../../utils'
-import Header from './Header'
 import TabList from './TabList'
 import TabContent from './TabContent'
 import { reviewContent, reviewComplete } from '../../../dummy/review'
 import { ratingStarReview } from '../../../utils/star'
-const MyReviewSegment = () => {
+const index = () => {
   const [reviewAddChk, setReviewAddChk] = useState(false)
   const reviewData = reviewContent
   const reviewDataComplete = reviewComplete
@@ -15,7 +14,6 @@ const MyReviewSegment = () => {
   const [reviewCompleteCount, setReviewCompleteCount] = useState(0)
   return (
     <>
-      <Header reviewAddChk={reviewAddChk} />
       <TabList
         cls={cls}
         tab={tab}
@@ -40,4 +38,4 @@ const MyReviewSegment = () => {
   )
 }
 
-export default MyReviewSegment
+export default index
