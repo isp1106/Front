@@ -2,7 +2,7 @@ import React from 'react'
 import heart from '/public/assets/heart-on.svg'
 
 function Card({ data }) {
-  const { brand, product, image, price, sale } = data
+  const { brand, productName, image, price, sale } = data
   const saleCost = parseInt((price * (100 - sale)) / 100)
 
   return (
@@ -19,7 +19,7 @@ function Card({ data }) {
         <div>
           <div className="text-sm font-bold">{brand}</div>
           <div className="text-xs font-normal text-black-800 truncate">
-            {product}
+            {productName}
           </div>
           <div className="test-xs font-medium text-black-600">{price} ¥</div>
         </div>

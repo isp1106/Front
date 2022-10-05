@@ -5,7 +5,7 @@ export const CATEGORY = [
       {
         name: '의류',
         imgSrc:
-          'https://whoisnerdy.com/web/product/big/202206/6655a56cb52cf635371b35292e2deb7f.png',
+          'https://image.msscdn.net/images/goods_img/20220124/2321863/2321863_1_500.jpg',
         list: {
           women: [
             '전체',
@@ -32,7 +32,7 @@ export const CATEGORY = [
       {
         name: '가방',
         imgSrc:
-          'https://static.goldengoose.com/image/upload/w_610,c_scale,dpr_1.0,f_auto/v1637677473/Style/ECOMM/GMA00230.A000340-35674',
+          'https://image.msscdn.net/images/goods_img/20220206/2342342/2342342_1_500.jpg?t=20220206125426',
         list: {
           women: [
             '전체',
@@ -67,7 +67,7 @@ export const CATEGORY = [
       {
         name: '신발',
         imgSrc:
-          'https://m.naturestore.co.kr/data/goods/21/02/07/1000004221/1000004221_detail_032.jpg',
+          'https://image.msscdn.net/images/prd_img/20200102/1260533/detail_1260533_1_500.jpg',
         list: {
           women: [
             '전체',
@@ -92,9 +92,9 @@ export const CATEGORY = [
         },
       },
       {
-        name: '엑세사리',
+        name: '액세사리',
         imgSrc:
-          'https://image.koibito.co.kr/product_photo/202101/1611131944_b_1_1574237684_b_2_3_70.jpg',
+          'https://image.msscdn.net/images/goods_img/20220927/2820749/2820749_1_500.jpg?t=20220927101651',
         list: {
           women: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
           men: ['전체', '귀걸이', '목걸이', '반지', '팔찌', '발찌'],
@@ -109,35 +109,34 @@ export const CATEGORY = [
         name: '브랜드',
         list: [
           {
-            subCategoryName: 'Dr.esthe',
+            subCategoryName: 'Etude House',
             imgSrc:
-              'https://stylenanda.com/web/product/big/202209/823b65c1e020d07fcbf7941bb3aa3d9d.png',
-          },
-          {
-            subCategoryName: 'Etude',
-            imgSrc:
-              'https://image.msscdn.net/images/goods_img/20220323/2440182/2440182_1_500.jpg?t=20220323164338',
+              'https://www.etude.com/wp-content/uploads/2022/07/0128-Play_Color_Eyes_Bakehouse-4.jpg',
           },
           {
             subCategoryName: '3CE',
-            imgSrc:
-              'https://m.stylenanda.com/web/product/small/202208/3be276b2c417f4fd2866f0cbd1d5fedb.jpg',
+            imgSrc: 'https://stylenanda.com/2017/3ce1/200619-LITTLE(9).jpg',
           },
           {
             subCategoryName: 'CLIO',
-            imgSrc: 'https://stylenanda.com/2017/3ce1/200619-LITTLE(9).jpg',
+            imgSrc:
+              'http://img.clubclio.co.kr/uploadFolder/WT_PRODUCT/500/KUT92VRIN26DHHB9ZN6Z.jpg',
           },
           {
             subCategoryName: 'HERA',
             imgSrc:
-              'https://image.msscdn.net/images/goods_img/20220831/2758851/2758851_6_500.jpg?t=20220831223232.jpg',
+              'https://www.hera.com/kr/ko/resource/image/color-my-own-story/img_20220217_color-my-own_03_pc_220419.jpg',
+          },
+          {
+            subCategoryName: 'Peripera',
+            imgSrc:
+              'https://img.clubclio.co.kr/uploadFolder/WT_PRODUCT/500/A0LX3R3YD3VU2OZNC73B.jpg',
           },
         ],
       },
       {
         name: '스킨케어',
-        imgSrc:
-          'https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2747621453/B.jpg?396000000',
+        imgSrc: 'https://image.msscdn.net/data/curating/22226/22226_1_org.jpg',
         list: [
           '전체',
           '스킨토너',
@@ -151,20 +150,18 @@ export const CATEGORY = [
       },
       {
         name: '메이크업',
-        imgSrc:
-          'https://cafe24img.poxo.com/nandaglobal/web/product/big/202209/d0fffa8c344e3b8675db25df6c0db6aa.png',
+        imgSrc: 'https://image.msscdn.net/data/curating/23649/23649_1_org.jpg',
         list: ['전체', '포인트 메이크업', '베이스 메이크업', '기타'],
       },
       {
         name: '헤어',
-        imgSrc:
-          'https://cdn.wadiz.kr/ft/images/green001/2020/0623/20200623201909435_67.jpg/wadiz/format/jpg/quality/80/optimize',
+        imgSrc: 'https://image.msscdn.net/data/curating/21157/21157_1_org.jpg',
         list: ['전체', '샴푸/린스', '탈모케어', '스타일링', '기타'],
       },
       {
         name: '향수',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.msscdn.net/images/goods_img/20220503/2537960/2537960_1_500.jpg?t=20220628171906',
 
         list: ['전체', '여성향수', '남성향수', '캔들', '디퓨저', '룸스프레이'],
       },
@@ -172,7 +169,7 @@ export const CATEGORY = [
         name: '이너뷰티',
         list: ['전체', '다이어트', '비타민', '건강', '가글'],
         imgSrc:
-          'https://img.dogpre.com/mobile/dogpre/product/87/86845_originalView_01315914.jpg',
+          'https://image.msscdn.net/images/goods_img/20201109/1683363/1683363_1_500.jpg?t=20201109180812',
       },
     ],
   },
@@ -182,15 +179,13 @@ export const CATEGORY = [
       {
         name: '운동복',
         imgSrc:
-          'https://www.ocokorea.com//upload/images/product/163/163726/Product_1648683794533.jpg',
-
+          'https://image.msscdn.net/images/prd_img/20220614/2613602/detail_2613602_11_500.jpg',
         list: ['전체', '상의', '하의', '기타'],
       },
       {
         name: '레저',
         imgSrc:
-          'https://mblogthumb-phinf.pstatic.net/MjAxNjExMDhfOCAg/MDAxNDc4NTk0NDI5MzIx.F69IFSCABnWjdbSNOyvEdRoh8U7htF7xuoYflHKghMcg.F-a6q9X0upquwtMWurBtxgzw9ogmsgeinYwVHFkCw84g.JPEG.doldoly2002/%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%2C_%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%ED%8A%9C%EB%8B%9D%2C_%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%EC%8A%A4%ED%8B%B0%EC%BB%A4%2C_%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%B4%EB%93%9C%ED%8A%9C.jpg?type=w2',
-
+          'https://image.msscdn.net/images/goods_img/20220802/2692714/2692714_1_500.jpg',
         list: ['전체', '캠핑', '수영', '골프', '기타'],
       },
     ],
@@ -202,13 +197,13 @@ export const CATEGORY = [
       {
         name: '가구',
         imgSrc:
-          'http://www.basicgagu.com/shopimages/83kjh/0110070001812.jpg?1611730476',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164801902358952420.jpg?gif=1&w=850&h=850&c=c&webp=1',
         list: ['전체', '책생', '의자', '침대', '기타'],
       },
       {
         name: '조명',
         imgSrc:
-          'https://royaldesign.kr/image/9/tradition-milk-spare-glass-white-0?w=1920&quality=80',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1544057804_101062_1.jpg?gif=1&w=850&h=850&c=c&webp=1',
         list: ['전체', '색상', '리빙', '침대', '기타'],
       },
     ],
