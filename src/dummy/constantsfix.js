@@ -103,7 +103,7 @@ export const CATEGORY = [
     ],
   },
   {
-    TopCategory: '코스메',
+    TopCategory: '뷰티',
     subCategory: [
       {
         name: '브랜드',
@@ -111,27 +111,26 @@ export const CATEGORY = [
           {
             subCategoryName: 'Dr.esthe',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'https://stylenanda.com/web/product/big/202209/823b65c1e020d07fcbf7941bb3aa3d9d.png',
           },
           {
-            subCategoryName: 'Etude House',
+            subCategoryName: 'Etude',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'https://image.msscdn.net/images/goods_img/20220323/2440182/2440182_1_500.jpg?t=20220323164338',
           },
           {
             subCategoryName: '3CE',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'https://m.stylenanda.com/web/product/small/202208/3be276b2c417f4fd2866f0cbd1d5fedb.jpg',
           },
           {
             subCategoryName: 'CLIO',
-            imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+            imgSrc: 'https://stylenanda.com/2017/3ce1/200619-LITTLE(9).jpg',
           },
           {
             subCategoryName: 'HERA',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'https://image.msscdn.net/images/goods_img/20220831/2758851/2758851_6_500.jpg?t=20220831223232.jpg',
           },
         ],
       },
