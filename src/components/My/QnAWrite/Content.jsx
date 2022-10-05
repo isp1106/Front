@@ -15,6 +15,7 @@ const Content = ({ count, onChangeHandler }) => {
         <div className="flex box-border rounded items-center border-box mt-5 mb-3">
           <input
             onChange={onChangeHandler}
+            type="text"
             name="title"
             placeholder="제목을 입력하세요."
             className="px-3 border-none h-[2.6rem] flex-initial box-border w-full py-[0.75rem] rounded text-sm transition shadow-white"
