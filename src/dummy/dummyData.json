@@ -748,5 +748,38 @@
       "https://etude.speedgabia.com/webcatalogue/2021/05/Soonjung_2021AD/3_AD_EMULSION/image/SJ_Emulsion_5.jpg",
       "https://etude.speedgabia.com/webcatalogue/2021/05/Soonjung_2021AD/3_AD_EMULSION/image/SJ_Emulsion_6.jpg"
     ]
+  },
+  {
+    "brand": "CLIO",
+    "brandKo": "클리오",
+    "product": "Stay Perfect Finish Pact",
+    "brandImg": "https://image.msscdn.net/mfile_s01/_brand/free_medium/clio.png?202209141217",
+    "price": 2600,
+    "sale": 30,
+    "tags": ["코스매틱", "메이크업", "팩트", "픽서", "쿠션", "파우더"],
+    "detailThumbList": [
+      "https://image.msscdn.net/images/goods_img/20220502/2533516/2533516_2_500.jpg?t=20220503143201"
+    ],
+    "detailList": [
+      "https://clubclioimg.co.kr/images/clio/Stay-Finish-Pact_810_01.jpg",
+      "https://clubclioimg.co.kr/images/clio/Stay-Finish-Pact_810_03.jpg"
+    ]
+  },
+  {
+    "brand": "CLIO",
+    "brandKo": "클리오",
+    "product": "Kill Cover Foundation",
+    "brandImg": "https://image.msscdn.net/mfile_s01/_brand/free_medium/clio.png?202209141217",
+    "price": 2600,
+    "sale": 30,
+    "tags": ["코스매틱", "메이크업", "파운데이션", "킬커버"],
+    "detailThumbList": [
+      "https://image.msscdn.net/images/goods_img/20220928/2824769/2824769_5_500.jpg?t=20221004094826"
+    ],
+    "detailList": [
+      "https://clubclioimg.co.kr/images/clio/KillCoverFounwearFoundation_810_01.jpg",
+      "https://clubclioimg.co.kr/images/clio/KillCoverFounwearFoundation_810_02.jpg",
+      "https://clubclioimg.co.kr/images/clio/KillCoverFounwearFoundation_810_05.jpg"
+    ]
   }
 ]

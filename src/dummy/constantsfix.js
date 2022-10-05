@@ -115,17 +115,17 @@ export const CATEGORY = [
           },
           {
             subCategoryName: '3CE',
-            imgSrc: 'https://stylenanda.com/2017/3ce1/200619-LITTLE(10).jpg',
+            imgSrc: 'https://stylenanda.com/2017/3ce1/200619-LITTLE(9).jpg',
           },
           {
             subCategoryName: 'CLIO',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'http://img.clubclio.co.kr/uploadFolder/WT_PRODUCT/500/KUT92VRIN26DHHB9ZN6Z.jpg',
           },
           {
             subCategoryName: 'HERA',
             imgSrc:
-              'https://stylenanda.com/web/product/medium/20191206/dd268620246d217d50062844c4ef2693.jpg',
+              'https://www.hera.com/kr/ko/resource/image/color-my-own-story/img_20220217_color-my-own_03_pc_220419.jpg',
           },
           {
             subCategoryName: 'Peripera',
@@ -136,8 +136,7 @@ export const CATEGORY = [
       },
       {
         name: '스킨케어',
-        imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+        imgSrc: 'https://image.msscdn.net/data/curating/22226/22226_1_org.jpg',
         list: [
           '전체',
           '스킨토너',
@@ -151,20 +150,18 @@ export const CATEGORY = [
       },
       {
         name: '메이크업',
-        imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+        imgSrc: 'https://image.msscdn.net/data/curating/23649/23649_1_org.jpg',
         list: ['전체', '포인트 메이크업', '베이스 메이크업', '기타'],
       },
       {
         name: '헤어',
-        imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+        imgSrc: 'https://image.msscdn.net/data/curating/21157/21157_1_org.jpg',
         list: ['전체', '샴푸/린스', '탈모케어', '스타일링', '기타'],
       },
       {
         name: '향수',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.msscdn.net/images/goods_img/20220503/2537960/2537960_1_500.jpg?t=20220628171906',
 
         list: ['전체', '여성향수', '남성향수', '캔들', '디퓨저', '룸스프레이'],
       },
@@ -172,7 +169,7 @@ export const CATEGORY = [
         name: '이너뷰티',
         list: ['전체', '다이어트', '비타민', '건강', '가글'],
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.msscdn.net/images/goods_img/20201109/1683363/1683363_1_500.jpg?t=20201109180812',
       },
     ],
   },
@@ -182,14 +179,14 @@ export const CATEGORY = [
       {
         name: '스포츠웨어',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.msscdn.net/images/prd_img/20220614/2613602/detail_2613602_11_500.jpg',
 
         list: ['전체', '상의', '하의', '기타'],
       },
       {
         name: '레저',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.msscdn.net/images/goods_img/20220802/2692714/2692714_1_500.jpg',
 
         list: ['전체', '캠핑', '수영', '골프', '기타'],
       },
@@ -202,13 +199,13 @@ export const CATEGORY = [
       {
         name: '가구',
         imgSrc:
-          'http://www.basicgagu.com/shopimages/83kjh/0110070001812.jpg?1611730476',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164801902358952420.jpg?gif=1&w=850&h=850&c=c&webp=1',
         list: ['전체', '책생', '의자', '침대', '기타'],
       },
       {
         name: '조명',
         imgSrc:
-          'https://royaldesign.kr/image/9/tradition-milk-spare-glass-white-0?w=1920&quality=80',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1544057804_101062_1.jpg?gif=1&w=850&h=850&c=c&webp=1',
         list: ['전체', '색상', '리빙', '침대', '기타'],
       },
     ],
