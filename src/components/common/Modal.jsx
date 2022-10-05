@@ -9,6 +9,21 @@ const Modal = ({ isOpen, children }) => {
         // hidden={!isOpen}
       ></div>
       <div className="absolute top-[50%] right-[50%] translate-x-2/4 -translate-y-2/4 bg-white p-5 rounded min-w-[300px]">
+        <svg
+          aria-hidden="true"
+          className="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
         {children}
       </div>
     </>
