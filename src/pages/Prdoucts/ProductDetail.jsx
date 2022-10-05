@@ -3,10 +3,12 @@ import Header from '../../components/layout/Header'
 import Detail from '../../components/Product/Detail'
 const ProductDetail = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Detail />
-    </div>
+      <div className="pt-[56px]">
+        <Detail />
+      </div>
+    </>
   )
 }
 
