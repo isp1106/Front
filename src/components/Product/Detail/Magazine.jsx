@@ -1,5 +1,4 @@
-import React from 'react'
-import { detailProducts } from '../../dummy/detail'
+import { detailProducts } from '../../../dummy/detail'
 
 const Relation = () => {
   const { thumbnail, title } = detailProducts.magazine

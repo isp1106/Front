@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import HeartIcon from '../../components/common/HeartIcon'
-import Coupon from '../common/Coupon'
-import { cls } from '../../utils/index'
+import HeartIcon from '../../common/HeartIcon'
+import Coupon from '../../common/Coupon'
+import { cls } from '../../../utils/index'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-import { detailProducts } from '../../dummy/detail'
-import { ratingStar } from '../../utils/star'
+import { detailProducts } from '../../../dummy/detail'
+import { ratingStar } from '../../../utils/star'
 const Explanation = () => {
   const [open, setOpen] = useState(false)
   const toggleBtn = () => {

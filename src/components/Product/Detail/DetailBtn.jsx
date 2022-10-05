@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { cls } from '../../utils'
-import HeartIcon from '../common/HeartIcon'
+import { cls } from '../../../utils'
+import HeartIcon from '../../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 
 const NextBtn = () => {

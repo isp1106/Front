@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-import { cls } from '../../utils'
+import { cls } from '../../../utils'
 
 const ProductCode = () => {
   const [open, setOpen] = useState(false)

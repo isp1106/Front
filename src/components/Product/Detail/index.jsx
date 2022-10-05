@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainSlide from './MainSlide'
 import Explanation from './Explanation'
 import Brand from './Brand'
@@ -13,8 +13,11 @@ import ProductCode from './ProductCode'
 import DeliveryNotice from './DeliveryNotice'
 import ExchangeRefund from './ExchangeRefund'
 import SellerInfo from './SellerInfo'
+import CartModal from './CartModal'
 
 const Detail = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
       <div className="flex flex-col items-start w-full">
@@ -40,6 +43,7 @@ const Detail = () => {
       <DeliveryNotice />
       <ExchangeRefund />
       <SellerInfo />
+      <CartModal />
     </>
   )
 }

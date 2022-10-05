@@ -1,6 +1,6 @@
 import React from 'react'
-import { detailProducts } from '../../dummy/detail'
-import HeartIcon from '../common/HeartIcon'
+import { detailProducts } from '../../../dummy/detail'
+import HeartIcon from '../../common/HeartIcon'
 
 const Similiar = () => {
   return (

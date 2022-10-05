@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { detailProducts } from '../../dummy/detail'
+import { detailProducts } from '../../../dummy/detail'
 
 const MainSlide = () => {
   const { detailThumList } = detailProducts

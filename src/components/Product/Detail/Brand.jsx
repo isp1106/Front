@@ -1,7 +1,7 @@
 import React from 'react'
-import { detailProducts } from '../../dummy/detail'
+import { detailProducts } from '../../../dummy/detail'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-import HeartIcon from '../common/HeartIcon'
+import HeartIcon from '../../common/HeartIcon'
 const Brand = () => {
   const { brandImg, brand, brandKo, liked } = detailProducts
   return (
