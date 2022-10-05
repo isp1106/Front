@@ -77,9 +77,9 @@ function App() {
           <Route path="/order" element={<Order />} />
         </Routes>
         {/* {!currentPath.includes('/category') && <NavBottom />} */}
-        {!currentPath.includes('/signup') &&
-          currentPath !== '/login' &&
-          !currentPath.includes('/product') && <NavBottom />}
+        {(!currentPath.includes('/signup') ||
+          currentPath !== '/login' ||
+          !currentPath.includes('/product')) && <NavBottom />}
       </Provider>
     </div>
   )
