@@ -223,10 +223,10 @@ export const CATEGORY = [
         list: ['전체', '주방가전', '주방용품', '그릇', '기타'],
       },
       {
-        name: '패브릭',
+        name: '생활용품',
         imgSrc:
           'http://m.likegagu.com/web/product/medium/201808/4e50e5f8009288d8dc8ff30d82548d51.jpg',
-        list: ['전체', '색상', '리빙', '침대', '기타'],
+        list: ['전체', '세탁', '청소', '수납', '잡화'],
       },
     ],
   },
