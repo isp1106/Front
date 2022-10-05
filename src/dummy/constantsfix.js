@@ -180,12 +180,14 @@ export const CATEGORY = [
         name: '스포츠웨어',
         imgSrc:
           'https://image.msscdn.net/images/prd_img/20220614/2613602/detail_2613602_11_500.jpg',
+
         list: ['전체', '상의', '하의', '기타'],
       },
       {
         name: '레저',
         imgSrc:
           'https://image.msscdn.net/images/goods_img/20220802/2692714/2692714_1_500.jpg',
+
         list: ['전체', '캠핑', '수영', '골프', '기타'],
       },
     ],
@@ -197,7 +199,7 @@ export const CATEGORY = [
       {
         name: '가구',
         imgSrc:
-          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164801902358952420.jpg?gif=1&w=850&h=850&c=c&webp=1',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/166389201788449700.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '책생', '의자', '침대', '기타'],
       },
       {
