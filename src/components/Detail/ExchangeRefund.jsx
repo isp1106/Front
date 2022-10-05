@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
+import { cls } from '../../utils'
 
 const ExchangeRefund = () => {
   const [open, setOpen] = useState(false)
@@ -6,10 +8,15 @@ const ExchangeRefund = () => {
     setOpen((prev) => !prev)
   }
   return (
-    <div className="px-5 my-5 border-b border-primary pb-5">
-      <h4 className="font-bold" onClick={openHandler}>
-        교환 / 환불안내
-      </h4>
+    <div className="px-5 mt-5 border-b border-primary pb-5">
+      <div className="flex justify-between items-center" onClick={openHandler}>
+        <h4 className="font-bold">교환 / 환불안내</h4>
+        <GoBackIcon
+          width="14px"
+          height="14px"
+          className={cls(open ? 'rotate-90' : '-rotate-90')}
+        />
+      </div>
       <div className={open ? 'mt-3 block' : 'hidden'}>
         <div className="text-xs leading-normal text-black-600">
           <div className="mb-5">

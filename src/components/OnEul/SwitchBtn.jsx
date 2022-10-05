@@ -1,16 +1,16 @@
 import { cls } from '../../utils'
 const SwitchBtn = ({ category, changeHandler, active }) => {
   return (
-    <div className="overflow-hidden transition border border-point fixed rounded-lg flex flex-col justify-evenly items-center top-[420px] right-2 text-[12px] font-bold overflow-hidden">
+    <div className="w-[42px] h-[84px] overflow-hidden transition grid-rows-2 fixed rounded-lg border border-point grid bottom-20 right-5 text-[12px] font-bold overflow-hidden">
       {category.map((item, index) => (
         <div
           key={index}
           onClick={changeHandler}
           className={cls(
-            'transition flex justify-center items-center  w-[42px] h-[42px]  ',
+            'transition flex justify-center items-center',
             active === item
               ? 'bg-point text-white '
-              : ' bg-white text-black-600  ',
+              : 'bg-white text-black-600 ',
           )}
         >
           {item}

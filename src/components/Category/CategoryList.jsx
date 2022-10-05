@@ -1,24 +1,27 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { CATEGORY } from '~/dummy/constantsfix'
 import { cls } from '../../utils'
 import SelectFilter from './SelectFilter'
 
-function CategoryList() {
-  const [selectTop, setSelectTop] = useState('패션')
-  const [selectSub, setSelectSub] = useState('의류')
+function CategoryList({ topCG, subCG }) {
+  const [selectTop, setSelectTop] = useState(topCG)
+  const [selectSub, setSelectSub] = useState(subCG)
   const [selectLast, setSelectLast] = useState('전체')
   const [subCategoryList, setSubCategoryList] = useState([])
   const [lastCategoryList, setLastSubCategoryList] = useState([])
+  const userGender = useSelector((state) => state.user).gender
 
   // 랜더링과 동시에 코트매틱 category에서 '브랜드' 리스트 삭제 (한번만 실행)
   useEffect(() => {
     CATEGORY.map((top) => {
-      if (top.TopCategory === '코스매틱') {
+      if (top.TopCategory === '뷰티') {
         top.subCategory.map((sub) => {
           if (sub.name === '브랜드') {
             top.subCategory.shift()
+            console.log('me')
           }
         })
       }
@@ -26,17 +29,13 @@ function CategoryList() {
   }, [])
 
   // topCategory가 바뀌면 디폴트로 subCategory의 첫번째 요소 name이 active 상태가 되도록
+  // sub카테고리가 바뀔때 last카테고리의 디폴트를 '전체'로
   useEffect(() => {
     CATEGORY.map((top) => {
       if (selectTop === top.TopCategory) {
         setSubCategoryList(top.subCategory)
-        setSelectSub(top.subCategory[0].name)
       }
     })
-  }, [selectTop])
-
-  // sub카테고리가 바뀔때 last카테고리의 디폴트를 '전체'로
-  useEffect(() => {
     setSelectLast('전체')
   }, [selectSub])
 
@@ -45,7 +44,7 @@ function CategoryList() {
     subCategoryList.map((sub) => {
       if (selectSub === sub.name) {
         if (selectTop === '패션') {
-          setLastSubCategoryList(sub.list.women)
+          setLastSubCategoryList(sub.list[userGender])
         } else {
           setLastSubCategoryList(sub.list)
         }
@@ -54,17 +53,7 @@ function CategoryList() {
   }, [selectSub, subCategoryList])
 
   return (
-    <div className="fixed top-0 w-full max-w-[600px] overflow-hidden bg-white z-50">
-      <div className="flex overflow-x-auto">
-        {CATEGORY.map((top) => (
-          <div
-            key={top.TopCategory}
-            onClick={() => setSelectTop(top.TopCategory)}
-          >
-            {top.TopCategory} /
-          </div>
-        ))}
-      </div>
+    <div className="fixed top-16 w-full max-w-[600px] overflow-hidden bg-white z-50">
       <div className="px-5 flex overflow-x-auto h-[50px] items-center border-black border-b text-xl text-black-400">
         {subCategoryList &&
           subCategoryList.map((sub) => (
