@@ -14,13 +14,11 @@ const index = () => {
   }
   return (
     <>
-      <div className="pb-[80px]">
-        <ShippingInfo />
-        <ProductInfo items={state} />
-        <Coupon />
-        <PayWay />
-        <TotalPrice items={state} />
-      </div>
+      <ShippingInfo />
+      <ProductInfo items={state} />
+      <Coupon />
+      <PayWay />
+      <TotalPrice items={state} />
       <OrderBtn items={state} paynowHandler={paynowHandler} />
     </>
   )

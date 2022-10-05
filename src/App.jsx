@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import './App.css'
+import { cls } from './utils'
 import Home from './pages/Home'
 import Like from './pages/Like'
 import Oneul from './pages/Oneul'
@@ -33,7 +34,6 @@ import QnAWrite from './components/My/QnAWrite'
 import CategoryFashion from './components/Category'
 import MainCategory from './pages/Category/MainCategory'
 
-
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
@@ -50,7 +50,7 @@ function App() {
           <Route path="/like" element={<Like />} />
           <Route path="/my" element={<MyPage />}>
             <Route path="" element={<MyPageComp />} />
-            <Route path="review" element={<MyReview />} >
+            <Route path="review" element={<MyReview />}>
               <Route path="" element={<MyReviewComp />} />
               <Route path="write" element={<MyReviewWrite />} />
             </Route>
@@ -76,9 +76,10 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/order" element={<Order />} />
         </Routes>
-        {!currentPath.includes('/signup') &&
-          !currentPath.includes('/detail') &&
-          !currentPath.includes('/cart') && <NavBottom />}
+        {/* {!currentPath.includes('/category') && <NavBottom />} */}
+        {!currentPath.includes('/signup') && currentPath !== '/login' && (
+          <NavBottom />
+        )}
       </Provider>
     </div>
   )
