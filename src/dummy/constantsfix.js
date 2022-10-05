@@ -103,7 +103,7 @@ export const CATEGORY = [
     ],
   },
   {
-    TopCategory: '코스매틱',
+    TopCategory: '뷰티',
     subCategory: [
       {
         name: '브랜드',
@@ -199,7 +199,7 @@ export const CATEGORY = [
       {
         name: '가구',
         imgSrc:
-          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164801902358952420.jpg?gif=1&w=850&h=850&c=c&webp=1',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/166389201788449700.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '책생', '의자', '침대', '기타'],
       },
       {
@@ -216,13 +216,13 @@ export const CATEGORY = [
       {
         name: '키친',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164999800889962184.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '주방가전', '주방용품', '그릇', '기타'],
       },
       {
-        name: '패브릭',
+        name: '생활용품',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1589869900_100574_1.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '세탁', '청소', '수납', '잡화'],
       },
     ],
@@ -233,13 +233,13 @@ export const CATEGORY = [
       {
         name: '아트',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/162815649354238229.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '공예품', '굿즈', '아트프린트', '아트북', '기타'],
       },
       {
         name: '문구',
         imgSrc:
-          'https://assets.burberry.com/is/image/Burberryltd/B2DA4233-4047-4295-B36B-F1E651DCEFAF?$BBY_V2_SL_1x1$&wid=1251&hei=1251',
+          'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1553840476176_IYWB4o.jpg?gif=1&w=640&h=640&c=c&webp=1',
         list: ['전체', '필기류', '노트', '다이어리', '데코', '기타'],
       },
     ],
