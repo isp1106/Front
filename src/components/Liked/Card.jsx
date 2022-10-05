@@ -6,7 +6,7 @@ import check from '/public/assets/allCheck.svg'
 import notCheck from '/public/assets/allNotCheck.svg'
 
 function Card({ editMode, data, deleteList, setDeleteList }) {
-  const { brand, product, image, price, sale } = data
+  const { brand, productName, image, price, sale } = data
   const saleCost = parseInt((price * (100 - sale)) / 100)
   const [selected, setSelected] = useState(false)
 
@@ -47,7 +47,7 @@ function Card({ editMode, data, deleteList, setDeleteList }) {
         <div>
           <div className="text-sm font-bold">{brand}</div>
           <div className="text-xs font-normal text-black-800 truncate">
-            {product}
+            {productName}
           </div>
           <div className="test-xs font-medium text-black-600">{price} ¥</div>
         </div>

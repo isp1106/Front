@@ -32,17 +32,23 @@ import QnADetail from './components/My/QnADetail'
 import QnAWrite from './components/My/QnAWrite'
 import Notice from './pages/Notice'
 import Faq from './pages/Faq'
+import CategoryFashion from './components/Category'
+import MainCategory from './pages/Category/MainCategory'
+
 
 
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <div className="pb-[75px]">
+    <div className="pb-[70px]">
       <Provider store={store}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/category" element={<Category />} />
+          <Route path="/category" element={<Category />}>
+            <Route index element={<MainCategory />} />
+            <Route path=":topCG/:subCG" element={<CategoryFashion />} />
+          </Route>
           <Route path="/oneul" element={<Oneul />} />
           <Route path="/like" element={<Like />} />
           <Route path="/my" element={<MyPage />}>
