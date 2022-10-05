@@ -6,7 +6,7 @@ const CartModal = () => {
       {/* 장바구니의 가시성은 아래 div의 (id="shopping-cart") class명으로 제어합니다. 
       translate-x-full: 장바구니 닫힘 translate-x-0: 장바구니 열림 */}
       <section
-        className="pointer-events-auto w-screen   transition ease-in-out duration-500 translate-y-full translate-y-0"
+        className="pointer-events-auto w-screen transition ease-in-out duration-500 translate-y-full translate-y-0"
         id="shopping-cart"
       >
         <div className="flex w-full flex-col overflow-y-scroll bg-white shadow-xl">
@@ -17,13 +17,12 @@ const CartModal = () => {
                 0원
               </p>
             </div>
-            <a
-              id="payment-btn"
+            <div
               href="./"
               className="flex items-center justify-center rounded-md border border-transparent bg-sky-400 px-6 py-3 mt-6 font-medium text-white shadow-sm hover:bg-sky-500"
             >
               결제하기
-            </a>
+            </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>
                 또는

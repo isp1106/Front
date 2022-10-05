@@ -4,12 +4,11 @@ import { cls } from '../../../utils'
 import HeartIcon from '../../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 
-const NextBtn = () => {
+const NextBtn = ({ onClick }) => {
   const navigate = useNavigate()
   const addCart = () => {
-    //장바구니 api호출
-    //장바구니 알럿 창 할지 이야기 나누기
-    navigate('/cart')
+    ModalOpenHandler()
+    // navigate('/cart')
   }
   const buyNow = () => {
     //구매 api
@@ -36,7 +35,7 @@ const NextBtn = () => {
             <LinkIcon width="24" height="24" onClick={copyUrl} />
           </div>
           <div className="flex gap-3 items-center">
-            <span className="px-1" onClick={addCart}>
+            <span className="px-1" onClick={onClick}>
               장바구니
             </span>
             <div className="w-[1px] h-[12px] bg-black-200"></div>

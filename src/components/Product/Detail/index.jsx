@@ -4,19 +4,15 @@ import Explanation from './Explanation'
 import Brand from './Brand'
 import DetailDesc from './DetailDesc'
 import Relation from './Magazine'
-import Snap from './Snap'
-import Similiar from './Similiar'
-import Another from './Another'
-import Review from './Review'
-import Inquiry from './Inquiry'
-import ProductCode from './ProductCode'
-import DeliveryNotice from './DeliveryNotice'
-import ExchangeRefund from './ExchangeRefund'
-import SellerInfo from './SellerInfo'
+import SubContent from './SubContent'
 import CartModal from './CartModal'
+import DetailBtn from './DetailBtn'
 
 const Detail = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const ModalOpenHandler = () => {
+    setIsOpen((prev) => !prev)
+  }
 
   return (
     <>
@@ -29,21 +25,12 @@ const Detail = () => {
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
       <Relation />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Snap />
-      {/* <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Similiar /> */}
-      <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Another />
-      <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Review />
-      <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Inquiry />
-      <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <ProductCode />
-      <DeliveryNotice />
-      <ExchangeRefund />
-      <SellerInfo />
-      <CartModal />
+      <SubContent />
+      {isOpen ? (
+        <CartModal onClick={ModalOpenHandler} isOpen={isOpen} />
+      ) : (
+        <DetailBtn onClick={ModalOpenHandler} isOpen={isOpen} />
+      )}
     </>
   )
 }
