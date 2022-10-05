@@ -10,11 +10,11 @@ const ContentBox = ({ item }) => {
     <>
       <div className="mb-5 px-5">
         <div className="flex items-center justify-between py-4 ">
-          <p className="font-bold">{item.createdDate}</p>
+          <p className="font-bold">{item?.createdDate}</p>
           <div className="flex items-center gap-1">
             <span
               className="text-xs"
-              onClick={() => navigate(`/my/qna/${item.id}`)}
+              onClick={() => navigate(`/my/qna/${item?.id}`)}
             >
               답변상세보기
             </span>
@@ -22,12 +22,12 @@ const ContentBox = ({ item }) => {
           </div>
         </div>
         <div className="flex flex-col gap-3 mb-4">
-          <div className="text-primary font-bold">{item.answerYn}</div>
-          <div className="text-sm font-bold">{item.type}</div>
-          <div className="text-xs">{item.title}</div>
+          <div className="text-primary font-bold">{item?.answerYn}</div>
+          <div className="text-sm font-bold">{item?.type}</div>
+          <div className="text-xs">{item?.title}</div>
         </div>
 
-        {item.product && (
+        {item?.product && (
           <div className="pt-4 border-t border-black-200 ">
             <Card item={item.product} />
           </div>

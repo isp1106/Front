@@ -1,9 +1,11 @@
 import React from 'react'
-import MyReviewSegment from '../../components/My/MyReviewSegment'
+import { Outlet } from 'react-router-dom'
+import Header from '../../components/My/MyReview/Header'
 const MyReview = () => {
   return (
     <div>
-      <MyReviewSegment />
+      <Header />
+      <Outlet />
     </div>
   )
 }

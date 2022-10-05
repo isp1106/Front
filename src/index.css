@@ -76,14 +76,6 @@ select {
   background-repeat: no-repeat;
   background-size: 56.6px;
 }
-.ratingStarReview {
-  display: inline-block;
-  width: 88px;
-  height: 16px;
-  background-image: url(/public/assets/star2.png);
-  background-repeat: no-repeat;
-  background-size: 88px;
-}
 
 .ellipsis {
   overflow: hidden;
@@ -91,4 +83,41 @@ select {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.rating-component {
+  position: relative;
+}
+.rating-component input[type=range] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  opacity: 0;
+  outline: none;
+  border: none;
+}
+.rating-component input[type=range]:focus {
+  outline: none;
+}
+.rating-component .bh-stars .bh-star {
+  width: 20px;
+  height: 20px;
+}
+.rating-component .bh-stars .bh-star .outline {
+  fill: var(--primary);
+}
+.rating-component .bh-stars .bh-star .full,
+.rating-component .bh-stars .bh-star .left-half,
+.rating-component .bh-stars .bh-star .right-half {
+  fill: var(--black-200)
+}
+.rating-component .bh-stars .full.active,
+.rating-component .bh-stars .left-half.active,
+.rating-component .bh-stars .right-half.active {
+  fill: var(--primary);
 }
