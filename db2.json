@@ -1,0 +1,9 @@
+{
+  "type": "배송문의",
+  "title": "상품문의입니다",
+  "content": "어쩌구저쩌구",
+  "image1": "blob:http://127.0.0.1:5173/8711b34c-b982-4130-bc13-a4fcc05c56c3",
+  "image2": "blob:http://127.0.0.1:5173/8718f0c5-af60-4930-95f6-620f08f1b463",
+  "privateYn": "공개",
+  "password": null
+}

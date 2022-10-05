@@ -9,12 +9,29 @@ export const questionApi = createApi({
   endpoints: (builder) => ({
     //카드 상품 불러오기
     getQuestions: builder.query({
+      // query: () => '/customers/question',
       query: () => 'question',
     }),
     getQustion: builder.query({
       query: (id) => `question/${id}`,
     }),
+    addQuestion: builder.mutation({
+      query: ({ data }) => ({
+        url: `customers/questions`,
+        method: 'PUT',
+        // mode: 'cors',
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY2NDk4MTgxMn0.RulW7VIPZJV4szYO-RpxYBdz8JevLATTxtmz5ePM6_habCD87zEIf0rnTFszib0zDgXptnTZ9CEEIq9ywDMUcQ`,
+        },
+        body: data,
+      }),
+    }),
   }),
 })
 
-export const { useGetQuestionsQuery, useGetQustionQuery } = questionApi
+export const {
+  useGetQuestionsQuery,
+  useGetQustionQuery,
+  useAddQuestionMutation,
+} = questionApi
