@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import { types } from '../../../utils/questions'
 import Type from './Type'
 import Content from './Content'

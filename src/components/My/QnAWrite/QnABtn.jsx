@@ -7,7 +7,7 @@ const QnABtn = ({ onClick }) => {
       onClick={onClick}
     >
       <div className="h-[78px] gap-4 w-full flex  justify-center items-center text-white-200 bg-primary pb-4 text-[20px]">
-        1:1 문의하기
+        등록하기
       </div>
     </div>
   )

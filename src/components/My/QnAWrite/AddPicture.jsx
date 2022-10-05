@@ -36,7 +36,7 @@ const AddPicture = ({ uploadThumbnail, showImage }) => {
           type="file"
           accept="image/jpg, image/jpeg, image/png"
           onChange={uploadThumbnail}
-          multiple
+          multiple="multiple"
           ref={fileInputRef}
         />
       </div>
