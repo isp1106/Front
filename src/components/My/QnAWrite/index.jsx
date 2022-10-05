@@ -4,6 +4,8 @@ import Type from './Type'
 import Content from './Content'
 import AddPicture from './AddPicture'
 import QnABtn from './QnABtn'
+import Modal from '../../common/Modal'
+import useModalControl from '../../../hook/useModalControl'
 
 const index = () => {
   const [count, setCount] = useState(0)
@@ -18,6 +20,8 @@ const index = () => {
     thumbnail: null,
     type: null,
   })
+
+  const [isOpen, setIsOpen] = useModalControl()
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target

@@ -16,18 +16,8 @@ const QnAList = ({ questions }) => {
         />
       ))}
       {isOpen && (
-        <Modal isOpen={isOpen}>
-          <div className="flex flex-col items-center gap-5">
-            <h3 className="w-full px-5 text-center">
-              작성자만 볼 수 있습니다.
-            </h3>
-            <div
-              className="border border-black-200 px-3 py-1 rounded"
-              onClick={ModalControlHandler}
-            >
-              확인
-            </div>
-          </div>
+        <Modal ModalControlHandler={ModalControlHandler}>
+          작성자만 볼 수 있습니다.
         </Modal>
       )}
     </>
