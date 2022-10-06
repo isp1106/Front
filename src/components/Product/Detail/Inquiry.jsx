@@ -1,5 +1,5 @@
 import React from 'react'
-import { detailProducts } from '../../dummy/detail'
+import { detailProducts } from '../../../dummy/detail'
 
 const Inquiry = () => {
   return (

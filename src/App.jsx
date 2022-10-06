@@ -36,7 +36,6 @@ import Faq from './pages/Faq'
 import CategoryFashion from './components/Category'
 import MainCategory from './pages/Category/MainCategory'
 
-
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
@@ -81,10 +80,9 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/order" element={<Order />} />
         </Routes>
-        {/* {!currentPath.includes('/category') && <NavBottom />} */}
-        {!currentPath.includes('/signup') && currentPath !== '/login' && (
-          <NavBottom />
-        )}
+        {(!currentPath.includes('/signup') ||
+          currentPath !== '/login' ||
+          !currentPath.includes('/product')) && <NavBottom />}
       </Provider>
     </div>
   )

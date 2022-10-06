@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { cls } from '../../utils/index'
-import { detailProducts } from '../../dummy/detail'
+import { useState } from 'react'
+import { cls } from '../../../utils/index'
+import { detailProducts } from '../../../dummy/detail'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 
 const DetailDesc = () => {

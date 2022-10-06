@@ -1,6 +1,6 @@
 import React from 'react'
-import { detailProducts } from '../../dummy/detail'
-import { ratingStar } from '../../utils/star'
+import { detailProducts } from '../../../dummy/detail'
+import { ratingStar } from '../../../utils/star'
 
 const Review = () => {
   return (
