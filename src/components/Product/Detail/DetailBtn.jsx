@@ -29,9 +29,8 @@ const NextBtn = () => {
   const goToShoppingCart = () => {
     navigate('/cart')
   }
-  const buyNow = () => {
-    //구매 api
-    //결제 페이지로 이동
+  const GoToPayment = () => {
+    isOpen ? navigate('/order') : ModalOpenHandler()
   }
 
   const copyUrl = () => {
@@ -102,7 +101,7 @@ const NextBtn = () => {
                   <div className="w-[1px] h-[12px] bg-black-200"></div>
                   <span
                     className="flex flex-end text-[20px]"
-                    onClick={() => navigate('/order')}
+                    onClick={GoToPayment}
                   >
                     구매하기
                   </span>

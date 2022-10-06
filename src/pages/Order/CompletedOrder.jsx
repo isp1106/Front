@@ -1,7 +1,12 @@
 import React from 'react'
+import Completed from '../../components/Product/Completed'
 
 const CompletedOrder = () => {
-  return <div>CompletedOrder</div>
+  return (
+    <>
+      <Completed />
+    </>
+  )
 }
 
 export default CompletedOrder
