@@ -1,5 +1,5 @@
 import React from 'react'
-import OrderPage from '../components/Order'
+import OrderPage from '../components/Order/Order'
 import Header from '../components/layout/Header'
 
 const Order = () => {
