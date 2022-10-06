@@ -1,0 +1,16 @@
+@keyframes post {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.openPost {
+  animation: post 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
+}
+
+.closePost {
+  animation: post 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 reverse forwards;
+}
