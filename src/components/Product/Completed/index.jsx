@@ -3,6 +3,7 @@ import TopContent from './TopContent'
 import Header from './Header'
 import OrderProductInfo from './OrderProductInfo'
 import PaymentInfo from './PaymentInfo'
+import Error from './Error'
 
 const index = () => {
   return (
@@ -11,6 +12,9 @@ const index = () => {
       <TopContent />
       <OrderProductInfo />
       <PaymentInfo />
+      {/* 
+      에러가 난경우
+      <Error /> */}
     </div>
   )
 }
