@@ -13,7 +13,7 @@ function Header(props) {
     <>
       <header
         className={cls(
-          'fixed w-full h-14 bg-white top-0 z-50 box-shadow-custom',
+          'fixed w-full h-14 bg-white top-0 z-50 box-shadow-custom max-w-[37.5rem]',
           currentPath === '/' && 'border-b-2 border-primary',
         )}
       >
