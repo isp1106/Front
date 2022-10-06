@@ -31,6 +31,8 @@ import QnA from './pages/My/QnA'
 import QnAComp from './components/My/QnA'
 import QnADetail from './components/My/QnADetail'
 import QnAWrite from './components/My/QnAWrite'
+import Notice from './pages/Notice'
+import Faq from './pages/Faq'
 import CategoryFashion from './components/Category'
 import MainCategory from './pages/Category/MainCategory'
 
@@ -60,6 +62,8 @@ function App() {
               <Route path="write" element={<QnAWrite />} />
             </Route>
           </Route>
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/faq" element={<Faq />} />
           <Route path="/login" element={<Login />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product/:id" element={<ProductDetail />} />
@@ -76,7 +80,6 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/order" element={<Order />} />
         </Routes>
-        {/* {!currentPath.includes('/category') && <NavBottom />} */}
         {(!currentPath.includes('/signup') ||
           currentPath !== '/login' ||
           !currentPath.includes('/product')) && <NavBottom />}

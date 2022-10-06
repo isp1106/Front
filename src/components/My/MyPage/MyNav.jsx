@@ -21,10 +21,10 @@ const MyNav = () => {
           <Link to="/my/qna">1:1 문의</Link>
         </li>
         <li className="text-sm w-1/2 py-1">
-          <Link to="">FAQ</Link>
+          <Link to="/faq">FAQ</Link>
         </li>
         <li className="text-sm w-1/2 py-1">
-          <Link to="#">공지사항</Link>
+          <Link to="/notice">공지사항</Link>
         </li>
       </ul>
     </div>
