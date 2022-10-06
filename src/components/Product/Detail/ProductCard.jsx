@@ -1,8 +1,7 @@
 import React from 'react'
-import { detailProducts } from '../../../dummy/detail'
 
-const ProductCard = () => {
-  const { brand, thumbnail, product, sale, price, liked, id } = detailProducts
+const ProductCard = ({ item, count }) => {
+  const { brand, thumbnail, product, sale, price, liked, id } = item
   return (
     <div className="w-full pt-10 pb-2">
       <div key={id} className=" flex tems-center justify-between  px-10">
@@ -17,7 +16,12 @@ const ProductCard = () => {
           <p className="text-xs text-black-800 truncate w-[142px]">{product}</p>
           <div>
             <span className="text-sm text-black-600 font-medium">
-              {parseInt((price * (100 - sale)) / 100)} ¥
+              ¥
+              <strong className="ml-1">
+                {(
+                  parseInt((price * (100 - sale)) / 100) * count
+                ).toLocaleString()}
+              </strong>
             </span>
           </div>
           <div className="text-sm text-primary">1개</div>
