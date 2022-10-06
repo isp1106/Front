@@ -77,7 +77,9 @@ function App() {
             <Route path="finish" element={<Finish />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/search" element={<Search />}>
+            <Route path=":search" />
+          </Route>
           <Route path="/order" element={<Order />} />
         </Routes>
         {(!currentPath.includes('/signup') ||
