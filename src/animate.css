@@ -1,4 +1,5 @@
-@keyframes post {
+/* signup kakao post API page animation */
+@keyframes slideLeft {
   from {
     transform: translateX(100%);
   }
@@ -8,9 +9,37 @@
 }
 
 .openPost {
-  animation: post 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
+  animation: slideLeft 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
 }
 
 .closePost {
-  animation: post 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 reverse forwards;
+  animation: slideLeft 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 reverse forwards;
+}
+
+/* search page searchBar css & animation */
+.openSearchBar {
+  animation: slideLeft 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
+}
+
+.closeSearchBar {
+  animation: slideLeft 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 reverse forwards;
+}
+
+/* open beauty brand tab in category page */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-70%);
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.openBeauty {
+  animation: slideDown 0.4s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
 }

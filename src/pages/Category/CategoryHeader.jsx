@@ -1,20 +1,45 @@
-import React from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as SearchIcon } from '/public/assets/search_icon.svg'
 import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
+import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
+import '~/animate.css'
 
-const CategoryHeader = () => {
+const CategoryHeader = ({ focus, setFocus }) => {
+  const [animation, setAnimation] = useState('')
+  const navigate = useNavigate()
+
+  const onFocusHandler = () => {
+    if (!focus) {
+      setFocus(true)
+      setAnimation('openSearchBar')
+      setTimeout(() => {
+        setAnimation('')
+      }, 1000)
+    } else {
+      setAnimation('closeSearchBar')
+      setTimeout(() => {
+        setFocus(false)
+        setAnimation('')
+      }, 1000)
+    }
+  }
   return (
     <div>
       <div className="w-full h-16 fixed flex items-center overflow-hidden bg-white z-40 top-0">
-        <div className="w-full max-w-[600px] px-5 flex justify-center">
-          <div className="flex justify-between w-full p-2 mx-1.5 border-b-2 border-primary">
-            <input
-              type="text"
-              className="placeholder:text-primary"
-              placeholder="#어라운드 앤"
-            />
-            <SearchIcon className="w-6" />
+        <div className="w-full max-w-[600px] px-5 flex items-center ">
+          <BackOn className="w-7" onClick={() => navigate(-1)} />
+          <div className="flex pl-3 items-center justify-end w-full h-fit">
+            <div className="w-full h-fit overflow-hidden">
+              {focus && (
+                <input
+                  type="text"
+                  className={`${animation} w-full px-2 py-2 placeholder:text-black-200 focus-visible:outline-none border-b-2 border-primary`}
+                  placeholder="#어라운드 앤"
+                />
+              )}
+            </div>
+            <SearchIcon onClick={onFocusHandler} className="w-6 mx-1" />
           </div>
           <Link to="/cart" className="m-2">
             <CartIcon className="w-8" onClick={() => navigate('/cart')} />

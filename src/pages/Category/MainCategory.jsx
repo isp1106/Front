@@ -6,10 +6,12 @@ import GenderTab from './GenderTab'
 import CategoryItem from './CategoryItem'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import '~/animate.css'
 
 function MainCategory() {
   const [topCategory, setTopCategory] = useState('패션')
   const [beautyBrand, setBeautyBrand] = useState([])
+  const [animation, setAnimation] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -20,6 +22,15 @@ function MainCategory() {
     })
   }, [])
 
+  useEffect(() => {
+    if (topCategory === '뷰티') {
+      setAnimation('openBeauty')
+      setTimeout(() => {
+        setAnimation('')
+      }, 1000)
+    }
+  }, [topCategory])
+
   return (
     <div>
       <div
@@ -29,7 +40,7 @@ function MainCategory() {
         )}
       >
         {topCategory === '뷰티' && (
-          <div className="col-span-2">
+          <div className={`${animation} col-span-2`}>
             <h5 className="block px-5 pt-2.5 pb-4 font-bold">브랜드</h5>
             <div className="px-5 flex overflow-x-auto">
               {beautyBrand.map(({ subCategoryName, imgSrc }) => (
@@ -49,11 +60,11 @@ function MainCategory() {
             </div>
           </div>
         )}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden border-r-2 border-primary">
           <ul>
             {CATEGORY.map(({ TopCategory }) => {
               return (
-                <li className="h-12" key={TopCategory}>
+                <li className="h-12 box-border" key={TopCategory}>
                   <ScrollLink
                     className={cls(
                       'px-5 py-3 flex items-center w-full h-full border-box text-black-600 ',
@@ -89,10 +100,10 @@ function MainCategory() {
                   {TopCategory === '패션' && (
                     <Element
                       name={TopCategory}
-                      className="box-border border-l-2 border-primary h-full bg-[#f3f3f3]"
+                      className="box-border h-full bg-[#f3f3f3] "
                     >
                       <GenderTab />
-                      <h3 className="text-sm h-12 font-bold uppercase px-5 py-3 block border-y border-black">
+                      <h3 className="text-sm h-12 font-bold uppercase px-5 py-3 bg-white block border-b border-black">
                         {TopCategory}
                       </h3>
                       <div className="grid grid-cols-3 place-items-center px-3 py-5">
@@ -114,9 +125,9 @@ function MainCategory() {
                   {TopCategory === '뷰티' && (
                     <Element
                       name={TopCategory}
-                      className="box-border border-l-2 border-primary h-full bg-[#f3f3f3]"
+                      className="box-border h-full bg-[#f3f3f3] border-t border-black"
                     >
-                      <h3 className="text-sm h-12 font-bold uppercase px-5 py-3 block border-y border-black sticky top-0 bg-white z-10">
+                      <h3 className="text-sm h-12 font-bold uppercase px-5 py-3 block border-b border-black sticky top-0 bg-white z-10">
                         {TopCategory}
                       </h3>
                       <div className="grid grid-cols-3 place-items-center px-3 py-5">
@@ -140,10 +151,10 @@ function MainCategory() {
                     <Element
                       name={TopCategory}
                       className={
-                        'box-border border-l-2 border-primary h-full bg-[#f3f3f3]'
+                        'box-border h-full bg-[#f3f3f3] border-t border-black'
                       }
                     >
-                      <h3 className="text-sm h-12 font-bold uppercase px-5 py-3 block border-y border-black sticky top-0 bg-white z-10">
+                      <h3 className="text-sm h-12 font-bold uppercase px-5 py-3 block border-b border-black sticky top-0 bg-white z-10">
                         {TopCategory}
                       </h3>
                       <div className="grid grid-cols-3 place-items-center px-3 py-5">
