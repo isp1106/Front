@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { detailProducts as item } from '../../../dummy/detail'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '../../../utils'
 import HeartIcon from '../../common/HeartIcon'
@@ -10,7 +11,7 @@ const NextBtn = () => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
   const ModalOpenHandler = () => {
     setIsOpen((prev) => !prev)
   }
@@ -22,6 +23,7 @@ const NextBtn = () => {
     isOpen ? GoToCart() : ModalOpenHandler()
   }
   const chnageCount = (frag) => {
+    if (count + frag * 1 < 1) return
     setCount(count + frag * 1)
   }
   const goToShoppingCart = () => {
@@ -60,9 +62,13 @@ const NextBtn = () => {
         >
           <div className="flex w-full flex-col overflow-y-scroll bg-white shadow-xl pb-[78px] rounded-md">
             {isOpen && !buyProduct && (
-              <ModalContent count={count} chnageCount={chnageCount} />
+              <ModalContent
+                count={count}
+                chnageCount={chnageCount}
+                item={item}
+              />
             )}
-            {buyProduct && <ProductCard />}
+            {buyProduct && <ProductCard count={count} item={item} />}
           </div>
         </section>
       </aside>
