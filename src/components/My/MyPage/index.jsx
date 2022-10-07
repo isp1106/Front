@@ -23,14 +23,14 @@ const index = () => {
             <Profile />
             <Process />
             <MyPossession />
+            <Button
+              onClick={logoutHandler}
+              classprop="text-sm mx-5 mt-9 mb-5 bg-primary text-white"
+            >
+              로그아웃
+            </Button>
           </>
         )}
-        <Button
-          onClick={logoutHandler}
-          classprop="text-sm mx-5 mt-9 mb-5 bg-primary text-white"
-        >
-          로그아웃
-        </Button>
         <MyNav />
       </div>
     </div>
