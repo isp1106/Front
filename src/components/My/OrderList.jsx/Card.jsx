@@ -22,7 +22,10 @@ const Card = ({ item }) => {
       <div className="px-5 mt-4">
         <div className="flex justify-between border-b border-black-200 pt-4">
           <div className="font-bold py-3">{createdAt}</div>
-          <div className="text-sm flex gap-1 items-center">
+          <div
+            className="text-sm flex gap-1 items-center"
+            onClick={() => navigate(`${id}`, { state: id })}
+          >
             주문상세보기
             <BackIcon size="16" fill="#000" className="rotate-180" />
           </div>
