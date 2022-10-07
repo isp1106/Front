@@ -35,6 +35,9 @@ import Notice from './pages/Notice'
 import Faq from './pages/Faq'
 import CategoryFashion from './components/Category'
 import MainCategory from './pages/Category/MainCategory'
+import OrderDetail from './pages/My/OrderDetail'
+import OrderList from './pages/My/OrderList'
+import OrderPage from './pages/My/Order'
 
 function App() {
   const location = useLocation()
@@ -51,13 +54,17 @@ function App() {
           <Route path="/oneul" element={<Oneul />} />
           <Route path="/like" element={<Like />} />
           <Route path="/my" element={<MyPage />}>
-            <Route path="" element={<MyPageComp />} />
+            <Route index element={<MyPageComp />} />
             <Route path="review" element={<MyReview />}>
-              <Route path="" element={<MyReviewComp />} />
+              <Route index element={<MyReviewComp />} />
               <Route path="write" element={<MyReviewWrite />} />
             </Route>
+            <Route path="order-list" element={<OrderPage />}>
+              <Route index element={<OrderList />} />
+              <Route path=":id" element={<OrderDetail />} />
+            </Route>
             <Route path="qna" element={<QnA />}>
-              <Route path="" element={<QnAComp />} />
+              <Route index element={<QnAComp />} />
               <Route path=":id" element={<QnADetail />} />
               <Route path="write" element={<QnAWrite />} />
             </Route>

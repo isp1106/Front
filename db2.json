@@ -1,0 +1,1207 @@
+{
+  "resDeliveryInfo": {
+    "content": "string",
+    "createdDate": "2022-10-07T03:56:21.370Z",
+    "id": 0,
+    "image": [
+      {
+        "filePath": "string",
+        "fileSize": 0,
+        "id": 0,
+        "origFileName": "string",
+        "review": {
+          "content": "string",
+          "createdDate": "2022-10-07T03:56:21.370Z",
+          "id": 0,
+          "image": [null],
+          "member": {
+            "address": {
+              "city": "string",
+              "street": "string",
+              "zipcode": "string"
+            },
+            "country": "string",
+            "createdAt": "2022-10-07",
+            "email": "string",
+            "firstFurigana": "string",
+            "firstName": "string",
+            "id": 0,
+            "lastFurigana": "string",
+            "lastName": "string",
+            "modifiedAt": "2022-10-07",
+            "password": "string",
+            "phoneNumber": "string",
+            "role": "ROLE_ADMIN",
+            "username": "string"
+          },
+          "product": {
+            "brand": "string",
+            "brandImg": "string",
+            "brandKo": "string",
+            "cartItems": [
+              {
+                "cart": {
+                  "cartItems": [null],
+                  "createdAt": "2022-10-07",
+                  "id": 0,
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "modifiedAt": "2022-10-07"
+                },
+                "count": 0,
+                "createdAt": "2022-10-07",
+                "id": 0,
+                "modifiedAt": "2022-10-07"
+              }
+            ],
+            "createdAt": "2022-10-07",
+            "detailList": "string",
+            "detailThumbList": "string",
+            "favoriteItems": [
+              {
+                "createdAt": "2022-10-07",
+                "favorite": {
+                  "createdAt": "2022-10-07",
+                  "favoriteItems": [null],
+                  "id": 0,
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "modifiedAt": "2022-10-07"
+                },
+                "id": 0,
+                "modifiedAt": "2022-10-07"
+              }
+            ],
+            "id": 0,
+            "magazineItems": [
+              {
+                "createdAt": "2022-10-07",
+                "id": 0,
+                "magazine": {
+                  "content": "string",
+                  "createdDate": "2022-10-07",
+                  "id": 0,
+                  "magazineItems": [null],
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "tag": "남성",
+                  "thumnail": "string",
+                  "title": "string"
+                },
+                "modifiedAt": "2022-10-07"
+              }
+            ],
+            "modifiedAt": "2022-10-07",
+            "orderItems": [
+              {
+                "createdAt": "2022-10-07",
+                "id": 0,
+                "modifiedAt": "2022-10-07",
+                "order": {
+                  "createdAt": "2022-10-07T03:56:21.370Z",
+                  "deliveryInfo": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "id": 0,
+                    "phoneNumber": "string",
+                    "receiverName": "string",
+                    "status": "CANCEL"
+                  },
+                  "id": 0,
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "modifiedAt": "2022-10-07",
+                  "orderItems": [null],
+                  "status": "CANCEL"
+                },
+                "orderCount": 0,
+                "orderPrice": 0
+              }
+            ],
+            "price": 0,
+            "productName": "string",
+            "productOption": "string",
+            "sale": 0,
+            "stock": 0,
+            "summary": "string",
+            "tags": "string",
+            "thumbnail": "string"
+          },
+          "star": 0,
+          "title": "string"
+        }
+      }
+    ],
+    "member": {
+      "address": {
+        "city": "string",
+        "street": "string",
+        "zipcode": "string"
+      },
+      "country": "string",
+      "createdAt": "2022-10-07",
+      "email": "string",
+      "firstFurigana": "string",
+      "firstName": "string",
+      "id": 0,
+      "lastFurigana": "string",
+      "lastName": "string",
+      "modifiedAt": "2022-10-07",
+      "password": "string",
+      "phoneNumber": "string",
+      "role": "ROLE_ADMIN",
+      "username": "string"
+    },
+    "product": {
+      "brand": "string",
+      "brandImg": "string",
+      "brandKo": "string",
+      "cartItems": [
+        {
+          "cart": {
+            "cartItems": [null],
+            "createdAt": "2022-10-07",
+            "id": 0,
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "modifiedAt": "2022-10-07"
+          },
+          "count": 0,
+          "createdAt": "2022-10-07",
+          "id": 0,
+          "modifiedAt": "2022-10-07"
+        }
+      ],
+      "createdAt": "2022-10-07",
+      "detailList": "string",
+      "detailThumbList": "string",
+      "favoriteItems": [
+        {
+          "createdAt": "2022-10-07",
+          "favorite": {
+            "createdAt": "2022-10-07",
+            "favoriteItems": [null],
+            "id": 0,
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "modifiedAt": "2022-10-07"
+          },
+          "id": 0,
+          "modifiedAt": "2022-10-07"
+        }
+      ],
+      "id": 0,
+      "magazineItems": [
+        {
+          "createdAt": "2022-10-07",
+          "id": 0,
+          "magazine": {
+            "content": "string",
+            "createdDate": "2022-10-07",
+            "id": 0,
+            "magazineItems": [null],
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "tag": "남성",
+            "thumnail": "string",
+            "title": "string"
+          },
+          "modifiedAt": "2022-10-07"
+        }
+      ],
+      "modifiedAt": "2022-10-07",
+      "orderItems": [
+        {
+          "createdAt": "2022-10-07",
+          "id": 0,
+          "modifiedAt": "2022-10-07",
+          "order": {
+            "createdAt": "2022-10-07",
+            "deliveryInfo": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "id": 0,
+              "phoneNumber": "string",
+              "receiverName": "string",
+              "status": "CANCEL"
+            },
+            "id": 0,
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "modifiedAt": "2022-10-07",
+            "orderItems": [null],
+            "status": "CANCEL",
+            "totalPrice": 0
+          },
+          "orderCount": 0,
+          "orderPrice": 0,
+          "totalPrice": 0
+        }
+      ],
+      "price": 0,
+      "productName": "string",
+      "productOption": "string",
+      "sale": 0,
+      "stock": 0,
+      "summary": "string",
+      "tags": "string",
+      "thumbnail": "string"
+    },
+    "star": 0,
+    "title": "string"
+  },
+  "resMember": {
+    "content": "string",
+    "createdDate": "2022-10-07T03:56:21.371Z",
+    "id": 0,
+    "image": [
+      {
+        "filePath": "string",
+        "fileSize": 0,
+        "id": 0,
+        "origFileName": "string",
+        "review": {
+          "content": "string",
+          "createdDate": "2022-10-07T03:56:21.371Z",
+          "id": 0,
+          "image": [null],
+          "member": {
+            "address": {
+              "city": "string",
+              "street": "string",
+              "zipcode": "string"
+            },
+            "country": "string",
+            "createdAt": "2022-10-07",
+            "email": "string",
+            "firstFurigana": "string",
+            "firstName": "string",
+            "id": 0,
+            "lastFurigana": "string",
+            "lastName": "string",
+            "modifiedAt": "2022-10-07",
+            "password": "string",
+            "phoneNumber": "string",
+            "role": "ROLE_ADMIN",
+            "username": "string"
+          },
+          "product": {
+            "brand": "string",
+            "brandImg": "string",
+            "brandKo": "string",
+            "cartItems": [
+              {
+                "cart": {
+                  "cartItems": [null],
+                  "createdAt": "2022-10-07",
+                  "id": 0,
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "modifiedAt": "2022-10-07"
+                },
+                "count": 0,
+                "createdAt": "2022-10-07",
+                "id": 0,
+                "modifiedAt": "2022-10-07"
+              }
+            ],
+            "createdAt": "2022-10-07",
+            "detailList": "string",
+            "detailThumbList": "string",
+            "favoriteItems": [
+              {
+                "createdAt": "2022-10-07",
+                "favorite": {
+                  "createdAt": "2022-10-07",
+                  "favoriteItems": [null],
+                  "id": 0,
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "modifiedAt": "2022-10-07"
+                },
+                "id": 0,
+                "modifiedAt": "2022-10-07"
+              }
+            ],
+            "id": 0,
+            "magazineItems": [
+              {
+                "createdAt": "2022-10-07",
+                "id": 0,
+                "magazine": {
+                  "content": "string",
+                  "createdDate": "2022-10-07",
+                  "id": 0,
+                  "magazineItems": [null],
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "tag": "남성",
+                  "thumnail": "string",
+                  "title": "string"
+                },
+                "modifiedAt": "2022-10-07"
+              }
+            ],
+            "modifiedAt": "2022-10-07",
+            "orderItems": [
+              {
+                "createdAt": "2022-10-07",
+                "id": 0,
+                "modifiedAt": "2022-10-07",
+                "order": {
+                  "createdAt": "2022-10-07T03:56:21.371Z",
+                  "deliveryInfo": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "id": 0,
+                    "phoneNumber": "string",
+                    "receiverName": "string",
+                    "status": "CANCEL"
+                  },
+                  "id": 0,
+                  "member": {
+                    "address": {
+                      "city": "string",
+                      "street": "string",
+                      "zipcode": "string"
+                    },
+                    "country": "string",
+                    "createdAt": "2022-10-07",
+                    "email": "string",
+                    "firstFurigana": "string",
+                    "firstName": "string",
+                    "id": 0,
+                    "lastFurigana": "string",
+                    "lastName": "string",
+                    "modifiedAt": "2022-10-07",
+                    "password": "string",
+                    "phoneNumber": "string",
+                    "role": "ROLE_ADMIN",
+                    "username": "string"
+                  },
+                  "modifiedAt": "2022-10-07",
+                  "orderItems": [null],
+                  "status": "CANCEL"
+                },
+                "orderCount": 0,
+                "orderPrice": 0
+              }
+            ],
+            "price": 0,
+            "productName": "string",
+            "productOption": "string",
+            "sale": 0,
+            "stock": 0,
+            "summary": "string",
+            "tags": "string",
+            "thumbnail": "string"
+          },
+          "star": 0,
+          "title": "string"
+        }
+      }
+    ],
+    "member": {
+      "address": {
+        "city": "string",
+        "street": "string",
+        "zipcode": "string"
+      },
+      "country": "string",
+      "createdAt": "2022-10-07",
+      "email": "string",
+      "firstFurigana": "string",
+      "firstName": "string",
+      "id": 0,
+      "lastFurigana": "string",
+      "lastName": "string",
+      "modifiedAt": "2022-10-07",
+      "password": "string",
+      "phoneNumber": "string",
+      "role": "ROLE_ADMIN",
+      "username": "string"
+    },
+    "product": {
+      "brand": "string",
+      "brandImg": "string",
+      "brandKo": "string",
+      "cartItems": [
+        {
+          "cart": {
+            "cartItems": [null],
+            "createdAt": "2022-10-07",
+            "id": 0,
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "modifiedAt": "2022-10-07"
+          },
+          "count": 0,
+          "createdAt": "2022-10-07",
+          "id": 0,
+          "modifiedAt": "2022-10-07"
+        }
+      ],
+      "createdAt": "2022-10-07",
+      "detailList": "string",
+      "detailThumbList": "string",
+      "favoriteItems": [
+        {
+          "createdAt": "2022-10-07",
+          "favorite": {
+            "createdAt": "2022-10-07",
+            "favoriteItems": [null],
+            "id": 0,
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "modifiedAt": "2022-10-07"
+          },
+          "id": 0,
+          "modifiedAt": "2022-10-07"
+        }
+      ],
+      "id": 0,
+      "magazineItems": [
+        {
+          "createdAt": "2022-10-07",
+          "id": 0,
+          "magazine": {
+            "content": "string",
+            "createdDate": "2022-10-07",
+            "id": 0,
+            "magazineItems": [null],
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "tag": "남성",
+            "thumnail": "string",
+            "title": "string"
+          },
+          "modifiedAt": "2022-10-07"
+        }
+      ],
+      "modifiedAt": "2022-10-07",
+      "orderItems": [
+        {
+          "createdAt": "2022-10-07",
+          "id": 0,
+          "modifiedAt": "2022-10-07",
+          "order": {
+            "createdAt": "2022-10-07",
+            "deliveryInfo": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "id": 0,
+              "phoneNumber": "string",
+              "receiverName": "string",
+              "status": "CANCEL"
+            },
+            "id": 0,
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "modifiedAt": "2022-10-07",
+            "orderItems": [null],
+            "status": "CANCEL",
+            "totalPrice": 0
+          },
+          "orderCount": 0,
+          "orderPrice": 0,
+          "totalPrice": 0
+        }
+      ],
+      "price": 0,
+      "productName": "string",
+      "productOption": "string",
+      "sale": 0,
+      "stock": 0,
+      "summary": "string",
+      "tags": "string",
+      "thumbnail": "string"
+    },
+    "star": 0,
+    "title": "string"
+  },
+  "resProduct": [
+    {
+      "content": "string",
+      "createdDate": "2022-10-07T03:56:21.372Z",
+      "id": 0,
+      "image": [
+        {
+          "filePath": "string",
+          "fileSize": 0,
+          "id": 0,
+          "origFileName": "string",
+          "review": {
+            "content": "string",
+            "createdDate": "2022-10-07T03:56:21.372Z",
+            "id": 0,
+            "image": [null],
+            "member": {
+              "address": {
+                "city": "string",
+                "street": "string",
+                "zipcode": "string"
+              },
+              "country": "string",
+              "createdAt": "2022-10-07",
+              "email": "string",
+              "firstFurigana": "string",
+              "firstName": "string",
+              "id": 0,
+              "lastFurigana": "string",
+              "lastName": "string",
+              "modifiedAt": "2022-10-07",
+              "password": "string",
+              "phoneNumber": "string",
+              "role": "ROLE_ADMIN",
+              "username": "string"
+            },
+            "product": {
+              "brand": "string",
+              "brandImg": "string",
+              "brandKo": "string",
+              "cartItems": [
+                {
+                  "cart": {
+                    "cartItems": [null],
+                    "createdAt": "2022-10-07",
+                    "id": 0,
+                    "member": {
+                      "address": {
+                        "city": "string",
+                        "street": "string",
+                        "zipcode": "string"
+                      },
+                      "country": "string",
+                      "createdAt": "2022-10-07",
+                      "email": "string",
+                      "firstFurigana": "string",
+                      "firstName": "string",
+                      "id": 0,
+                      "lastFurigana": "string",
+                      "lastName": "string",
+                      "modifiedAt": "2022-10-07",
+                      "password": "string",
+                      "phoneNumber": "string",
+                      "role": "ROLE_ADMIN",
+                      "username": "string"
+                    },
+                    "modifiedAt": "2022-10-07"
+                  },
+                  "count": 0,
+                  "createdAt": "2022-10-07",
+                  "id": 0,
+                  "modifiedAt": "2022-10-07"
+                }
+              ],
+              "createdAt": "2022-10-07",
+              "detailList": "string",
+              "detailThumbList": "string",
+              "favoriteItems": [
+                {
+                  "createdAt": "2022-10-07",
+                  "favorite": {
+                    "createdAt": "2022-10-07",
+                    "favoriteItems": [null],
+                    "id": 0,
+                    "member": {
+                      "address": {
+                        "city": "string",
+                        "street": "string",
+                        "zipcode": "string"
+                      },
+                      "country": "string",
+                      "createdAt": "2022-10-07",
+                      "email": "string",
+                      "firstFurigana": "string",
+                      "firstName": "string",
+                      "id": 0,
+                      "lastFurigana": "string",
+                      "lastName": "string",
+                      "modifiedAt": "2022-10-07",
+                      "password": "string",
+                      "phoneNumber": "string",
+                      "role": "ROLE_ADMIN",
+                      "username": "string"
+                    },
+                    "modifiedAt": "2022-10-07"
+                  },
+                  "id": 0,
+                  "modifiedAt": "2022-10-07"
+                }
+              ],
+              "id": 0,
+              "magazineItems": [
+                {
+                  "createdAt": "2022-10-07",
+                  "id": 0,
+                  "magazine": {
+                    "content": "string",
+                    "createdDate": "2022-10-07",
+                    "id": 0,
+                    "magazineItems": [null],
+                    "member": {
+                      "address": {
+                        "city": "string",
+                        "street": "string",
+                        "zipcode": "string"
+                      },
+                      "country": "string",
+                      "createdAt": "2022-10-07",
+                      "email": "string",
+                      "firstFurigana": "string",
+                      "firstName": "string",
+                      "id": 0,
+                      "lastFurigana": "string",
+                      "lastName": "string",
+                      "modifiedAt": "2022-10-07",
+                      "password": "string",
+                      "phoneNumber": "string",
+                      "role": "ROLE_ADMIN",
+                      "username": "string"
+                    },
+                    "tag": "남성",
+                    "thumnail": "string",
+                    "title": "string"
+                  },
+                  "modifiedAt": "2022-10-07"
+                }
+              ],
+              "modifiedAt": "2022-10-07",
+              "orderItems": [
+                {
+                  "createdAt": "2022-10-07",
+                  "id": 0,
+                  "modifiedAt": "2022-10-07",
+                  "order": {
+                    "createdAt": "2022-10-07T03:56:21.372Z",
+                    "deliveryInfo": {
+                      "address": {
+                        "city": "string",
+                        "street": "string",
+                        "zipcode": "string"
+                      },
+                      "id": 0,
+                      "phoneNumber": "string",
+                      "receiverName": "string",
+                      "status": "CANCEL"
+                    },
+                    "id": 0,
+                    "member": {
+                      "address": {
+                        "city": "string",
+                        "street": "string",
+                        "zipcode": "string"
+                      },
+                      "country": "string",
+                      "createdAt": "2022-10-07",
+                      "email": "string",
+                      "firstFurigana": "string",
+                      "firstName": "string",
+                      "id": 0,
+                      "lastFurigana": "string",
+                      "lastName": "string",
+                      "modifiedAt": "2022-10-07",
+                      "password": "string",
+                      "phoneNumber": "string",
+                      "role": "ROLE_ADMIN",
+                      "username": "string"
+                    },
+                    "modifiedAt": "2022-10-07",
+                    "orderItems": [null],
+                    "status": "CANCEL"
+                  },
+                  "orderCount": 0,
+                  "orderPrice": 0
+                }
+              ],
+              "price": 0,
+              "productName": "string",
+              "productOption": "string",
+              "sale": 0,
+              "stock": 0,
+              "summary": "string",
+              "tags": "string",
+              "thumbnail": "string"
+            },
+            "star": 0,
+            "title": "string"
+          }
+        }
+      ],
+      "member": {
+        "address": {
+          "city": "string",
+          "street": "string",
+          "zipcode": "string"
+        },
+        "country": "string",
+        "createdAt": "2022-10-07",
+        "email": "string",
+        "firstFurigana": "string",
+        "firstName": "string",
+        "id": 0,
+        "lastFurigana": "string",
+        "lastName": "string",
+        "modifiedAt": "2022-10-07",
+        "password": "string",
+        "phoneNumber": "string",
+        "role": "ROLE_ADMIN",
+        "username": "string"
+      },
+      "product": {
+        "brand": "string",
+        "brandImg": "string",
+        "brandKo": "string",
+        "cartItems": [
+          {
+            "cart": {
+              "cartItems": [null],
+              "createdAt": "2022-10-07",
+              "id": 0,
+              "member": {
+                "address": {
+                  "city": "string",
+                  "street": "string",
+                  "zipcode": "string"
+                },
+                "country": "string",
+                "createdAt": "2022-10-07",
+                "email": "string",
+                "firstFurigana": "string",
+                "firstName": "string",
+                "id": 0,
+                "lastFurigana": "string",
+                "lastName": "string",
+                "modifiedAt": "2022-10-07",
+                "password": "string",
+                "phoneNumber": "string",
+                "role": "ROLE_ADMIN",
+                "username": "string"
+              },
+              "modifiedAt": "2022-10-07"
+            },
+            "count": 0,
+            "createdAt": "2022-10-07",
+            "id": 0,
+            "modifiedAt": "2022-10-07"
+          }
+        ],
+        "createdAt": "2022-10-07",
+        "detailList": "string",
+        "detailThumbList": "string",
+        "favoriteItems": [
+          {
+            "createdAt": "2022-10-07",
+            "favorite": {
+              "createdAt": "2022-10-07",
+              "favoriteItems": [null],
+              "id": 0,
+              "member": {
+                "address": {
+                  "city": "string",
+                  "street": "string",
+                  "zipcode": "string"
+                },
+                "country": "string",
+                "createdAt": "2022-10-07",
+                "email": "string",
+                "firstFurigana": "string",
+                "firstName": "string",
+                "id": 0,
+                "lastFurigana": "string",
+                "lastName": "string",
+                "modifiedAt": "2022-10-07",
+                "password": "string",
+                "phoneNumber": "string",
+                "role": "ROLE_ADMIN",
+                "username": "string"
+              },
+              "modifiedAt": "2022-10-07"
+            },
+            "id": 0,
+            "modifiedAt": "2022-10-07"
+          }
+        ],
+        "id": 0,
+        "magazineItems": [
+          {
+            "createdAt": "2022-10-07",
+            "id": 0,
+            "magazine": {
+              "content": "string",
+              "createdDate": "2022-10-07",
+              "id": 0,
+              "magazineItems": [null],
+              "member": {
+                "address": {
+                  "city": "string",
+                  "street": "string",
+                  "zipcode": "string"
+                },
+                "country": "string",
+                "createdAt": "2022-10-07",
+                "email": "string",
+                "firstFurigana": "string",
+                "firstName": "string",
+                "id": 0,
+                "lastFurigana": "string",
+                "lastName": "string",
+                "modifiedAt": "2022-10-07",
+                "password": "string",
+                "phoneNumber": "string",
+                "role": "ROLE_ADMIN",
+                "username": "string"
+              },
+              "tag": "남성",
+              "thumnail": "string",
+              "title": "string"
+            },
+            "modifiedAt": "2022-10-07"
+          }
+        ],
+        "modifiedAt": "2022-10-07",
+        "orderItems": [
+          {
+            "createdAt": "2022-10-07",
+            "id": 0,
+            "modifiedAt": "2022-10-07",
+            "order": {
+              "createdAt": "2022-10-07",
+              "deliveryInfo": {
+                "address": {
+                  "city": "string",
+                  "street": "string",
+                  "zipcode": "string"
+                },
+                "id": 0,
+                "phoneNumber": "string",
+                "receiverName": "string",
+                "status": "CANCEL"
+              },
+              "id": 0,
+              "member": {
+                "address": {
+                  "city": "string",
+                  "street": "string",
+                  "zipcode": "string"
+                },
+                "country": "string",
+                "createdAt": "2022-10-07",
+                "email": "string",
+                "firstFurigana": "string",
+                "firstName": "string",
+                "id": 0,
+                "lastFurigana": "string",
+                "lastName": "string",
+                "modifiedAt": "2022-10-07",
+                "password": "string",
+                "phoneNumber": "string",
+                "role": "ROLE_ADMIN",
+                "username": "string"
+              },
+              "modifiedAt": "2022-10-07",
+              "orderItems": [null],
+              "status": "CANCEL",
+              "totalPrice": 0
+            },
+            "orderCount": 0,
+            "orderPrice": 0,
+            "totalPrice": 0
+          }
+        ],
+        "price": 0,
+        "productName": "string",
+        "productOption": "string",
+        "sale": 0,
+        "stock": 0,
+        "summary": "string",
+        "tags": "string",
+        "thumbnail": "string"
+      },
+      "star": 0,
+      "title": "string"
+    }
+  ]
+}
