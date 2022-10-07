@@ -7,7 +7,7 @@ export const Category = () => {
   const [active, setActive] = useState('상품')
   return (
     <div className="fixed w-full max-w-[600px] z-10 overflow-hidden bg-white">
-      <div className="flex justify-between items-center mx-5 h-[66px]">
+      <div className="flex justify-between items-center mx-5 h-16">
         <div className="text-xl font-bold">찜</div>
         <HeaderLink />
       </div>

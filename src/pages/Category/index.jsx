@@ -6,7 +6,7 @@ const Category = () => {
   const [focus, setFocus] = useState(false)
   const [animation, setAnimation] = useState('')
   return (
-    <nav className="-mt-1.5">
+    <nav>
       <CategoryHeader
         focus={focus}
         setFocus={setFocus}

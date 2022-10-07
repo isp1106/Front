@@ -35,7 +35,7 @@ function MainCategory() {
     <div>
       <div
         className={cls(
-          'w-full max-w-[600px] h-[calc(100vh-8rem)] grid grid-cols-[110px_minmax(0,_1fr)]',
+          'w-full max-w-[600px] h-[calc(100vh-70px)] pt-16 grid grid-cols-[110px_minmax(0,_1fr)]',
           topCategory === '뷰티' && 'fixed grid-rows-[10.5rem,_1fr]',
         )}
       >

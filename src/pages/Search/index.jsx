@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import CategoryHeader from '../Category/CategoryHeader'
 import BeforeSearch from './BeforeSearch'
+import SearchHeader from './SearchHeader'
 
 function Search() {
   const [focus, setFocus] = useState(false)
@@ -14,15 +14,21 @@ function Search() {
       setInputAnimation('')
     }, 1000)
   }, [])
+
   return (
     <div>
-      <CategoryHeader
+      <SearchHeader
         focus={focus}
         setFocus={setFocus}
         animation={inputAnimation}
         setAnimation={setInputAnimation}
       />
-      <BeforeSearch focus={focus} setFocus={setFocus} />
+      <BeforeSearch
+        focus={focus}
+        setFocus={setFocus}
+        animation={inputAnimation}
+        setAnimation={setInputAnimation}
+      />
     </div>
   )
 }

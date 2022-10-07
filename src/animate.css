@@ -1,9 +1,11 @@
 /* signup kakao post API page animation */
 @keyframes slideLeft {
   from {
+    opacity: 0;
     transform: translateX(100%);
   }
   to {
+    opacity: 1;
     transform: translateX(0%);
   }
 }
@@ -17,6 +19,16 @@
 }
 
 /* search page searchBar css & animation */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 .openSearchBar {
   animation: slideLeft 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
 }
@@ -42,4 +54,9 @@
 
 .openBeauty {
   animation: slideDown 0.4s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 normal forwards;
+}
+
+/* delete searches in recent searches */
+.deleteSearch {
+  animation: slideDown 0.3s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 reverse forwards;
 }
