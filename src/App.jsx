@@ -38,6 +38,7 @@ import MainCategory from './pages/Category/MainCategory'
 import OrderDetail from './pages/My/OrderDetail'
 import OrderList from './pages/My/OrderList'
 import OrderPage from './pages/My/Order'
+import UserEditInfo from './pages/My/UserEditInfo'
 
 function App() {
   const location = useLocation()
@@ -68,6 +69,7 @@ function App() {
               <Route path=":id" element={<QnADetail />} />
               <Route path="write" element={<QnAWrite />} />
             </Route>
+            <Route path="edit-user-info" element={<UserEditInfo />} />
           </Route>
           <Route path="/notice" element={<Notice />} />
           <Route path="/faq" element={<Faq />} />
