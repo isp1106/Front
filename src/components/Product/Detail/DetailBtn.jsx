@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { detailProducts as item } from '../../../dummy/detail'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '../../../utils'
 import HeartIcon from '../../common/HeartIcon'
@@ -11,7 +10,7 @@ const NextBtn = () => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(0)
   const ModalOpenHandler = () => {
     setIsOpen((prev) => !prev)
   }
@@ -23,14 +22,14 @@ const NextBtn = () => {
     isOpen ? GoToCart() : ModalOpenHandler()
   }
   const chnageCount = (frag) => {
-    if (count + frag * 1 < 1) return
     setCount(count + frag * 1)
   }
   const goToShoppingCart = () => {
     navigate('/cart')
   }
-  const GoToPayment = () => {
-    isOpen ? navigate('/order') : ModalOpenHandler()
+  const buyNow = () => {
+    //구매 api
+    //결제 페이지로 이동
   }
 
   const copyUrl = () => {
@@ -61,13 +60,9 @@ const NextBtn = () => {
         >
           <div className="flex w-full flex-col overflow-y-scroll bg-white shadow-xl pb-[78px] rounded-md">
             {isOpen && !buyProduct && (
-              <ModalContent
-                count={count}
-                chnageCount={chnageCount}
-                item={item}
-              />
+              <ModalContent count={count} chnageCount={chnageCount} />
             )}
-            {buyProduct && <ProductCard count={count} item={item} />}
+            {buyProduct && <ProductCard />}
           </div>
         </section>
       </aside>
@@ -101,7 +96,7 @@ const NextBtn = () => {
                   <div className="w-[1px] h-[12px] bg-black-200"></div>
                   <span
                     className="flex flex-end text-[20px]"
-                    onClick={GoToPayment}
+                    onClick={() => navigate('/order')}
                   >
                     구매하기
                   </span>

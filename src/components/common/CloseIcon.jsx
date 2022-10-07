@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CloseIcon = ({ fill = '#D86145', size = '24', className, onClick }) => {
+const CloseIcon = ({ fill = '#D86145', size = '24', className }) => {
   return (
-    <div className={className} onClick={onClick}>
+    <div className={className}>
       <svg
         width={size}
         height={size}

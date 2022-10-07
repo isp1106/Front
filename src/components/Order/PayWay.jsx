@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-import { cls } from '../../../utils'
+import { cls } from '../../utils'
 
 const payway = ['신용/체크카드', '무통장입금', '애플페이', '라인페이']
 

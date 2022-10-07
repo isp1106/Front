@@ -4,14 +4,12 @@ import { cartApi } from './api/cartApiSlice'
 import { magazineApi } from './api/magazineSlice'
 import { questionApi } from './api/questionSlice'
 import userReducer from './slices/userSlice'
-import productReducer from './slices/productSlice'
 
 const rootReducer = combineReducers({
   [cartApi.reducerPath]: cartApi.reducer,
   [magazineApi.reducerPath]: magazineApi.reducer,
   [questionApi.reducerPath]: questionApi.reducer,
   user: userReducer,
-  product: productReducer,
 })
 
 export const store = configureStore({

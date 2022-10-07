@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { cls } from '../../../utils'
+import { cls } from '../../utils'
 import MemberInfo from './MemberInfo'
-import UserInfo from '../../../pages/SignUp/UserInfo'
+import UserInfo from '../../pages/SignUp/UserInfo'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 
 const ShippingInfo = () => {

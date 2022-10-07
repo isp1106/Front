@@ -1,5 +1,5 @@
 import React from 'react'
-import { cls } from '../../../utils'
+import { cls } from '../../utils'
 
 const OrderBtn = ({ items, paynowHandler }) => {
   return (

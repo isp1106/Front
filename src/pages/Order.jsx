@@ -1,6 +1,6 @@
 import React from 'react'
-import OrderPage from '../../components/Order/Order'
-import Header from '../../components/layout/Header'
+import OrderPage from '../components/Order'
+import Header from '../components/layout/Header'
 
 const Order = () => {
   return (

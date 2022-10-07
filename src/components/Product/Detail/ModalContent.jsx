@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ModalContent = ({ chnageCount, count, item }) => {
+const ModalContent = ({ chnageCount, count }) => {
   return (
     <div>
       <div className="px-6 pt-6">
@@ -25,25 +25,13 @@ const ModalContent = ({ chnageCount, count, item }) => {
                   +
                 </div>
               </div>
-              <div className="text-sm">
-                <span>¥</span>
-                <strong className="ml-1">
-                  {(
-                    parseInt((item.price * (100 - item.sale)) / 100) * count
-                  ).toLocaleString()}
-                </strong>
-              </div>
+              <div className="text-sm">256,500원</div>
             </div>
           </div>
           <div className="py-5 flex justify-end items-center gap-2">
             <div className="text-xs">총상품 금액</div>
             <div className="">
-              <span>¥</span>
-              <strong className="font-bold text ml-1">
-                {(
-                  parseInt((item.price * (100 - item.sale)) / 100) * count
-                ).toLocaleString()}
-              </strong>
+              <strong className="font-bold text">256,500 </strong>원
             </div>
           </div>
         </div>
