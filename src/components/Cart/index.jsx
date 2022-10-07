@@ -42,7 +42,10 @@ const Cart = () => {
                 </div>
                 <div className="text-point text-xs">선택 삭제</div>
               </div>
-              {!cartItems && <div>장바구니에 상품이 없습니다.</div>}
+              {/* {!cartItems && <div>
+                <h2 className="text-[20px] font-bold ml-2 pl-6"></h2>
+                장바구니에 상품이 없습니다.
+                </div>} */}
               {cartItems.map((item) => (
                 <CartItem
                   item={item}
