@@ -50,7 +50,7 @@ const SignUpIdForm = () => {
             placeholder="6자 이상의 영문, 숫자로 입력해 주세요."
             maxLength="11"
             minLength="6"
-            className="pl-3 w-full border-none h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
+            className="pl-3 h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
           />
 
           <div className="absolute flex gap-1 right-2">
