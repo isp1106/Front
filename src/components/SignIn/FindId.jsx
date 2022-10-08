@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Modal from '../common/Modal'
 import NextBtn from '../common/NextBtn'
 import Email from './email'
@@ -7,7 +8,7 @@ const EMAIL_REGEX =
 
 const FindId = () => {
   const [alret, setAlret] = useState('')
-  const [email, setEmail] = useState(null)
+  const [email, setEmail] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const onClick = () => {
     //아이디 찾기 api
@@ -15,23 +16,20 @@ const FindId = () => {
     setIsOpen(true)
   }
   const onChangeHandler = (e) => {
-    const { value } = e.target
+    const value = e.target.value
     setEmail(value)
-  }
-  const invalidCheckHandler = () => {
-    EMAIL_REGEX.test(email)
-      ? setAlret(null)
-      : setAlret('올바르지 않은 이메일입니다.')
+
+    setTimeout(() => {
+      EMAIL_REGEX.test(email)
+        ? setAlret(null)
+        : setAlret('올바르지 않은 이메일입니다.')
+    }, 500)
   }
 
   return (
-    <>
-      <Email
-        alret={alret}
-        onChange={onChangeHandler}
-        onBlur={invalidCheckHandler}
-      />
-      <NextBtn onClick={() => onClick()} disabled={!alret}>
+    <div className="px-5 mt-[36px]">
+      <Email onChange={onChangeHandler} alret={alret} />
+      <NextBtn onClick={onClick} disabled={EMAIL_REGEX.test(email)}>
         아이디 찾기
       </NextBtn>
       {isOpen && (
@@ -40,7 +38,7 @@ const FindId = () => {
           onClick={() => setIsOpen(false)}
         />
       )}
-    </>
+    </div>
   )
 }
 

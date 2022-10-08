@@ -9,7 +9,7 @@ const NextBtn = ({ next, inputValue, disabled, children, onClick }) => {
   return (
     <div
       className="hover:cursor-pointer fixed bottom-0 left-0 right-0 z-20"
-      onClick={onClick ? onClick : ChangeRouter}
+      onClick={disabled && onClick ? onClick : ChangeRouter}
     >
       <div
         className={cls(
