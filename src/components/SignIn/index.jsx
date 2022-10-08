@@ -1,12 +1,13 @@
 import { useState, useMemo } from 'react'
-import BackIcon from '../common/BackIcon'
 import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 import Input from './input'
 import Button from '../common/Button'
 import GoBack from '../common/GoBack'
+import { useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
+  const navigate = useNavigate()
   const [inputValue, setInputValue] = useState({
     id: '',
     pw: '',
@@ -68,10 +69,16 @@ const SignIn = () => {
           로그인하기
         </Button>
         <div className="flex justify-end mt-5 font-medium">
-          <span className="text-xs text-black-400 cursor-pointer  pr-[12px] pl-[12px] border-r ">
+          <span
+            className="text-xs text-black-400 cursor-pointer  pr-[12px] pl-[12px] border-r "
+            onClick={() => navigate('findID')}
+          >
             아이디 찾기
           </span>
-          <span className="text-xs text-black-400 cursor-pointer pl-[12px]">
+          <span
+            className="text-xs text-black-400 cursor-pointer pl-[12px]"
+            onClick={() => navigate('findPw')}
+          >
             비밀번호 찾기
           </span>
         </div>
