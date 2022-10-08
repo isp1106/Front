@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react'
 import Modal from '../common/Modal'
 import NextBtn from '../common/NextBtn'
 import Email from './email'
