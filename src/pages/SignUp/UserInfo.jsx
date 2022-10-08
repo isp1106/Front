@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react'
 import { useEffect } from 'react'
 import DaumPostcodeEmbed from 'react-daum-postcode'
 import { useLocation } from 'react-router-dom'
-import NextBtn from '../../components/SignUp/NextBtn'
+import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
 import '~/animate.css'
 const EMAIL_REGEX =
@@ -317,7 +317,9 @@ const UserInfo = () => {
       </div>
 
       {pathname.includes('/signup') && (
-        <NextBtn next="finish" inputValue={inputValue} disabled={disabled} />
+        <NextBtn next="finish" inputValue={inputValue} disabled={disabled}>
+          다음
+        </NextBtn>
       )}
     </div>
   )

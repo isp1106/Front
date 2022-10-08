@@ -5,7 +5,7 @@ const SignUp = () => {
   return (
     <div>
       <GoBack />
-      <div className="px-5 pt-[66px] pb-12">
+      <div className="px-5 pt-[64px] pb-12">
         <Outlet />
       </div>
     </div>

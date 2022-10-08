@@ -6,7 +6,9 @@ import { cls } from './utils'
 import Home from './pages/Home'
 import Like from './pages/Like'
 import Oneul from './pages/Oneul'
-import Login from './pages/Login'
+import LoginIndex from './pages/Login'
+import Login from './pages/Login/Login'
+import FindIDPw from './pages/Login/FindIDPw'
 import Cart from './pages/Cart'
 import MyPage from './pages/My/MyPage'
 import MyPageComp from './components/My/MyPage'
@@ -21,7 +23,6 @@ import SignUpId from './pages/SignUp/SignUpId'
 import SignUpPw from './pages/SignUp/SignUpPw'
 import UserInfo from './pages/SignUp/UserInfo'
 import Finish from './pages/SignUp/Finish'
-import Product from './pages/Product'
 import ProductDetail from './pages/Prdoucts/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
@@ -73,8 +74,10 @@ function App() {
           </Route>
           <Route path="/notice" element={<Notice />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/login" element={<LoginIndex />}>
+            <Route index element={<Login />} />
+            <Route path="findIdPw" element={<FindIDPw />} />
+          </Route>
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/oneul/detail" element={<SnapDetail />} />
           <Route path="/magazine/:id" element={<MagazineDetail />} />

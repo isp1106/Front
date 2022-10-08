@@ -60,7 +60,7 @@ const Card = ({ item }) => {
             {status === '결제 완료' && (
               <Button onClick={() => CancleOrder(id)}>결제취소</Button>
             )}
-            <Button onClick={() => navigate('/my/question')}>1:1문의</Button>
+            <Button onClick={() => navigate('/my/qna/write')}>1:1문의</Button>
           </div>
         </div>
       </div>
