@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useLocation } from 'react-router-dom'
 import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import { ReactComponent as ViewIcon } from '/public/assets/view.svg'
-import NextBtn from '../../components/SignUp/NextBtn'
+import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
 import useInputValue from '../../hook/useInputValue'
 export const PW_REGEX = new RegExp('^[a-zA-Z0-9_-]{5,11}$')
@@ -87,7 +87,7 @@ const SignUpPw = () => {
             placeholder="6자 이상의 영문, 숫자로 입력해 주세요."
             maxLength="11"
             minLength="6"
-            className="pl-3 w-full border-none h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
+            className="pl-3 h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
           />
 
           <div className="absolute flex gap-1 right-2">
@@ -126,7 +126,9 @@ const SignUpPw = () => {
         next="infoform"
         inputValue={inputValue}
         disabled={inputValue.pw === inputValue.pwCheck}
-      />
+      >
+        다음
+      </NextBtn>
     </>
   )
 }

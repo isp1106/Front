@@ -8,8 +8,7 @@ import Like from './pages/Like'
 import Oneul from './pages/Oneul'
 import LoginIndex from './pages/Login'
 import Login from './pages/Login/Login'
-import FindID from './pages/Login/FindID'
-import FindPw from './pages/Login/FindPw'
+import FindIDPw from './pages/Login/FindIDPw'
 import Cart from './pages/Cart'
 import MyPage from './pages/My/MyPage'
 import MyPageComp from './components/My/MyPage'
@@ -77,8 +76,7 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/login" element={<LoginIndex />}>
             <Route index element={<Login />} />
-            <Route path="findPw" element={<FindPw />} />
-            <Route path="findId" element={<FindID />} />
+            <Route path="findIdPw" element={<FindIDPw />} />
           </Route>
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/oneul/detail" element={<SnapDetail />} />

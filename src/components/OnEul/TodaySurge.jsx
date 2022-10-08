@@ -33,7 +33,7 @@ const TodaySurge = ({ category }) => {
         {list.map((item, index) => (
           <div key={index} className="item__list">
             <div
-              className="relative item w-[50vw] h-[50vw] max-w-[300px] max-h-[300px] bg-cover"
+              className="relative item w-[50vw-2px] h-[50vw] max-w-[300px] max-h-[300px] bg-cover"
               style={{
                 backgroundImage: `url(${item.imgUrl})`,
               }}

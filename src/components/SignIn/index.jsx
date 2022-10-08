@@ -3,7 +3,6 @@ import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 import Input from './input'
 import Button from '../common/Button'
-import GoBack from '../common/GoBack'
 import { useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
@@ -43,8 +42,7 @@ const SignIn = () => {
 
   return (
     <>
-      <GoBack />
-      <div className="pr-5 pl-5 pt-[66px]">
+      <div className="pr-5 pl-5">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>
         <Input
@@ -71,13 +69,13 @@ const SignIn = () => {
         <div className="flex justify-end mt-5 font-medium">
           <span
             className="text-xs text-black-400 cursor-pointer  pr-[12px] pl-[12px] border-r "
-            onClick={() => navigate('findID')}
+            onClick={() => navigate('findIdPw', { state: '아이디 찾기' })}
           >
             아이디 찾기
           </span>
           <span
             className="text-xs text-black-400 cursor-pointer pl-[12px]"
-            onClick={() => navigate('findPw')}
+            onClick={() => navigate('findIDPw', { state: '비밀번호 찾기' })}
           >
             비밀번호 찾기
           </span>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '../../utils'
-const NextBtn = ({ next, inputValue, disabled }) => {
+const NextBtn = ({ next, inputValue, disabled, children, onClick }) => {
   const navigate = useNavigate()
   const ChangeRouter = () => {
     disabled && navigate(`/signup/${next}`, { state: inputValue })
@@ -9,7 +9,7 @@ const NextBtn = ({ next, inputValue, disabled }) => {
   return (
     <div
       className="hover:cursor-pointer fixed bottom-0 left-0 right-0 z-20"
-      onClick={ChangeRouter}
+      onClick={onClick ? onClick : ChangeRouter}
     >
       <div
         className={cls(
@@ -17,7 +17,7 @@ const NextBtn = ({ next, inputValue, disabled }) => {
           !disabled ? 'bg-sub-primary' : 'bg-primary',
         )}
       >
-        <p className="mb-6">다음</p>
+        <p className="mb-6">{children}</p>
       </div>
     </div>
   )
