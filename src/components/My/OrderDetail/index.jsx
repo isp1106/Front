@@ -8,7 +8,7 @@ const index = () => {
   return (
     <>
       <Header>주문 상세 보기</Header>
-      <div className="pt-[56px] px-5">
+      <div className="pt-[54px] px-5">
         <InfoTopContent />
         <PayMentInfo />
         <DeliveryInfo />
