@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import BackIcon from '../../common/BackIcon'
 import Button from './Button'
+import MyCardHeader from '../MyCardHeader'
 
 const Card = ({ item }) => {
   const navigate = useNavigate()
@@ -20,16 +21,13 @@ const Card = ({ item }) => {
   return (
     <>
       <div className="px-5 mt-4">
-        <div className="flex justify-between border-b border-black-200 pt-4">
-          <div className="font-bold py-3">{createdAt}</div>
-          <div
-            className="text-sm flex gap-1 items-center"
-            onClick={() => navigate(`${id}`, { state: id })}
-          >
-            주문상세보기
-            <BackIcon size="16" fill="#000" className="rotate-180" />
-          </div>
-        </div>
+        {
+          <MyCardHeader
+            createdAt={createdAt}
+            requests={'주문'}
+            navigateId={id}
+          />
+        }
         <div>
           <h3 className="text-primary font-bold py-3">{status}</h3>
           <div className="flex text-[14px] mb-[18px]">
