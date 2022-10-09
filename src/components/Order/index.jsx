@@ -6,13 +6,15 @@ import Coupon from '../common/Coupon'
 import PayWay from './PayWay'
 import TotalPrice from './TotalPrice'
 import OrderBtn from './OrderBtn'
+import { useSelector } from 'react-redux'
+// productid로 조회
 
 const index = () => {
   const { state } = useLocation()
   const paynowHandler = () => {
     alert('결제가 정상적으로 처리되었습니다.')
   }
-  console.log(state)
+
   return (
     <>
       <ShippingInfo />

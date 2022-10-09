@@ -10,7 +10,6 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const NextBtn = () => {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
   const items = useSelector((state) => state.product)
