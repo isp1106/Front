@@ -10,7 +10,7 @@ const MyNav = () => {
           {/* Temporary link */}
         </li>
         <li className="text-sm w-1/2 py-1">
-          <Link to="#">취소/교환/환불 내역</Link>
+          <Link to="refund-list">취소/교환/환불 내역</Link>
         </li>
       </ul>
       <h2 className="text-sm font-medium text-black-200 mt-9 mb-1.5">
