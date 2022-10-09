@@ -17,9 +17,9 @@ const RefundList = () => {
       {isLoading && <Loader />}
       {isError && <div>{isError}</div>}
       {RefundList && (
-        <div className="">
+        <div className="overflow-hidden">
           <Header>취소/교환/환불내역</Header>
-          <div className="pt-[54px] text-center">
+          <div className="pt-[54px] overflow-y-scroll">
             {RefundList.map((item) => {
               return <RefundListCard item={item} key={item.id} />
             })}
