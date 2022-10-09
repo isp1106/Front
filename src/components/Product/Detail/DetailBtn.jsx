@@ -5,12 +5,15 @@ import HeartIcon from '../../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 import ModalContent from './ModalContent'
 import ProductCard from './ProductCard'
+import { detailProducts } from '../../../dummy/detail'
+import { useSelector, useDispatch } from 'react-redux'
 
 const NextBtn = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
-
+  const items = useSelector((state) => state.product)
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
     setIsOpen((prev) => !prev)
@@ -24,11 +27,16 @@ const NextBtn = () => {
   }
 
   const onBuyControlHandler = () => {
-    isOpen ? navigate('/order') : ModalOpenHandler()
+    isOpen ? BuyProudctNow() : ModalOpenHandler()
   }
 
   const goToShoppingCart = () => {
     navigate('/cart')
+    //장바구니 담는 api호출
+  }
+
+  const BuyProudctNow = () => {
+    navigate('/order')
   }
 
   const copyUrl = () => {

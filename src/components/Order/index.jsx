@@ -12,6 +12,7 @@ const index = () => {
   const paynowHandler = () => {
     alert('결제가 정상적으로 처리되었습니다.')
   }
+  console.log(state)
   return (
     <>
       <ShippingInfo />

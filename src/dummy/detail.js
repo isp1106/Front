@@ -1,4 +1,5 @@
 export const detailProducts = {
+  id: 11,
   detailThumList: [
     'https://images.seoulstore.com/products/546e7653a3284eab33eae8d2c1c81675.jpg',
     'https://images.seoulstore.com/products/05114e87573eaa474d88f4f473d8355f.jpg',

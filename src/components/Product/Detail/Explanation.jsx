@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import HeartIcon from '../../common/HeartIcon'
 import Coupon from '../../common/Coupon'
-import { cls } from '../../../utils/index'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 import { detailProducts } from '../../../dummy/detail'
 import { ratingStar } from '../../../utils/star'
@@ -10,8 +9,7 @@ const Explanation = () => {
   const toggleBtn = () => {
     setOpen((prev) => !prev)
   }
-  const { brand, productName, price, sale, star, reviewCount, color } =
-    detailProducts
+  const { brand, productName, price, sale, star, reviewCount } = detailProducts
   return (
     <div className="w-full flex-1 mt-5 pb-2">
       <div className="pl-5 pr-5 border-b border-black-200 flex-grow pb-7">
