@@ -5,7 +5,7 @@ import { cls } from '../../utils'
 const CartBtn = ({ items }) => {
   const navigate = useNavigate()
   const OrderToHandler = () => {
-    // navigate(`/order`, { state: items })
+    navigate(`/order`, { state: items })
   }
 
   return (

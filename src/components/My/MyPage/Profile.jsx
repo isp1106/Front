@@ -1,9 +1,11 @@
 import React, { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ReactComponent as CameraIcon } from '/public/assets/camera_icon.svg'
 import { ReactComponent as PenIcon } from '/public/assets/pen_icon.svg'
 const Profile = () => {
   const uploadedImage = useRef(null)
   const imageUploader = useRef(null)
+  const navigate = useNavigate()
   const handleImageUpload = (e) => {
     const [file] = e.target.files
     if (file) {
@@ -38,7 +40,10 @@ const Profile = () => {
         <CameraIcon className="absolute top-[70%] left-[65%] w-6" />
       </div>
       <span className="font-bold text-xl mr-[0.625rem]">유키</span>
-      <PenIcon className="w-[0.844rem]" />
+      <PenIcon
+        className="w-[0.844rem]"
+        onClick={() => navigate('edit-user-info')}
+      />
     </div>
   )
 }

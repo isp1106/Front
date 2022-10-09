@@ -6,11 +6,11 @@ const MyNav = () => {
       <h2 className="text-sm font-medium text-black-200 mb-1.5">주문정보</h2>
       <ul className="flex flex-wrap">
         <li className="text-sm w-1/2 py-1">
-          <Link to="#">주문/배송/픽업 조회</Link>
+          <Link to="order-list">주문/배송/픽업 조회</Link>
           {/* Temporary link */}
         </li>
         <li className="text-sm w-1/2 py-1">
-          <Link to="#">취소/교환/환불 내역</Link>
+          <Link to="refund-list">취소/교환/환불 내역</Link>
         </li>
       </ul>
       <h2 className="text-sm font-medium text-black-200 mt-9 mb-1.5">

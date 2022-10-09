@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import TabList from './TabList'
+import TabList from '../../common/TabList'
 import QnAList from './QnAList'
 import QnABtn from './QnABtn'
 import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
