@@ -13,7 +13,7 @@ const Brand = () => {
           <img src={brandImg} width="58px" />
         </div>
         <div className="flex-grow py-5 px-4">
-          <div className="relative flex flex items-center w-full justify-between">
+          <div className="relative flex items-center w-full justify-between">
             <div className="w-full flex items-center">
               <span className="text-color-800 text-sm font-bold">{brand}</span>
               <BackIcon

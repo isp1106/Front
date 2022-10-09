@@ -111,7 +111,7 @@ const SignUpPw = () => {
             placeholder="비밀번호를 재입력해주세요."
             maxLength="11"
             minLength="6"
-            className="pl-3 w-full border-none h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
+            className="pl-3 border-none h-[48px] flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
           />
           <div className="absolute flex gap-1 right-2">
             {active && <ClearIcon width="20px" onClick={onFocusHandler} />}
