@@ -1,0 +1,26 @@
+[
+  {
+    "status": "ORDER",
+    "member": {
+      "createdAt": "2022-10-07",
+      "modifiedAt": "2022-10-07",
+      "id": 1,
+      "username": "String",
+      "password": "String",
+      "email": "String",
+      "role": "ROLE_USER",
+      "firstName": null,
+      "lastName": null,
+      "address": {
+        "city": "String",
+        "street": "String",
+        "zipcode": "String"
+      },
+      "phoneNumber": "String",
+      "country": "ko",
+      "firstFurigana": null,
+      "lastFurigana": null
+    },
+    "deliveryInfo": null
+  }
+]

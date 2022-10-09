@@ -5,13 +5,16 @@ import HeartIcon from '../../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 import ModalContent from './ModalContent'
 import ProductCard from './ProductCard'
+import { detailProducts } from '../../../dummy/detail'
+import { useSelector, useDispatch } from 'react-redux'
 
 const NextBtn = () => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
-  const [count, setCount] = useState(0)
+  const items = useSelector((state) => state.product)
   const ModalOpenHandler = () => {
+    buyProduct && setBuyProduct((prev) => !prev)
     setIsOpen((prev) => !prev)
   }
   const GoToCart = () => {
@@ -21,15 +24,18 @@ const NextBtn = () => {
   const onClickHandler = () => {
     isOpen ? GoToCart() : ModalOpenHandler()
   }
-  const chnageCount = (frag) => {
-    setCount(count + frag * 1)
+
+  const onBuyControlHandler = () => {
+    isOpen ? BuyProudctNow() : ModalOpenHandler()
   }
+
   const goToShoppingCart = () => {
     navigate('/cart')
+    //장바구니 담는 api호출
   }
-  const buyNow = () => {
-    //구매 api
-    //결제 페이지로 이동
+
+  const BuyProudctNow = () => {
+    navigate('/order')
   }
 
   const copyUrl = () => {
@@ -54,14 +60,13 @@ const NextBtn = () => {
       )}
       <aside className="fixed inset-x-0 flex bottom-0  z-50">
         <section
-          className={`'pointer-events-auto w-screen transition ease-in-out duration-500 translate-y-${
-            isOpen ? 0 : 'full'
-          }`}
+          className={cls(
+            'pointer-events-auto w-screen transition ease-in-out duration-500',
+            isOpen ? 'translate-y-0' : 'translate-y-full',
+          )}
         >
           <div className="flex w-full flex-col overflow-y-scroll bg-white shadow-xl pb-[78px] rounded-md">
-            {isOpen && !buyProduct && (
-              <ModalContent count={count} chnageCount={chnageCount} />
-            )}
+            {isOpen && !buyProduct && <ModalContent />}
             {buyProduct && <ProductCard />}
           </div>
         </section>
@@ -96,7 +101,7 @@ const NextBtn = () => {
                   <div className="w-[1px] h-[12px] bg-black-200"></div>
                   <span
                     className="flex flex-end text-[20px]"
-                    onClick={() => navigate('/order')}
+                    onClick={onBuyControlHandler}
                   >
                     구매하기
                   </span>
