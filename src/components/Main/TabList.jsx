@@ -1,31 +1,53 @@
 import React from 'react'
-import { Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
-const TabList = ({ tablist, changeCateogry }) => {
+const TabList = ({ tablist, setCategory }) => {
   return (
-    <Swiper
-      // install Swiper modules
-      className="tablist pl-5 mt-4 mb-7"
-      modules={[Scrollbar]}
-      spaceBetween={60}
-      slidesPerView={3.7}
-      scrollbar={{ draggable: true }}
-      onSlideChange={(e) => changeCateogry(e)}
-    >
-      {tablist.map((item, idx) => (
-        <SwiperSlide
-          className={
-            item !== '' &&
-            'tab leading-normal border border-primary rounded-2xl text-center text-xs text-primary whitespace-nowrap'
-          }
-          key={idx}
-        >
-          <span> {item}</span>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="relative">
+      <Swiper
+        // install Swiper modules
+        className="tablist pl-5 mt-4 pb-20 overflow-y-visible"
+        spaceBetween={60}
+        loop={true}
+        slidesPerView={'auto'}
+        slideToClickedSlide={true}
+      >
+        {tablist.map((item, idx) => (
+          <SwiperSlide
+            className={
+              'tab leading-normal border border-primary rounded-2xl text-center text-xs text-primary whitespace-nowrap'
+            }
+            key={idx}
+          >
+            {({ isActive }) => (
+              <div
+                onClick={() => {
+                  if (isActive) {
+                    setCategory(item)
+                  }
+                }}
+              >
+                <span>{item}</span>
+                <div
+                  className={
+                    isActive &&
+                    'relative after:w-0.5 after:h-20 after:bg-primary after:absolute after:top-[100%] after:left-[calc(50%-2px)]'
+                  }
+                ></div>
+                <div
+                  className={
+                    isActive &&
+                    'relative after:absolute after:w-2.5 after:h-2.5 after:bg-primary after:rounded-full after:top-[70px] after:left-[calc(50%-6px)]'
+                  }
+                ></div>
+              </div>
+            )}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="w-full h-2.5 bg-white-200 absolute bottom-0"></div>
+    </div>
   )
 }
 
