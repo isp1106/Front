@@ -7,7 +7,7 @@ export const detailProducts = {
   brandKo: '키르시',
   brandImg: 'https://ifh.cc/g/nGCNgk.png',
   liked: true,
-  product: 'BIG CHERRY FLEECE CROP HOOD',
+  productName: 'BIG CHERRY FLEECE CROP HOOD',
   star: 4.5,
   reviewCount: 128,
   sale: 30,
@@ -23,6 +23,7 @@ export const detailProducts = {
       'http://image.kyobobook.co.kr/images/book/large/327/l4910178330327.jpg',
     title: 'NO.05 Cherry heart',
   },
+  size: ['L', 'M', 'S'],
   snap: [
     {
       id: 1,
@@ -44,48 +45,6 @@ export const detailProducts = {
       liked: 254,
     },
   ],
-  // similiar: [
-  //   {
-  //     id: 1,
-  //     imgurl:
-  //       'https://img.29cm.co.kr/next-product/2021/09/14/adfd4334b548443887f311521fc3efbd_20210914214925.jpg?width=300',
-  //     brnad: '페인오어플레져',
-  //     name: 'RABITA FUR CARDIGAN_plum',
-  //     price: 980,
-  //     liked: false,
-  //     discount: 30,
-  //   },
-  //   {
-  //     id: 2,
-  //     imgurl:
-  //       'https://img.29cm.co.kr/next-product/2022/09/02/91ef52eb39f34fd3bf678d5e4d911cb7_20220902114700.jpg?width=300',
-  //     brnad: '메인부스',
-  //     name: 'Island Flower Cardigan(BLACK)',
-  //     price: 720,
-  //     liked: true,
-  //     discount: 20,
-  //   },
-  //   {
-  //     id: 3,
-  //     imgurl:
-  //       'https://img.29cm.co.kr/next-product/2022/08/18/b8ed61509a6a4276b70574a86a6f3a4d_20220818161350.jpg?width=300',
-  //     brnad: '엔오르',
-  //     name: 'BUSTIER CARDIGAN SET - BLACK',
-  //     price: 790,
-  //     liked: false,
-  //     discount: 30,
-  //   },
-  //   {
-  //     id: 4,
-  //     imgurl:
-  //       'https://img.29cm.co.kr/next-product/2021/10/15/888d56110d744e09a058b22a8d578d56_20211015014905.jpg?width=300',
-  //     brand: '로아즈',
-  //     name: '[파인울100%] 로아즈 울 프린지 니트 가디건 R12K02-IV',
-  //     price: 230,
-  //     liked: true,
-  //     discount: 10,
-  //   },
-  // ],
   another: [
     {
       id: 11,

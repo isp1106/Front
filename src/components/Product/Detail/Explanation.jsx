@@ -10,7 +10,7 @@ const Explanation = () => {
   const toggleBtn = () => {
     setOpen((prev) => !prev)
   }
-  const { brand, product, price, sale, star, reviewCount, color } =
+  const { brand, productName, price, sale, star, reviewCount, color } =
     detailProducts
   return (
     <div className="w-full flex-1 mt-5 pb-2">
@@ -22,7 +22,7 @@ const Explanation = () => {
           </div>
           <HeartIcon size="22px" />
         </div>
-        <h2 className="mt-2 font-bold">{product}</h2>
+        <h2 className="mt-2 font-bold">{productName}</h2>
         <div className="flex items-center my-3">
           <div
             className="ratingStar mr-2"
@@ -49,7 +49,7 @@ const Explanation = () => {
           </div>
         </div>
       </div>
-      <div className="border-b border-black-200 pl-5 pr-5 pb-4 ">
+      {/* <div className="border-b border-black-200 pl-5 pr-5 pb-4 ">
         <p className="font-bold mt-5 my-4">컬러</p>
         <div className="flex gap-4 ">
           {color.map((item, idx) => (
@@ -61,7 +61,7 @@ const Explanation = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
       <Coupon>
         <span className="mr-5 text-primary font-bold">40%</span>
         <span className="mr-1 font-bold">
