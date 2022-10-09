@@ -27,7 +27,6 @@ import ProductDetail from './pages/Prdoucts/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
-import Order from './pages/Order'
 import QnA from './pages/My/QnA'
 import QnAComp from './components/My/QnA'
 import QnADetail from './components/My/QnADetail'
@@ -36,6 +35,9 @@ import Notice from './pages/Notice'
 import Faq from './pages/Faq'
 import CategoryFashion from './components/Category'
 import MainCategory from './pages/Category/MainCategory'
+import OrderMain from './pages/Order'
+import Order from './pages/Order/Order'
+import CompletedOrder from './pages/Order/CompletedOrder'
 import OrderDetail from './pages/My/OrderDetail'
 import OrderList from './pages/My/OrderList'
 import OrderPage from './pages/My/Order'
@@ -99,7 +101,10 @@ function App() {
           <Route path="/search" element={<Search />}>
             <Route path=":search" />
           </Route>
-          <Route path="/order" element={<Order />} />
+          <Route path="/order" element={<OrderMain />}>
+            <Route path="" element={<Order />} />
+            <Route path="completed" element={<CompletedOrder />} />
+          </Route>
         </Routes>
         {(!currentPath.includes('/signup') ||
           currentPath !== '/login' ||
