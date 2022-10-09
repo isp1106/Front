@@ -8,6 +8,7 @@ import Modal from '../../common/Modal'
 import CloseIcon from '../../common/CloseIcon'
 import useModalControl from '../../../hook/useModalControl'
 import { useAddQuestionMutation } from '../../../store/api/questionSlice'
+import { Outlet } from 'react-router-dom'
 
 const index = () => {
   const [count, setCount] = useState(0)
@@ -133,33 +134,34 @@ const index = () => {
 
   return (
     <>
-      <div className="px-5">
-        <Type
-          types={types}
-          userValue={userValue}
-          onChangeCheckedHandler={onChangeCheckedHandler}
-        />
-        <Content
-          count={count}
-          privateYn={userValue['privateYn']}
-          onChangeHandler={onChangeHandler}
-          privateYnHandler={privateYnHandler}
-          addPassword={addPassword}
-        />
-        <AddPicture
-          uploadThumbnail={uploadThumbnail}
-          showImage={showImage}
-          ref={FileRef}
-          count={imageFile.length === 0 ? 0 : imageFile.length}
-        />
-        <QnABtn onClick={AddQuestionHandler} />
-      </div>
+      <Type
+        types={types}
+        userValue={userValue}
+        onChangeCheckedHandler={onChangeCheckedHandler}
+      />
+      <div className="w-full h-[10px] bg-white-200 my-4"></div>
+      <Content
+        count={count}
+        privateYn={userValue['privateYn']}
+        onChangeHandler={onChangeHandler}
+        privateYnHandler={privateYnHandler}
+        addPassword={addPassword}
+      />
+      <div className="w-full h-[10px] bg-white-200 my-4"></div>
+      <AddPicture
+        uploadThumbnail={uploadThumbnail}
+        showImage={showImage}
+        ref={FileRef}
+        count={imageFile.length === 0 ? 0 : imageFile.length}
+      />
+      <QnABtn onClick={AddQuestionHandler} />
       {isOpen && (
         <Modal
           onClick={ModalControlHandler}
           title="제목과 내용은 필수로 입력해야합니다."
         />
       )}
+      <Outlet />
     </>
   )
 }

@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Button from '../../common/Button'
 import { cls } from '../../../utils'
 import { ReactComponent as Nochecked } from '/public/assets/allNotCheck.svg'
 import { ReactComponent as Checked } from '/public/assets/allCheck.svg'
+import { useNavigate } from 'react-router-dom'
+import InquireProducts from './InquireProducts'
 
 const Type = ({ types, userValue, onChangeCheckedHandler }) => {
+  const navigate = useNavigate()
+  const [isOpen, setIsOpen] = useState(false)
+  const controlOpenHandler = () => {
+    setIsOpen((prev) => !prev)
+  }
   return (
     <>
-      <div className="mb-5">
+      <div className="px-5 mb-5">
         <h3 className="font-bold my-5 ">문의 유형</h3>
-        <div className="grid grid-cols-2 gap-5 pt-5 border-t border-black-200 text-sm">
+        <div className="grid grid-cols-2 gap-5 py-5 border-t border-black-200 text-sm">
           {types.map((item, idx) => (
             <React.Fragment key={idx}>
               <div
@@ -28,6 +36,25 @@ const Type = ({ types, userValue, onChangeCheckedHandler }) => {
             </React.Fragment>
           ))}
         </div>
+        <Button
+          classprop="bg-primary text-white text-sm"
+          onClick={controlOpenHandler}
+        >
+          문의상품 검색
+        </Button>
+      </div>
+
+      <div
+        className={cls(
+          'transition ease-in-out duration-500',
+          isOpen
+            ? 'px-5 inset-0 transition-x-full bg-white z-[100] fixed translate-x-0'
+            : 'translate-x-full',
+        )}
+      >
+        {isOpen && (
+          <InquireProducts isOpen={isOpen} onClick={controlOpenHandler} />
+        )}
       </div>
     </>
   )
