@@ -5,7 +5,7 @@ import { ReactComponent as ViewIcon } from '/public/assets/view.svg'
 import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
 import useInputValue from '../../hook/useInputValue'
-export const PW_REGEX = new RegExp('^[a-zA-Z0-9_-]{5,11}$')
+const PW_REGEX = new RegExp('^[a-zA-Z0-9_-]{5,11}$')
 
 const SignUpPw = () => {
   const { state } = useLocation()
