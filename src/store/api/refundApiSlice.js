@@ -10,7 +10,7 @@ export const refundApi = createApi({
   endpoints: (builder) => ({
     //환불 상품 불러오기
     getRefundItems: builder.query({
-      query: () => 'refund',
+      query: () => 'refunds',
       providesTags: (result, error, arg) =>
         result
           ? [...result.map(({ id }) => ({ type: 'Refunds', id })), 'Refunds']
