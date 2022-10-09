@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MainSlide from './MainSlide'
 import Explanation from './Explanation'
 import DetailDesc from './DetailDesc'
 import Relation from './Magazine'
 import SubContent from './SubContent'
 import DetailBtn from './DetailBtn'
-// import Brand from '../../Magazine/Brand'
 import Brand from './Brand'
-import { detailProducts } from '../../../dummy/detail'
 const Detail = () => {
   return (
     <>

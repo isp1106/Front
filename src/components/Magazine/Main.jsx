@@ -1,9 +1,10 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { magazineDummy as list } from '../../dummy/magaineDetail'
+// import { magazineDummy as list } from '../../dummy/magaineDetail'
 import Brand from './Brand'
 import Plus from './Plus'
 import { useGetMagazineQuery } from '../../store/api/magazineSlice'
+import { cls } from '../../utils'
 
 const TopMain = () => {
   // const { title, thumbnail, items } = list
@@ -29,16 +30,20 @@ const TopMain = () => {
               {list.thumbnail.map((item, idx) => (
                 <React.Fragment key={idx}>
                   <img src={item} className="w-full" />
-                  {idx === 0 && <Brand />}
+                  {idx === 0 && <Brand item={list} />}
                 </React.Fragment>
               ))}
-              {list.items.map((item, idx) => (
-                <Plus
-                  className={`absolute ${item.className}`}
-                  id={item.id}
-                  key={idx}
-                />
-              ))}
+              {list &&
+                list.items.map((item, idx) => (
+                  <Plus
+                    className={cls(
+                      'absolute',
+                      item.className && item.className,
+                    )}
+                    id={item.id}
+                    key={idx}
+                  />
+                ))}
             </div>
           </>
         )
