@@ -1,10 +1,11 @@
 import React from 'react'
 import BackIcon from '../common/BackIcon'
 import HeartIcon from '../common/HeartIcon'
-import { magazineDummy as list } from '../../dummy/magaineDetail'
+// import { magazineDummy as list } from '../../dummy/magaineDetail'
 
-const Brand = () => {
-  const { brandImg, brand, brandKo, liked } = list
+const Brand = ({ item }) => {
+  const { brandImg, brand, brandKo, liked } = item
+  console.log(item)
 
   return (
     <div className="w-full px-5 mt-2 py-[36px]">
