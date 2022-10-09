@@ -40,6 +40,9 @@ import OrderDetail from './pages/My/OrderDetail'
 import OrderList from './pages/My/OrderList'
 import OrderPage from './pages/My/Order'
 import UserEditInfo from './pages/My/UserEditInfo'
+import Refund from './pages/My/Refund'
+import RefundListPage from './pages/My/Refund/RefundListPage'
+import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
 
 function App() {
   const location = useLocation()
@@ -71,6 +74,10 @@ function App() {
               <Route path="write" element={<QnAWrite />} />
             </Route>
             <Route path="edit-user-info" element={<UserEditInfo />} />
+            <Route path="refund-list" element={<Refund />}>
+              <Route index element={<RefundListPage />} />
+              <Route path=":refundId" element={<RefundDetailPage />} />
+            </Route>
           </Route>
           <Route path="/notice" element={<Notice />} />
           <Route path="/faq" element={<Faq />} />
