@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import Tab from './Tab'
 
 const TabList = ({ tablist, setCategory }) => {
   return (
@@ -21,27 +22,7 @@ const TabList = ({ tablist, setCategory }) => {
             key={idx}
           >
             {({ isActive }) => (
-              <div
-                onClick={() => {
-                  if (isActive) {
-                    setCategory(item)
-                  }
-                }}
-              >
-                <span>{item}</span>
-                <div
-                  className={
-                    isActive &&
-                    'relative after:w-0.5 after:h-20 after:bg-primary after:absolute after:top-[100%] after:left-[calc(50%-2px)]'
-                  }
-                ></div>
-                <div
-                  className={
-                    isActive &&
-                    'relative after:absolute after:w-2.5 after:h-2.5 after:bg-primary after:rounded-full after:top-[70px] after:left-[calc(50%-6px)]'
-                  }
-                ></div>
-              </div>
+              <Tab item={item} isActive={isActive} setCategory={setCategory} />
             )}
           </SwiperSlide>
         ))}
