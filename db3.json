@@ -1,6 +1,7 @@
 [
   {
     "productId": 1,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, lena",
     "detailList": [
@@ -26,6 +27,7 @@
   },
   {
     "productId": 2,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, lena",
     "detailList": [
@@ -51,6 +53,7 @@
   },
   {
     "productId": 3,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Samantha",
     "detailList": [
@@ -77,6 +80,7 @@
   },
   {
     "productId": 4,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Bella",
     "detailList": [
@@ -99,6 +103,7 @@
   },
   {
     "productId": 5,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Bella",
     "detailList": [
@@ -121,6 +126,7 @@
   },
   {
     "productId": 6,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Kristin",
     "detailList": [
@@ -144,6 +150,7 @@
   },
   {
     "productId": 7,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Kristin",
     "detailList": [
@@ -167,6 +174,7 @@
   },
   {
     "productId": 8,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Ami",
     "detailList": [
@@ -189,6 +197,7 @@
   },
   {
     "productId": 9,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Rinda",
     "detailList": [
@@ -212,6 +221,7 @@
   },
   {
     "productId": 10,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Rinda",
     "detailList": [
@@ -235,6 +245,7 @@
   },
   {
     "productId": 11,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, troi",
     "detailList": [
@@ -257,6 +268,7 @@
   },
   {
     "productId": 12,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Wrinkle",
     "detailList": [
@@ -280,6 +292,7 @@
   },
   {
     "productId": 13,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "women, 가방, aroundann, Double",
     "detailList": [
@@ -305,6 +318,7 @@
   },
   {
     "productId": 14,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "패션, 가방, 숄더백, women, aroundann, Sally",
     "detailList": [
@@ -329,6 +343,7 @@
   },
   {
     "productId": 15,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "패션, 가방, 숄더백, women, aroundann, Sally",
     "detailList": [
@@ -353,6 +368,7 @@
   },
   {
     "productId": 16,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/final/aroundannbrand.png",
     "tags": "패션, 가방, 숄더백, women, aroundann, Sally",
     "detailList": [
@@ -376,6 +392,7 @@
   },
   {
     "productId": 17,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/kume/kumebrand.png",
     "tags": "패션, 의류, 상의, women",
     "detailList": [
@@ -398,6 +415,7 @@
   },
   {
     "productId": 18,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/kume/kumebrand.png",
     "tags": "패션, 의류, 하의, women",
     "detailList": [
@@ -417,6 +435,7 @@
   },
   {
     "productId": 19,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/kume/kumebrand.png",
     "tags": "패션, 의류, 하의, women",
     "detailList": [
@@ -437,6 +456,7 @@
   },
   {
     "productId": 20,
+    "type": "women",
     "brandImg": "https://fianl.s3.ap-northeast-2.amazonaws.com/kume/kumebrand.png",
     "tags": "패션, 의류, 상의, women",
     "detailList": [
