@@ -48,6 +48,7 @@ import UserEditInfo from './pages/My/UserEditInfo'
 import Refund from './pages/My/Refund'
 import RefundListPage from './pages/My/Refund/RefundListPage'
 import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
+import NotFoundPage from './pages/NotfoundPage'
 
 function App() {
   const location = useLocation()
@@ -108,6 +109,7 @@ function App() {
             <Route path="" element={<Order />} />
             <Route path="completed" element={<CompletedOrder />} />
           </Route>
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         {(!currentPath.includes('/signup') ||
           currentPath !== '/login' ||
