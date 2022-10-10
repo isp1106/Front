@@ -104,10 +104,9 @@ function App() {
           </Route>
           <Route path="/order" element={<OrderMain />}>
             <Route path="" element={<Order />} />
-            <Route path="/*" element={<NotFoundPage />} />
             <Route path="completed" element={<CompletedOrder />} />
           </Route>
-
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         {(!currentPath.includes('/signup') ||
           currentPath !== '/login' ||
