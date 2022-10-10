@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { likedList } from '~/dummy/liked'
 import Card from '../../components/CardList/Card'
 import BackIcon from '../../components/common/BackIcon'
-// import more from '/public/assets/back-small.svg'
 
 function NoResult() {
   const { search } = useParams()
@@ -21,15 +20,15 @@ function NoResult() {
           <div className="font-bold">구매한 상품</div>
           <button
             className="text-xs font-medium text-black-400 flex items-center"
-            onClick={() => navigate('/order')}
+            onClick={() => navigate('/my/order-list')}
           >
             더 보기
             <BackIcon size={10} fill={'#9c9c9c'} className="rotate-180 ml-px" />
           </button>
         </div>
         <div className="px-4 flex overflow-x-auto">
-          {likedList.map((item) => (
-            <div key={item.id} className="w-28 mx-1 shrink-0">
+          {likedList.slice(0, 10).map((item, idx) => (
+            <div key={idx} className="w-28 mx-1 shrink-0">
               <Card data={item} purchase={true} />
             </div>
           ))}
@@ -40,8 +39,8 @@ function NoResult() {
           <div>최근 본 상품</div>
         </div>
         <div className="px-4 flex overflow-x-auto pb-7">
-          {likedList.map((item) => (
-            <div key={item.id} className="w-28 mx-1 shrink-0">
+          {likedList.map((item, idx) => (
+            <div key={idx} className="w-28 mx-1 shrink-0">
               <Card data={item} purchase={true} />
             </div>
           ))}
