@@ -28,11 +28,8 @@ import ProductDetail from './pages/Prdoucts/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
-<<<<<<< HEAD
 import RequireAuth from './components/RequireAuth'
 import Order from './pages/Order'
-=======
->>>>>>> cb8e69acb2f1356744a59e34670dd987c20e8b7a
 import QnA from './pages/My/QnA'
 import QnAComp from './components/My/QnA'
 import QnADetail from './components/My/QnADetail'
@@ -121,7 +118,6 @@ function App() {
 }
 
 export default App
-
 
 // <<<<<<< HEAD
 //     <div className="pb-[75px]">
