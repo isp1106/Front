@@ -21,7 +21,6 @@ function CategoryList({ topCG, subCG }) {
         top.subCategory.map((sub) => {
           if (sub.name === '브랜드') {
             top.subCategory.shift()
-            console.log('me')
           }
         })
       }

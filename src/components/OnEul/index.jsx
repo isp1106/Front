@@ -4,13 +4,13 @@ import Picture from './Picture'
 import Category from './Category'
 const OnEul = () => {
   return (
-    <>
-      <Header />
-      <div className="mt-[54px]">
+    <div>
+      <Header>오늘</Header>
+      <div className="pt-16">
         <Picture />
         <Category />
       </div>
-    </>
+    </div>
   )
 }
 

@@ -7,18 +7,17 @@ import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
 const Header = () => {
   const navigate = useNavigate()
   return (
-    <div className="flex justify-end items-center h-[4.125rem] leading-none px-5 justify-between">
-      <BackOn className="" onClick={() => navigate(-1)} />
-      <ul className="flex items-center h-[4.125rem] gap-3.5">
-        <li>
-          <CartIcon />
-        </li>
-        <li>
+    <div className="w-full flex fixed items-center overflow-hidden bg-white z-40">
+      <div className="w-full h-16 max-w-[600px] px-5 flex items-center">
+        <BackOn className="w-7" onClick={() => navigate(-1)} />
+        <div className="w-full items-center"></div>
+        <div className="flex justify-center items-center gap-2">
           <Link to="/">
             <SetIcon className="w-6 " alt="" />
           </Link>
-        </li>
-      </ul>
+          <CartIcon />
+        </div>
+      </div>
     </div>
   )
 }

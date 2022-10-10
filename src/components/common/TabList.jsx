@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { cls } from '../../../utils'
+import { cls } from '../../utils'
 
 const TabList = ({ tablist, select, onClickHandler }) => {
   return (

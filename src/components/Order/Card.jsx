@@ -1,8 +1,7 @@
 import React from 'react'
 
 const Card = ({ item }) => {
-  const { thumbnail, brand, name, price, discount, sale, stock, count } = item
-
+  const { thumbnail, brand, name, price, sale, stock, count } = item
   return (
     <div className="flex text-[14px] mb-[12px] pl-5">
       <div
