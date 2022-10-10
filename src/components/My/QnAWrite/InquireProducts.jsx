@@ -25,7 +25,7 @@ const items = [
 ]
 const InquireProducts = ({ isOpen, onClick }) => {
   return (
-    <>
+    <div>
       <div className="text-lg font-bold w-full h-16 relative top-0 bg-white z-40 box-border flex items-center justify-center">
         상품검색하기
         <CloseIcon className="absolute right-0" fill="#000" onClick={onClick} />
@@ -58,7 +58,7 @@ const InquireProducts = ({ isOpen, onClick }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
