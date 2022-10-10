@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../components/common/Button'
 import Title from '../../components/SignUp/Title'
-import NextBtn from '../../components/SignUp/NextBtn'
+import NextBtn from '../../components/common/NextBtn'
 import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import useInputValue from '../../hook/useInputValue'
 const ID_REGEX = new RegExp('^[a-z0-9_-]{6,11}$')
@@ -50,7 +50,7 @@ const SignUpIdForm = () => {
             placeholder="6자 이상의 영문, 숫자로 입력해 주세요."
             maxLength="11"
             minLength="6"
-            className="pl-3 w-full border-none h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
+            className="pl-3 h-[48px] border-none flex-initial box-border w-full py-[12px] rounded text-[14px] transition shadow-white"
           />
 
           <div className="absolute flex gap-1 right-2">
@@ -63,7 +63,9 @@ const SignUpIdForm = () => {
         <Button classprop=" border border-black-100 mt-6 gap-2">
           중복확인
         </Button>
-        <NextBtn next="pwform" inputValue={inputValue} disabled={disabled} />
+        <NextBtn next="pwform" inputValue={inputValue} disabled={disabled}>
+          다음
+        </NextBtn>
       </div>
     </>
   )

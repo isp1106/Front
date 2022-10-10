@@ -1,10 +1,11 @@
 import React from 'react'
 import BackIcon from '../common/BackIcon'
 import HeartIcon from '../common/HeartIcon'
-import { magazineDummy as list } from '../../dummy/magaineDetail'
+// import { magazineDummy as list } from '../../dummy/magaineDetail'
 
-const Brand = () => {
-  const { brandImg, brand, brandKo, liked } = list
+const Brand = ({ item }) => {
+  const { brandImg, brand, brandKo, liked } = item
+  console.log(item)
 
   return (
     <div className="w-full px-5 mt-2 py-[36px]">
@@ -13,7 +14,7 @@ const Brand = () => {
           <img src={brandImg} width="58px" />
         </div>
         <div className="flex-grow py-5 px-4">
-          <div className="relative flex flex items-center w-full justify-between">
+          <div className="relative flex items-center w-full justify-between">
             <div className="w-full flex items-center">
               <span className="text-color-800 text-sm font-bold">{brand}</span>
               <BackIcon

@@ -3,15 +3,19 @@ import { Provider } from 'react-redux'
 import { CookiesProvider } from 'react-cookie'
 import { store } from './store'
 import './App.css'
+import { cls } from './utils'
 import Home from './pages/Home'
 import Like from './pages/Like'
 import Oneul from './pages/Oneul'
-import Login from './pages/Login'
+import LoginIndex from './pages/Login'
+import Login from './pages/Login/Login'
+import FindIDPw from './pages/Login/FindIDPw'
 import Cart from './pages/Cart'
-import My from './pages/My'
 import MyPage from './pages/My/MyPage'
+import MyPageComp from './components/My/MyPage'
 import MyReview from './pages/My/MyReview'
-import MyReviewWrite from './pages/My/MyReviewWrite'
+import MyReviewComp from './components/My/MyReview'
+import MyReviewWrite from './components/My/MyReview/Write'
 import SignUp from './pages/SignUp'
 import Category from './pages/Category'
 import NavBottom from './components/layout/NavBottom'
@@ -20,66 +24,146 @@ import SignUpId from './pages/SignUp/SignUpId'
 import SignUpPw from './pages/SignUp/SignUpPw'
 import UserInfo from './pages/SignUp/UserInfo'
 import Finish from './pages/SignUp/Finish'
-import Product from './pages/Product'
 import ProductDetail from './pages/Prdoucts/ProductDetail'
 import SnapDetail from './pages/SnapDetail'
 import MagazineDetail from './pages/MagazineDetail'
 import Search from './pages/Search'
+<<<<<<< HEAD
 import RequireAuth from './components/RequireAuth'
 import Order from './pages/Order'
+=======
+>>>>>>> cb8e69acb2f1356744a59e34670dd987c20e8b7a
 import QnA from './pages/My/QnA'
 import QnAComp from './components/My/QnA'
 import QnADetail from './components/My/QnADetail'
 import QnAWrite from './components/My/QnAWrite'
+import Notice from './pages/Notice'
+import Faq from './pages/Faq'
+import CategoryFashion from './components/Category'
+import MainCategory from './pages/Category/MainCategory'
+import OrderMain from './pages/Order'
+import Order from './pages/Order/Order'
+import CompletedOrder from './pages/Order/CompletedOrder'
+import OrderDetail from './pages/My/OrderDetail'
+import OrderList from './pages/My/OrderList'
+import OrderPage from './pages/My/Order'
+import UserEditInfo from './pages/My/UserEditInfo'
+import Refund from './pages/My/Refund'
+import RefundListPage from './pages/My/Refund/RefundListPage'
+import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
 
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <div className="pb-[75px]">
-      <CookiesProvider>
-        <Provider store={store}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/category" element={<Category />} />
-            <Route path="/oneul" element={<Oneul />} />
-            {/* 로그인이후에 접근할 수 있는 페이지 */}
-            <Route element={<RequireAuth />}>
-              <Route path="/like" element={<Like />} />
-              <Route path="/my" element={<My />}>
-                <Route path="" element={<MyPage />} />
-                <Route path="review" element={<MyReview />} />
-                <Route path="review/write" element={<MyReviewWrite />} />
-                <Route path="qna" element={<QnA />}>
-                  <Route path="" element={<QnAComp />} />
-                  <Route path=":id" element={<QnADetail />} />
-                  <Route path="write" element={<QnAWrite />} />
-                </Route>
-              </Route>
+    <div className="pb-[70px]">
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category" element={<Category />}>
+            <Route index element={<MainCategory />} />
+            <Route path=":topCG/:subCG" element={<CategoryFashion />} />
+          </Route>
+          <Route path="/oneul" element={<Oneul />} />
+          <Route path="/like" element={<Like />} />
+          <Route path="/my" element={<MyPage />}>
+            <Route index element={<MyPageComp />} />
+            <Route path="review" element={<MyReview />}>
+              <Route index element={<MyReviewComp />} />
+              <Route path="write" element={<MyReviewWrite />} />
             </Route>
-            <Route path="/login" element={<Login />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/oneul/detail" element={<SnapDetail />} />
-            <Route path="/magazine/:id" element={<MagazineDetail />} />
-            <Route path="/signup" element={<SignUp />}>
-              <Route path="" element={<TermService />} />
-              <Route path="idform" element={<SignUpId />} />
-              <Route path="pwform" element={<SignUpPw />} />
-              <Route path="infoform" element={<UserInfo />} />
-              <Route path="finish" element={<Finish />} />
+            <Route path="order-list" element={<OrderPage />}>
+              <Route index element={<OrderList />} />
+              <Route path=":id" element={<OrderDetail />} />
             </Route>
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/order" element={<Order />} />
-          </Routes>
-          {!currentPath.includes('/signup') &&
-            !currentPath.includes('/detail') &&
-            !currentPath.includes('/cart') && <NavBottom />}
-        </Provider>
-      </CookiesProvider>
+            <Route path="qna" element={<QnA />}>
+              <Route index element={<QnAComp />} />
+              <Route path=":id" element={<QnADetail />} />
+              <Route path="write" element={<QnAWrite />} />
+            </Route>
+            <Route path="edit-user-info" element={<UserEditInfo />} />
+            <Route path="refund-list" element={<Refund />}>
+              <Route index element={<RefundListPage />} />
+              <Route path=":refundId" element={<RefundDetailPage />} />
+            </Route>
+          </Route>
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/login" element={<LoginIndex />}>
+            <Route index element={<Login />} />
+            <Route path="findIdPw" element={<FindIDPw />} />
+          </Route>
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/oneul/detail" element={<SnapDetail />} />
+          <Route path="/magazine/:id" element={<MagazineDetail />} />
+          <Route path="/signup" element={<SignUp />}>
+            <Route path="" element={<TermService />} />
+            <Route path="idform" element={<SignUpId />} />
+            <Route path="pwform" element={<SignUpPw />} />
+            <Route path="infoform" element={<UserInfo />} />
+            <Route path="finish" element={<Finish />} />
+          </Route>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/search" element={<Search />}>
+            <Route path=":search" />
+          </Route>
+          <Route path="/order" element={<OrderMain />}>
+            <Route path="" element={<Order />} />
+            <Route path="completed" element={<CompletedOrder />} />
+          </Route>
+        </Routes>
+        {(!currentPath.includes('/signup') ||
+          currentPath !== '/login' ||
+          !currentPath.includes('/product')) && <NavBottom />}
+      </Provider>
     </div>
   )
 }
 
 export default App
+
+
+// <<<<<<< HEAD
+//     <div className="pb-[75px]">
+//       <CookiesProvider>
+//         <Provider store={store}>
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/category" element={<Category />} />
+//             <Route path="/oneul" element={<Oneul />} />
+//             {/* 로그인이후에 접근할 수 있는 페이지 */}
+//             <Route element={<RequireAuth />}>
+//               <Route path="/like" element={<Like />} />
+//               <Route path="/my" element={<My />}>
+//                 <Route path="" element={<MyPage />} />
+//                 <Route path="review" element={<MyReview />} />
+//                 <Route path="review/write" element={<MyReviewWrite />} />
+//                 <Route path="qna" element={<QnA />}>
+//                   <Route path="" element={<QnAComp />} />
+//                   <Route path=":id" element={<QnADetail />} />
+//                   <Route path="write" element={<QnAWrite />} />
+//                 </Route>
+//               </Route>
+//             </Route>
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/product" element={<Product />} />
+//             <Route path="/product/:id" element={<ProductDetail />} />
+//             <Route path="/oneul/detail" element={<SnapDetail />} />
+//             <Route path="/magazine/:id" element={<MagazineDetail />} />
+//             <Route path="/signup" element={<SignUp />}>
+//               <Route path="" element={<TermService />} />
+//               <Route path="idform" element={<SignUpId />} />
+//               <Route path="pwform" element={<SignUpPw />} />
+//               <Route path="infoform" element={<UserInfo />} />
+//               <Route path="finish" element={<Finish />} />
+//             </Route>
+//             <Route path="/cart" element={<Cart />} />
+//             <Route path="/search" element={<Search />} />
+//             <Route path="/order" element={<Order />} />
+//           </Routes>
+//           {!currentPath.includes('/signup') &&
+//             !currentPath.includes('/detail') &&
+//             !currentPath.includes('/cart') && <NavBottom />}
+//         </Provider>
+//       </CookiesProvider>
+// =======

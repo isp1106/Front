@@ -13,13 +13,13 @@ const Coupon = (props) => {
   return (
     <div className="">
       <div
-        className="flex px-5 border-b border-black-200 py-5"
+        className="flex px-5 border-b border-black-200 py-6"
         onClick={toggleBtn}
       >
         <p className="flex-grow font-bold">
           {currentPath === '/order' ? '쿠폰 / 적립금' : '최대혜택가'}
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center gap-1">
           {props.children}
           <GoBackIcon
             width="14px"

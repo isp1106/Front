@@ -9,27 +9,21 @@ const HeaderLink = () => {
   const currentPath = location.pathname
   const navigate = useNavigate()
   return (
-    <ul className=" top-2.5 right-5 flex justify-center items-center h-9 z-50 gap-2">
-      <li>
-        {!currentPath.includes('/my') && (
-          <Link to="/search">
-            <SearchIcon
-              className="w-6 "
-              alt="검색"
-              onClick={() => navigate('/search')}
-            />
-          </Link>
-        )}
-      </li>
-      <li>{currentPath !== '/cart' && <CartIcon />}</li>
-      {(currentPath.includes('/product') || currentPath.includes('/cart')) && (
-        <li>
-          <Link to="/">
-            <Home />
-          </Link>
-        </li>
+    <div className="flex justify-center items-center">
+      {!currentPath.includes('/my') && (
+        <SearchIcon onClick={() => navigate('/search')} className="w-7" />
       )}
-    </ul>
+      {currentPath !== '/cart' && (
+        <div className="pl-2">
+          <CartIcon />
+        </div>
+      )}
+      {(currentPath.includes('/product') || currentPath.includes('/cart')) && (
+        <div className="pl-2">
+          <Home onClick={() => navigate('/')} />
+        </div>
+      )}
+    </div>
   )
 }
 

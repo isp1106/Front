@@ -8,7 +8,7 @@ const GoBack = ({ className }) => {
   return (
     <div
       className={cls(
-        'z-50 h-[66px] pl-3 fixed overflow-hidden bg-white w-full flex items-center',
+        'z-50 h-[64px] pl-3 fixed overflow-hidden bg-white w-full flex items-center',
         className,
       )}
       onClick={() => navigate(-1)}

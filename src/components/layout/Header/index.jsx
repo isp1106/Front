@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import HeaderLink from './HeaderLink'
 import { cls } from '../../../utils'
 import Logo from './Logo'
-import { ReactComponent as BackIcon } from '/public/assets/back-on.svg'
+import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function Header(props) {
@@ -10,34 +10,26 @@ function Header(props) {
   const currentPath = location.pathname
   const navigate = useNavigate()
   return (
-    <>
-      <header
-        className={cls(
-          'fixed w-full h-14 bg-white top-0 z-50 box-shadow-custom',
-          currentPath === '/' && 'border-b-2 border-primary',
+    <div
+      className={cls(
+        'w-full h-16 flex fixed top-0 items-center bg-white z-40 box-border',
+        currentPath === '/' && 'border-b-2 border-primary',
+      )}
+    >
+      <div className="w-full h-16 max-w-[600px] px-5 flex items-center">
+        {currentPath === '/' ? (
+          <Logo />
+        ) : (
+          <BackOn className="w-7" onClick={() => navigate(-1)} />
         )}
-      >
-        <div className="relative flex justify-center items-center text-center pr-5 pl-3 h-full">
-          {currentPath === '/' ? (
-            <Logo className="absolute z-50" />
-          ) : (
-            <>
-              <BackIcon
-                onClick={() => navigate(-1)}
-                width="24px"
-                height="24px"
-              />
-            </>
-          )}
-          <div className="flex-grow">
-            <h2 className="text-[20px] font-bold ml-2 pl-6">
-              {props.children}
-            </h2>
-          </div>
+        <div className="w-full items-center justify-center text-[20px] font-bold mx-3">
+          {props.children}
+        </div>
+        <div className="mr-[1.75px]">
           <HeaderLink />
         </div>
-      </header>
-    </>
+      </div>
+    </div>
   )
 }
 

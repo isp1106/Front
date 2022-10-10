@@ -1,26 +1,30 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import ShippingInfo from './ShippingInfo'
 import ProductInfo from './ProductInfo'
 import Coupon from '../common/Coupon'
 import PayWay from './PayWay'
 import TotalPrice from './TotalPrice'
 import OrderBtn from './OrderBtn'
+import { useSelector } from 'react-redux'
+// productid로 조회
 
 const index = () => {
   const { state } = useLocation()
+  const navigate = useNavigate()
   const paynowHandler = () => {
-    alert('결제가 정상적으로 처리되었습니다.')
+    //api호출
+    //성공시
+    navigate('/order/completed')
   }
+
   return (
     <>
-      <div className="pb-[80px]">
-        <ShippingInfo />
-        <ProductInfo items={state} />
-        <Coupon />
-        <PayWay />
-        <TotalPrice items={state} />
-      </div>
+      <ShippingInfo />
+      <ProductInfo items={state} />
+      <Coupon />
+      <PayWay />
+      <TotalPrice items={state} />
       <OrderBtn items={state} paynowHandler={paynowHandler} />
     </>
   )

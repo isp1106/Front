@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from 'react'
 import { useEffect } from 'react'
+import DaumPostcodeEmbed from 'react-daum-postcode'
 import { useLocation } from 'react-router-dom'
-import NextBtn from '../../components/SignUp/NextBtn'
+import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
+import '~/animate.css'
 const EMAIL_REGEX =
   /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
 
@@ -22,6 +24,8 @@ const UserInfo = () => {
     detail: '',
   })
   const [disabled, setDisabled] = useState(false)
+  const [openPost, setOpenPost] = useState(false)
+  const [animation, setAnimation] = useState('')
 
   const ChangeHandler = useCallback((e) => {
     const { name, value } = e.target
@@ -30,6 +34,34 @@ const UserInfo = () => {
       [name]: value,
     })
   })
+
+  const onOpenHandler = () => {
+    setOpenPost(true)
+    setAnimation('openPost')
+    document.body.style.overflow = 'hidden'
+    setTimeout(() => {
+      setAnimation('')
+    }, 1000)
+  }
+
+  const onCloseHandler = () => {
+    setAnimation('closePost')
+    document.body.style.overflow = 'auto'
+    setTimeout(() => {
+      setOpenPost(false)
+      setAnimation('')
+    }, 1000)
+  }
+
+  const onCompleteHandler = (data) => {
+    setInputValue({
+      ...inputValue,
+      postNum: data.zonecode,
+      address: data.roadAddress,
+    })
+    onCloseHandler()
+  }
+
   const [alret, setAlret] = useState({
     email: null,
     lastName: null,
@@ -74,8 +106,8 @@ const UserInfo = () => {
   const telOptions = ['Japan(+81)', 'Korea(+82)']
   const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
   return (
-    <>
-      <div className="info px-5 ">
+    <div>
+      <div className="info px-5">
         {pathname.includes('/signup') && (
           <>
             <Title title="정보" text="입력" />
@@ -117,7 +149,7 @@ const UserInfo = () => {
               onChange={ChangeHandler}
               onBlur={() => checkRegex('firstName')}
               placeholder="성"
-              className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
+              className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
             />
             <input
               name="lastName"
@@ -125,7 +157,7 @@ const UserInfo = () => {
               onBlur={() => checkRegex('lastName')}
               onChange={ChangeHandler}
               placeholder="이름"
-              className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
+              className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
@@ -144,7 +176,7 @@ const UserInfo = () => {
               onChange={ChangeHandler}
               onBlur={() => checkRegex('firstNameRuby')}
               placeholder="성"
-              className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
+              className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
             />
             <input
               name="lastNameRuby"
@@ -152,7 +184,7 @@ const UserInfo = () => {
               onBlur={() => checkRegex('lastNameRuby')}
               onChange={ChangeHandler}
               placeholder="이름"
-              className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
+              className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
@@ -169,7 +201,7 @@ const UserInfo = () => {
             <select
               onChange={ChangeHandler}
               name="tel"
-              className="text-black-400 p-[0.625rem] pr-[1.5rem] h-[3rem] flex-initial box-border rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
+              className="text-black-400 p-[0.625rem] pr-[1.5rem] h-[3rem] flex-initial box-border text-[0.875rem] transition shadow-white border border-neutral-200 rounded bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
             >
               {telOptions &&
                 telOptions.map((option) => {
@@ -186,7 +218,7 @@ const UserInfo = () => {
               onChange={ChangeHandler}
               value={inputValue['telNum']}
               onBlur={() => checkRegex('telNum')}
-              className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
+              className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
@@ -203,7 +235,7 @@ const UserInfo = () => {
             <select
               name="nation"
               onChange={ChangeHandler}
-              className="text-black-400 pl-3 w-full h-[3rem] flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 rounded bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
+              className="text-black-400 pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
             >
               {nationOptions &&
                 nationOptions.map((option) => {
@@ -230,9 +262,32 @@ const UserInfo = () => {
               placeholder="우편번호를 검색해 주세요."
               className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
-            <button className="absolute right-[0.625rem] whitespace-nowrap p-[0.313rem] w-[5.438rem] h-[1.563rem] text-xs border border-primary text-primary rounded font-medium">
+            <button
+              className="absolute right-[0.625rem] whitespace-nowrap p-[0.313rem] w-[5.438rem] h-[1.563rem] text-xs border border-primary text-primary rounded font-medium align-middle"
+              onClick={onOpenHandler}
+            >
               우편번호검색
             </button>
+            {openPost && (
+              <div
+                className={`${animation} w-full h-full fixed z-50 top-0 left-0 bg-white flex flex-col items-center`}
+              >
+                <div className="w-full h-20 py-5 font-bold text-lg flex items-center justify-center relative">
+                  <div>주소 찾기</div>
+                  <div className="absolute right-5" onClick={onCloseHandler}>
+                    <div className="relative w-6 h-6 inset-y-0 flex justify-center items-center">
+                      <div className="w-6 h-0.5 bg-black origin-center rotate-45 absolute"></div>
+                      <div className="w-6 h-0.5 bg-black origin-center -rotate-45 "></div>
+                    </div>
+                  </div>
+                </div>
+                <DaumPostcodeEmbed
+                  style={{ height: '100%' }}
+                  onComplete={onCompleteHandler}
+                  onClose={onCloseHandler}
+                />
+              </div>
+            )}
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
             {alert.postNum}
@@ -260,10 +315,13 @@ const UserInfo = () => {
           </div>
         </div>
       </div>
+
       {pathname.includes('/signup') && (
-        <NextBtn next="finish" inputValue={inputValue} disabled={disabled} />
+        <NextBtn next="finish" inputValue={inputValue} disabled={disabled}>
+          다음
+        </NextBtn>
       )}
-    </>
+    </div>
   )
 }
 

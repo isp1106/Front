@@ -25,7 +25,7 @@ const index = () => {
 
             {list.product && <Card item={list.product} />}
             <Content item={list} />
-            {list.type === '답변완료' && <Answer item={list} />}
+            {list.answerYn === '답변완료' && <Answer item={list} />}
           </>
         )
       )}
