@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 
 const Plus = ({ id = 'detail', className }) => {
   const navigate = useNavigate()
-
   return (
     <PlusIcon
       className={className}

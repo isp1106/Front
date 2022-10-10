@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 
 const AddPicture = forwardRef(({ uploadThumbnail, showImage, count }, ref) => {
   return (
-    <div className="mb-4">
+    <div className="px-5 mb-4">
       <h3 className="font-bold pb-5">사진등록</h3>
 
       <div className="relative flex gap-2">

@@ -28,7 +28,8 @@ const DetailDesc = () => {
           )}
         />
       </div>
-      <div className="grid grid-cols-5 border border-black-200 w-full text-center text-[10px] leading-8 mt-8 text-black-200">
+      {/* api연결 하며 임시제거 */}
+      {/* <div className="grid grid-cols-5 border border-black-200 w-full text-center text-[10px] leading-8 mt-8 text-black-200">
         <div className="border-r border-b border-black-200 bg-point">cm</div>
         <div className="border-r border-b border-black-200 bg-point">총장</div>
         <div className="border-r border-b border-black-200 bg-point ">
@@ -45,7 +46,7 @@ const DetailDesc = () => {
         <div className="border-r border-black-200 text-black-800">60</div>
         <div className="border-r border-black-200 text-black-800">68</div>
         <div className="text-black-800">86</div>
-      </div>
+      </div> */}
     </div>
   )
 }
