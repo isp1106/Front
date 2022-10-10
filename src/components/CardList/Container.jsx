@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Card from './Card'
-import { likedList } from '~/dummy/liked'
+import product from '~/dummy/dummy/product.json'
 
-function Container() {
+function Container({ list }) {
   return (
     <div className="pt-56">
       <div className="w-full grid grid-cols-2 gap-1">
-        {likedList.map((item, idx) => (
+        {list.map((item, idx) => (
           <Card key={idx} data={item} />
         ))}
       </div>

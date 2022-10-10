@@ -35,6 +35,8 @@ import Notice from './pages/Notice'
 import Faq from './pages/Faq'
 import CategoryFashion from './components/Category'
 import MainCategory from './pages/Category/MainCategory'
+import AfterSearch from './pages/Search/AfterSearch'
+import BeforeSearch from './pages/Search/BeforeSearch'
 
 function App() {
   const location = useLocation()
@@ -78,7 +80,8 @@ function App() {
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/search" element={<Search />}>
-            <Route path=":search" />
+            <Route path="" element={<BeforeSearch />} />
+            <Route path=":search" element={<AfterSearch />} />
           </Route>
           <Route path="/order" element={<Order />} />
         </Routes>
