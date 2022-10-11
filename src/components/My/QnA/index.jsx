@@ -8,9 +8,9 @@ const tablist = ['답변완료', '미답변']
 
 const index = () => {
   const { data: questions, isLoading, isError } = useGetQuestionsQuery()
-  const answerYes = questions?.filter((item) => item.answerYn === '답변완료')
-  const answerNo = questions?.filter((item) => item.answerYn !== '답변완료')
-
+  const answerYes = questions?.filter((item) => !item.answerYn)
+  const answerNo = questions?.filter((item) => !!item.answerYn)
+  console.log(answerYes, 'answerYes')
   const [select, setSelect] = useState(tablist[0])
   const navigate = useNavigate()
   const onClickHandler = (idx) => {

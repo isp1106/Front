@@ -5,7 +5,7 @@ import useModalControl from '../../../hook/useModalControl'
 
 const QnAList = ({ questions }) => {
   const [isOpen, ModalControlHandler] = useModalControl()
-
+  console.log('here', questions)
   return (
     <>
       {questions.map((item) => (

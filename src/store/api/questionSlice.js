@@ -11,18 +11,17 @@ export const questionApi = createApi({
       query: () => 'customers/questions',
     }),
     getQustion: builder.query({
-      query: (id) => `questions/${id}`,
+      query: (id) => `customers/questions/${id}`,
     }),
     addQuestion: builder.mutation({
-      query: ({ data }) => ({
-        url: `customers/questions/1`,
-        method: 'POST',
-        // mode: 'cors',
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-        body: data,
-      }),
+      query: (data) => {
+        console.log('data', data)
+        return {
+          url: `customers/questions/1`,
+          method: 'POST',
+          body: data,
+        }
+      },
     }),
   }),
 })
