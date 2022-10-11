@@ -16,6 +16,7 @@ function NoResult() {
         검색어를 다시 한번 확인해보세요
       </div>
       <div className="pb-6 border-b-[10px] border-white-200">
+        {/* 비로그인 시, 구매한 상품 목록은 보이지 않게 조건부 랜더링 */}
         <div className="p-5 flex justify-between">
           <div className="font-bold">구매한 상품</div>
           <button
@@ -26,7 +27,7 @@ function NoResult() {
             <BackIcon size={10} fill={'#9c9c9c'} className="rotate-180 ml-px" />
           </button>
         </div>
-        <div className="px-4 flex overflow-x-auto">
+        <div className="px-5 flex overflow-x-auto">
           {likedList.slice(0, 10).map((item, idx) => (
             <div key={idx} className="w-28 mx-1 shrink-0">
               <Card data={item} purchase={true} />
