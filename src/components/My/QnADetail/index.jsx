@@ -4,6 +4,7 @@ import { useGetQustionQuery } from '../../../store/api/questionSlice'
 import Card from '../QnA/Card'
 import Content from './Content'
 import Answer from './Answer'
+import ErrorCom from '../../common/ErrorCom'
 
 const index = () => {
   const params = useParams()
@@ -14,7 +15,7 @@ const index = () => {
       {isLoading ? (
         <span>로딩중...</span>
       ) : isError ? (
-        <span>에러발생</span>
+        <ErrorCom Title="에러발생" />
       ) : (
         list && (
           <>

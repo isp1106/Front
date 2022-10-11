@@ -5,9 +5,13 @@ import useModalControl from '../../../hook/useModalControl'
 
 const QnAList = ({ questions }) => {
   const [isOpen, ModalControlHandler] = useModalControl()
-  console.log('here', questions)
   return (
     <>
+      {questions.length === 0 && (
+        <>
+          <div className="w-full text-center pt-5">문의 내역이 없습니다</div>
+        </>
+      )}
       {questions.map((item) => (
         <ContentBox
           item={item}

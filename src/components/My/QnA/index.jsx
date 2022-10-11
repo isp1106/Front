@@ -4,6 +4,7 @@ import TabList from '../../common/TabList'
 import QnAList from './QnAList'
 import QnABtn from './QnABtn'
 import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
+import ErrorCom from '../../common/ErrorCom'
 const tablist = ['답변완료', '미답변']
 
 const index = () => {
@@ -30,7 +31,7 @@ const index = () => {
       {isLoading ? (
         <span>로딩중...</span>
       ) : isError ? (
-        <span>에러발생...</span>
+        <ErrorCom Title="에러발생" />
       ) : (
         questions &&
         (select === tablist[0] ? (
