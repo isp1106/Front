@@ -53,6 +53,13 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
     } else {
       api.dispatch(logOut())
     }
+  } else if (
+    result?.error?.originalStatus === 500 &&
+    result?.error?.msg === '서버 에러가 발생했습니다. 고객센터로 문의 바랍니다.'
+  ) {
+    api.dispatch(logOut())
+  } else {
+    throw new Error()
   }
 
   return result
