@@ -15,9 +15,12 @@ export const questionApi = createApi({
     }),
     addQuestion: builder.mutation({
       query: ({ data }) => ({
-        url: `customers/questions`,
-        method: 'PUT',
+        url: `customers/questions/1`,
+        method: 'POST',
         // mode: 'cors',
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
         body: data,
       }),
     }),

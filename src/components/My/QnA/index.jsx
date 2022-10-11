@@ -20,9 +20,6 @@ const index = () => {
     navigate('/my/qna/write')
   }
 
-  if (isLoading) return <span>로딩중...</span>
-  if (isError) return <span>에러발생...</span>
-
   return (
     <>
       <TabList
@@ -30,13 +27,18 @@ const index = () => {
         select={select}
         onClickHandler={onClickHandler}
       />
-
-      {select === tablist[0] ? (
-        <QnAList questions={answerYes} />
+      {isLoading ? (
+        <span>로딩중...</span>
+      ) : isError ? (
+        <span>에러발생...</span>
       ) : (
-        <QnAList questions={answerNo} />
+        questions &&
+        (select === tablist[0] ? (
+          <QnAList questions={answerYes} />
+        ) : (
+          <QnAList questions={answerNo} />
+        ))
       )}
-
       <QnABtn onClick={goToWrite} />
     </>
   )
