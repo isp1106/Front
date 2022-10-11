@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_BASE_UR2,
+const baseQuery = fetchBaseQuery({
+  baseUrl: import.meta.env.VITE_BASE_URL2,
   credentials: 'include',
   prepareHeaders: (headers) => {
     // const accessToken = getCookie('accessToken')
@@ -13,4 +13,9 @@ export const baseQuery = fetchBaseQuery({
     }
     return headers
   },
+})
+
+export const apiSlice = createApi({
+  baseQuery,
+  endpoints: (builder) => ({}),
 })

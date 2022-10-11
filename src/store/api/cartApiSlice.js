@@ -1,12 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { baseQuery } from '../api/baseQuery'
-// import { apiSlice } from '../api/apiSlice'
-// const apiWithTags = apiSlice.enhanceEndpoints({ addTagTypes: ['Cart'] })
+import { apiSlice } from '../api/baseQuery'
 
-// export const cartApiSlice = apiWithTags.injectEndpoints({
-export const cartApi = createApi({
-  reducerPath: 'cartApi',
-  baseQuery,
+export const cartApi = apiSlice.injectEndpoints({
   tagTypes: ['Carts'],
   endpoints: (builder) => ({
     //카드 상품 불러오기
