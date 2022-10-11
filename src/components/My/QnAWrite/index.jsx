@@ -13,6 +13,9 @@ import { Outlet } from 'react-router-dom'
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
+    id: null,
+    Product: null,
+    Member: null,
     type: types[0],
     title: null,
     content: null,
@@ -93,8 +96,7 @@ const index = () => {
         formData.append(key, userValue[key])
       }
     }
-    //api연결 로직
-    addQuestion(formData)
+    addQuestion(userValue)
   }
 
   const removeThumbnail = (idx) => {
@@ -127,11 +129,6 @@ const index = () => {
       </>
     )
   })
-
-  // useEffect(() => {
-  //   console.log('imageFile', imageFile)
-  //   console.log('userValue', userValue)
-  // }, [imageFile, userValue])
 
   return (
     <>

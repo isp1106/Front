@@ -11,7 +11,7 @@ const Card = ({ item }) => {
       ></div>
       <div className="text-xs flex flex-col gap-1">
         <div className="font-bold">{item?.brand}</div>
-        <div className="text-black-800">{item?.product}</div>
+        <div className="text-black-800">{item?.productName}</div>
         <div className="text-black-600">수량 : {item?.count}</div>
       </div>
     </div>
