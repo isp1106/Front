@@ -8,10 +8,10 @@ export const questionApi = createApi({
     //카드 상품 불러오기
     getQuestions: builder.query({
       // query: () => '/customers/question',
-      query: () => 'question',
+      query: () => 'customers/questions',
     }),
     getQustion: builder.query({
-      query: (id) => `question/${id}`,
+      query: (id) => `questions/${id}`,
     }),
     addQuestion: builder.mutation({
       query: ({ data }) => ({
