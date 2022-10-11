@@ -1,16 +1,22 @@
+import { fetchBaseQuery } from '@reduxjs/toolkit/query'
 import {
   setCredentials,
   logOut,
-  selectCurrentAccessToken,
-  selectCurrentRefreshToken,
-} from '../../features/auth/authSlice'
-
+  // selectCurrentAccessToken,
+  // selectCurrentRefreshToken,
+} from '../slices/authSlice'
+// import { useCookies } from 'react-cookie'
+import { Cookies } from 'react-cookie'
+// const [cookies, setCookie, removeCookie] = useCookies()
 const { VITE_BASE_URL } = import.meta.env
+const cookies = new Cookies()
 export const baseQuery = fetchBaseQuery({
   baseUrl: VITE_BASE_URL,
   credentials: 'include',
   prepareHeaders: (headers) => {
-    const token = selectCurrentAccessToken
+    // const [cookies, setCookie, removeCookie] = useCookies()
+    // const token = cookies.accessToken
+    const token = cookies.get('accessToken')
     if (token) {
       headers.set('authorization', `Bearer ${token}`)
     }
@@ -24,13 +30,16 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
   if (result?.error?.originalStatus === 403) {
     console.log('sending refresh token')
     // send refresh token to get new access token
+    // const [cookies, setCookie, removeCookie] = useCookies()
     const refreshResult = await baseQuery(
       {
         url: '/auth/reissue',
         method: 'POST',
         body: {
-          accessToken: selectCurrentAccessToken,
-          refreshToken: selectCurrentRefreshToken,
+          // accessToken: cookies.accessToken,
+          // refreshToken: cookies.refreshToken,
+          accessToken: cookies.remove('accessToken'),
+          refreshToken: cookies.remove('refreshToken'),
         },
       },
       api,

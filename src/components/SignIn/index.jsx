@@ -1,9 +1,14 @@
 import { useState, useMemo } from 'react'
 import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
+
+import { useNavigate } from 'react-router-dom'
+import { useLoginMutation } from '../../store/api/authApiSlice'
+import { setCredentials } from '../../store/slices/authSlice'
+import { useDispatch } from 'react-redux'
+
 import Input from './input'
 import Button from '../common/Button'
-import { useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -12,6 +17,8 @@ const SignIn = () => {
     pw: '',
   })
 
+  const [login, { isLoading }] = useLoginMutation()
+  const dispatch = useDispatch()
   const onChangeHandler = (e) => {
     const { name, value } = e.target
     setInputValue({
@@ -31,10 +38,13 @@ const SignIn = () => {
     () => inputValue.id.trim() !== '' && inputValue.pw.trim() !== '',
   )
 
-  const loginHandler = () => {
+  const loginHandler = async () => {
     if (invalidInput) {
       //api연결 후 api 요청 로직 작성
       console.log(inputValue)
+      const { id, pw } = inputValue
+      const userData = await login({ username: id, password: pw })
+      dispatch(setCredentials(userData['data']))
     } else {
       alert('아이디와 패스워드를 확인해주세요')
     }

@@ -63,6 +63,7 @@ function App() {
             <Route index element={<MainCategory />} />
             <Route path=":topCG/:subCG" element={<CategoryFashion />} />
           </Route>
+          {/* Oneul  like  edit-user-info//조건부 */}
           <Route path="/oneul" element={<Oneul />} />
           <Route path="/like" element={<Like />} />
           <Route path="/my" element={<MyPage />}>
