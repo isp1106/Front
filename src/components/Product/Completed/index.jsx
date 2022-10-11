@@ -3,7 +3,7 @@ import TopContent from './TopContent'
 import Header from './Header'
 import OrderProductInfo from './OrderProductInfo'
 import PaymentInfo from './PaymentInfo'
-// import CompletedBtn from './CompletedBtn'
+import CompletedBtn from './CompletedBtn'
 import Error from './Error'
 
 const index = () => {
@@ -18,7 +18,7 @@ const index = () => {
       에러가 난경우
       <Error /> */}
       </div>
-      {/* <CompletedBtn /> */}
+      <CompletedBtn />
     </>
   )
 }
