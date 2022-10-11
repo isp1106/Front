@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_BASE_UR2,
+  baseUrl: 'http://43.200.38.47:9090',
   credentials: 'include',
   prepareHeaders: (headers) => {
     // const accessToken = getCookie('accessToken')
