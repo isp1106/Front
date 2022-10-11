@@ -1,7 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../../components/layout/Header'
-import InquireProducts from '../../components/My/QnAWrite/InquireProducts'
 
 const QnA = () => {
   return (
@@ -10,7 +9,6 @@ const QnA = () => {
       <div className="pt-[55px]">
         <Outlet />
       </div>
-      <InquireProducts />
     </>
   )
 }

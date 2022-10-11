@@ -1,11 +1,16 @@
-import { setCredentials, logOut } from '../../features/auth/authSlice'
+import {
+  setCredentials,
+  logOut,
+  selectCurrentAccessToken,
+  selectCurrentRefreshToken,
+} from '../../features/auth/authSlice'
 
 const { VITE_BASE_URL } = import.meta.env
 export const baseQuery = fetchBaseQuery({
   baseUrl: VITE_BASE_URL,
   credentials: 'include',
-  prepareHeaders: (headers, { getState }) => {
-    const token = getState().auth.token
+  prepareHeaders: (headers) => {
+    const token = selectCurrentAccessToken
     if (token) {
       headers.set('authorization', `Bearer ${token}`)
     }
@@ -19,7 +24,18 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
   if (result?.error?.originalStatus === 403) {
     console.log('sending refresh token')
     // send refresh token to get new access token
-    const refreshResult = await baseQuery('/refresh', api, extraOptions)
+    const refreshResult = await baseQuery(
+      {
+        url: '/auth/reissue',
+        method: 'POST',
+        body: {
+          accessToken: selectCurrentAccessToken,
+          refreshToken: selectCurrentRefreshToken,
+        },
+      },
+      api,
+      extraOptions,
+    )
     console.log(refreshResult)
     if (refreshResult?.data) {
       const user = api.getState().auth.user

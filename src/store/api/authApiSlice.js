@@ -1,5 +1,4 @@
-//로그인
-import { apiSlice } from '../../app/api/apiSlice'
+import { apiSlice } from './apiSlice'
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
