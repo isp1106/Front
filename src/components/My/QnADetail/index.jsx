@@ -5,6 +5,7 @@ import Card from '../QnA/Card'
 import Content from './Content'
 import Answer from './Answer'
 import ErrorCom from '../../common/ErrorCom'
+import Loader from '../../layout/Loader'
 
 const index = () => {
   const params = useParams()
@@ -13,7 +14,7 @@ const index = () => {
   return (
     <>
       {isLoading ? (
-        <span>로딩중...</span>
+        <Loader />
       ) : isError ? (
         <ErrorCom Title="에러발생" />
       ) : (

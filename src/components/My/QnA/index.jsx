@@ -5,6 +5,7 @@ import QnAList from './QnAList'
 import QnABtn from './QnABtn'
 import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
 import ErrorCom from '../../common/ErrorCom'
+import Loader from '../../layout/Loader'
 const tablist = ['답변완료', '미답변']
 
 const index = () => {
@@ -29,7 +30,7 @@ const index = () => {
         onClickHandler={onClickHandler}
       />
       {isLoading ? (
-        <span>로딩중...</span>
+        <Loader />
       ) : isError ? (
         <ErrorCom Title="에러발생" />
       ) : (

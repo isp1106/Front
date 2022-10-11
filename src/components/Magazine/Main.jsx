@@ -6,6 +6,7 @@ import Brand from './Brand'
 import Plus from './Plus'
 import { useGetMagazineQuery } from '../../store/api/magazineSlice'
 import { cls } from '../../utils'
+import Loader from '../layout/Loader'
 
 const TopMain = () => {
   // const { title, thumbnail, items } = list
@@ -18,7 +19,7 @@ const TopMain = () => {
   return (
     <>
       {isLoading ? (
-        <span>로딩중...</span>
+        <Loader />
       ) : isError ? (
         <ErrorCom Title="에러발생" />
       ) : (
