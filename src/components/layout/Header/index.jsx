@@ -31,7 +31,7 @@ function Header(props) {
         )}
         <div className="flex-grow font-bold text-xl">{props.children}</div>
         <div className="mr-[1.75px]">
-          <HeaderLink />
+          <HeaderLink searchNone={props.searchNone} />
         </div>
       </div>
     </div>
