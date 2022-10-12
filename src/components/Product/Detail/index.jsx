@@ -59,7 +59,7 @@ const Detail = () => {
             <Relation />
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <SubContent />
-            <DetailBtn />
+            <DetailBtn list={list} />
             <div
               className={cls(
                 'flex items-center justify-center fixed  right-3 text-white bottom-[120px] z-10 w-[38px] h-[38px] rounded-full bg-point font-bold transition-opacity ease-in',
