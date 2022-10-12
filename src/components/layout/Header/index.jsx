@@ -20,11 +20,9 @@ function Header(props) {
         {currentPath === '/' ? (
           <Logo />
         ) : (
-          <BackOn className="w-7" onClick={() => navigate(-1)} />
+          !props.back && <BackOn className="w-7" onClick={() => navigate(-1)} />
         )}
-        <div className="w-full items-center justify-center text-[20px] font-bold mx-3">
-          {props.children}
-        </div>
+        <div className="flex-grow font-bold text-xl">{props.children}</div>
         <div className="mr-[1.75px]">
           <HeaderLink />
         </div>
