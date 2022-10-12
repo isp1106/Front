@@ -6,7 +6,7 @@ import check from '/public/assets/allCheck.svg'
 import notCheck from '/public/assets/allNotCheck.svg'
 
 function Card({ editMode, data, deleteList, setDeleteList }) {
-  const { brand, productName, thumbnail, price, sale } = data
+  const { brand, productName, productId, thumbnail, price, sale } = data
   const saleCost = parseInt((price * (100 - sale)) / 100)
   const [selected, setSelected] = useState(false)
 
@@ -19,7 +19,7 @@ function Card({ editMode, data, deleteList, setDeleteList }) {
     <div>
       <div className="relative">
         <div className="w-full bg-cover overflow-hidden relative justify-center after:content('') after:block after:pb-[100%]">
-          <img src={thumbnail} alt="kirsh product" className="absolute" />
+          <img src={thumbnail} alt={productName} className="absolute" />
         </div>
         <div>
           {editMode ? (
@@ -27,7 +27,13 @@ function Card({ editMode, data, deleteList, setDeleteList }) {
               className="absolute top-2.5 right-2.5"
               onClick={() => {
                 setSelected(!selected)
-                setDeleteList([...deleteList, product])
+                if (selected) {
+                  setDeleteList(
+                    deleteList.filter((name) => name !== productName),
+                  )
+                } else {
+                  setDeleteList([...deleteList, productName])
+                }
               }}
             >
               <img
@@ -43,7 +49,7 @@ function Card({ editMode, data, deleteList, setDeleteList }) {
           )}
         </div>
       </div>
-      <div className="px-5 py-2.5">
+      <div className="px-5 pt-2.5 pb-7">
         <div>
           <div className="text-sm font-bold">{brand}</div>
           <div className="text-xs font-normal text-black-800 truncate">
