@@ -17,7 +17,6 @@ const Detail = () => {
   const params = useParams()
   const dispatch = useDispatch()
   const { data: list, isLoading, isError } = useGetProductQuery(params.id)
-
   const recentViewProduct = 'recentViewProduct'
 
   useEffect(() => {

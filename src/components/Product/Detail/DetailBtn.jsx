@@ -9,13 +9,14 @@ import { detailProducts } from '../../../dummy/detail'
 import { useSelector, useDispatch } from 'react-redux'
 import { useGetProductQuery } from '../../../store/api/productSlice'
 
-const NextBtn = () => {
+const NextBtn = ({ list }) => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
   const params = useParams()
   const { data: list, isLoading, isError } = useGetProductQuery(params.id)
   const items = useSelector((state) => state.product)
+
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
     setIsOpen((prev) => !prev)
@@ -42,10 +43,17 @@ const NextBtn = () => {
   }
 
   const copyUrl = () => {
-    const value = window.document.location.href
-    navigator.clipboard.writeText(value).then(() => {
-      alert('주소가 복사되었습니다')
-    })
+    const url = window.document.location.href
+    if (navigator.share) {
+      navigator
+        .share({
+          title: list.brand,
+          text: list.productName,
+          url,
+        })
+        .then(() => console.log('공유 성공'))
+        .catch((error) => console.log('공유 실패', error))
+    }
   }
 
   const ContinueShopping = () => {
