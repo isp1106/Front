@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
-import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
+import GoogleBtn from './GoogleBtn'
+// import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 import Input from './input'
 import Button from '../common/Button'

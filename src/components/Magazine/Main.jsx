@@ -1,10 +1,12 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import ErrorCom from '../common/ErrorCom'
 // import { magazineDummy as list } from '../../dummy/magaineDetail'
 import Brand from './Brand'
 import Plus from './Plus'
 import { useGetMagazineQuery } from '../../store/api/magazineSlice'
 import { cls } from '../../utils'
+import Loader from '../layout/Loader'
 
 const TopMain = () => {
   // const { title, thumbnail, items } = list
@@ -17,9 +19,9 @@ const TopMain = () => {
   return (
     <>
       {isLoading ? (
-        <span>로딩중...</span>
+        <Loader />
       ) : isError ? (
-        <span>에러발생</span>
+        <ErrorCom Title="에러발생" />
       ) : (
         list && (
           <>

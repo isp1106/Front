@@ -6,7 +6,7 @@ const QnA = () => {
   return (
     <>
       <Header>1:1 문의</Header>
-      <div className="pt-[55px]">
+      <div className="pt-[65px]">
         <Outlet />
       </div>
     </>
