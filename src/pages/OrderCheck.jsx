@@ -18,6 +18,7 @@ function OrderCheck() {
           </div>
           <input
             value={orderNum}
+            onChange={(e) => setOrderNum(e.target.value)}
             type="text"
             className="pl-3 h-12 box-border w-full py-3 rounded border border-neutral-300 shadow-white my-5"
           />
