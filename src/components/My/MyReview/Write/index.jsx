@@ -11,13 +11,13 @@ const index = () => {
   const [userValue, setUserValue] = useState({
     title: null,
     images: [],
-    // thumbnailBase64: '',
     id: null,
     content: null,
     product: null,
     member: null,
     images: [],
-    star: 5.0,
+    star: 0,
+    createdDate: null,
   })
   const [imageFile, setImageFile] = useState([])
   const [addProductReview] = useAddProductReviewMutation()
@@ -47,6 +47,7 @@ const index = () => {
   const handleImageUpload = (e) => {
     const fileList = e.target.files
 
+    console.log(imageFile.length)
     if (imageFile.length > 1) {
       let currentImages = imageFile.slice(1, 2)
       setImageFile([
@@ -83,9 +84,9 @@ const index = () => {
     addProductReview(formData)
   }
 
-  // useEffect(() => {
-  //   console.log(userValue)
-  // }, [userValue])
+  useEffect(() => {
+    console.log(userValue)
+  }, [userValue])
 
   const reviewData = reviewContent
   return (
@@ -112,7 +113,7 @@ const index = () => {
       </ul>
       <div className="flex flex-col items-center justify-center py-[1.875rem] mb-[1.875rem] border-b border-black-200 gap-4">
         <p>상품에 대한 별점을 매겨주세요</p>
-        <StarScore />
+        <StarScore userValue={userValue} setUserValue={setUserValue} />
       </div>
       <AddPicture
         handleImageUpload={handleImageUpload}
