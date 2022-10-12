@@ -48,6 +48,7 @@ import Refund from './pages/My/Refund'
 import RefundListPage from './pages/My/Refund/RefundListPage'
 import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
 import NotFoundPage from './pages/NotfoundPage'
+import OrderCheck from './pages/OrderCheck'
 
 function App() {
   const location = useLocation()
@@ -84,6 +85,7 @@ function App() {
               <Route path=":refundId" element={<RefundDetailPage />} />
             </Route>
           </Route>
+          <Route path="order-check" element={<OrderCheck />} />
           <Route path="/notice" element={<Notice />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/login" element={<LoginIndex />}>
