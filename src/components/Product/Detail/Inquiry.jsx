@@ -5,9 +5,12 @@ const Inquiry = () => {
   return (
     <>
       <div className=" pb-6 ">
-        <h4 className="pl-5 font-bold border-primary border-b pb-5">
-          상품 문의
-        </h4>
+        <div className="flex justify-between px-5 items-center border-primary border-b">
+          <h4 className="font-bold my-4">
+            상품 문의 <span>({detailProducts.review.count})</span>
+          </h4>
+          <span className="text-sm text-black-600 font-medium">Q&A쓰기</span>
+        </div>
         <div>
           {detailProducts.Inquiry.map((item, idx) => (
             <div className="py-5  border-b border-black-400" key={idx}>

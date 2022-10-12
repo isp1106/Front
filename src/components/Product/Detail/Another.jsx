@@ -14,7 +14,10 @@ const Another = () => {
 
   return (
     <div className="pl-5">
-      <h4 className="font-bold my-4">브랜드의 다른상품</h4>
+      <div className="flex justify-between pr-5 items-center">
+        <h4 className="font-bold my-4">브랜드의 다른상품</h4>
+        <span className="text-sm text-black-600 font-medium">더보기</span>
+      </div>
       <div className="flex gap-5 overflow-x-scroll">
         {list?.map(
           ({ productId, thumbnail, productName, price, sale, liked }) => (
