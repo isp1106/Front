@@ -6,7 +6,7 @@ const OrderBtn = ({ items, paynowHandler }) => {
     <div className="hover:cursor-pointer fixed bottom-0 left-0 right-0 z-50 ">
       <div
         className={cls(
-          'h-[78px] gap-4 w-full flex  justify-center items-center text-white-200 bg-primary pb-4 text-[20px]',
+          'h-[80px] gap-4 w-full flex justify-center items-center text-white-200 bg-point pb-6 text-lg',
         )}
         onClick={paynowHandler}
       >

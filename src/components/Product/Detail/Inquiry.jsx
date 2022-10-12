@@ -27,6 +27,7 @@ const Inquiry = () => {
             </div>
           ))}
         </div>
+        <div className="flex items-center justify-center mt-3 text-xs">1</div>
       </div>
     </>
   )

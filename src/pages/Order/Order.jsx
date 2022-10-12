@@ -5,7 +5,9 @@ import Header from '../../components/layout/Header'
 const Order = () => {
   return (
     <div>
-      <Header>결제</Header>
+      <Header className="border-b border-black-100">
+        <div className="text-center ml-[26px]">결제</div>
+      </Header>
       <div className="pt-[55px]">
         <OrderPage />
       </div>
