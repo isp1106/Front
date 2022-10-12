@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import HeartIcon from '../../common/HeartIcon'
 import Coupon from '../../common/Coupon'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-// import { detailProducts } from '../../../dummy/detail'
 import { ratingStar } from '../../../utils/star'
+import { useGetProductReviewsCountQuery } from '../../../store/api/reviewApiSlice'
 const Explanation = ({ list }) => {
   const [open, setOpen] = useState(false)
   const toggleBtn = () => {
     setOpen((prev) => !prev)
   }
   //리뷰호출
-  console.log(list, 'list')
   const { brand, productName, price, sale, star } = list
+  const params = useParams()
+  const { data: questionCount } = useGetProductReviewsCountQuery(params.id)
   return (
     <div className="w-full flex-1 mt-5 pb-2">
       <div className="pl-5 pr-5 border-b border-black-200 flex-grow pb-7">
@@ -31,18 +33,20 @@ const Explanation = ({ list }) => {
             }}
           ></div>
           <span className="text-black-600 text-xs underline">
-            100개의 리뷰보기
+            {!questionCount
+              ? '작성된 리뷰가 없습니다.'
+              : `{questionCount}개의 리뷰보기`}
           </span>
         </div>
         <div className="flex items-end">
           <div className="flex flex-col mr-4">
             <span className="text-black-400 text-xs line-through items-center">
-              {price} ¥
+              {price.toLocaleString()} ¥
             </span>
             <span className="text-xl font-bold text-primary mr-2">{sale}%</span>
           </div>
           <div className="flex-grow text-xl font-bold">
-            {parseInt((price * (100 - sale)) / 100)}¥
+            ¥{parseInt((price * (100 - sale)) / 100).toLocaleString()}
           </div>
           <div className="text-white bg-point py-2 px-3 rounded-[5px] font-medium">
             {price > 5000 && '무료배송 상품'}
@@ -65,7 +69,7 @@ const Explanation = ({ list }) => {
       <Coupon>
         <span className="mr-5 text-primary font-bold">40%</span>
         <span className="mr-1 font-bold">
-          ¥ {parseInt((price * (100 - sale)) / 100)}
+          ¥ {parseInt((price * (100 - sale)) / 100).toLocaleString()}
         </span>
       </Coupon>
     </div>

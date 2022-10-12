@@ -12,11 +12,12 @@ import { cls } from '../../../utils'
 import BackIcon from '../../common/BackIcon'
 import Loader from '../../layout/Loader'
 import ErrorCom from '../../common/ErrorCom'
+import { useDispatch } from 'react-redux'
 
 const Detail = () => {
   const params = useParams()
-  const { data: list, isLoaing, isError } = useGetProductQuery(params.id)
-
+  const dispatch = useDispatch()
+  const { data: list, isLoading, isError } = useGetProductQuery(params.id)
   const [showButton, setShowButton] = useState(false)
 
   const scrollToTop = () => {
@@ -43,17 +44,17 @@ const Detail = () => {
 
   return (
     <>
-      {isLoaing ? (
+      {isLoading ? (
         <Loader />
       ) : isError ? (
         <ErrorCom Title="에러 발생" />
       ) : (
         list && (
-          <div className="relative">
+          <div className="relative mb-10">
             <MainSlide list={list.detailThumbList} />
             <Explanation list={list} />
             <Brand list={list} />
-            <DetailDesc />
+            <DetailDesc list={list.detailList} />
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <Relation />
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
