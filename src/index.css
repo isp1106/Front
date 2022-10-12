@@ -122,3 +122,21 @@ select {
 .rating-component .bh-stars .right-half.active {
   fill: var(--primary);
 }
+
+.googleBtn {
+  border: 1px solid var(--black-100) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  position: relative;
+}
+.googleBtn span {
+  font-weight: 700 !important;
+  display: block !important;
+}
+.googleBtn svg {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+}
