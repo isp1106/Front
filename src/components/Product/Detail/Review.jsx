@@ -3,7 +3,7 @@ import { detailProducts } from '~/dummy/detail'
 import { ratingStar } from '~/utils/star'
 import { useParams } from 'react-router-dom'
 import { useGetProductReviewsQuery } from '~/store/api/reviewApiSlice'
-import Loader from '../../layout/Loader'
+import Loading from '../../layout/Loading'
 
 const Review = () => {
   const params = useParams()
@@ -13,7 +13,7 @@ const Review = () => {
     isLoading,
   } = useGetProductReviewsQuery(params.id)
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <Loading />
   return (
     <>
       <h4 className="px-5 font-bold my-4">

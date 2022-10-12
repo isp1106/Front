@@ -10,7 +10,7 @@ import DetailBtn from './DetailBtn'
 import Brand from './Brand'
 import { cls } from '../../../utils'
 import BackIcon from '../../common/BackIcon'
-import Loader from '../../layout/Loader'
+import Loading from '../../layout/Loading'
 import ErrorCom from '../../common/ErrorCom'
 import { useDispatch } from 'react-redux'
 
@@ -45,7 +45,7 @@ const Detail = () => {
   return (
     <>
       {isLoading ? (
-        <Loader />
+        <Loading />
       ) : isError ? (
         <ErrorCom Title="에러 발생" />
       ) : (
