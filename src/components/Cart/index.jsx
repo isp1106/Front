@@ -32,7 +32,7 @@ const Cart = () => {
       {isLoading ? (
         <Loading />
       ) : isError ? (
-        <ErrorCom Title="에러발생" />
+        <ErrorCom />
       ) : (
         cartItems && (
           <div className="pb-[80px]">

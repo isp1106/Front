@@ -5,7 +5,9 @@ import Header from '../../components/layout/Header'
 const UserEditInfo = () => {
   return (
     <>
-      <Header>내 정보 관리</Header>
+      <Header fill="#000">
+        <div className="text-center">내 정보 관리</div>
+      </Header>
       <div className="pt-[65px]">
         <UserInfoPage />
       </div>

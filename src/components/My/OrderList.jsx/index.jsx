@@ -25,7 +25,9 @@ const index = () => {
 
   return (
     <>
-      <Header>주문/배송/픽업 조회</Header>
+      <Header fill="#000">
+        <div className="text-center">주문/배송/픽업 조회</div>
+      </Header>
       <NavBox status={result} />
       {delivery.map((item) => (
         <Card item={item} status={result} key={item.id} />

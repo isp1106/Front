@@ -688,9 +688,9 @@ export const oneulBestList = [
     id: 1,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/08/23/c2d3958fe2b54c6eb36510901b83679b_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20190502/1032990/1032990_1_320.jpg',
-    brnad: '스티그마',
+    brand: '스티그마',
     price: 1080,
     discount: 10,
     liked: 4412,
@@ -699,9 +699,9 @@ export const oneulBestList = [
     id: 2,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/08/19/26225f44558d48ba9535c5b3600fdb61_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20220804/2697220/2697220_1_320.jpg',
-    brnad: '마하그리드',
+    brand: '마하그리드',
     price: 5310,
     discount: 10,
     liked: 3620,
@@ -710,9 +710,9 @@ export const oneulBestList = [
     id: 3,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/08/26/34de071e5d0d4a79bb416541aff0fc99_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20220330/2457811/2457811_1_320.jpg',
-    brnad: '디파이클럽로버스',
+    brand: '디파이클럽로버스',
     price: 3680,
     discount: 20,
     liked: 3251,
@@ -721,9 +721,9 @@ export const oneulBestList = [
     id: 4,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/08/20/71a2ea941ddb4d198be12b6de4ac635e_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20220119/2315824/2315824_1_320.jpg',
-    brnad: '마리떼',
+    brand: '마리떼',
     price: 4900,
     discount: 0,
     liked: 2688,
@@ -732,9 +732,9 @@ export const oneulBestList = [
     id: 5,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/01/2876335f6b2f487a8236ae0c947c522e_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20210907/2113397/2113397_2_320.jpg',
-    brnad: '커스텀에이드',
+    brand: '커스텀에이드',
     price: 9265,
     discount: 15,
     liked: 2477,
@@ -743,9 +743,9 @@ export const oneulBestList = [
     id: 6,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/08/30/d7d2a9543bd24b8faa7b30b9fcfdac97_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20220127/2334259/2334259_2_320.jpg',
-    brnad: '엠엘비',
+    brand: '엠엘비',
     price: 3600,
     discount: 0,
     liked: 2313,
@@ -756,9 +756,9 @@ export const oneulLastestList = [
     id: 1,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/13/4c886bde63ca40fa85259fe9165d0c32_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20200221/1316665/1316665_1_320.jpg',
-    brnad: '언더컨트롤',
+    brand: '언더컨트롤',
     price: 3680,
     discount: 10,
     liked: 389,
@@ -767,9 +767,9 @@ export const oneulLastestList = [
     id: 2,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/13/15e6459c342d49e09489f80680d096c1_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20220705/2647952/2647952_2_320.jpg',
-    brnad: '두마로',
+    brand: '두마로',
     price: 5310,
     discount: 10,
     liked: 3620,
@@ -778,9 +778,9 @@ export const oneulLastestList = [
     id: 3,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/13/ca3590f09d944b24a660bb35afcaf06d_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20200123/1280576/1280576_2_320.jpg',
-    brnad: '파르티멘토',
+    brand: '파르티멘토',
     price: 4990,
     discount: 20,
     liked: 212,
@@ -789,9 +789,9 @@ export const oneulLastestList = [
     id: 4,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/12/0835efdba96d402f9e0c41906a5104fc_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20210323/1859888/1859888_1_320.jpg',
-    brnad: '클락스',
+    brand: '클락스',
     price: 4900,
     discount: 0,
     liked: 2688,
@@ -802,9 +802,9 @@ export const oneulFollowingList = [
     id: 1,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/11/d135e16104e147f4a850c1659a73e0aa_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20220328/2447490/2447490_1_320.jpg',
-    brnad: '어나더레이어',
+    brand: '어나더레이어',
     price: 5580,
     discount: 10,
     liked: 234,
@@ -813,9 +813,9 @@ export const oneulFollowingList = [
     id: 2,
     imgUrl:
       'https://image.msscdn.net/display/images/usersnap/2022/09/11/c717000466a0492285d6dba115a906d7_main.jpg',
-    brnadurl:
+    brandurl:
       'https://image.msscdn.net/images/goods_img/20210813/2063641/2063641_3_320.jpg',
-    brnad: '필로그램',
+    brand: '필로그램',
     price: 5310,
     discount: 10,
     liked: 3620,

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ReactComponent as SearchIcon } from '/public/assets/search_icon.svg'
 import CartIcon from '~/components/common/CartIcon'
 import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
 import '~/animate.css'
 import { useEffect } from 'react'
+import SearchIcon from '../../components/common/SearchIcon'
 
 const SearchHeader = ({ setGoSearch }) => {
   const [focus, setFocus] = useState(false)
@@ -96,7 +96,7 @@ const SearchHeader = ({ setGoSearch }) => {
             )}
           </div>
           <div className="flex justify-center items-center gap-2">
-            <SearchIcon onClick={onFocusHandler} className="w-7" />
+            <SearchIcon onClick={onFocusHandler} size="30" />
             <CartIcon />
           </div>
         </div>

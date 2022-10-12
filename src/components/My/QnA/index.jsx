@@ -31,7 +31,7 @@ const index = () => {
       {isLoading ? (
         <Loading />
       ) : isError ? (
-        <ErrorCom Title="에러발생" />
+        <ErrorCom />
       ) : (
         questions &&
         (select === tablist[0] ? (
