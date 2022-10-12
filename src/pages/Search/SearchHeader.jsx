@@ -11,6 +11,7 @@ const SearchHeader = ({ setGoSearch }) => {
   const [inputAnimation, setInputAnimation] = useState('')
   const [value, setValue] = useState('')
   const navigate = useNavigate()
+  const searchKeyword = 'searchKeyword'
 
   useEffect(() => {
     setFocus(true)
@@ -46,11 +47,11 @@ const SearchHeader = ({ setGoSearch }) => {
   const goSearch = () => {
     // 검색어가 빈칸을 제외하고 빈 배열일 경우, 함수를 실행시키지 않고 리턴
     if (value.trim === '') return
-    const local = JSON.parse(localStorage.getItem('searchKeyword'))
+    const local = JSON.parse(localStorage.getItem(searchKeyword))
 
     // local에 저장된 키워드들이 없다면 키값을 설정하고 그 키워드만 로컬에 저장 후 리턴
     if (!local) {
-      window.localStorage.setItem('searchKeyword', JSON.stringify([value]))
+      window.localStorage.setItem(searchKeyword, JSON.stringify([value]))
       return
     }
 
@@ -64,7 +65,7 @@ const SearchHeader = ({ setGoSearch }) => {
 
     // 새로운 검색어를 맨 앞으로 저장
     window.localStorage.setItem(
-      'searchKeyword',
+      searchKeyword,
       JSON.stringify([value, ...local]),
     )
     setGoSearch(true)
