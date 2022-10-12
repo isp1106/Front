@@ -9,7 +9,7 @@ const TodayMagazine = () => {
     <div
       className="relative w-[9.563em]"
       //추후 id 값 넣기
-      onClick={() => navigate('/magazine/id')}
+      onClick={() => navigate('/magazine/${id}')}
     >
       <img src="https://ifh.cc/g/DKN0O0.png" className="w-full" />
       <button className="absolute top-4 right-4" onClick={() => setLike(!like)}>
