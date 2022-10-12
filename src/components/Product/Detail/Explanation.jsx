@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import HeartIcon from '../../common/HeartIcon'
 import Coupon from '../../common/Coupon'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-import { detailProducts } from '../../../dummy/detail'
+// import { detailProducts } from '../../../dummy/detail'
 import { ratingStar } from '../../../utils/star'
-const Explanation = () => {
+const Explanation = ({ list }) => {
   const [open, setOpen] = useState(false)
   const toggleBtn = () => {
     setOpen((prev) => !prev)
   }
-  const { brand, productName, price, sale, star, reviewCount } = detailProducts
+  //리뷰호출
+  console.log(list, 'list')
+  const { brand, productName, price, sale, star } = list
   return (
     <div className="w-full flex-1 mt-5 pb-2">
       <div className="pl-5 pr-5 border-b border-black-200 flex-grow pb-7">
@@ -29,7 +31,7 @@ const Explanation = () => {
             }}
           ></div>
           <span className="text-black-600 text-xs underline">
-            {reviewCount}개의 리뷰보기
+            100개의 리뷰보기
           </span>
         </div>
         <div className="flex items-end">
