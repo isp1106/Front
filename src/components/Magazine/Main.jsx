@@ -6,7 +6,7 @@ import Brand from './Brand'
 import Plus from './Plus'
 // import { useGetMagazineQuery } from '../../store/api/magazineSlice'
 import { cls } from '../../utils'
-import Loader from '../layout/Loader'
+import Loading from '../layout/Loading'
 
 const TopMain = () => {
   const params = useParams()
@@ -20,7 +20,7 @@ const TopMain = () => {
   return (
     <>
       {/* {isLoading ? (
-        <Loader />
+        <Loading />
       ) : isError ? (
         <ErrorCom Title="에러발생" />
       ) : (
