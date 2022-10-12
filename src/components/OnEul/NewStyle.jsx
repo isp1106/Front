@@ -38,11 +38,11 @@ const NewStyle = ({ category }) => {
               <div
                 className="w-[43px] h-[43px] bg-cover rounded-lg "
                 style={{
-                  backgroundImage: `url(${item.brnadurl})`,
+                  backgroundImage: `url(${item.brandurl})`,
                 }}
               ></div>
               <div className="flex flex-col gap-1 text-sm font-medium">
-                <div className="font-semibold text-primary">{item.brnad}</div>
+                <div className="font-semibold text-primary">{item.brand}</div>
                 <div className="flex gap-2">
                   <span className="font-bold text-primary">
                     {item.discount && item.discount}%
