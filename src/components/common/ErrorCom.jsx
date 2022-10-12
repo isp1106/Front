@@ -1,6 +1,9 @@
 import React from 'react'
 
-const ErrorCom = ({ Title, Contents }) => {
+const ErrorCom = ({
+  Title = 'Oops!',
+  Contents = '요청하신 페이지에 접속할 수 없습니다.',
+}) => {
   // const orderTitle = `주문이 정상적으로\n처리되지 않았습니다`
   // const orderContents = `결제방법을 다시한번 확인 해 주세요\n오류가 반복될 경우 1:1문의를 남겨주세요`
   return (
