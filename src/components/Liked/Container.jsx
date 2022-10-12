@@ -4,7 +4,6 @@ import { likedList } from '~/dummy/liked'
 import Button from '../common/Button'
 
 function Container() {
-  console.log('like')
   const [edit, setEdit] = useState(false)
   const [deleteList, setDeleteList] = useState([])
 

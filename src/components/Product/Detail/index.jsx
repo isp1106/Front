@@ -15,9 +15,9 @@ import ErrorCom from '../../common/ErrorCom'
 import { useDispatch } from 'react-redux'
 
 const Detail = () => {
-  const params = useParams()
+  const { id } = useParams()
   const dispatch = useDispatch()
-  const { data: list, isLoading, isError } = useGetProductQuery(params.id)
+  const { data: list, isLoading, isError } = useGetProductQuery(id)
   const [showButton, setShowButton] = useState(false)
   const recentViewProduct = 'recentViewProduct'
 
@@ -26,16 +26,13 @@ const Detail = () => {
 
     // local에 저장된 '최근 본 상품'이 없다면 key값을 설정하고 그 product id만 로컬에 저장 후 return
     if (!local) {
-      window.localStorage.setItem(
-        recentViewProduct,
-        JSON.stringify([list.productId]),
-      )
+      window.localStorage.setItem(recentViewProduct, JSON.stringify([id]))
       return
     }
 
     // 이전에 본 기록이 있는 product id는 지운 후, 맨 앞에서 추가
     local.map((item, idx) => {
-      if (item === list.productId) local.splice(idx, 1)
+      if (item === id) local.splice(idx, 1)
     })
 
     // 최근 본 상품 최대 20개만 저장
@@ -44,7 +41,7 @@ const Detail = () => {
     // 새로운 product id를 맨 앞으로 저장
     window.localStorage.setItem(
       recentViewProduct,
-      JSON.stringify([list.productId, ...local]),
+      JSON.stringify([id, ...local]),
     )
   }, [])
 
