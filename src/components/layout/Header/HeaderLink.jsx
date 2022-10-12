@@ -2,24 +2,37 @@ import React from 'react'
 import CartIcon from '../../common/CartIcon'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import SearchIcon from '../../common/SearchIcon'
-import { ReactComponent as Home } from '/public/assets/homeIcon.svg'
+// import { ReactComponent as Home } from '/public/assets/homeIcon.svg'
+import HomeIcon from '../../common/HomeIcon'
 
 const HeaderLink = () => {
   const location = useLocation()
   const currentPath = location.pathname
-  console.log(currentPath)
   const navigate = useNavigate()
   return (
     <div className="flex justify-center items-center gap-3">
       {!currentPath.includes('/my') && (
         <SearchIcon size="30" onClick={() => navigate('/search')} />
       )}
-      {currentPath !== '/cart' && currentPath !== '/oneul' && <CartIcon />}
-      {(currentPath.includes('/product') || currentPath.includes('/cart')) && (
-        <div className="pl-2">
-          <Home onClick={() => navigate('/')} />
-        </div>
-      )}
+      {!currentPath.includes('/cart') &&
+        !currentPath.includes('/oneul') &&
+        !currentPath.includes('/edit-user-info') &&
+        !currentPath.includes('/my/qna') && <CartIcon />}
+      {!currentPath.includes('/product') &&
+        !currentPath.includes('/oneul') &&
+        currentPath !== '/my' &&
+        currentPath !== '/' &&
+        !currentPath.includes('-list') && (
+          <div className="pl-2">
+            <HomeIcon
+              size="24"
+              fill={
+                currentPath.includes('/edit-user-info') ? '#000' : '#D86145'
+              }
+              onClick={() => navigate('/')}
+            />
+          </div>
+        )}
     </div>
   )
 }

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import HeaderLink from './HeaderLink'
+import BackIcon from '../../common/BackIcon'
 import { cls } from '../../../utils'
 import Logo from './Logo'
-import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function Header(props) {
   const location = useLocation()
   const currentPath = location.pathname
   const navigate = useNavigate()
+  console.log('ㅠㅠ')
   return (
     <div
       className={cls(
@@ -20,7 +21,13 @@ function Header(props) {
         {currentPath === '/' ? (
           <Logo />
         ) : (
-          !props.back && <BackOn className="w-7" onClick={() => navigate(-1)} />
+          !props.back && (
+            <BackIcon
+              size="24"
+              fill={cls(props.fill ? '#000' : '#D86145')}
+              onClick={() => navigate(-1)}
+            />
+          )
         )}
         <div className="flex-grow font-bold text-xl">{props.children}</div>
         <div className="mr-[1.75px]">

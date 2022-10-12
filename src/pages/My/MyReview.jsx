@@ -1,12 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from '../../components/My/MyReview/Header'
+import Header from '../../components/layout/Header'
 const MyReview = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <>
+      <Header fill="#000">
+        <div className="text-center ml-[22px]">리뷰</div>
+      </Header>
+      <div className="pt-[64px]">
+        <Outlet />
+      </div>
+    </>
   )
 }
 
