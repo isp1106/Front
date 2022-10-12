@@ -1,12 +1,19 @@
 import React from 'react'
-import heart from '/public/assets/heart-on.svg'
 import HeartIcon from '../../common/HeartIcon'
-import cart from '/public/assets/bag-on.svg'
+import cart from '/public/assets/bag-black.svg'
 import { useNavigate } from 'react-router-dom'
+import { cls } from '../../../utils'
 
 const Card = ({ product, active }) => {
-  const { detailThumbList, productName, sale, price, liked, productId } =
-    product
+  const {
+    detailThumbList,
+    thumbnail,
+    productName,
+    sale,
+    price,
+    liked,
+    productId,
+  } = product
   const navigate = useNavigate()
   return (
     <div
@@ -14,21 +21,28 @@ const Card = ({ product, active }) => {
       onClick={() => navigate(`/product/${productId}`)}
     >
       <div
-        className="w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden"
-        style={active ? { border: '2px solid #D86145' } : { border: 'none' }}
+        className={cls(
+          'w-[230px] h-[230px] bg-cover bg-center rounded-full overflow-hidden',
+          active ? 'border-2 border-primary' : 'border-2 border-black-200',
+        )}
       >
-        <img src={detailThumbList[0]} alt={productName} />
+        <img
+          src={thumbnail || (detailThumbList && detailThumbList[0])}
+          alt={productName}
+        />
       </div>
       <div className="mt-8 relative">
-        <div className="text-sm text-[#4B4B4B] mt-7.5">[{productName}]</div>
-        <div className="text-xl text-[#2B2B2B] font-bold mt-1.5">
+        <div className="text-sm text-black-800 font-medium mt-7.5">
+          [{productName}]
+        </div>
+        <div className="text-xl text-black-100 font-bold mt-1.5">
           <span className="text-primary mr-2.5">{sale}%</span>
           {price} ¥
         </div>
         {active ? (
-          <div className="absolute flex right-1 bottom-0 gap-2">
-            <HeartIcon size="30" off={liked} />
-            <img src={cart} alt="cart" width="30" hegiht="30" />
+          <div className="absolute flex right-1 bottom-0 gap-3">
+            <HeartIcon size="25" off={liked} fill={'#000'} />
+            <img src={cart} alt="cart" width="25" hegiht="25" />
           </div>
         ) : null}
       </div>
