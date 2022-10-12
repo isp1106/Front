@@ -5,14 +5,13 @@ import QnAList from './QnAList'
 import QnABtn from './QnABtn'
 import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
 import ErrorCom from '../../common/ErrorCom'
-import Loader from '../../layout/Loader'
+import Loading from '../../layout/Loading'
 const tablist = ['답변완료', '미답변']
 
 const index = () => {
   const { data: questions, isLoading, isError } = useGetQuestionsQuery()
   const answerYes = questions?.filter((item) => !item.answerYn)
   const answerNo = questions?.filter((item) => !!item.answerYn)
-  console.log(answerYes, 'answerYes')
   const [select, setSelect] = useState(tablist[0])
   const navigate = useNavigate()
   const onClickHandler = (idx) => {
@@ -30,7 +29,7 @@ const index = () => {
         onClickHandler={onClickHandler}
       />
       {isLoading ? (
-        <Loader />
+        <Loading />
       ) : isError ? (
         <ErrorCom Title="에러발생" />
       ) : (
