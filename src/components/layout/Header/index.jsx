@@ -9,7 +9,6 @@ function Header(props) {
   const location = useLocation()
   const currentPath = location.pathname
   const navigate = useNavigate()
-  console.log('ㅠㅠ')
   return (
     <div
       className={cls(
