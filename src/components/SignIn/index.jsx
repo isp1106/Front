@@ -43,7 +43,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="pr-5 pl-5">
+      <div className="px-5 pb-10">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>
         <Input
@@ -69,25 +69,20 @@ const SignIn = () => {
         </Button>
         <div className="flex justify-end mt-5 font-medium">
           <span
-            className="text-xs text-black-400 cursor-pointer  pr-[12px] pl-[12px] border-r "
+            className="text-xs text-black-400 cursor-pointer pr-3 pl-3 border-r "
             onClick={() => navigate('findIdPw', { state: '아이디 찾기' })}
           >
             아이디 찾기
           </span>
           <span
-            className="text-xs text-black-400 cursor-pointer pl-[12px]"
+            className="text-xs text-black-400 cursor-pointer pl-3"
             onClick={() => navigate('findIDPw', { state: '비밀번호 찾기' })}
           >
             비밀번호 찾기
           </span>
         </div>
-        {/* <Button classprop="justify-between border border-black-100 border-box mt-6 gap-2">
-          <GooGleIcon className="ml-3" />
-          <span>Googleでログイン</span>
-          <GooGleIcon className="mr-3 opacity-0" />
-        </Button> */}
         <GoogleBtn />
-        <Button classprop="justify-between text-white mt-6 gap-2 bg-black-400">
+        <Button classprop="justify-between text-white mt-5 gap-2 bg-black-400">
           <Link to="/order-check" className="w-full block h-full py-3">
             비회원 주문 조회
           </Link>
