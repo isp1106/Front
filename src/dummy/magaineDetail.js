@@ -10,7 +10,25 @@ export const magazineDummy = [
     brand: 'aroundAnn',
     brandKo: '어라운드앤',
     liked: false,
-    items: [11, 12, 13],
+    // items: [11, 12, 13],
+    items: [
+      {
+        id: 11,
+        className: 'top-[260px] right-[100px]',
+      },
+      {
+        id: 12,
+        className: 'top-[900px] right-[30px]',
+      },
+      {
+        id: 12,
+        className: 'bottom-[1400px] right-[70px]',
+      },
+      {
+        id: 13,
+        className: 'bottom-[570px] left-[120px]',
+      },
+    ],
   },
   {
     id: 2,
@@ -27,7 +45,25 @@ export const magazineDummy = [
     brand: 'aroundAnn',
     brandKo: '어라운드앤',
     liked: false,
-    items: [8, 12, 14],
+    // items: [8, 12, 14],
+    items: [
+      {
+        id: 8,
+        className: 'top-[1030px] left-[140px]',
+      },
+      {
+        id: 12,
+        className: 'top-[1120px] right-[85px]',
+      },
+      {
+        id: 14,
+        className: 'bottom-[580px] left-[90px]',
+      },
+      {
+        id: 14,
+        className: 'bottom-[120px] right-[80px]',
+      },
+    ],
   },
   {
     id: 3,
@@ -44,6 +80,24 @@ export const magazineDummy = [
     brandKo: '쿠메',
     liked: false,
     items: [17, 18, 20],
+    items: [
+      {
+        id: 17,
+        className: 'top-[1964px] right-[42px]',
+      },
+      {
+        id: 18,
+        className: 'top-[2032px] left-[194px]',
+      },
+      {
+        id: 18,
+        className: 'top-[3281px] left-[189px]',
+      },
+      {
+        id: 20,
+        className: 'top-[3485px] left-[154px]',
+      },
+    ],
   },
   {
     id: 4,
@@ -72,12 +126,12 @@ export const magazineDummy = [
     brandKo: '시티브리즈 포 맨',
     liked: false,
     //아직 상품이 등록 안되어서 id가 아니라 이름으로 넣었어!
-    items: [
-      '스티치 포인트 데님 자켓_INDIGO',
-      '알파카 오버핏 카라 니트_BEIGE',
-      '알파카 오버핏 니트 가디건 _BLACK',
-      '로고 자수 베이직 후드 스웻 셔츠_MELANGE GREY',
-    ],
+    // items: [
+    //   '스티치 포인트 데님 자켓_INDIGO',
+    //   '알파카 오버핏 카라 니트_BEIGE',
+    //   '알파카 오버핏 니트 가디건 _BLACK',
+    //   '로고 자수 베이직 후드 스웻 셔츠_MELANGE GREY',
+    // ],
   },
   {
     id: 6,
@@ -92,6 +146,6 @@ export const magazineDummy = [
     liked: false,
     //아직 상품이 등록 안되어서 id가 아니라 이름으로 넣었어!
 
-    items: ['시코 66 사봇 1183A707_103', '멕시코 66 사봇 1183A707_103'],
+    // items: ['시코 66 사봇 1183A707_103', '멕시코 66 사봇 1183A707_103'],
   },
 ]

@@ -81,11 +81,12 @@ const SignIn = () => {
             비밀번호 찾기
           </span>
         </div>
-        <Button classprop="justify-between border border-black-100 border-box mt-6 gap-2">
+        {/* <Button classprop="justify-between border border-black-100 border-box mt-6 gap-2">
           <GooGleIcon className="ml-3" />
           <span>Googleでログイン</span>
           <GooGleIcon className="mr-3 opacity-0" />
-        </Button>
+        </Button> */}
+        <GoogleBtn />
         <Button classprop="justify-between text-white mt-6 gap-2 bg-black-400">
           <Link to="/order-check" className="w-full block h-full py-3">
             비회원 주문 조회

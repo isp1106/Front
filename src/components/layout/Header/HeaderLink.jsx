@@ -4,13 +4,13 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { ReactComponent as SearchIcon } from '/public/assets/search_icon.svg'
 import { ReactComponent as Home } from '/public/assets/homeIcon.svg'
 
-const HeaderLink = () => {
+const HeaderLink = ({ searchNone }) => {
   const location = useLocation()
   const currentPath = location.pathname
   const navigate = useNavigate()
   return (
     <div className="flex justify-center items-center">
-      {!currentPath.includes('/my') && (
+      {!currentPath.includes('/my') && !searchNone && (
         <SearchIcon onClick={() => navigate('/search')} className="w-7" />
       )}
       {currentPath !== '/cart' && (

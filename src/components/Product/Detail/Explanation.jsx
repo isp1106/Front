@@ -49,7 +49,8 @@ const Explanation = ({ list }) => {
             ¥{parseInt((price * (100 - sale)) / 100).toLocaleString()}
           </div>
           <div className="text-white bg-point py-2 px-3 rounded-[5px] font-medium">
-            {price > 5000 && '무료배송 상품'}
+            {/* {price > 5000 && '무료배송 상품'} */}
+            무료배송 상품
           </div>
         </div>
       </div>
