@@ -26,7 +26,7 @@ function Header(props) {
           {props.children}
         </div>
         <div className="mr-[1.75px]">
-          <HeaderLink />
+          <HeaderLink searchNone={props.searchNone} />
         </div>
       </div>
     </div>
