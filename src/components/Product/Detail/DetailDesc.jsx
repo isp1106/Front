@@ -3,16 +3,15 @@ import { cls } from '../../../utils/index'
 import { detailProducts } from '../../../dummy/detail'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 
-const DetailDesc = () => {
+const DetailDesc = ({ list }) => {
   const [open, setOpen] = useState(false)
   const moreHnadler = () => {
     setOpen((prev) => !prev)
   }
-  const { detailList } = detailProducts
   return (
     <div className="px-5">
-      <div className={cls('overflow-hidden ', open ? '' : 'h-[4000px]')}>
-        {detailList.map((item, idx) => (
+      <div className={cls('overflow-hidden ', open ? '' : 'h-[3000px]')}>
+        {list.map((item, idx) => (
           <img src={item} key={idx} />
         ))}
       </div>
@@ -28,25 +27,6 @@ const DetailDesc = () => {
           )}
         />
       </div>
-      {/* api연결 하며 임시제거 */}
-      {/* <div className="grid grid-cols-5 border border-black-200 w-full text-center text-[10px] leading-8 mt-8 text-black-200">
-        <div className="border-r border-b border-black-200 bg-point">cm</div>
-        <div className="border-r border-b border-black-200 bg-point">총장</div>
-        <div className="border-r border-b border-black-200 bg-point ">
-          어깨너비
-        </div>
-        <div className="border-r border-b border-black-200 bg-point">
-          가슴단면
-        </div>
-        <div className="border-r border-b border-black-200 bg-point">
-          소매길이
-        </div>
-        <div className="border-r border-b border-black-200 bg-point">1size</div>
-        <div className="border-r border-black-200 text-black-800">66.5</div>
-        <div className="border-r border-black-200 text-black-800">60</div>
-        <div className="border-r border-black-200 text-black-800">68</div>
-        <div className="text-black-800">86</div>
-      </div> */}
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useGetRefundItemsQuery } from '../../../../store/api/refundApiSlice'
 import RefundListCard from './RefundListCard'
-import Loader from '../../../layout/Loader'
 import Header from '../../../layout/Header'
+import Loading from '../../../layout/Loading'
 
 const RefundList = () => {
   const {
@@ -14,7 +14,7 @@ const RefundList = () => {
   console.log(RefundList)
   return (
     <div>
-      {isLoading && <Loader />}
+      {isLoading && <Loading />}
       {isError && <div>{isError}</div>}
       {RefundList && (
         <div className="overflow-hidden">

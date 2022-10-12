@@ -1,20 +1,22 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetQustionQuery } from '../../../store/api/questionSlice'
+import { useGetQuestionQuery } from '../../../store/api/questionSlice'
 import Card from '../QnA/Card'
 import Content from './Content'
 import Answer from './Answer'
+import ErrorCom from '../../common/ErrorCom'
+import Loading from '../../layout/Loading'
 
 const index = () => {
   const params = useParams()
-  const { data: list, isLoading, isError } = useGetQustionQuery(params.id)
+  const { data: list, isLoading, isError } = useGetQuestionQuery(params.id)
 
   return (
     <>
       {isLoading ? (
-        <span>로딩중...</span>
+        <Loading />
       ) : isError ? (
-        <span>에러발생</span>
+        <ErrorCom Title="에러발생" />
       ) : (
         list && (
           <>

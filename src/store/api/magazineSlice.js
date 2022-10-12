@@ -1,11 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { apiSlice } from '../api/baseQuery'
 
-export const magazineApi = createApi({
-  reducerPath: 'magazineApi',
-  // baseQuery,
-  baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_BASE_URL,
-  }),
+export const magazineApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     //카드 상품 불러오기
     getMagazines: builder.query({

@@ -60,3 +60,28 @@
 .deleteSearch {
   animation: slideDown 0.3s cubic-bezier(0.65, 0, 0.35, 1) 0s 1 reverse forwards;
 }
+
+/* loading bounce */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.firstBall {
+  animation: bounce 0.7s infinite;
+}
+
+.secondBall {
+  animation: bounce 0.7s 0.15s infinite;
+}
+
+.thirdBall {
+  animation: bounce 0.7s 0.3s infinite;
+}

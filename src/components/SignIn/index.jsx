@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
-import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
+import GoogleBtn from './GoogleBtn'
+// import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 
 import { useNavigate } from 'react-router-dom'
@@ -9,6 +10,7 @@ import { useDispatch } from 'react-redux'
 
 import Input from './input'
 import Button from '../common/Button'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -90,15 +92,15 @@ const SignIn = () => {
             비밀번호 찾기
           </span>
         </div>
-        <Button classprop="justify-between border border-black-100 mt-6 gap-2">
+        <Button classprop="justify-between border border-black-100 border-box mt-6 gap-2">
           <GooGleIcon className="ml-3" />
           <span>Googleでログイン</span>
           <GooGleIcon className="mr-3 opacity-0" />
         </Button>
-        <Button classprop="justify-between border text-white border-[#60C545] mt-6 gap-2 bg-[#60C545]">
-          <LineIcon className="ml-3" />
-          <span>LINEでログイン</span>
-          <LineIcon className="mr-3 opacity-0" />
+        <Button classprop="justify-between text-white mt-6 gap-2 bg-black-400">
+          <Link to="/order-check" className="w-full block h-full py-3">
+            비회원 주문 조회
+          </Link>
         </Button>
         <p className="font-bold text-xs text-center mt-9">
           회원 가입하고 <strong className="text-primary">500¥</strong> 적립금을

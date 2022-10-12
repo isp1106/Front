@@ -4,6 +4,8 @@ import CartItem from './CartItem'
 import Total from './Total'
 import CartBtn from './CartBtn'
 import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
+import ErrorCom from '../common/ErrorCom'
+import Loading from '../layout/Loading'
 
 const Cart = () => {
   const {
@@ -28,9 +30,9 @@ const Cart = () => {
   return (
     <>
       {isLoading ? (
-        <span>로딩중..</span>
+        <Loading />
       ) : isError ? (
-        <span>에러발생</span>
+        <ErrorCom Title="에러발생" />
       ) : (
         cartItems && (
           <div className="pb-[80px]">
