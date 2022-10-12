@@ -7,11 +7,14 @@ import ProductCode from './ProductCode'
 import DeliveryNotice from './DeliveryNotice'
 import ExchangeRefund from './ExchangeRefund'
 import SellerInfo from './SellerInfo'
+import Similiar from './Similiar'
 
 const SubContent = () => {
   return (
     <>
       <Snap />
+      <div className="w-full h-[10px] bg-white-200 my-8"></div>
+      <Similiar />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
       <Another />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>

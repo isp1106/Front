@@ -45,7 +45,7 @@ const SignIn = () => {
     <>
       <div className="px-5 pb-10">
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
-        <h3 className="text-black-800">오늘의 상점에서 만나보세요</h3>
+        <h3 className="text-black-800 mb-[34px]">오늘의 상점에서 만나보세요</h3>
         <Input
           state="아이디"
           name="id"

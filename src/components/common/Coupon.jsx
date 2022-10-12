@@ -48,6 +48,13 @@ const Coupon = (props) => {
               <span>¥ -1,455</span>
             </div>
           </div>
+          <div className="px-5 py-5 border-b border-black-200 ">
+            <div className="text-sm text-black-600 font-bold">보유 적립금</div>
+            <div className="mt-[11px] text-sm text-black-600 text-[12px] flex justify-between">
+              <span>보유 적릭금 모두 사용</span>
+              <span>450P</span>
+            </div>
+          </div>
         </div>
       )}
     </div>

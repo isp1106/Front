@@ -21,10 +21,13 @@ const Card = ({ item }) => {
           </div>
           <div className="text-center">
             <div className=" text-xs text-black-600 line-through">
-              {price * count} ¥
+              {(price * count).toLocaleString()} ¥
             </div>
             <div className="text-[14px]">
-              {parseInt((price * (100 - sale)) / 100) * count} ¥
+              {(
+                parseInt((price * (100 - sale)) / 100) * count
+              ).toLocaleString()}{' '}
+              ¥
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ const Input = ({ state, name, onChangeHandler, clear, value }) => {
   return (
     <div
       className={cls(
-        'bg-transparent rounded-md p-2 pt-4 mt-3 mb-3 ',
+        'bg-transparent rounded-md p-2 pt-4 mt-3 mb-[20px] ',
         active ? 'shawdowing' : 'border border-black-200 ',
       )}
     >
