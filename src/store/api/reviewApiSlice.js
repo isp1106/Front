@@ -1,4 +1,4 @@
-import { apiSlice } from './baseQuery'
+import { apiSlice } from '../api/apiSlice'
 
 export const reviewApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

@@ -3,7 +3,6 @@ import GoogleBtn from './GoogleBtn'
 // import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
 import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 
-import { useNavigate } from 'react-router-dom'
 import { useLoginMutation } from '../../store/api/authApiSlice'
 import { setCredentials } from '../../store/slices/authSlice'
 import { useDispatch } from 'react-redux'
@@ -41,15 +40,28 @@ const SignIn = () => {
   )
 
   const loginHandler = async () => {
-    if (invalidInput) {
-      //api연결 후 api 요청 로직 작성
-      console.log(inputValue)
-      const { id, pw } = inputValue
-      const userData = await login({ username: id, password: pw })
-      dispatch(setCredentials(userData['data']))
-    } else {
-      alert('아이디와 패스워드를 확인해주세요')
-    }
+    try {
+      if (invalidInput) {
+        const { id, pw } = inputValue
+        const userData = await login({ username: id, password: pw })
+        dispatch(setCredentials(userData['data']))
+      } else {
+        throw '아이디와 패스워드를 확인해주세요'
+      }
+    } catch (error) {}
+    // if (invalidInput) {
+    //   //api연결 후 api 요청 로직 작성
+    //   console.log(inputValue)
+    //   const { id, pw } = inputValue
+    //   try {
+    //     const userData = await login({ username: id, password: pw })
+    //     dispatch(setCredentials(userData['data']))
+    //   } catch (error) {
+    //     throw '아이디와 패스워드를 확인해주세요'
+    //   }
+    // } else {
+    //   alert('아이디와 패스워드를 확인해주세요')
+    // }
   }
 
   return (

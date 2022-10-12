@@ -3,7 +3,7 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import userReducer from './slices/userSlice'
 import productReducer from './slices/productSlice'
 
-import { apiSlice } from './api/baseQuery'
+import { apiSlice } from './api/apiSlice'
 
 const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,

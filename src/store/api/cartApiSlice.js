@@ -1,4 +1,4 @@
-import { apiSlice } from '../api/baseQuery'
+import { apiSlice } from '../api/apiSlice'
 
 export const cartApi = apiSlice.injectEndpoints({
   tagTypes: ['Carts'],
