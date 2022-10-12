@@ -10,8 +10,8 @@ const Guest = () => {
       <span className="text-xs font-medium text-white bg-primary text-center px-1.5 py-[0.094rem] rounded rounded-br-none">
         5000p
       </span>
-      <ul className="text-center pt-2">
-        <li className="font-medium border border-primary rounded ">
+      <ul className="text-center pt-2 font-bold text-xs">
+        <li className="border border-primary rounded">
           <Link to="/signup" className="w-full block h-full py-3">
             회원가입
           </Link>
