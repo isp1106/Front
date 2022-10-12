@@ -1,4 +1,4 @@
-import { apiSlice } from '../api/baseQuery'
+import { apiSlice } from './baseQuery'
 
 export const reviewApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -6,10 +6,13 @@ export const reviewApi = apiSlice.injectEndpoints({
     getReviews: builder.query({
       query: () => 'customers/reviews',
     }),
-    getMyReviews: builder.query({
+    getProductReviews: builder.query({
       query: (id) => `/products/${id}/reviews`,
     }),
-    getProductReviews: builder.query({
+    getProductReviewsCount: builder.query({
+      query: (id) => `/products/${id}/review-count`,
+    }),
+    getMyReviews: builder.query({
       query: () => 'customers/reviews/my',
     }),
   }),
@@ -18,5 +21,6 @@ export const reviewApi = apiSlice.injectEndpoints({
 export const {
   useGetMyReviewsQuery,
   useGetReviewsQuery,
+  useGetProductReviewsCountQuery,
   useGetProductReviewsQuery,
 } = reviewApi
