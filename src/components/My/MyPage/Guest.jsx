@@ -21,6 +21,11 @@ const Guest = () => {
             로그인
           </Link>
         </li>
+        <li className="border bg-black-400 rounded text-white mt-2.5">
+          <Link to="/order-check" className="w-full block h-full py-3">
+            비회원 주문 조회
+          </Link>
+        </li>
       </ul>
     </div>
   )

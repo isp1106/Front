@@ -11,10 +11,7 @@ const Header = () => {
       <div className="w-full h-16 max-w-[600px] px-5 flex items-center">
         <BackOn className="w-7" onClick={() => navigate(-1)} />
         <div className="w-full items-center"></div>
-        <div className="flex justify-center items-center gap-2">
-          <Link to="/">
-            <SetIcon className="w-6 " alt="" />
-          </Link>
+        <div className="flex justify-center">
           <CartIcon />
         </div>
       </div>
