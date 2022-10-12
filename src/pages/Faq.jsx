@@ -1,8 +1,8 @@
 import React from 'react'
-
+import FaqComp from '../components/Faq'
 const Faq = () => {
   return (
-    <div>Faq</div>
+    <FaqComp />
   )
 }
 
