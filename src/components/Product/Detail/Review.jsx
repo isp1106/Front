@@ -16,9 +16,12 @@ const Review = () => {
   if (isLoading) return <Loading />
   return (
     <>
-      <h4 className="px-5 font-bold my-4">
-        리뷰 <span>({detailProducts.review.count})</span>
-      </h4>
+      <div className="flex justify-between px-5 items-center">
+        <h4 className="font-bold my-4">
+          리뷰 <span>({detailProducts.review.count})</span>
+        </h4>
+        <span className="text-sm text-black-600 font-medium">더보기</span>
+      </div>
       {list ? (
         <>
           <div className="pl-5 border-b pb-6 border-primary">

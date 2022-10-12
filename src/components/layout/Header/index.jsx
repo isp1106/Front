@@ -9,11 +9,10 @@ function Header(props) {
   const location = useLocation()
   const currentPath = location.pathname
   const navigate = useNavigate()
-  console.log('ㅠㅠ')
   return (
     <div
       className={cls(
-        'w-full max-w-[600px] h-16 flex fixed top-0 items-center bg-white z-40 box-border',
+        `w-full max-w-[600px] h-16 flex fixed top-0 items-center bg-white z-40 box-border ${props.className} `,
         currentPath === '/' && 'border-b-2 border-primary',
       )}
     >

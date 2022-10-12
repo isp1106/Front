@@ -26,10 +26,7 @@ const Card = ({ product, active }) => {
           active ? 'border-2 border-primary' : 'border-2 border-black-200',
         )}
       >
-        <img
-          src={thumbnail || (detailThumbList && detailThumbList[0])}
-          alt={productName}
-        />
+        <img src={thumbnail} alt={productName} />
       </div>
       <div className="mt-8 relative">
         <div className="text-sm text-black-800 font-medium mt-7.5">

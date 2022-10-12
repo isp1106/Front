@@ -22,7 +22,10 @@ const TotalPrice = ({ items }) => {
         <div className="mt-[20px] text-[20px] font-bold flex justify-between">
           <span className="text-primary">결제금액</span>
           <span>
-            {items?.reduce((acc, cur) => cur.price * cur.count + acc, 0)}¥
+            {items
+              ?.reduce((acc, cur) => cur.price * cur.count + acc, 0)
+              .toLocaleString()}
+            ¥
           </span>
         </div>
       </div>

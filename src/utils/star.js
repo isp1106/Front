@@ -28,8 +28,11 @@ export const ratingStar = (starcount) => {
     case 1:
       star = '-25px'
       break
+    case 0.5:
+      star = '-13px'
+      break
     default:
-      return (star = '-13px')
+      return (star = 0)
   }
 
   return star
