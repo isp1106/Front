@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { cls } from '../../../utils'
 import HeartIcon from '../../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
@@ -7,11 +7,14 @@ import ModalContent from './ModalContent'
 import ProductCard from './ProductCard'
 import { detailProducts } from '../../../dummy/detail'
 import { useSelector, useDispatch } from 'react-redux'
+import { useGetProductQuery } from '../../../store/api/productSlice'
 
 const NextBtn = () => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
+  const params = useParams()
+  const { data: list, isLoading, isError } = useGetProductQuery(params.id)
   const items = useSelector((state) => state.product)
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
@@ -35,7 +38,7 @@ const NextBtn = () => {
   }
 
   const BuyProudctNow = () => {
-    navigate('/order')
+    navigate('/order', { state: [{ ...list, ...items }] })
   }
 
   const copyUrl = () => {

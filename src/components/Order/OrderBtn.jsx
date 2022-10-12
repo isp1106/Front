@@ -11,12 +11,15 @@ const OrderBtn = ({ items, paynowHandler }) => {
         onClick={paynowHandler}
       >
         <span className="px-1">
-          총 {items?.reduce((acc, cur) => cur.count + acc, 0)}개
+          총 {items?.reduce((acc, cur) => cur.count + acc, 0).toLocaleString()}
+          개
         </span>
         <div className="w-[1px] h-[18px] bg-white"></div>
         <span className="px-1">
-          {items?.reduce((acc, cur) => cur.price * cur.count + acc, 0)} ¥
-          결제하기
+          {items
+            ?.reduce((acc, cur) => cur.price * cur.count + acc, 0)
+            .toLocaleString()}{' '}
+          ¥ 결제하기
         </span>
       </div>
     </div>

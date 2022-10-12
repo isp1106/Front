@@ -21,11 +21,14 @@ const CartBtn = ({ items }) => {
         </span>
         <div className="w-[1px] h-[18px] bg-white"></div>
         <span className="px-1">
-          {items?.reduce(
-            (acc, cur) =>
-              parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
-            0,
-          )}
+          {items
+            ?.reduce(
+              (acc, cur) =>
+                parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count +
+                acc,
+              0,
+            )
+            .toLocaleString()}
           ¥ 결제하기
         </span>
       </div>
