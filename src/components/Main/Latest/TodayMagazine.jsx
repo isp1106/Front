@@ -11,7 +11,7 @@ const TodayMagazine = () => {
       //추후 id 값 넣기
       onClick={() => navigate('/magazine/${id}')}
     >
-      <img src="https://ifh.cc/g/DKN0O0.png" className="w-full" />
+      <img src="https://ifh.cc/g/KC4trp.png" className="w-full" />
       <button className="absolute top-4 right-4" onClick={() => setLike(!like)}>
         {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
         {/* 나중에 아이콘넣기 */}
