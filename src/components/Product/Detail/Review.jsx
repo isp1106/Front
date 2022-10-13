@@ -6,14 +6,15 @@ import { useGetProductReviewsQuery } from '~/store/api/reviewApiSlice'
 import Loading from '../../layout/Loading'
 
 const Review = () => {
-  const params = useParams()
-  const {
-    data: list,
-    isError,
-    isLoading,
-  } = useGetProductReviewsQuery(params.id)
+  // const params = useParams()
+  // const {
+  //   data: list,
+  //   isError,
+  //   isLoading,
+  // } = useGetProductReviewsQuery(params.id)
 
-  if (isLoading) return <Loading />
+  // if (isLoading) return <Loading />
+
   return (
     <>
       <div className="flex justify-between px-5 items-center">
@@ -22,7 +23,7 @@ const Review = () => {
         </h4>
         <span className="text-sm text-black-600 font-medium">더보기</span>
       </div>
-      {list ? (
+      {detailProducts ? (
         <>
           <div className="pl-5 border-b pb-6 border-primary">
             <div className="flex gap-5 overflow-x-scroll">

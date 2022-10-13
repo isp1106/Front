@@ -8,7 +8,7 @@ const baseQuery = fetchBaseQuery({
     if (true) {
       headers.set(
         'Authorization',
-        `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY2NTY5MDAwNX0.xZgTC0n0ByQa6C1LOqBO1LPAWlAlI7vTcFFdm5I57uMGbfCXqIbLqVhOn8efmJerhgIFOuw0RdTzILf9QBjvIQ`,
+        `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY2NTY2MDc5OH0.TnanjAE4XjD-IYKtZjYuJzectQLqH6ZGaytqpP16sZwIvOgNOGCnxjKhkpRCH3rGc6_aXqWvkqvBonRd1aE9Mw`,
       )
     }
     return headers

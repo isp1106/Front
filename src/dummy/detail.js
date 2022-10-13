@@ -85,7 +85,7 @@ export const detailProducts = {
     },
   ],
   review: {
-    count: 128,
+    count: 2,
     reviews: [
       {
         id: 1,
