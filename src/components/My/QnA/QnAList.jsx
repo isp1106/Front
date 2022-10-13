@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import ContentBox from './ContentBox'
 import Modal from '../../common/Modal'
-import useModalControl from '../../../hook/useModalControl'
+import useOutSideHook from '../../../hook/useOutSideHook'
 
 const QnAList = ({ questions }) => {
-  const [isOpen, ModalControlHandler] = useModalControl()
+  const [modalFalg, setModalFalg] = useState(false)
+  const modalRef = useRef(null)
+  useOutSideHook(modalRef, () => {
+    setModalFalg(false)
+  })
   return (
     <>
       {questions.length === 0 && (
@@ -14,13 +18,19 @@ const QnAList = ({ questions }) => {
       )}
       {questions.map((item) => (
         <ContentBox
+          id="test"
           item={item}
           key={item.id}
-          ModalControlHandler={ModalControlHandler}
+          ModalControlHandler={() => setModalFalg(true)}
         />
       ))}
-      {isOpen && (
-        <Modal onClick={ModalControlHandler} title="작성자만 볼 수 있습니다." />
+      {modalFalg && (
+        <div ref={modalRef}>
+          <Modal
+            onClick={() => setModalFalg(false)}
+            title="작성자만 볼 수 있습니다."
+          />
+        </div>
       )}
     </>
   )

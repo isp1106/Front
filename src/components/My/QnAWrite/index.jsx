@@ -85,18 +85,23 @@ const index = () => {
   }
   const AddQuestionHandler = () => {
     if (!userValue.title || !userValue.content) {
-      ModalControlHandler()
+      return ModalControlHandler()
     }
     const formData = new FormData()
 
     for (const key in userValue) {
       if (Array.isArray(userValue[key])) {
-        formData.append(key, JSON.stringify(userValue[key]))
+        formData.append(
+          key,
+          new Blob([JSON.stringify(userValue[key])], {
+            type: 'application/json',
+          }),
+        )
       } else {
         formData.append(key, userValue[key])
       }
     }
-    addQuestion(userValue)
+    addQuestion(formData)
   }
 
   const removeThumbnail = (idx) => {
