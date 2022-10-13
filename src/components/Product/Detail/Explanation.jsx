@@ -24,10 +24,10 @@ const Explanation = ({ list }) => {
           </div>
           <HeartIcon size="22px" />
         </div>
-        <h2 className="mt-2 font-bold">{productName}</h2>
+        <h2 className="mt-5 font-bold">{productName}</h2>
         <div className="flex items-center my-3">
           <div
-            className="ratingStar mr-2"
+            className="ratingStar mr-3"
             style={{
               backgroundPositionY: ratingStar(star),
             }}
@@ -38,7 +38,7 @@ const Explanation = ({ list }) => {
               : `{questionCount}개의 리뷰보기`}
           </span>
         </div>
-        <div className="flex items-end">
+        <div className="flex items-end mt-2">
           <div className="flex flex-col mr-4">
             <span className="text-black-400 text-xs line-through items-center">
               {price.toLocaleString()} ¥
@@ -48,8 +48,9 @@ const Explanation = ({ list }) => {
           <div className="flex-grow text-xl font-bold">
             ¥{parseInt((price * (100 - sale)) / 100).toLocaleString()}
           </div>
-          <div className="text-white bg-point py-2 px-3 rounded-[5px] font-medium">
-            {price > 5000 && '무료배송 상품'}
+          <div className="text-white bg-point py-2 px-3.5 rounded-[5px] font-medium">
+            {/* {price > 5000 && '무료배송 상품'} */}
+            무료배송 상품
           </div>
         </div>
       </div>

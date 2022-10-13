@@ -7,7 +7,9 @@ import DeliveryInfo from './DeliveryInfo'
 const index = () => {
   return (
     <>
-      <Header>주문 상세 보기</Header>
+      <Header>
+        <div className="text-center">주문 상세 보기</div>
+      </Header>
       <div className="pt-[54px] px-5">
         <InfoTopContent />
         <PayMentInfo />

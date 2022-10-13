@@ -22,7 +22,7 @@ const TopMain = () => {
       {/* {isLoading ? (
         <Loading />
       ) : isError ? (
-        <ErrorCom Title="에러발생" />
+        <ErrorCom  />
       ) : (
         list && ( */}
       <>
@@ -36,6 +36,14 @@ const TopMain = () => {
               {idx === 0 && <Brand item={list} />}
             </React.Fragment>
           ))}
+          {list &&
+            list.items.map((item, idx) => (
+              <Plus
+                className={cls('absolute', item.className && item.className)}
+                id={item.id}
+                key={idx}
+              />
+            ))}
         </div>
       </>
       {/* ) */}

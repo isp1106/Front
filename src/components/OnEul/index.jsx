@@ -5,7 +5,7 @@ import Category from './Category'
 const OnEul = () => {
   return (
     <div>
-      <Header>오늘</Header>
+      <Header back>오늘</Header>
       <div className="pt-16">
         <Picture />
         <Category />

@@ -4,6 +4,7 @@ import { likedList } from '~/dummy/liked'
 import Button from '../common/Button'
 
 function Container() {
+  console.log('like')
   const [edit, setEdit] = useState(false)
   const [deleteList, setDeleteList] = useState([])
 
@@ -33,7 +34,7 @@ function Container() {
           </div>
         )}
       </div>
-      <div className="w-full grid grid-cols-2 gap-1">
+      <div className="w-full grid grid-cols-2 gap-[2px]">
         {likedList.map((item, idx) => (
           <Card
             key={idx}

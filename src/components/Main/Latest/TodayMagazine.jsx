@@ -12,7 +12,10 @@ const TodayMagazine = () => {
       onClick={() => navigate('/magazine/${id}')}
     >
       <img src="https://ifh.cc/g/KC4trp.png" className="w-full" />
-      <button className="absolute top-4 right-4" onClick={() => setLike(!like)}>
+      <button
+        className="absolute top-4 right-4"
+        onClick={() => navigate('/magazine/1')}
+      >
         {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
         {/* 나중에 아이콘넣기 */}
       </button>

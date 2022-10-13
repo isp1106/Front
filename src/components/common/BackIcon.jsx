@@ -1,8 +1,9 @@
 import React from 'react'
 
-const BackIcon = ({ size, fill = '#D86145', className }) => {
+const BackIcon = ({ size, fill = '#D86145', className, onClick }) => {
   return (
     <svg
+      onClick={onClick}
       className={className}
       width={size}
       height={size}

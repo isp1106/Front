@@ -4,13 +4,23 @@ import StarScore from './StarScore'
 import Content from './Content'
 import AddPicture from './AddPicture'
 import Button from '../../../common/Button'
+import { useAddProductReviewMutation } from '../../../../store/api/reviewApiSlice'
+
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
-    title: '',
-    content: '',
-    thumbnailBase64: '',
+    title: null,
+    images: [],
+    id: null,
+    content: null,
+    product: null,
+    member: null,
+    images: [],
+    star: 0,
+    createdDate: null,
   })
+  const [imageFile, setImageFile] = useState([])
+  const [addProductReview] = useAddProductReviewMutation()
   const onChangeHandler = (e) => {
     const { name, value } = e.target
     setUserValue({
@@ -22,29 +32,69 @@ const index = () => {
   const uploadedImage = useRef(null)
   const imageUploader = useRef(null)
 
+  // const handleImageUpload = (e) => {
+  //   const [file] = e.target.files
+  //   if (file) {
+  //     const reader = new FileReader()
+  //     const { current } = uploadedImage
+  //     current.file = file
+  //     reader.onload = (e) => {
+  //       current.src = e.target.result
+  //     }
+  //     reader.readAsDataURL(file)
+  //   }
+  // }
   const handleImageUpload = (e) => {
-    const [file] = e.target.files
-    if (file) {
-      const reader = new FileReader()
-      const { current } = uploadedImage
-      current.file = file
-      reader.onload = (e) => {
-        current.src = e.target.result
-      }
-      reader.readAsDataURL(file)
+    const fileList = e.target.files
+
+    console.log(imageFile.length)
+    if (imageFile.length > 1) {
+      let currentImages = imageFile.slice(1, 2)
+      setImageFile([
+        ...currentImages,
+        URL.createObjectURL(fileList[fileList.length - 1]),
+      ])
+      let currentFiles = userValue.images.slice(1, 2)
+      setUserValue({
+        ...userValue,
+        images: [...currentFiles, fileList[fileList.length - 1]],
+      })
+    } else {
+      setImageFile([
+        ...imageFile,
+        URL.createObjectURL(fileList[fileList.length - 1]),
+      ])
+      setUserValue({
+        ...userValue,
+        images: [...userValue.images, fileList[fileList.length - 1]],
+      })
     }
   }
+
+  const AddReviewHandler = () => {
+    const formData = new FormData()
+
+    for (const key in userValue) {
+      if (Array.isArray(userValue[key])) {
+        formData.append(key, JSON.stringify(userValue[key]))
+      } else {
+        formData.append(key, userValue[key])
+      }
+    }
+    addProductReview(formData)
+  }
+
   useEffect(() => {
     console.log(userValue)
   }, [userValue])
 
   const reviewData = reviewContent
   return (
-    <div className="px-5">
+    <div className="px-5 mt-[38px]">
       <ul>
         {reviewData.map((review, index) => (
           <li
-            className="flex items-center py-5 border-b border-black-200"
+            className="flex items-center pb-5 border-b border-black-200"
             key={index}
           >
             <div
@@ -63,7 +113,7 @@ const index = () => {
       </ul>
       <div className="flex flex-col items-center justify-center py-[1.875rem] mb-[1.875rem] border-b border-black-200 gap-4">
         <p>상품에 대한 별점을 매겨주세요</p>
-        <StarScore />
+        <StarScore userValue={userValue} setUserValue={setUserValue} />
       </div>
       <AddPicture
         handleImageUpload={handleImageUpload}
@@ -71,7 +121,10 @@ const index = () => {
         imageUploader={imageUploader}
       />
       <Content count={count} onChangeHandler={onChangeHandler} />
-      <Button classprop="text-sm mt-9 mb-5 bg-primary text-white">
+      <Button
+        classprop="text-sm mt-9 mb-5 bg-primary text-white"
+        onClick={AddReviewHandler}
+      >
         등록하기
       </Button>
     </div>
