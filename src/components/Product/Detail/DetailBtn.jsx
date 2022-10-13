@@ -7,20 +7,28 @@ import ModalContent from './ModalContent'
 import ProductCard from './ProductCard'
 import { detailProducts } from '../../../dummy/detail'
 import { useSelector, useDispatch } from 'react-redux'
-import { useGetProductQuery } from '../../../store/api/productSlice'
+import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
+import { resetCount } from '../../../store/slices/productSlice'
 
 const NextBtn = ({ list }) => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
   const params = useParams()
-
+  const [addCartItem] = useAddCartItemMutation()
+  const items = useSelector((state) => state.product)
+  const dispatch = useDispatch()
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
     setIsOpen((prev) => !prev)
   }
   const GoToCart = () => {
     setBuyProduct((prev) => !prev)
+    addCartItem({
+      product_id: list.productId,
+      count: items.count,
+    })
+    dispatch(resetCount())
   }
 
   const onClickHandler = () => {
@@ -31,9 +39,8 @@ const NextBtn = ({ list }) => {
     isOpen ? BuyProudctNow() : ModalOpenHandler()
   }
 
-  const goToShoppingCart = () => {
+  const goToShoppingCart = (data) => {
     navigate('/cart')
-    //장바구니 담는 api호출
   }
 
   const BuyProudctNow = () => {
