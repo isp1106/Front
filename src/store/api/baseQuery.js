@@ -34,10 +34,16 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
       api,
       extraOptions,
     )
-    console.log(refreshResult)
+    console.log('refreshResult', refreshResult)
     if (refreshResult?.data) {
-      const user = api.getState().auth.user
-      api.dispatch(setCredentials({ ...refreshResult.data, user }))
+      // const user = api.getState().auth.user/
+      // api.dispatch(setCredentials({ ...refreshResult.data, user }))
+      api.dispatch(
+        setCredentials({
+          ...refreshResult.data,
+          user: refreshResult.data.username,
+        }),
+      )
       result = await baseQuery(args, api, extraOptions)
     } else {
       api.dispatch(logOut())
