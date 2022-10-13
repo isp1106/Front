@@ -1,12 +1,12 @@
 import { useState, useMemo } from 'react'
 import GoogleBtn from './GoogleBtn'
 // import { ReactComponent as GooGleIcon } from '/public/assets/google.svg'
-import { ReactComponent as LineIcon } from '/public/assets/line.svg'
-
+// import { ReactComponent as LineIcon } from '/public/assets/line.svg'
 import { useLoginMutation } from '../../store/api/authApiSlice'
 import { setCredentials } from '../../store/slices/authSlice'
 import { useDispatch } from 'react-redux'
 
+import ErrorCom from '../common/ErrorCom'
 import Input from './input'
 import Button from '../common/Button'
 import { Link, useNavigate } from 'react-router-dom'
@@ -46,22 +46,11 @@ const SignIn = () => {
         const userData = await login({ username: id, password: pw })
         dispatch(setCredentials(userData['data']))
       } else {
-        throw '아이디와 패스워드를 확인해주세요'
+        throw new Error('아이디와 패스워드를 입력해주세요.')
       }
-    } catch (error) {}
-    // if (invalidInput) {
-    //   //api연결 후 api 요청 로직 작성
-    //   console.log(inputValue)
-    //   const { id, pw } = inputValue
-    //   try {
-    //     const userData = await login({ username: id, password: pw })
-    //     dispatch(setCredentials(userData['data']))
-    //   } catch (error) {
-    //     throw '아이디와 패스워드를 확인해주세요'
-    //   }
-    // } else {
-    //   alert('아이디와 패스워드를 확인해주세요')
-    // }
+    } catch (error) {
+      return <ErrorCom Title={'로그인 실패'} Contents={error.msg} />
+    }
   }
 
   return (
