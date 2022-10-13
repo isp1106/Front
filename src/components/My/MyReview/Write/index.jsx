@@ -15,7 +15,6 @@ const index = () => {
     content: null,
     product: null,
     member: null,
-    images: [],
     star: 0,
     createdDate: null,
   })
@@ -76,12 +75,60 @@ const index = () => {
 
     for (const key in userValue) {
       if (Array.isArray(userValue[key])) {
-        formData.append(key, new Blob(JSON.stringify(userValue[key])))
+        formData.append(key, userValue[key])
       } else {
         formData.append(key, userValue[key])
       }
     }
-    console.log('클릭')
+
+    // formData.append(
+    //   'title',
+    //   new Blob([JSON.stringify(userValue.title)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'id',
+    //   new Blob([JSON.stringify(userValue.id)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'content',
+    //   new Blob([JSON.stringify(userValue.content)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'product',
+    //   new Blob([JSON.stringify(userValue.product)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'member',
+    //   new Blob([JSON.stringify(userValue.member)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'star',
+    //   new Blob([JSON.stringify(userValue.star)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'createdDate',
+    //   new Blob([JSON.stringify(userValue.createdDate)], {
+    //     type: 'application/json',
+    //   }),
+    // )
+    // formData.append(
+    //   'images',
+    //   new Blob([JSON.stringify(userValue.images)], {
+    //     type: 'multipart/form-data',
+    //   }),
+    // )
     addProductReview(formData)
   }
 

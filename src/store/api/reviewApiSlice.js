@@ -17,6 +17,7 @@ export const reviewApi = apiSlice.injectEndpoints({
     }),
     addProductReview: builder.mutation({
       query: (data) => {
+        console.log('data', data)
         return {
           url: `/customers/reviews/1`,
           method: 'POST',
