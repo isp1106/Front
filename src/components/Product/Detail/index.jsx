@@ -15,9 +15,7 @@ import GoTop from '../../common/GoTop'
 
 const Detail = () => {
   const { id } = useParams()
-  const dispatch = useDispatch()
   const { data: list, isLoading, isError } = useGetProductQuery(id)
-  const [showButton, setShowButton] = useState(false)
   const recentViewProduct = 'recentViewProduct'
 
   useEffect(() => {
@@ -42,28 +40,6 @@ const Detail = () => {
       recentViewProduct,
       JSON.stringify([id, ...local]),
     )
-  }, [])
-
-  const scrollToTop = () => {
-    window.scroll({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
-
-  useEffect(() => {
-    const handleShowButton = () => {
-      if (window.scrollY > 2000) {
-        setShowButton(true)
-      } else {
-        setShowButton(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleShowButton)
-    return () => {
-      window.removeEventListener('scroll', handleShowButton)
-    }
   }, [])
 
   return (

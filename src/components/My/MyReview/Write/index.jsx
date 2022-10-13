@@ -76,7 +76,7 @@ const index = () => {
 
     for (const key in userValue) {
       if (Array.isArray(userValue[key])) {
-        formData.append(key, JSON.stringify(userValue[key]))
+        formData.append(key, new Blob(JSON.stringify(userValue[key])))
       } else {
         formData.append(key, userValue[key])
       }
