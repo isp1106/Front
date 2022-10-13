@@ -6,7 +6,6 @@ import RecentView from './RecentView'
 
 export const Liked = () => {
   const { pathname } = useLocation()
-  console.log(pathname)
   return (
     <div>
       <Category />
