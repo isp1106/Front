@@ -5,21 +5,22 @@ import GoogleBtn from './GoogleBtn'
 import { useLoginMutation } from '../../store/api/authApiSlice'
 import { setCredentials } from '../../store/slices/authSlice'
 import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
 import ErrorCom from '../common/ErrorCom'
 import Input from './input'
 import Button from '../common/Button'
-import { Link, useNavigate } from 'react-router-dom'
+import Loader from '../layout/Loader'
 
 const SignIn = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState({
     id: '',
     pw: '',
   })
-
-  const [login, { isLoading }] = useLoginMutation()
-  const dispatch = useDispatch()
+  const [errMsg, setErrMsg] = useState('')
+  const [login, { isLoading, isError }] = useLoginMutation()
   const onChangeHandler = (e) => {
     const { name, value } = e.target
     setInputValue({
@@ -45,19 +46,32 @@ const SignIn = () => {
         const { id, pw } = inputValue
         const userData = await login({ username: id, password: pw })
         dispatch(setCredentials(userData['data']))
+        navigate('/', { replace: true })
       } else {
         throw new Error('아이디와 패스워드를 입력해주세요.')
       }
     } catch (error) {
-      return <ErrorCom Title={'로그인 실패'} Contents={error.msg} />
+      if (!error?.originalStatus) {
+        setErrMsg('No Server Response')
+      } else if (error.originalStatus === 400) {
+        setErrMsg('Missing Username or Password')
+      } else if (error.originalStatus === 401) {
+        setErrMsg('Unauthorized')
+      } else if (error.originalStatus === 500) {
+        setErrMsg('회원가입을 해주세요.')
+      } else {
+        setErrMsg('Login Failed')
+      }
     }
   }
 
   return (
     <>
       <div className="px-5 pb-10">
+        {isLoading && <Loader />}
         <h2 className="text-[30px] font-bold">내 손안의 매거진</h2>
         <h3 className="text-black-800 mb-[34px]">오늘의 상점에서 만나보세요</h3>
+        {isError && <div className="text-red-500">{errMsg}</div>}
         <Input
           state="아이디"
           name="id"
