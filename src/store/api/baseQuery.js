@@ -26,7 +26,7 @@ export const baseQuery = fetchBaseQuery({
 
 export const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions)
-
+  console.log('result', result)
   if (result?.error?.originalStatus === 403) {
     console.log('sending refresh token')
     // send refresh token to get new access token
@@ -54,11 +54,13 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
       api.dispatch(logOut())
     }
   } else if (
-    result?.error?.originalStatus === 500 &&
-    result?.error?.msg === '서버 에러가 발생했습니다. 고객센터로 문의 바랍니다.'
+    result?.error?.originalStatus === 500
+    // result?.error?.msg === '서버 에러가 발생했습니다. 고객센터로 문의 바랍니다.'
   ) {
+    console.log('500')
     api.dispatch(logOut())
   } else {
+    console.log(result)
     throw new Error()
   }
 
