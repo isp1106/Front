@@ -16,6 +16,7 @@ const NextBtn = ({ list, kakaoShareBtn }) => {
   const [buyProduct, setBuyProduct] = useState(false)
   const params = useParams()
   const salePrice = parseInt(list.price * (1 - list.sale / 100))
+  const items = useSelector((state) => state.product)
 
   useEffect(() => {
     createKakaoButton()

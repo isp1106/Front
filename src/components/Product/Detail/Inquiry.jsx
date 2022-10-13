@@ -7,7 +7,7 @@ const Inquiry = () => {
       <div className=" pb-6 ">
         <div className="flex justify-between px-5 items-center border-primary border-b">
           <h4 className="font-bold my-4">
-            상품 문의 <span>({detailProducts.review.count})</span>
+            상품 문의 <span>({detailProducts.Inquiry.length})</span>
           </h4>
           <span className="text-sm text-black-600 font-medium">Q&A쓰기</span>
         </div>

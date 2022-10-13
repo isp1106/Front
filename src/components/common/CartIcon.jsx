@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
-import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
+// import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
+import { cartItems as carts } from '../../dummy/cart'
 
 const CartICon = () => {
-  const { data: carts } = useGetCartItemsQuery()
+  // const { data: carts } = useGetCartItemsQuery()
   return (
     <Link to="/cart" className="relative top-[-2px]">
       <CartIcon width="26" height="26" alt="장바구니" />
