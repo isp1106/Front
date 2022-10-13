@@ -2,9 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
 // import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
-import { cartItems as carts } from '../../dummy/cart'
+import { cartItems as list } from '../../dummy/cart'
+import { useSelector } from 'react-redux'
 
 const CartICon = () => {
+  const token = localStorage.getItem('accessToken')
+  const cartItems = useSelector((state) => state.cart)
+  let carts
+  token ? (carts = list) : (carts = cartItems)
   // const { data: carts } = useGetCartItemsQuery()
   return (
     <Link to="/cart" className="relative top-[-2px]">

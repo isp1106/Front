@@ -6,20 +6,19 @@ import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 import ModalContent from './ModalContent'
 import ProductCard from './ProductCard'
 import KakaoIcon from '/public/assets/kakao-icon.png'
-import { detailProducts } from '../../../dummy/detail'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
-import { resetCount } from '../../../store/slices/productSlice'
+import { addCartItems } from '../../../store/slices/cartSlice'
 
 const NextBtn = ({ list, kakaoShareBtn }) => {
-  const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
-  const params = useParams()
   const [addCartItem] = useAddCartItemMutation()
-  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const token = localStorage.getItem('accessToken')
   const salePrice = parseInt(list.price * (1 - list.sale / 100))
   const items = useSelector((state) => state.product)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     createKakaoButton()
@@ -68,18 +67,19 @@ const NextBtn = ({ list, kakaoShareBtn }) => {
     }
   }
 
-
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
     setIsOpen((prev) => !prev)
   }
   const GoToCart = () => {
     setBuyProduct((prev) => !prev)
+    if (!token) {
+      dispatch(addCartItems({ ...list, ...items }))
+    }
     addCartItem({
       product_id: list.productId,
       count: items.count,
     })
-    dispatch(resetCount())
   }
 
   const onClickHandler = () => {

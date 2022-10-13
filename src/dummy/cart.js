@@ -1,5 +1,16 @@
 export const cartItems = [
   {
+    productId: 17,
+    productName: 'TWEED BOMBER JACKET BLACK',
+    sale: 10,
+    price: 36000,
+    brand: 'KUME',
+    stock: 12,
+    thumbnail:
+      'https://fianl.s3.ap-northeast-2.amazonaws.com/kume/TWEED+BOMBER+JACKET+BLACK-1.jpg',
+    count: 3,
+  },
+  {
     productId: 1,
     brand: 'Kirsh',
     productName: 'BIG CHERRY FLEECE CROP HOOD',
