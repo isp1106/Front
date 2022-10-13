@@ -105,8 +105,8 @@ const index = () => {
         formData.append(key, userValue[key])
       }
     }
-    addQuestion(userValue)
-    // addQuestion(formData)
+
+    addQuestion(formData)
   }
 
   const removeThumbnail = (idx) => {

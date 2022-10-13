@@ -21,9 +21,6 @@ export const reviewApi = apiSlice.injectEndpoints({
         return {
           url: `/customers/reviews/1`,
           method: 'POST',
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
           body: data,
         }
       },
