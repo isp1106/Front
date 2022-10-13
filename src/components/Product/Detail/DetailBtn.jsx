@@ -13,7 +13,7 @@ const NextBtn = ({ list }) => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
-  const params = useParams()
+  const items = useSelector((state) => state.product)
 
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
