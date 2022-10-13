@@ -15,7 +15,7 @@ const index = () => {
   const paynowHandler = () => {
     //api호출
     //성공시
-    navigate('/order/completed')
+    navigate('/order/completed', { state: state })
   }
 
   return (

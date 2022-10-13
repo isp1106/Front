@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Header from './Header'
+// import Header from './Header'
+import Header from '../layout/Header'
 import {
   faqData,
   faqOrderData,
@@ -43,19 +44,23 @@ const index = () => {
   }
   return (
     <>
-      <Header />
-      <FaqList
-        faqList={faqList}
-        setTabIndex={setTabIndex}
-        setTabActive={setTabActive}
-        setTabOpen={setTabOpen}
-        tabActive={tabActive}
-      />
-      <FaqContent
-        handleToggle={handleToggle}
-        tabList={tabList}
-        tabOpen={tabOpen}
-      />
+      <Header fill="#000">
+        <div className="text-center">FAQ</div>
+      </Header>
+      <div className="pt-[64px]">
+        <FaqList
+          faqList={faqList}
+          setTabIndex={setTabIndex}
+          setTabActive={setTabActive}
+          setTabOpen={setTabOpen}
+          tabActive={tabActive}
+        />
+        <FaqContent
+          handleToggle={handleToggle}
+          tabList={tabList}
+          tabOpen={tabOpen}
+        />
+      </div>
     </>
   )
 }

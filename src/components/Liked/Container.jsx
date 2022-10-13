@@ -33,7 +33,7 @@ function Container() {
           </div>
         )}
       </div>
-      <div className="w-full grid grid-cols-2 gap-1">
+      <div className="w-full grid grid-cols-2 gap-[2px]">
         {likedList.map((item, idx) => (
           <Card
             key={idx}

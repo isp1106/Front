@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import HeaderLink from './HeaderLink'
+import BackIcon from '../../common/BackIcon'
 import { cls } from '../../../utils'
 import Logo from './Logo'
-import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function Header(props) {
@@ -12,7 +12,7 @@ function Header(props) {
   return (
     <div
       className={cls(
-        'w-full max-w-[600px] h-16 flex fixed top-0 items-center bg-white z-40 box-border',
+        `w-full max-w-[600px] h-16 flex fixed top-0 items-center bg-white z-40 box-border ${props.className} `,
         currentPath === '/' && 'border-b-2 border-primary',
       )}
     >
@@ -20,11 +20,15 @@ function Header(props) {
         {currentPath === '/' ? (
           <Logo />
         ) : (
-          <BackOn className="w-7" onClick={() => navigate(-1)} />
+          !props.back && (
+            <BackIcon
+              size="24"
+              fill={cls(props.fill ? '#000' : '#D86145')}
+              onClick={() => navigate(-1)}
+            />
+          )
         )}
-        <div className="w-full items-center justify-center text-[20px] font-bold mx-3">
-          {props.children}
-        </div>
+        <div className="flex-grow font-bold text-xl">{props.children}</div>
         <div className="mr-[1.75px]">
           <HeaderLink searchNone={props.searchNone} />
         </div>

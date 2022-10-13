@@ -1,5 +1,5 @@
 import React from 'react'
-import heartOn from '/public/assets/heart-on.svg'
+import HeartIcon from '../../common/HeartIcon'
 import heartOff from '/public/assets/heart.svg'
 
 export const Card = ({ data }) => {
@@ -11,13 +11,9 @@ export const Card = ({ data }) => {
           <img src={profile} alt={userId} className="absolute" />
         </div>
       </div>
-      <div className="flex justify-between px-5 py-3.5 border-y-2 border-primary text-primary text-sm">
+      <div className="flex justify-between items-center px-5 py-3.5 border-y-2 border-primary text-black-600 text-sm">
         <div className="truncate">@ {userId}</div>
-        {liked ? (
-          <img src={heartOn} alt="heart on" width="24px" height="24px" />
-        ) : (
-          <img src={heartOff} alt="heart off" width="24px" height="24px" />
-        )}
+        <HeartIcon size="30" off={liked} fill={'#000'} />
       </div>
     </div>
   )

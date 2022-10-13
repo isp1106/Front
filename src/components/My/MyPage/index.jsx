@@ -1,4 +1,5 @@
-import Header from './Header'
+// import Header from './Header'
+import Header from '../../layout/Header'
 import Profile from './Profile'
 import Process from './Process'
 import MyPossession from './MyPossession'
@@ -13,10 +14,10 @@ const index = () => {
     console.log('logout!!')
   }
   return (
-    <div>
+    <>
       <Header />
-      <div className="pt-16 pb-2">
-        {!token ? (
+      <div className="pt-16 pb-2 mb-8 mt-2">
+        {token ? (
           <Guest />
         ) : (
           <>
@@ -33,7 +34,7 @@ const index = () => {
         )}
         <MyNav />
       </div>
-    </div>
+    </>
   )
 }
 

@@ -72,7 +72,7 @@ function CategoryList({ topCG, subCG }) {
             </div>
           ))}
       </div>
-      <div className="px-5 flex overflow-x-auto h-12 items-center border-b border-primary">
+      <div className="px-5 flex overflow-x-auto pt-5 pb-3 items-center border-b border-primary">
         {lastCategoryList &&
           lastCategoryList.map((last) => (
             <div

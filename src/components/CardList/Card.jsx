@@ -18,7 +18,7 @@ function Card({ data, purchase }) {
           </div>
         )}
       </div>
-      <div className={purchase ? '' : 'px-5 py-2.5'}>
+      <div className={purchase ? '' : 'px-5 pt-2.5 pb-7'}>
         <div>
           <div
             className={cls(

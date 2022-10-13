@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PaymentInfo = () => {
+const PaymentInfo = ({ items }) => {
   return (
     <>
       <div className="py-9">
@@ -20,7 +20,16 @@ const PaymentInfo = () => {
           </div>
           <div className="grid  grid-cols-2  border-t border-black-200 leading-9  py-1">
             <div className="text-black-400">할인금액</div>
-            <div className="text-black-800">¥ 3,800</div>
+            <div className="text-black-800">
+              ¥{' '}
+              {items
+                ?.reduce(
+                  (acc, cur) =>
+                    parseInt((cur.price * cur.sale) / 100) * cur.count + acc,
+                  0,
+                )
+                .toLocaleString()}
+            </div>
           </div>
           <div className="grid  grid-cols-2  border-t border-black-200 leading-9  py-1">
             <div className="text-black-400">배송비</div>
@@ -29,7 +38,17 @@ const PaymentInfo = () => {
         </div>
         <div className="grid  grid-cols-2 mt-5 text-base font-bold">
           <div>결제금액</div>
-          <div className="text-primary">¥ 13,700</div>
+          <div className="text-primary">
+            ¥
+            {items
+              ?.reduce(
+                (acc, cur) =>
+                  parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count +
+                  acc,
+                0,
+              )
+              .toLocaleString()}
+          </div>
         </div>
       </div>
       <div className="py-9">

@@ -92,11 +92,11 @@ const index = () => {
 
   const reviewData = reviewContent
   return (
-    <div className="px-5">
+    <div className="px-5 mt-[38px]">
       <ul>
         {reviewData.map((review, index) => (
           <li
-            className="flex items-center py-5 border-b border-black-200"
+            className="flex items-center pb-5 border-b border-black-200"
             key={index}
           >
             <div
