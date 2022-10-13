@@ -81,6 +81,7 @@ const index = () => {
         formData.append(key, userValue[key])
       }
     }
+    console.log('클릭')
     addProductReview(formData)
   }
 
