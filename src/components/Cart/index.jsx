@@ -3,24 +3,24 @@ import Header from '../layout/Header'
 import CartItem from './CartItem'
 import Total from './Total'
 import CartBtn from './CartBtn'
-// import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
+import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
 import ErrorCom from '../common/ErrorCom'
 import Loading from '../layout/Loading'
 import { useNavigate } from 'react-router-dom'
-import { cartItems } from '../../dummy/cart'
+// import { cartItems } from '../../dummy/cart'
 
 const Cart = () => {
-  // const {
-  //   data: cartItems,
-  //   isLoading,
-  //   isError,
-  //   isSuccess,
-  // } = useGetCartItemsQuery()
+  const {
+    data: cartItems,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useGetCartItemsQuery()
   const navigate = useNavigate()
   const [checkedItems, setCheckedItems] = useState(cartItems)
-  // useEffect(() => {
-  //   setCheckedItems(cartItems)
-  // }, [isSuccess])
+  useEffect(() => {
+    setCheckedItems(cartItems)
+  }, [isSuccess])
 
   const onCheckedHandler = (item) => {
     checkedItems.includes(item)
@@ -30,7 +30,7 @@ const Cart = () => {
 
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading />
       ) : isError ? (
         <ErrorCom />
@@ -76,8 +76,8 @@ const Cart = () => {
             )}
           </div>
         )
-      )} */}
-      <>
+      )}
+      {/* <>
         <div className="pb-[80px]">
           <Header>
             <div className="text-center ml-[27px]">장바구니</div>
@@ -117,7 +117,7 @@ const Cart = () => {
             </>
           )}
         </div>
-      </>
+      </> */}
     </>
   )
 }
