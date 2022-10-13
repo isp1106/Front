@@ -67,7 +67,9 @@ const Cart = () => {
         )
       )} */}
       <div className="pb-[80px]">
-        <Header>장바구니</Header>
+        <Header>
+          <div className="text-center">장바구니</div>
+        </Header>
         <div className="pt-[54px] ">
           <div className="flex justify-between px-5 my-[14px]">
             <div className="text-black-400 text-xs">

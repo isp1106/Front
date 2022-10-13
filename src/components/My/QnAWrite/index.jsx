@@ -14,8 +14,8 @@ const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
     id: null,
-    Product: null,
-    Member: null,
+    product: null,
+    member: null,
     type: types[0],
     title: null,
     content: null,
@@ -96,7 +96,7 @@ const index = () => {
         formData.append(key, userValue[key])
       }
     }
-    addQuestion(userValue)
+    addQuestion(formData)
   }
 
   const removeThumbnail = (idx) => {

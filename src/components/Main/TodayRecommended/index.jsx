@@ -30,8 +30,8 @@ const TodayRecommended = ({ category }) => {
       <h3 className="font-bold text-xl mb-5 pl-5">
         <strong className="text-primary">오늘</strong>의 추천브랜드
       </h3>
-      {list.map(({ img1, desc, img2, img3, liked, brand }) => (
-        <div className="mt-[38px]">
+      {list.map(({ img1, desc, img2, img3, liked, brand }, idx) => (
+        <div className="mt-[38px]" key={idx}>
           <div
             className="h-[226px] border-primary border-t-2 bg-cover"
             style={{
