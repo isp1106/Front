@@ -5,7 +5,7 @@ import Content from './Content'
 import AddPicture from './AddPicture'
 import Button from '../../../common/Button'
 import { useAddProductReviewMutation } from '../../../../store/api/reviewApiSlice'
-
+import { useLocation } from 'react-router-dom'
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
@@ -31,7 +31,9 @@ const index = () => {
   }
   const uploadedImage = useRef(null)
   const imageUploader = useRef(null)
-
+  const location = useLocation()
+  const edit = location.state
+  console.log(edit)
   // const handleImageUpload = (e) => {
   //   const [file] = e.target.files
   //   if (file) {
@@ -47,7 +49,7 @@ const index = () => {
   const handleImageUpload = (e) => {
     const fileList = e.target.files
 
-    console.log(imageFile.length)
+    // console.log(imageFile.length)
     if (imageFile.length > 1) {
       let currentImages = imageFile.slice(1, 2)
       setImageFile([
@@ -85,8 +87,8 @@ const index = () => {
   }
 
   useEffect(() => {
-    console.log(userValue)
-  }, [userValue])
+    // console.log(userValue)
+  }, [userValue, edit])
 
   const reviewData = reviewContent
   return (
@@ -99,13 +101,19 @@ const index = () => {
           >
             <div
               className="w-[4.125rem] h-[4.125rem] bg-no-repeat bg-[length:100%_auto] rounded overflow-hidden mr-3"
-              style={{ backgroundImage: `url(${review.brand_img_url})` }}
+              style={{
+                backgroundImage: `url(${
+                  edit ? edit.img_url : review.brand_img_url
+                })`,
+              }}
             ></div>
             <ul className="grow">
               <li className="text-xs flex flex-col justify-center gap-2">
-                <p className="font-bold">{review.brand}</p>
-                <p>{review.product_name}</p>
-                <p className="text-black-600">옵션: {review.product_option}</p>
+                <p className="font-bold">{edit ? edit.brand : review.brand}</p>
+                <p>{edit ? edit.name : review.product_name}</p>
+                <p className="text-black-600">
+                  옵션: {edit ? edit.option : review.product_option}
+                </p>
               </li>
             </ul>
           </li>
@@ -113,19 +121,23 @@ const index = () => {
       </ul>
       <div className="flex flex-col items-center justify-center py-[1.875rem] mb-[1.875rem] border-b border-black-200 gap-4">
         <p>상품에 대한 별점을 매겨주세요</p>
-        <StarScore userValue={userValue} setUserValue={setUserValue} />
+        <StarScore userValue={userValue} setUserValue={setUserValue} edit={edit}/>
       </div>
       <AddPicture
         handleImageUpload={handleImageUpload}
         uploadedImage={uploadedImage}
         imageUploader={imageUploader}
       />
-      <Content count={count} onChangeHandler={onChangeHandler} />
+      <Content count={count} onChangeHandler={onChangeHandler} edit={edit}/>
       <Button
         classprop="text-sm mt-9 mb-5 bg-primary text-white"
-        onClick={AddReviewHandler}
+        onClick={
+          edit
+            ? null //  AddUpdateHandler
+            : AddReviewHandler
+        }
       >
-        등록하기
+        {edit ? '수정하기' : '등록하기'}
       </Button>
     </div>
   )

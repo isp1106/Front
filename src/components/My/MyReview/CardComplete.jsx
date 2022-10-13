@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const CardComplete = ({reviewDataComplete, ratingStarReview}) => {
+const CardComplete = ({ reviewDataComplete, ratingStarReview }) => {
+  const navigate = useNavigate()
   return (
     <ul className="px-5">
       {reviewDataComplete.map((review, index) => (
@@ -22,14 +24,26 @@ const CardComplete = ({reviewDataComplete, ratingStarReview}) => {
               width: ratingStarReview(review.star),
             }}
           ></div>
-          <p className="text-xs">
-            퀄리티도 좋고 내구성도 좋아보여요
-            <br />
-            요즘 유행하는 스타일이랑도 잘 맞아서 잘 구매했다는 생각이 들어요
-          </p>
+          <textarea className="text-xs w-full resize-none">{review.reply}</textarea>
           <ul className="flex gap-3 mt-5">
             <li>
-              <button className="w-[3.125rem] bg-white-200 text-[#9C9C9C] rounded">
+              <button
+                className="w-[3.125rem] bg-white-200 text-[#9C9C9C] rounded"
+                onClick={() =>
+                  navigate('/my/review/write', {
+                    state: {
+                      edit: true,
+                      id: review.id,
+                      brand:review.brand,
+                      img_url: review.brand_img_url,
+                      name: review.product_name,
+                      option:review.product_option,
+                      star:review.star,
+                      reply:review.reply
+                    },
+                  })
+                }
+              >
                 수정
               </button>
             </li>
