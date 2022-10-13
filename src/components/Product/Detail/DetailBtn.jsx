@@ -14,7 +14,11 @@ const NextBtn = ({ list }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
   const params = useParams()
-  const { data: list, isLoading, isError } = useGetProductQuery(params.id)
+  const {
+    data: productList,
+    isLoading,
+    isError,
+  } = useGetProductQuery(params.id)
   const items = useSelector((state) => state.product)
 
   const ModalOpenHandler = () => {
