@@ -15,6 +15,7 @@ const index = () => {
     content: null,
     product: null,
     member: null,
+    images: [],
     star: 0,
     createdDate: null,
   })

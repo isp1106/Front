@@ -115,9 +115,10 @@ function App() {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        {(!currentPath.includes('/signup') ||
-          currentPath !== '/login' ||
-          !currentPath.includes('/product')) && <NavBottom />}
+        {!currentPath.includes('/signup') &&
+          currentPath !== '/login' &&
+          !currentPath.includes('/cart') &&
+          !currentPath.includes('/product') && <NavBottom />}
       </Provider>
     </div>
   )
