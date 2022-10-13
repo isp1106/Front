@@ -18,7 +18,21 @@ const Detail = () => {
   const dispatch = useDispatch()
   const { data: list, isLoading, isError } = useGetProductQuery(id)
   const [showButton, setShowButton] = useState(false)
+  const [kakaoShare, setKakaoShare] = useState(false)
   const recentViewProduct = 'recentViewProduct'
+
+  useEffect(() => {
+    // 카카오 sdk 추가
+    const script = document.createElement('script')
+    script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    script.onload = () => setKakaoShare(true)
+    // return () => {
+    //   document.body.removeChild(script)
+    // }
+  }, [])
 
   useEffect(() => {
     const local = JSON.parse(localStorage.getItem(recentViewProduct))
@@ -83,7 +97,7 @@ const Detail = () => {
             <Relation />
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <SubContent />
-            <DetailBtn list={list} />
+            <DetailBtn list={list} kakaoShareBtn={kakaoShare} />
             <GoTop />
           </div>
         )
