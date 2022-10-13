@@ -14,8 +14,8 @@ const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
     id: null,
-    product: null,
-    member: null,
+    Product: null,
+    Member: null,
     type: types[0],
     title: null,
     content: null,
@@ -85,18 +85,27 @@ const index = () => {
   }
   const AddQuestionHandler = () => {
     if (!userValue.title || !userValue.content) {
-      ModalControlHandler()
+      return ModalControlHandler()
     }
+    setUserValue({
+      ...userValue,
+      createdDate: new Date(),
+    })
     const formData = new FormData()
 
     for (const key in userValue) {
       if (Array.isArray(userValue[key])) {
-        formData.append(key, JSON.stringify(userValue[key]))
+        formData.append(
+          key,
+          new Blob([JSON.stringify(userValue[key])], {
+            type: 'application/json',
+          }),
+        )
       } else {
         formData.append(key, userValue[key])
       }
     }
-    addQuestion(formData)
+    addQuestion(userValue)
   }
 
   const removeThumbnail = (idx) => {
@@ -109,7 +118,7 @@ const index = () => {
     return (
       <>
         {imageFile?.map((item, idx) => (
-          <div className="relative flex gap-2">
+          <div className="relative flex gap-2" key={idx}>
             <div
               className="relative w-[86px] h-[86px] bg-cover rounded overflow-hidden shawdow-md"
               style={{
