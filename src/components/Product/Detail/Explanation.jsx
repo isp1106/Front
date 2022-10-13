@@ -11,7 +11,7 @@ const Explanation = ({ list }) => {
     setOpen((prev) => !prev)
   }
   //리뷰호출
-  const { brand, productName, price, sale, star } = list
+  const { brand, productName, price, sale, star = 4.5 } = list
   const params = useParams()
   const { data: questionCount } = useGetProductReviewsCountQuery(params.id)
   return (

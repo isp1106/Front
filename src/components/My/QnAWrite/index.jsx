@@ -105,8 +105,8 @@ const index = () => {
         formData.append(key, userValue[key])
       }
     }
-    // addQuestion(userValue)
-    addQuestion(formData)
+    addQuestion(userValue)
+    // addQuestion(formData)
   }
 
   const removeThumbnail = (idx) => {
@@ -156,12 +156,14 @@ const index = () => {
         addPassword={addPassword}
       />
       <div className="w-full h-[10px] bg-white-200 my-4"></div>
-      <AddPicture
-        uploadThumbnail={uploadThumbnail}
-        showImage={showImage}
-        ref={FileRef}
-        count={imageFile.length === 0 ? 0 : imageFile.length}
-      />
+      {userValue.type !== '기타문의' && (
+        <AddPicture
+          uploadThumbnail={uploadThumbnail}
+          showImage={showImage}
+          ref={FileRef}
+          count={imageFile.length === 0 ? 0 : imageFile.length}
+        />
+      )}
       <QnABtn onClick={AddQuestionHandler} />
       {isOpen && (
         <Modal
