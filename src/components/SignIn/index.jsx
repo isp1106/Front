@@ -64,6 +64,7 @@ const SignIn = () => {
           onChangeHandler={onChangeHandler}
           clear={() => clear('id')}
           value={inputValue.id}
+          type="text"
         />
         <Input
           state="비밀번호"
@@ -71,6 +72,7 @@ const SignIn = () => {
           onChangeHandler={onChangeHandler}
           clear={() => clear('pw')}
           value={inputValue.pw}
+          type="password"
         />
         <Button
           classprop="bg-primary text-white"
