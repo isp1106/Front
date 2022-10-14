@@ -16,7 +16,6 @@ import GoTop from '../../common/GoTop'
 const Detail = () => {
   const { id } = useParams()
   const { data: list, isLoading, isError } = useGetProductQuery(id)
-  const [showButton, setShowButton] = useState(false)
   const [kakaoShare, setKakaoShare] = useState(false)
   const recentViewProduct = 'recentViewProduct'
 

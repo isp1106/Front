@@ -1,5 +1,4 @@
 import React from 'react'
-import { detailProducts } from '../../../dummy/detail'
 import BackIcon from '../../common/BackIcon'
 import HeartIcon from '../../common/HeartIcon'
 const Brand = ({ list }) => {
