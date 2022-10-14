@@ -8,7 +8,27 @@ export const productApi = apiSlice.injectEndpoints({
     getProduct: builder.query({
       query: (id) => `/products/${id}`,
     }),
+    getSimpleProducts: builder.query({
+      query: (queryString) => ({
+        url: `/products/list?${queryString}`,
+        method: 'POST',
+      }),
+    }),
+    getLikedList: builder.query({
+      query: () => ({
+        url: '/favorites',
+      }),
+    }),
+    addLike: builder.mutation({
+      url: '/favorites',
+      method: 'POST',
+    }),
   }),
 })
 
-export const { useGetProductsQuery, useGetProductQuery } = productApi
+export const {
+  useGetProductsQuery,
+  useGetProductQuery,
+  useGetSimpleProductsQuery,
+  useAddLikedListMutation,
+} = productApi

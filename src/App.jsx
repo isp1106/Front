@@ -49,7 +49,8 @@ import RefundListPage from './pages/My/Refund/RefundListPage'
 import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import OrderCheck from './pages/OrderCheck'
-import Liked from './components/Liked'
+import Liked from './components/Liked/Liked'
+import RecentView from './components/Liked/RecentView'
 
 function App() {
   const location = useLocation()
@@ -64,7 +65,10 @@ function App() {
             <Route path=":topCG/:subCG" element={<CategoryFashion />} />
           </Route>
           <Route path="/oneul" element={<Oneul />} />
-          <Route path="/like" element={<Like />} />
+          <Route path="/like" element={<Like />}>
+            <Route path="" element={<Liked />} />
+          </Route>
+          <Route path="recent-view" element={<RecentView />} />
           <Route path="/my" element={<MyPage />}>
             <Route index element={<MyPageComp />} />
             <Route path="review" element={<MyReview />}>

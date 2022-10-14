@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Card from './Card'
 import { likedList } from '~/dummy/liked'
 import Button from '../common/Button'
+import NoList from '../CardList/NoList'
 
 function Container() {
   const [edit, setEdit] = useState(false)
@@ -9,7 +10,7 @@ function Container() {
 
   return (
     <div className="pt-28">
-      {edit && (
+      {edit && likedList.length > 0 && (
         <div className="fixed top-0 w-full max-w-[600px] z-50 overflow-hidden bg-white flex justify-between items-center px-5 h-[66px]">
           <div className="text-xl font-bold">
             {deleteList.length}개 상품 선택됨
@@ -24,7 +25,7 @@ function Container() {
       )}
       <div className="flex justify-between items-center mx-5 h-11 text-xs">
         <div className="text-black-400">찜한 상품 {likedList.length}</div>
-        {edit ? null : (
+        {edit && likedList.length ? null : (
           <div
             className="text-black-100 hover:cursor-pointer"
             onClick={() => setEdit(true)}
@@ -33,18 +34,24 @@ function Container() {
           </div>
         )}
       </div>
-      <div className="w-full grid grid-cols-2 gap-[2px]">
-        {likedList.map((item, idx) => (
-          <Card
-            key={idx}
-            editMode={edit}
-            data={item}
-            deleteList={deleteList}
-            setDeleteList={setDeleteList}
-          />
-        ))}
-      </div>
-      {edit && (
+      {likedList.length > 0 ? (
+        <div className="w-full grid grid-cols-2 gap-[2px]">
+          {likedList.map((item, idx) => (
+            <Card
+              key={idx}
+              editMode={edit}
+              data={item}
+              deleteList={deleteList}
+              setDeleteList={setDeleteList}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="pt-20">
+          <NoList title={'찜한 상품이 없습니다'} />
+        </div>
+      )}
+      {edit && likedList.length > 0 && (
         <div
           onClick={() => {
             console.log(deleteList)
