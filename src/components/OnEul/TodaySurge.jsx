@@ -60,7 +60,10 @@ const TodaySurge = ({ category }) => {
             //   </div>
             // </div>
 
-            <div className="w-full  [&:nth-child(2n)]:border-l-2 border-primary box-content overflow-hidden">
+            <div
+              className="w-full  [&:nth-child(2n)]:border-l-2 border-primary box-content overflow-hidden"
+              key={index}
+            >
               <div className="flex relative justify-center align-items-center">
                 <div className="absolute text-white flex flex-col right-[12px] top-[16px] items-center">
                   <HeartIcon fill="#ffffff" size="22" />

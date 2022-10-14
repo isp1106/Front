@@ -6,9 +6,11 @@ import CartList from '../components/Cart'
 import { cartItems as data } from '../dummy/cart'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useCookies } from 'react-cookie'
 
 const Cart = () => {
-  const token = localStorage.getItem('accessToken')
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
   const cartItems = useSelector((state) => state.cart)
   // const { data, isLoading, isError, isSuccess } = useGetCartItemsQuery()
 
