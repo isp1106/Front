@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { reviewContent } from '../../../../dummy/review'
 import StarScore from './StarScore'
 import Content from './Content'
@@ -6,6 +6,7 @@ import AddPicture from './AddPicture'
 import Button from '../../../common/Button'
 import { useAddProductReviewMutation } from '../../../../store/api/reviewApiSlice'
 import { useLocation } from 'react-router-dom'
+import CloseIcon from '../../../common/CloseIcon'
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
@@ -18,6 +19,7 @@ const index = () => {
     star: 0,
     createdDate: null,
   })
+  const FileRef = useRef()
   const [imageFile, setImageFile] = useState([])
   const [addProductReview] = useAddProductReviewMutation()
   const onChangeHandler = (e) => {
@@ -28,27 +30,11 @@ const index = () => {
     })
     name === 'content' && setCount(value.length)
   }
-  const uploadedImage = useRef(null)
-  const imageUploader = useRef(null)
   const location = useLocation()
   const edit = location.state
-  console.log(edit)
-  // const handleImageUpload = (e) => {
-  //   const [file] = e.target.files
-  //   if (file) {
-  //     const reader = new FileReader()
-  //     const { current } = uploadedImage
-  //     current.file = file
-  //     reader.onload = (e) => {
-  //       current.src = e.target.result
-  //     }
-  //     reader.readAsDataURL(file)
-  //   }
-  // }
-  const handleImageUpload = (e) => {
+  const uploadThumbnail = (e) => {
     const fileList = e.target.files
 
-    // console.log(imageFile.length)
     if (imageFile.length > 1) {
       let currentImages = imageFile.slice(1, 2)
       setImageFile([
@@ -71,74 +57,62 @@ const index = () => {
       })
     }
   }
-
   const AddReviewHandler = () => {
-    const formData = new FormData()
+    setUserValue({
+      ...userValue,
+      createdDate: new Date(),
+    })
 
+    const formData = new FormData()
     for (const key in userValue) {
       if (Array.isArray(userValue[key])) {
-        formData.append(key, userValue[key])
+        formData.append(
+          key,
+          new Blob([JSON.stringify(userValue[key])], {
+            type: 'application/json',
+          }),
+        )
       } else {
         formData.append(key, userValue[key])
       }
     }
-
-    // formData.append(
-    //   'title',
-    //   new Blob([JSON.stringify(userValue.title)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'id',
-    //   new Blob([JSON.stringify(userValue.id)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'content',
-    //   new Blob([JSON.stringify(userValue.content)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'product',
-    //   new Blob([JSON.stringify(userValue.product)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'member',
-    //   new Blob([JSON.stringify(userValue.member)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'star',
-    //   new Blob([JSON.stringify(userValue.star)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'createdDate',
-    //   new Blob([JSON.stringify(userValue.createdDate)], {
-    //     type: 'application/json',
-    //   }),
-    // )
-    // formData.append(
-    //   'images',
-    //   new Blob([JSON.stringify(userValue.images)], {
-    //     type: 'multipart/form-data',
-    //   }),
-    // )
     addProductReview(formData)
   }
+  const removeThumbnail = (idx) => {
+    imageFile.length === 1
+      ? setImageFile([])
+      : setImageFile(imageFile.splice(idx, 1))
+  }
+  const showImage = useMemo(() => {
+    return (
+      <>
+        {imageFile?.map((item, idx) => (
+          <div className="relative flex gap-2" key={idx}>
+            <div
+              className="relative w-[86px] h-[86px] bg-cover rounded overflow-hidden shawdow-md"
+              style={{
+                backgroundImage: `url(${imageFile[idx]})`,
+              }}
+              onClick={() => removeThumbnail(idx)}
+            ></div>
+            <div className="absolute -right-2 -top-2">
+              <CloseIcon
+                fill="#000"
+                size="8"
+                className="bg-black-200 p-1 rounded-full"
+              />
+            </div>
+          </div>
+        ))}
+      </>
+    )
+  })
 
   useEffect(() => {
-    // console.log(userValue)
+    console.log(userValue)
   }, [userValue, edit])
-
   const reviewData = reviewContent
+
   return (
     <div className="px-5 mt-[38px]">
       <ul>
@@ -176,9 +150,10 @@ const index = () => {
         />
       </div>
       <AddPicture
-        handleImageUpload={handleImageUpload}
-        uploadedImage={uploadedImage}
-        imageUploader={imageUploader}
+        uploadThumbnail={uploadThumbnail}
+        showImage={showImage}
+        ref={FileRef}
+        count={imageFile.length === 0 ? 0 : imageFile.length}
       />
       <Content count={count} onChangeHandler={onChangeHandler} edit={edit} />
       <Button
