@@ -1,5 +1,4 @@
 const Content = ({ count, onChangeHandler, edit }) => {
-  console.log(edit)
   return (
     <>
       <div className="py-5 w-full border-b border-black-200">
@@ -14,7 +13,9 @@ const Content = ({ count, onChangeHandler, edit }) => {
             cols="1"
             className=" w-full px-3 py-3 text-sm h-[105px] placeholder:text-sm resize-none"
             style={{ backgroundColor: '#F5F5F5' }}
-          >{edit ? edit.reply : null}</textarea>
+          >
+            {edit ? edit.reply : null}
+          </textarea>
           <div className="absolute text-xs bottom-1 right-2">
             {count} / 1000
           </div>

@@ -32,7 +32,6 @@ function CategoryList({ topCG, subCG }) {
   // topCategory가 바뀌면 디폴트로 subCategory의 첫번째 요소 name이 active 상태가 되도록
   // sub카테고리가 바뀔때 last카테고리의 디폴트를 '전체'로
   useEffect(() => {
-    console.log(CATEGORY)
     setCategory.map((top) => {
       if (selectTop === top.TopCategory) {
         setSubCategoryList(top.subCategory)

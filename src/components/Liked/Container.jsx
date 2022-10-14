@@ -46,9 +46,7 @@ function Container() {
       </div>
       {edit && (
         <div
-          onClick={() => {
-            console.log(deleteList)
-          }}
+          onClick={() => {}}
           className="z-50 hover:cursor-pointer w-full fixed h-20 bottom-0 flex justify-center items-center text-white-200 text-xl bg-primary"
         >
           <div className="pb-5">삭제</div>

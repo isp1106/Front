@@ -106,8 +106,6 @@ const UserInfo = () => {
       setDisabled(true)
   }, [alret])
 
-  console.log(inputValue)
-
   const telOptions = ['Japan(+81)', 'Korea(+82)']
   const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
   return (
