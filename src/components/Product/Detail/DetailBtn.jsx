@@ -11,7 +11,7 @@ import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
 import { addCartItems } from '../../../store/slices/cartSlice'
 import { useCookies } from 'react-cookie'
 
-const NextBtn = ({ list, kakaoShareBtn }) => {
+const DetailBtn = ({ list, kakaoShareBtn }) => {
   const [cookies, setCookie, removeCookie] = useCookies([])
   const token = cookies.accessToken
   const [isOpen, setIsOpen] = useState(false)
@@ -189,4 +189,4 @@ const NextBtn = ({ list, kakaoShareBtn }) => {
   )
 }
 
-export default NextBtn
+export default DetailBtn
