@@ -8,7 +8,7 @@ const Profile = () => {
 
   return (
     <div className="flex items-center px-12">
-      <span className="font-bold text-xl mr-2.5">{user}</span>
+      <span className="font-bold text-xl mr-2.5">{user ? user : '유키'}</span>
       <PenIcon className="w-4" onClick={() => navigate('edit-user-info')} />
     </div>
   )
