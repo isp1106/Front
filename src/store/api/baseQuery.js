@@ -50,4 +50,3 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
   }
   return result
 }
-
