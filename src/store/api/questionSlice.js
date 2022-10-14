@@ -1,4 +1,4 @@
-import { apiSlice } from '../api/baseQuery'
+import { apiSlice } from '../api/apiSlice'
 
 export const questionApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
