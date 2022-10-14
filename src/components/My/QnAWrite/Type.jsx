@@ -36,12 +36,14 @@ const Type = ({ types, userValue, onChangeCheckedHandler }) => {
             </React.Fragment>
           ))}
         </div>
-        <Button
-          classprop="bg-primary text-white text-sm"
-          onClick={controlOpenHandler}
-        >
-          문의상품 검색
-        </Button>
+        {userValue.type !== '기타문의' && (
+          <Button
+            classprop="bg-primary text-white text-sm"
+            onClick={controlOpenHandler}
+          >
+            문의상품 검색
+          </Button>
+        )}
       </div>
 
       <div

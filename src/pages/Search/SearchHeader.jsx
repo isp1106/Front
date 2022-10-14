@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import CartIcon from '~/components/common/CartIcon'
 import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
+import BackIcon from '../../components/common/BackIcon'
 import '~/animate.css'
 import { useEffect } from 'react'
 import SearchIcon from '../../components/common/SearchIcon'
@@ -79,7 +80,7 @@ const SearchHeader = ({ setGoSearch }) => {
     <div>
       <div className="w-full fixed top-0 flex items-center overflow-hidden bg-white z-40">
         <div className="w-full h-16 max-w-[600px] px-5 flex items-center">
-          <BackOn className="w-7" onClick={() => navigate(-1)} />
+          <BackOn size="24" onClick={() => navigate(-1)} />
           <div className="w-full h-fit overflow-hidden flex ml-3 items-center">
             {focus && (
               <input

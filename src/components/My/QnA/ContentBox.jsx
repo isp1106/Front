@@ -19,7 +19,7 @@ const ContentBox = ({ item, ModalControlHandler }) => {
     <>
       <div className="mb-5 px-5">
         <div className="flex items-center justify-between py-4 ">
-          <p className="font-bold">{item?.createdDate}</p>
+          <p className="font-bold">{item?.createdDate?.slice(0, -9)}</p>
           <div className="flex items-center gap-1">
             <span className="text-xs" onClick={() => viewDetail()}>
               답변상세보기

@@ -1,8 +1,8 @@
 export const questions = [
   {
     id: 1,
-    createdDate: '2022.09.25T04:33:39',
-    answerYn: false,
+    createdDate: '2022.09.25',
+    answerYn: true,
     type: '교환문의',
     product: {
       thumbnail:
@@ -26,7 +26,7 @@ export const questions = [
   },
   {
     id: 2,
-    createdDate: '2022.09.25T04:33:39',
+    createdDate: '2022.09.25',
     answerYn: false,
     type: '배송문의',
     product: {
@@ -47,7 +47,7 @@ export const questions = [
   },
   {
     id: 3,
-    createdDate: '2022.10.25T04:33:39',
+    createdDate: '2022.10.25',
     answerYn: true,
     type: '시스템문의',
     title: '자꾸 로그인이 안되어요...',
@@ -61,8 +61,8 @@ export const questions = [
   },
   {
     id: 4,
-    createdDate: '2022.10.25T04:33:39',
-    answerYn: true,
+    createdDate: '2022.10.25',
+    answerYn: false,
     type: '이벤트문의',
     title: '메인이벤트 관련해서 질문드려요~',
     product: null,
