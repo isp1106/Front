@@ -3,9 +3,11 @@ import { cls } from '../../utils'
 import MemberInfo from './MemberInfo'
 import UserInfo from '../../pages/SignUp/UserInfo'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
+import { useCookies } from 'react-cookie'
 
 const ShippingInfo = () => {
-  const token = localStorage.getItem('accessToken')
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
   const [open, setOpen] = useState(true)
   const toggleBtn = () => {
     setOpen((prev) => !prev)

@@ -7,18 +7,19 @@ const TodayMagazine = () => {
 
   return (
     <div
-      className="relative w-[9.563em]"
+      className="w-[9.563em]"
       //추후 id 값 넣기
       onClick={() => navigate('/magazine/${id}')}
     >
-      <img src="https://ifh.cc/g/KC4trp.png" className="w-full" />
-      <button
-        className="absolute top-4 right-4"
-        onClick={() => navigate('/magazine/1')}
-      >
-        {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-        {/* 나중에 아이콘넣기 */}
-      </button>
+      <div className="absolute bottom-12">
+        <img src="https://ifh.cc/g/KC4trp.png" className=" w-[150px]" />
+        <button
+          className="absolute top-4 right-4"
+          onClick={() => navigate('/magazine/1')}
+        >
+          {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
+        </button>
+      </div>
     </div>
   )
 }

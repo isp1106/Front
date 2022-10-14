@@ -29,13 +29,13 @@ const Input = ({
     >
       <div className="relative flex items-center h-7 ">
         <input
-          type={type}
           placeholder={state}
           name={name}
           className={cls('text-sm input ', active && 'active')}
           onClick={inputHandler}
           onChange={onChangeHandler}
           value={value}
+          type={type}
         />
         {active && <ClearIcon width="20px" onClick={inputBlurHandler} />}
         <label className={cls('text-xs label ', active && 'active')}>

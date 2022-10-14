@@ -5,8 +5,8 @@ import product from '~/dummy/dummy/product.json'
 
 function AfterSearch() {
   return (
-    <div className="mt-9">
-      {product && product.length === 0 ? (
+    <div className="mt-7">
+      {product && product.length !== 0 ? (
         <HaveResult product={product} />
       ) : (
         <NoResult />
