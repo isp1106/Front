@@ -77,7 +77,7 @@ const SearchHeader = ({ setGoSearch }) => {
 
   return (
     <div>
-      <div className="w-full fixed top-0 flex items-center overflow-hidden bg-white z-40">
+      <div className="w-full flex items-center overflow-hidden bg-white z-40">
         <div className="w-full h-16 max-w-[600px] px-5 flex items-center">
           <BackOn className="w-7" onClick={() => navigate(-1)} />
           <div className="w-full h-fit overflow-hidden flex ml-3 items-center">
@@ -96,7 +96,7 @@ const SearchHeader = ({ setGoSearch }) => {
               />
             )}
           </div>
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-3">
             <SearchIcon onClick={onFocusHandler} size="30" />
             <CartIcon />
           </div>
