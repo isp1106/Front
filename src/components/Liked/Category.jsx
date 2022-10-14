@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import HeaderLink from '../layout/Header/HeaderLink'
 
 export const Category = () => {
@@ -11,13 +11,14 @@ export const Category = () => {
     'liked-oneul': '오늘',
     'recent-view': '최근 본',
   }
-  const [active, setActive] = useState('상품')
   const navigate = useNavigate()
+  const { pathname } = useLocation()
+
   return (
     <div className="fixed w-full max-w-[600px] z-10 overflow-hidden bg-white">
       <div className="flex justify-between items-center mx-5 h-16">
         <div className="text-xl font-bold">
-          {active === '최근 본' ? '최근 본 상품' : '찜'}
+          {pathname === '/recent-view' ? '최근 본 상품' : '찜'}
         </div>
         <HeaderLink />
       </div>
@@ -25,12 +26,9 @@ export const Category = () => {
         {Object.entries(category).map(([k, v]) => (
           <div
             key={k}
-            onClick={() => {
-              setActive(v)
-              navigate(`/${k}`)
-            }}
+            onClick={() => navigate(`/${k}`)}
             className={
-              active === v
+              pathname === `/${k}`
                 ? 'relative font-bold text-black-100 after:border-b-[3px] after:border-black after:absolute after:-bottom-3 after:w-full after:left-0 hover:cursor-pointer'
                 : null
             }

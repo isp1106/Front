@@ -2,14 +2,10 @@ import React, { useState } from 'react'
 import CountBtn from './CountBtn'
 import { ReactComponent as Checked } from '/public/assets/allNotCheck.svg'
 import { ReactComponent as Nochecked } from '/public/assets/allCheck.svg'
-import {
-  useDeleteCartItemMutation,
-  useChangeCountMutation,
-} from '../../store/api/cartApiSlice'
+import { useDeleteCartItemMutation } from '../../store/api/cartApiSlice'
 
 const CartItem = ({ item, onCheckedHandler }) => {
   const [checked, setChecked] = useState(true)
-  const [changeCount] = useChangeCountMutation()
   const [deleteCartItem] = useDeleteCartItemMutation()
   const checkedHandler = () => {
     setChecked((prev) => !prev)
@@ -62,7 +58,7 @@ const CartItem = ({ item, onCheckedHandler }) => {
 
           <div className="mt-8 text-primary">{stock}개 남음</div>
         </div>
-        <div className="pr-5" onClick={() => deleteCartItem(id)}>
+        <div className="pr-5" onClick={() => deleteCartItem(productId)}>
           <svg
             width="14"
             height="14"

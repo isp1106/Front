@@ -52,7 +52,7 @@ import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import OrderCheck from './pages/OrderCheck'
 import Liked from './components/Liked'
-
+import EventDetail from './pages/EventDetail'
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
@@ -61,6 +61,7 @@ function App() {
       <Provider store={store}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/event" element={<EventDetail />} />
           <Route path="/category" element={<Category />}>
             <Route index element={<MainCategory />} />
             <Route path=":topCG/:subCG" element={<CategoryFashion />} />
@@ -118,9 +119,10 @@ function App() {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        {(!currentPath.includes('/signup') ||
-          currentPath !== '/login' ||
-          !currentPath.includes('/product')) && <NavBottom />}
+        {!currentPath.includes('/signup') &&
+          currentPath !== '/login' &&
+          !currentPath.includes('/cart') &&
+          !currentPath.includes('/product') && <NavBottom />}
       </Provider>
     </div>
   )

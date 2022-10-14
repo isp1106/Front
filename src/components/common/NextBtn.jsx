@@ -4,7 +4,10 @@ import { cls } from '../../utils'
 const NextBtn = ({ next, inputValue, disabled, children, onClick }) => {
   const navigate = useNavigate()
   const ChangeRouter = () => {
-    disabled && navigate(`/signup/${next}`, { state: inputValue })
+    if (!disabled) return
+    next === 'finish' && onClick()
+
+    navigate(`/signup/${next}`, { state: inputValue })
   }
   return (
     <div

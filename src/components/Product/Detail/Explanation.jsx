@@ -11,7 +11,7 @@ const Explanation = ({ list }) => {
     setOpen((prev) => !prev)
   }
   //리뷰호출
-  const { brand, productName, price, sale, star } = list
+  const { brand, productName, price, sale, star = 4.5 } = list
   const params = useParams()
   const { data: questionCount } = useGetProductReviewsCountQuery(params.id)
   return (
@@ -33,9 +33,10 @@ const Explanation = ({ list }) => {
             }}
           ></div>
           <span className="text-black-600 text-xs underline">
-            {!questionCount
+            {/* {!questionCount
               ? '작성된 리뷰가 없습니다.'
-              : `{questionCount}개의 리뷰보기`}
+              : `{questionCount}개의 리뷰보기`} */}
+            2개의 리뷰보기
           </span>
         </div>
         <div className="flex items-end mt-2">
