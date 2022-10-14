@@ -59,6 +59,7 @@ const SignIn = () => {
           onChangeHandler={onChangeHandler}
           clear={() => clear('pw')}
           value={inputValue.pw}
+          type="password"
         />
         <Button
           classprop="bg-primary text-white"
