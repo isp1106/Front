@@ -85,27 +85,18 @@ const index = () => {
   }
   const AddQuestionHandler = () => {
     if (!userValue.title || !userValue.content) {
-      return ModalControlHandler()
+      ModalControlHandler()
     }
-    setUserValue({
-      ...userValue,
-      createdDate: new Date(),
-    })
     const formData = new FormData()
 
     for (const key in userValue) {
       if (Array.isArray(userValue[key])) {
-        formData.append(
-          key,
-          new Blob([JSON.stringify(userValue[key])], {
-            type: 'application/json',
-          }),
-        )
+        formData.append(key, JSON.stringify(userValue[key]))
       } else {
         formData.append(key, userValue[key])
       }
     }
-    addQuestion(userValue)
+    addQuestion(formData)
   }
 
   const removeThumbnail = (idx) => {
@@ -118,7 +109,7 @@ const index = () => {
     return (
       <>
         {imageFile?.map((item, idx) => (
-          <div className="relative flex gap-2" key={idx}>
+          <div className="relative flex gap-2">
             <div
               className="relative w-[86px] h-[86px] bg-cover rounded overflow-hidden shawdow-md"
               style={{
@@ -155,12 +146,14 @@ const index = () => {
         addPassword={addPassword}
       />
       <div className="w-full h-[10px] bg-white-200 my-4"></div>
-      <AddPicture
-        uploadThumbnail={uploadThumbnail}
-        showImage={showImage}
-        ref={FileRef}
-        count={imageFile.length === 0 ? 0 : imageFile.length}
-      />
+      {userValue.type !== '기타문의' && (
+        <AddPicture
+          uploadThumbnail={uploadThumbnail}
+          showImage={showImage}
+          ref={FileRef}
+          count={imageFile.length === 0 ? 0 : imageFile.length}
+        />
+      )}
       <QnABtn onClick={AddQuestionHandler} />
       {isOpen && (
         <Modal

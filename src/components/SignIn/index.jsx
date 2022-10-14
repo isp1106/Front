@@ -91,7 +91,12 @@ const SignIn = () => {
           회원 가입하고 <strong className="text-primary">500¥</strong> 적립금을
           받으세요!
         </p>
-        <Button classprop="mt-3 border border-black-100">회원가입 하기</Button>
+        <Button
+          classprop="mt-3 border border-black-100"
+          onClick={() => navigate('/signup')}
+        >
+          회원가입 하기
+        </Button>
       </div>
     </>
   )
