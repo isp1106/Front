@@ -9,13 +9,15 @@ import KakaoIcon from '/public/assets/kakao-icon.png'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
 import { addCartItems } from '../../../store/slices/cartSlice'
+import { useCookies } from 'react-cookie'
 
-const NextBtn = ({ list, kakaoShareBtn }) => {
+const DetailBtn = ({ list, kakaoShareBtn }) => {
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
   const [addCartItem] = useAddCartItemMutation()
   const navigate = useNavigate()
-  const token = localStorage.getItem('accessToken')
   const salePrice = parseInt(list.price * (1 - list.sale / 100))
   const items = useSelector((state) => state.product)
   const dispatch = useDispatch()
@@ -192,4 +194,4 @@ const NextBtn = ({ list, kakaoShareBtn }) => {
   )
 }
 
-export default NextBtn
+export default DetailBtn

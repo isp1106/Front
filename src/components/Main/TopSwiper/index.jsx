@@ -6,8 +6,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import './TopSwiper.css'
 import Slide from './Slide'
+import { useNavigate } from 'react-router-dom'
 
 const TopSwiper = () => {
+  const navigate = useNavigate()
   const postList = useMemo(() => {
     return [
       {
@@ -83,7 +85,9 @@ const TopSwiper = () => {
         {postList.map((element, index) => {
           return (
             <SwiperSlide className="topslide" key={index}>
-              <Slide className="topslide" item={element} />
+              <div onClick={() => navigate('/event')}>
+                <Slide className="topslide" item={element} />
+              </div>
             </SwiperSlide>
           )
         })}

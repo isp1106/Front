@@ -4,9 +4,11 @@ import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
 // import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
 import { cartItems as list } from '../../dummy/cart'
 import { useSelector } from 'react-redux'
+import { useCookies } from 'react-cookie'
 
 const CartICon = () => {
-  const token = localStorage.getItem('accessToken')
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
   const cartItems = useSelector((state) => state.cart)
   let carts
   token ? (carts = list) : (carts = cartItems)

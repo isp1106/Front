@@ -27,9 +27,9 @@ const Detail = () => {
     document.body.appendChild(script)
 
     script.onload = () => setKakaoShare(true)
-    // return () => {
-    //   document.body.removeChild(script)
-    // }
+    return () => {
+      document.body.removeChild(script)
+    }
   }, [])
 
   useEffect(() => {

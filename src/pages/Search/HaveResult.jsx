@@ -9,7 +9,7 @@ function HaveResult({ product }) {
       </div>
       <div>
         <div className="p-5 font-bold text-sm">상품</div>
-        <Container list={product} search={true} />
+        <Container list={product} pt={'pt-0'} />
       </div>
     </div>
   )
