@@ -16,8 +16,8 @@ const NavBottom = () => {
   const location = useLocation()
   const currentPath = location.pathname
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-10">
-      <ul className="flex flex-wrap bg-neutral-100 justify-between pt-1 pb-4 pl-5 pr-5 items-center">
+    <nav className="h-[70px] fixed bottom-0 left-0 right-0 z-10">
+      <ul className="h-[70px] flex flex-wrap bg-neutral-100 justify-between pt-1 pb-4 pl-5 pr-5 items-center">
         <li>
           <Link
             to="/category"
