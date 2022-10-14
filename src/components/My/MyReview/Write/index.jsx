@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'
+import CloseIcon from '../../../common/CloseIcon'
+import { useLocation } from 'react-router-dom'
 import { reviewContent } from '../../../../dummy/review'
 import StarScore from './StarScore'
 import Content from './Content'
 import AddPicture from './AddPicture'
 import Button from '../../../common/Button'
 import { useAddProductReviewMutation } from '../../../../store/api/reviewApiSlice'
-
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
@@ -18,6 +19,8 @@ const index = () => {
     star: 0,
     createdDate: null,
   })
+  const location = useLocation()
+  const edit = location.state
   const FileRef = useRef()
   const [imageFile, setImageFile] = useState([])
   const [addProductReview] = useAddProductReviewMutation()
@@ -29,25 +32,9 @@ const index = () => {
     })
     name === 'content' && setCount(value.length)
   }
-  const uploadedImage = useRef(null)
-  const imageUploader = useRef(null)
 
-  // const handleImageUpload = (e) => {
-  //   const [file] = e.target.files
-  //   if (file) {
-  //     const reader = new FileReader()
-  //     const { current } = uploadedImage
-  //     current.file = file
-  //     reader.onload = (e) => {
-  //       current.src = e.target.result
-  //     }
-  //     reader.readAsDataURL(file)
-  //   }
-  // }
-  const handleImageUpload = (e) => {
+  const uploadThumbnail = (e) => {
     const fileList = e.target.files
-
-    console.log(imageFile.length)
     if (imageFile.length > 1) {
       let currentImages = imageFile.slice(1, 2)
       setImageFile([
@@ -70,6 +57,7 @@ const index = () => {
       })
     }
   }
+
   const AddReviewHandler = () => {
     setUserValue({
       ...userValue,
@@ -91,11 +79,13 @@ const index = () => {
     }
     addProductReview(formData)
   }
+
   const removeThumbnail = (idx) => {
     imageFile.length === 1
       ? setImageFile([])
       : setImageFile(imageFile.splice(idx, 1))
   }
+  
   const showImage = useMemo(() => {
     return (
       <>
@@ -121,12 +111,7 @@ const index = () => {
     )
   })
 
-  useEffect(() => {
-    console.log(userValue)
-  }, [userValue])
-
   const reviewData = reviewContent
-
   return (
     <div className="px-5 mt-[38px]">
       <ul>
@@ -137,13 +122,19 @@ const index = () => {
           >
             <div
               className="w-[4.125rem] h-[4.125rem] bg-no-repeat bg-[length:100%_auto] rounded overflow-hidden mr-3"
-              style={{ backgroundImage: `url(${review.brand_img_url})` }}
+              style={{
+                backgroundImage: `url(${
+                  edit ? edit.img_url : review.brand_img_url
+                })`,
+              }}
             ></div>
             <ul className="grow">
               <li className="text-xs flex flex-col justify-center gap-2">
-                <p className="font-bold">{review.brand}</p>
-                <p>{review.product_name}</p>
-                <p className="text-black-600">옵션: {review.product_option}</p>
+                <p className="font-bold">{edit ? edit.brand : review.brand}</p>
+                <p>{edit ? edit.name : review.product_name}</p>
+                <p className="text-black-600">
+                  옵션: {edit ? edit.option : review.product_option}
+                </p>
               </li>
             </ul>
           </li>
@@ -151,7 +142,7 @@ const index = () => {
       </ul>
       <div className="flex flex-col items-center justify-center py-[1.875rem] mb-[1.875rem] border-b border-black-200 gap-4">
         <p>상품에 대한 별점을 매겨주세요</p>
-        <StarScore userValue={userValue} setUserValue={setUserValue} />
+        <StarScore userValue={userValue} setUserValue={setUserValue} edit={edit} />
       </div>
       <AddPicture
         uploadThumbnail={uploadThumbnail}
@@ -159,10 +150,14 @@ const index = () => {
         ref={FileRef}
         count={imageFile.length === 0 ? 0 : imageFile.length}
       />
-      <Content count={count} onChangeHandler={onChangeHandler} />
+      <Content count={count} onChangeHandler={onChangeHandler} edit={edit} />
       <Button
         classprop="text-sm mt-9 mb-5 bg-primary text-white"
-        onClick={AddReviewHandler}
+        onClick={
+          edit
+            ? null //  AddUpdateHandler
+            : AddReviewHandler
+        }
       >
         등록하기
       </Button>
