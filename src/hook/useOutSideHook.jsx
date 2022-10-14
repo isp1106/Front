@@ -2,7 +2,6 @@ import React, { useEffect, useCallback } from 'react'
 
 const useOutSideHook = (ref, cb) => {
   const listener = useCallback((event) => {
-    console.log(event.target.innerText)
     if (
       ref.current &&
       !ref.current?.contains(event.target) &&

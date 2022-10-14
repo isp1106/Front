@@ -45,10 +45,6 @@ const EditAddress = () => {
     onCloseHandler()
   }
 
-  useEffect(() => {
-    console.log(inputValue)
-  }, [inputValue])
-
   return (
     <>
       <label

@@ -16,7 +16,7 @@ function RecentView() {
     isError,
   } = useGetSimpleProductsQuery(queryString)
   console.log(recentList)
-
+  const local = JSON.parse(localStorage.getItem(recentViewProduct))
   return (
     <div>
       <Category />

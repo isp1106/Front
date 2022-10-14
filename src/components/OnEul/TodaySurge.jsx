@@ -35,31 +35,6 @@ const TodaySurge = ({ category }) => {
             { imgUrl, brandurl, brand, price, discount, userId, liked },
             index,
           ) => (
-            // <div key={index} className="item__list">
-            //   <div
-            //     className="relative item w-[50vw-2px] h-[50vw] max-w-[300px] max-h-[300px] bg-cover"
-            //     style={{
-            //       backgroundImage: `url(${item.imgUrl})`,
-            //     }}
-            //   >
-            //     <div className="absolute text-white flex flex-col right-[12px] top-[16px] items-center">
-            //       <HeartIcon fill="#ffffff" size="22" />
-            //       <span className="text-sm">{item.liked}</span>
-            //     </div>
-            //   </div>
-            //   <div className="flex py-4 pl-5">
-            //     <div
-            //       className="w-[39px] h-[39px] bg-cover rounded-lg mr-[14px]"
-            //       style={{
-            //         backgroundImage: `url(${item.brandurl})`,
-            //       }}
-            //     ></div>
-            //     <div className="flex flex-col text-sm font-medium">
-            //
-            //     </div>
-            //   </div>
-            // </div>
-
             <div
               className="w-full  [&:nth-child(2n)]:border-l-2 border-primary box-content overflow-hidden"
               key={index}

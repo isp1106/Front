@@ -5,7 +5,6 @@ import HeartIcon from '../common/HeartIcon'
 
 const Brand = ({ item }) => {
   const { brandImg, brand, brandKo, liked } = item
-  console.log(item)
 
   return (
     <div className="w-full px-5 mt-2 py-[36px]">
