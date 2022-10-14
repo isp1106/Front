@@ -2,12 +2,16 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import userReducer from './slices/userSlice'
 import productReducer from './slices/productSlice'
-import { apiSlice } from './api/baseQuery'
+import authReducer from './slices/authSlice'
+import { apiSlice } from './api/apiSlice'
+import cartReducer from './slices/cartSlice'
 
 const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
+  auth: authReducer,
   user: userReducer,
   product: productReducer,
+  cart: cartReducer,
 })
 
 export const store = configureStore({
