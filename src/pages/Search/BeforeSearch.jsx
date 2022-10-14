@@ -58,7 +58,7 @@ const BeforeSearch = ({ goSearch }) => {
 
   return (
     <div className={`${animation} w-full`}>
-      <div className="h-72 px-7 mt-2 py-2 text-sm text-black-600">
+      <div className="h-72 px-7 mt-16 py-2 text-sm text-black-600">
         <div className="flex justify-between py-4">
           <div className="font-bold text-base text-black">최근 검색어</div>
           {recentSearches && recentSearches.length > 0 && (

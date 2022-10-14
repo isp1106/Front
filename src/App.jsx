@@ -51,8 +51,10 @@ import RefundListPage from './pages/My/Refund/RefundListPage'
 import RefundDetailPage from './pages/My/Refund/RefundDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import OrderCheck from './pages/OrderCheck'
-import Liked from './components/Liked'
+import Liked from './components/Liked/Liked'
+import RecentView from './components/Liked/RecentView'
 import EventDetail from './pages/EventDetail'
+
 function App() {
   const location = useLocation()
   const currentPath = location.pathname
@@ -68,7 +70,10 @@ function App() {
           </Route>
           {/* Oneul  like  edit-user-info//조건부 */}
           <Route path="/oneul" element={<Oneul />} />
-          <Route path="/like" element={<Like />} />
+          <Route path="/like" element={<Like />}>
+            <Route path="" element={<Liked />} />
+          </Route>
+          <Route path="recent-view" element={<RecentView />} />
           <Route path="/my" element={<MyPage />}>
             <Route index element={<MyPageComp />} />
             <Route path="review" element={<MyReview />}>
