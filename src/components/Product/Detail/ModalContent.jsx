@@ -21,7 +21,6 @@ const ModalContent = () => {
     dispatch(changeCount(e))
   }
 
-  console.log('price', price, 'sale', sale, 'productCount', productCount)
   return (
     <>
       {isError ? (
