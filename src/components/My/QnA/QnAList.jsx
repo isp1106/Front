@@ -13,7 +13,9 @@ const QnAList = ({ questions }) => {
     <>
       {questions.length === 0 && (
         <>
-          <div className="w-full text-center pt-5">문의 내역이 없습니다</div>
+          <div className="w-full text-center pt-5 mt-5">
+            문의 내역이 없습니다
+          </div>
         </>
       )}
       {questions.map((item) => (

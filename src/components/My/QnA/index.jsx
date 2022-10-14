@@ -3,14 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import TabList from '../../common/TabList'
 import QnAList from './QnAList'
 import QnABtn from './QnABtn'
-import { questions } from '../../../dummy/qeustions'
-// import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
+import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
 import ErrorCom from '../../common/ErrorCom'
 import Loading from '../../layout/Loading'
 const tablist = ['답변완료', '미답변']
 
 const index = () => {
-  // const { data: questions, isLoading, isError } = useGetQuestionsQuery()
+  const { data: questions, isLoading, isError } = useGetQuestionsQuery()
   const answerYes = questions?.filter((item) => !item.answerYn)
   const answerNo = questions?.filter((item) => !!item.answerYn)
   const [select, setSelect] = useState(tablist[0])
@@ -29,7 +28,7 @@ const index = () => {
         select={select}
         onClickHandler={onClickHandler}
       />
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading />
       ) : isError ? (
         <ErrorCom />
@@ -40,13 +39,7 @@ const index = () => {
         ) : (
           <QnAList questions={answerNo} />
         ))
-      )} */}
-      {questions &&
-        (select === tablist[0] ? (
-          <QnAList questions={answerYes} />
-        ) : (
-          <QnAList questions={answerNo} />
-        ))}
+      )}
       <QnABtn onClick={goToWrite} />
     </>
   )
