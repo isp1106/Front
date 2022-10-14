@@ -1,21 +1,52 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { fetchBaseQuery } from '@reduxjs/toolkit/query'
+import { setCredentials, logOut } from '../slices/authSlice'
+import { Cookies } from 'react-cookie'
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_BASE_URL2,
+const { VITE_BASE_URL } = import.meta.env
+const cookies = new Cookies()
+
+export const baseQuery = fetchBaseQuery({
+  baseUrl: VITE_BASE_URL,
   credentials: 'include',
   prepareHeaders: (headers) => {
-    // const accessToken = getCookie('accessToken')
-    if (true) {
-      headers.set(
-        'Authorization',
-        `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY2NTY2MDc5OH0.TnanjAE4XjD-IYKtZjYuJzectQLqH6ZGaytqpP16sZwIvOgNOGCnxjKhkpRCH3rGc6_aXqWvkqvBonRd1aE9Mw`,
-      )
+    const token = cookies.get('accessToken')
+    if (token) {
+      headers.set('authorization', `Bearer ${token}`)
     }
     return headers
   },
 })
 
-export const apiSlice = createApi({
-  baseQuery,
-  endpoints: (builder) => ({}),
-})
+export const baseQueryWithReauth = async (args, api, extraOptions) => {
+  let result = await baseQuery(args, api, extraOptions)
+
+  if (result?.error?.originalStatus === 403) {
+    console.log('sending refresh token')
+    const refreshResult = await baseQuery(
+      {
+        url: '/auth/reissue',
+        method: 'POST',
+        body: {
+          accessToken: cookies.remove('accessToken'),
+          refreshToken: cookies.remove('refreshToken'),
+        },
+      },
+      api,
+      extraOptions,
+    )
+    console.log('refreshResult', refreshResult)
+    if (refreshResult?.data) {
+      // const user = api.getState().auth.user/
+      // api.dispatch(setCredentials({ ...refreshResult.data, user }))
+      api.dispatch(
+        setCredentials({
+          ...refreshResult.data,
+        }),
+      )
+      result = await baseQuery(args, api, extraOptions)
+    } else {
+      api.dispatch(logOut())
+    }
+  }
+  return result
+}
