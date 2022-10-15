@@ -5,8 +5,10 @@ import Header from '../../components/layout/Header'
 const QnA = () => {
   return (
     <>
-      <Header>1:1 문의</Header>
-      <div className="pt-[55px]">
+      <Header fill="#000">
+        <div className="text-center">1:1 문의</div>
+      </Header>
+      <div className="pt-[65px]">
         <Outlet />
       </div>
     </>

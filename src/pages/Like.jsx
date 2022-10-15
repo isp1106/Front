@@ -1,11 +1,12 @@
 import React from 'react'
-import HeaderLink from '../components/layout/Header/HeaderLink'
-import Liked from '../components/Liked'
+import { Outlet } from 'react-router-dom'
+import Category from '../components/Liked/Category'
 
 const Like = () => {
   return (
     <div>
-      <Liked />
+      <Category />
+      <Outlet />
     </div>
   )
 }

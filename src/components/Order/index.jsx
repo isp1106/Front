@@ -6,17 +6,10 @@ import Coupon from '../common/Coupon'
 import PayWay from './PayWay'
 import TotalPrice from './TotalPrice'
 import OrderBtn from './OrderBtn'
-import { useSelector } from 'react-redux'
 // productid로 조회
 
 const index = () => {
   const { state } = useLocation()
-  const navigate = useNavigate()
-  const paynowHandler = () => {
-    //api호출
-    //성공시
-    navigate('/order/completed')
-  }
 
   return (
     <>
@@ -25,7 +18,7 @@ const index = () => {
       <Coupon />
       <PayWay />
       <TotalPrice items={state} />
-      <OrderBtn items={state} paynowHandler={paynowHandler} />
+      <OrderBtn items={state} />
     </>
   )
 }

@@ -1,13 +1,16 @@
 import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { cls } from '../../utils'
 import heart from '/public/assets/heart-on.svg'
 
 function Card({ data, purchase }) {
   const { brand, productName, thumbnail, price, sale } = data
   const saleCost = parseInt((price * (100 - sale)) / 100)
+  const location = useLocation().pathname
+  const navigate = useNavigate()
 
   return (
-    <div>
+    <div onClick={() => navigate(`/product/${data.productId}`)}>
       <div className="relative">
         <div className="w-full bg-cover overflow-hidden relative justify-center after:content('') after:block after:pb-[100%]">
           <img src={thumbnail} alt={productName} className="absolute" />
@@ -18,7 +21,7 @@ function Card({ data, purchase }) {
           </div>
         )}
       </div>
-      <div className={purchase ? '' : 'px-5 py-2.5'}>
+      <div className={purchase ? '' : 'px-5 pt-2.5 pb-7'}>
         <div>
           <div
             className={cls(
@@ -42,12 +45,13 @@ function Card({ data, purchase }) {
             <div className="test-xs font-medium text-black-600">{price} ¥</div>
           )}
         </div>
-        {!purchase && (
-          <div className="flex text-sm font-bold">
-            <div className="text-primary mr-3">{sale}%</div>
-            <div className="text-black-100">{saleCost} ¥</div>
-          </div>
-        )}
+        {!purchase ||
+          (!location.includes('recent-view') && (
+            <div className="flex text-sm font-bold">
+              <div className="text-primary mr-3">{sale}%</div>
+              <div className="text-black-100">{saleCost} ¥</div>
+            </div>
+          ))}
       </div>
     </div>
   )

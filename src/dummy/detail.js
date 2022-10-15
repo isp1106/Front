@@ -1,5 +1,5 @@
 export const detailProducts = {
-  id: 11,
+  productId: 11,
   detailThumList: [
     'https://images.seoulstore.com/products/546e7653a3284eab33eae8d2c1c81675.jpg',
     'https://images.seoulstore.com/products/05114e87573eaa474d88f4f473d8355f.jpg',
@@ -85,33 +85,35 @@ export const detailProducts = {
     },
   ],
   review: {
-    count: 128,
+    count: 2,
     reviews: [
       {
         id: 1,
-        imgUrl: [
+        images: [
           'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
           'https://ifh.cc/g/GFBkp0.png',
           'https://ifh.cc/g/G85L5x.png',
           'https://ifh.cc/g/G85L5x.png',
         ],
-        userId: 'onuel12356',
-        desc: '두껍고 따뜻하고 색깔도 화면과 같아요. 사이즈도 넉넉하고 어던옷과 입어도 잘 매치됩니다. 세일해서 저렴하고 구매했어요!',
+        member: 'onuel12356',
+        content:
+          '두껍고 따뜻하고 색깔도 화면과 같아요. 사이즈도 넉넉하고 어던옷과 입어도 잘 매치됩니다. 세일해서 저렴하고 구매했어요!',
         star: 4.5,
-        date: '2022-04-21',
+        createdDate: '2022-04-21',
       },
       {
-        id: 1,
-        imgUrl: [
+        id: 2,
+        images: [
           'https://ifh.cc/g/GFBkp0.png',
           'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
           'https://ifh.cc/g/G85L5x.png',
           'https://ifh.cc/g/G85L5x.png',
         ],
-        userId: 'onuel12356',
-        desc: '데일리로 입기 편한 티셔츠예요 완전 귀엽습니다. 너무 젊은 브랜드 아닐까 생각했지만 귀여우니 그냥 입으려고요',
+        member: 'onuel12356',
+        content:
+          '데일리로 입기 편한 티셔츠예요 완전 귀엽습니다. 너무 젊은 브랜드 아닐까 생각했지만 귀여우니 그냥 입으려고요',
         star: 4,
-        date: '2022-04-21',
+        createdDate: '2022-04-21',
       },
     ],
   },
@@ -122,6 +124,48 @@ export const detailProducts = {
       userId: 'onuel12356',
       category: '배송문의',
       desc: '한번에 결제하고 각각 다른 주소로 보내고 싶어요',
+    },
+  ],
+  similiar: [
+    {
+      id: 1,
+      imgurl:
+        'https://img.29cm.co.kr/next-product/2021/09/14/adfd4334b548443887f311521fc3efbd_20210914214925.jpg?width=300',
+      brnad: '페인오어플레져',
+      name: 'RABITA FUR CARDIGAN_plum',
+      price: 980,
+      liked: false,
+      discount: 30,
+    },
+    {
+      id: 2,
+      imgurl:
+        'https://img.29cm.co.kr/next-product/2022/09/02/91ef52eb39f34fd3bf678d5e4d911cb7_20220902114700.jpg?width=300',
+      brnad: '메인부스',
+      name: 'Island Flower Cardigan(BLACK)',
+      price: 720,
+      liked: true,
+      discount: 20,
+    },
+    {
+      id: 3,
+      imgurl:
+        'https://img.29cm.co.kr/next-product/2022/08/18/b8ed61509a6a4276b70574a86a6f3a4d_20220818161350.jpg?width=300',
+      brnad: '엔오르',
+      name: 'BUSTIER CARDIGAN SET - BLACK',
+      price: 790,
+      liked: false,
+      discount: 30,
+    },
+    {
+      id: 4,
+      imgurl:
+        'https://img.29cm.co.kr/next-product/2021/10/15/888d56110d744e09a058b22a8d578d56_20211015014905.jpg?width=300',
+      brand: '로아즈',
+      name: '[파인울100%] 로아즈 울 프린지 니트 가디건 R12K02-IV',
+      price: 230,
+      liked: true,
+      discount: 10,
     },
   ],
 }

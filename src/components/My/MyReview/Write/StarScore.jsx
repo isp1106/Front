@@ -1,15 +1,19 @@
 import React, { useState, useMemo } from 'react'
 
-const StarScore = () => {
+const StarScore = ({ userValue, setUserValue, edit }) => {
   const [leftValue, setLeftValue] = useState(0)
-  const [rightValue, setRightValue] = useState(0)
+  const [rightValue, setRightValue] = useState(edit ? edit.star : 0)
   const onRightChange = (e) => {
     const input = e.currentTarget
     const value = parseInt(input.value)
+    setUserValue({
+      ...userValue,
+      star: value / 2,
+    })
     setRightValue(value > leftValue + 1 ? value : leftValue + 1)
   }
   const stars = useMemo(() => {
-    const stars = []
+    const stars = [] 
     for (let i = 1; i <= 5; i += 1) {
       const ratingIndexRight = i * 2
       const ratingIndexLeft = ratingIndexRight - 1

@@ -13,12 +13,16 @@ import { Outlet } from 'react-router-dom'
 const index = () => {
   const [count, setCount] = useState(0)
   const [userValue, setUserValue] = useState({
+    id: null,
+    Product: null,
+    Member: null,
     type: types[0],
     title: null,
     content: null,
     privateYn: false,
     password: null,
     images: [],
+    createdDate: null,
   })
   const [imageFile, setImageFile] = useState([])
   const [isOpen, ModalControlHandler] = useModalControl()
@@ -92,7 +96,6 @@ const index = () => {
         formData.append(key, userValue[key])
       }
     }
-    //api연결 로직
     addQuestion(formData)
   }
 
@@ -127,11 +130,6 @@ const index = () => {
     )
   })
 
-  // useEffect(() => {
-  //   console.log('imageFile', imageFile)
-  //   console.log('userValue', userValue)
-  // }, [imageFile, userValue])
-
   return (
     <>
       <Type
@@ -148,12 +146,14 @@ const index = () => {
         addPassword={addPassword}
       />
       <div className="w-full h-[10px] bg-white-200 my-4"></div>
-      <AddPicture
-        uploadThumbnail={uploadThumbnail}
-        showImage={showImage}
-        ref={FileRef}
-        count={imageFile.length === 0 ? 0 : imageFile.length}
-      />
+      {userValue.type !== '기타문의' && (
+        <AddPicture
+          uploadThumbnail={uploadThumbnail}
+          showImage={showImage}
+          ref={FileRef}
+          count={imageFile.length === 0 ? 0 : imageFile.length}
+        />
+      )}
       <QnABtn onClick={AddQuestionHandler} />
       {isOpen && (
         <Modal

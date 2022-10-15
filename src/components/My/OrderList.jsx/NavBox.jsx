@@ -1,7 +1,6 @@
 import React from 'react'
 
 const NavBox = ({ status }) => {
-  console.log(status)
   const types = Object.keys(status)
   return (
     <div className="pt-[54px] text-center">

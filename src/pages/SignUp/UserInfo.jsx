@@ -27,6 +27,11 @@ const UserInfo = () => {
   const [openPost, setOpenPost] = useState(false)
   const [animation, setAnimation] = useState('')
 
+  const onClick = () => {
+    //여기 너 회원가입 로직
+    console.log('회원가입 했다!')
+  }
+
   const ChangeHandler = useCallback((e) => {
     const { name, value } = e.target
     setInputValue({
@@ -100,8 +105,6 @@ const UserInfo = () => {
       inputValue.postNum !== '' &&
       setDisabled(true)
   }, [alret])
-
-  console.log(inputValue)
 
   const telOptions = ['Japan(+81)', 'Korea(+82)']
   const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
@@ -317,7 +320,12 @@ const UserInfo = () => {
       </div>
 
       {pathname.includes('/signup') && (
-        <NextBtn next="finish" inputValue={inputValue} disabled={disabled}>
+        <NextBtn
+          onClick={onClick}
+          next="finish"
+          inputValue={inputValue}
+          disabled={disabled}
+        >
           다음
         </NextBtn>
       )}

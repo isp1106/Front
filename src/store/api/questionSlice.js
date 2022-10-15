@@ -1,37 +1,31 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { apiSlice } from '../api/apiSlice'
 
-export const questionApi = createApi({
-  reducerPath: 'questionApi',
-  // baseQuery,
-  baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_BASE_URL,
-  }),
+export const questionApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    //카드 상품 불러오기
     getQuestions: builder.query({
-      // query: () => '/customers/question',
-      query: () => 'question',
+      query: () => 'customers/questions',
     }),
-    getQustion: builder.query({
-      query: (id) => `question/${id}`,
+    getQuestion: builder.query({
+      query: (id) => `customers/questions/${id}`,
+    }),
+    getMyQuestions: builder.query({
+      query: () => `customers​/questions​/my`,
     }),
     addQuestion: builder.mutation({
-      query: ({ data }) => ({
-        url: `customers/questions`,
-        method: 'PUT',
-        // mode: 'cors',
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY2NDk4MTgxMn0.RulW7VIPZJV4szYO-RpxYBdz8JevLATTxtmz5ePM6_habCD87zEIf0rnTFszib0zDgXptnTZ9CEEIq9ywDMUcQ`,
-        },
-        body: data,
-      }),
+      query: (data) => {
+        return {
+          url: `customers/questions/1`,
+          method: 'POST',
+          body: data,
+        }
+      },
     }),
   }),
 })
 
 export const {
   useGetQuestionsQuery,
-  useGetQustionQuery,
+  useGetQuestionQuery,
+  useGetMyQuestionsQuery,
   useAddQuestionMutation,
 } = questionApi

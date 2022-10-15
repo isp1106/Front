@@ -1,9 +1,8 @@
 import React from 'react'
-import { detailProducts } from '../../../dummy/detail'
 import BackIcon from '../../common/BackIcon'
 import HeartIcon from '../../common/HeartIcon'
-const Brand = () => {
-  const { brandImg, brand, brandKo, liked } = detailProducts
+const Brand = ({ list }) => {
+  const { brandImg, brand, brandKo, liked } = list
   return (
     <div className="w-full px-5 mt-2 py-[36px]">
       <div className="flex w-full border border-primary">

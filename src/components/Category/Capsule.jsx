@@ -8,7 +8,7 @@ function Capsule() {
   const dispatch = useDispatch()
 
   return (
-    <div className="fixed bottom-20 right-5">
+    <div className="fixed bottom-28 right-5">
       <div className="flex flex-col text-xs font-bold justify-center items-center rounded-md box-border overflow-hidden">
         <button
           value={'women'}

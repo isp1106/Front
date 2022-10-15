@@ -19,10 +19,10 @@ const TabList = ({
   return (
     <>
       {!reviewAddChk && (
-        <ul className="flex justify-center items-center text-center mt-10">
+        <ul className="flex justify-center items-center text-center mt-[38px]">
           <li
             className={cls(
-              'text-sm w-1/2 bg-point p-3.5 cursor-pointer',
+              'text-sm w-1/2 p-3.5 cursor-pointer',
               tab === 0
                 ? 'bg-point text-white font-bold'
                 : 'bg-white-200 text-black-200 font-normal',

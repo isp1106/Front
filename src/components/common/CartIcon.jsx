@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
-import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
+// import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
+import { cartItems as list } from '../../dummy/cart'
+import { useSelector } from 'react-redux'
+import { useCookies } from 'react-cookie'
 
 const CartICon = () => {
-  const { data: carts } = useGetCartItemsQuery()
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
+  const cartItems = useSelector((state) => state.cart)
+  let carts
+  token ? (carts = list) : (carts = cartItems)
+  // const { data: carts } = useGetCartItemsQuery()
   return (
-    <Link to="/cart" className="relative">
-      <CartIcon className="w-8" alt="장바구니" />
+    <Link to="/cart" className="relative top-[-2px]">
+      <CartIcon width="26" height="26" alt="장바구니" />
       <span className="count absolute right-0 bottom-[-0.188rem] text-[0.625rem] rounded-[50%] bg-primary text-white w-[0.875rem] h-[0.875rem] text-center leading-[0.875rem]">
         {carts ? carts.reduce((acc, cur) => cur.count + acc, 0) : 0}
       </span>

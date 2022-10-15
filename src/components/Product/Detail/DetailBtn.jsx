@@ -1,24 +1,85 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { cls } from '../../../utils'
 import HeartIcon from '../../common/HeartIcon'
 import { ReactComponent as LinkIcon } from '/public/assets/link.svg'
 import ModalContent from './ModalContent'
 import ProductCard from './ProductCard'
-import { detailProducts } from '../../../dummy/detail'
+import KakaoIcon from '/public/assets/kakao-icon.png'
 import { useSelector, useDispatch } from 'react-redux'
+import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
+import { addCartItems } from '../../../store/slices/cartSlice'
+import { useCookies } from 'react-cookie'
 
-const NextBtn = () => {
-  const navigate = useNavigate()
+const DetailBtn = ({ list, kakaoShareBtn }) => {
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
+  const [addCartItem] = useAddCartItemMutation()
+  const navigate = useNavigate()
+  const salePrice = parseInt(list.price * (1 - list.sale / 100))
   const items = useSelector((state) => state.product)
+  const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //   createKakaoButton()
+  // }, [window.location.href])
+
+  const createKakaoButton = () => {
+    // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근 가능
+    if (window.Kakao) {
+      const kakao = window.Kakao
+      // 중복 initialization 방지
+      if (!kakao.isInitialized()) {
+        // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
+        kakao.init(import.meta.env.VITE_APP_KAKAO_KEY)
+      }
+      kakao.Share.createDefaultButton({
+        // Render 부분 id=kakao-link-btn 을 찾아 그부분에 렌더링
+        container: '#kakao-link-btn',
+        objectType: 'commerce',
+        content: {
+          title: `[${list.brand}] ${list.productName}`,
+          imageUrl: list.thumbnail,
+          link: {
+            mobileWebUrl: window.location.href,
+            webUrl: window.location.href,
+          },
+        },
+        commerce: {
+          productName: list.brand,
+          regularPrice: list.price,
+          discountRate: list.sale,
+          discountPrice: salePrice,
+          currencyUnit: '¥',
+        },
+        buttons: [
+          {
+            title: '자세히 보기',
+            link: {
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href,
+            },
+          },
+        ],
+      })
+    }
+  }
+
   const ModalOpenHandler = () => {
     buyProduct && setBuyProduct((prev) => !prev)
     setIsOpen((prev) => !prev)
   }
   const GoToCart = () => {
     setBuyProduct((prev) => !prev)
+    if (!token) {
+      dispatch(addCartItems({ ...list, ...items }))
+    }
+    addCartItem({
+      product_id: list.productId,
+      count: items.count,
+    })
   }
 
   const onClickHandler = () => {
@@ -29,20 +90,26 @@ const NextBtn = () => {
     isOpen ? BuyProudctNow() : ModalOpenHandler()
   }
 
-  const goToShoppingCart = () => {
+  const goToShoppingCart = (data) => {
     navigate('/cart')
-    //장바구니 담는 api호출
   }
 
   const BuyProudctNow = () => {
-    navigate('/order')
+    navigate('/order', { state: [{ ...list, ...items }] })
   }
 
   const copyUrl = () => {
-    const value = window.document.location.href
-    navigator.clipboard.writeText(value).then(() => {
-      alert('주소가 복사되었습니다')
-    })
+    const url = window.document.location.href
+    if (navigator.share) {
+      navigator
+        .share({
+          title: list.brand,
+          text: list.productName,
+          url,
+        })
+        .then(() => console.log('공유 성공'))
+        .catch((error) => console.log('공유 실패', error))
+    }
   }
 
   const ContinueShopping = () => {
@@ -50,6 +117,13 @@ const NextBtn = () => {
     setIsOpen(false)
   }
 
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://developers.kakao.com/sdk/kakao.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => document.body.removeChild(script)
+  }, [dispatch])
   return (
     <>
       {isOpen && (
@@ -58,7 +132,7 @@ const NextBtn = () => {
           onClick={ModalOpenHandler}
         ></div>
       )}
-      <aside className="fixed inset-x-0 flex bottom-0  z-50">
+      <aside className="fixed inset-x-0 flex bottom-0 z-50">
         <section
           className={cls(
             'pointer-events-auto w-screen transition ease-in-out duration-500',
@@ -79,7 +153,7 @@ const NextBtn = () => {
         >
           {buyProduct ? (
             <div className="flex items-center justify-between">
-              <div className="text-xl " onClick={ContinueShopping}>
+              <div className="text-xl" onClick={ContinueShopping}>
                 쇼핑계속하기
               </div>
               <div className="mx-5 grow w-[1px] h-[12px] bg-black-200"></div>
@@ -93,6 +167,11 @@ const NextBtn = () => {
                 <div className="flex gap-5 flex-grow">
                   <HeartIcon size="24" fill="#ffffff" />
                   <LinkIcon width="24" height="24" onClick={copyUrl} />
+                  {kakaoShareBtn && (
+                    <button id="kakao-link-btn" className="w-6 block">
+                      <img src={KakaoIcon} alt="카카오 공유하기" />
+                    </button>
+                  )}
                 </div>
                 <div className="flex gap-3 items-center pl-5">
                   <span className="text-[20px]" onClick={onClickHandler}>
@@ -115,4 +194,4 @@ const NextBtn = () => {
   )
 }
 
-export default NextBtn
+export default DetailBtn

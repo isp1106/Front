@@ -18,6 +18,7 @@ const Category = () => {
               key={index}
               onClick={() => changeCategory(item)}
               className={cls(
+                'leading-2',
                 select === item
                   ? 'text-white font-bold border-b-2 border-white'
                   : 'text-white-200 font-normal',

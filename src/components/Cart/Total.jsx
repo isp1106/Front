@@ -15,11 +15,13 @@ const Total = ({ items }) => {
         <div className="flex justify-between mt-[15px]">
           <span className="text-black-400">할인금액</span>
           <span>
-            {items?.reduce(
-              (acc, cur) =>
-                parseInt((cur.price * cur.sale) / 100) * cur.count + acc,
-              0,
-            )}
+            {items
+              ?.reduce(
+                (acc, cur) =>
+                  parseInt((cur.price * cur.sale) / 100) * cur.count + acc,
+                0,
+              )
+              .toLocaleString()}
             ¥
           </span>
         </div>
@@ -27,11 +29,14 @@ const Total = ({ items }) => {
       <div className="mt-[20px] text-[20px] font-bold flex justify-between px-5">
         <span className="text-primary">결제금액</span>
         <span>
-          {items?.reduce(
-            (acc, cur) =>
-              parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
-            0,
-          )}
+          {items
+            ?.reduce(
+              (acc, cur) =>
+                parseInt((cur.price * (100 - cur.sale)) / 100) * cur.count +
+                acc,
+              0,
+            )
+            .toLocaleString()}
           ¥
         </span>
       </div>

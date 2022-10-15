@@ -1,30 +1,23 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { cartApi } from './api/cartApiSlice'
-import { magazineApi } from './api/magazineSlice'
-import { questionApi } from './api/questionSlice'
-import { refundApi } from './api/refundApiSlice'
 import userReducer from './slices/userSlice'
 import productReducer from './slices/productSlice'
+import authReducer from './slices/authSlice'
+import { apiSlice } from './api/apiSlice'
+import cartReducer from './slices/cartSlice'
 
 const rootReducer = combineReducers({
-  [cartApi.reducerPath]: cartApi.reducer,
-  [magazineApi.reducerPath]: magazineApi.reducer,
-  [questionApi.reducerPath]: questionApi.reducer,
-  [refundApi.reducerPath]: refundApi.reducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
+  auth: authReducer,
   user: userReducer,
   product: productReducer,
+  cart: cartReducer,
 })
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([
-      cartApi.middleware,
-      magazineApi.middleware,
-      questionApi.middleware,
-      refundApi.middleware,
-    ]),
+    getDefaultMiddleware().concat([apiSlice.middleware]),
 })
 
 setupListeners(store.dispatch)

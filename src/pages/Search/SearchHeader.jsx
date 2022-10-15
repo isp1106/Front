@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ReactComponent as SearchIcon } from '/public/assets/search_icon.svg'
 import CartIcon from '~/components/common/CartIcon'
 import { ReactComponent as BackOn } from '/public/assets/back-small.svg'
+import BackIcon from '../../components/common/BackIcon'
 import '~/animate.css'
 import { useEffect } from 'react'
+import SearchIcon from '../../components/common/SearchIcon'
 
 const SearchHeader = ({ setGoSearch }) => {
   const [focus, setFocus] = useState(false)
   const [inputAnimation, setInputAnimation] = useState('')
   const [value, setValue] = useState('')
   const navigate = useNavigate()
+  const searchKeyword = 'searchKeyword'
 
   useEffect(() => {
     setFocus(true)
@@ -46,11 +48,11 @@ const SearchHeader = ({ setGoSearch }) => {
   const goSearch = () => {
     // 검색어가 빈칸을 제외하고 빈 배열일 경우, 함수를 실행시키지 않고 리턴
     if (value.trim === '') return
-    const local = JSON.parse(localStorage.getItem('searchKeyword'))
+    const local = JSON.parse(localStorage.getItem(searchKeyword))
 
     // local에 저장된 키워드들이 없다면 키값을 설정하고 그 키워드만 로컬에 저장 후 리턴
     if (!local) {
-      window.localStorage.setItem('searchKeyword', JSON.stringify([value]))
+      window.localStorage.setItem(searchKeyword, JSON.stringify([value]))
       return
     }
 
@@ -64,7 +66,7 @@ const SearchHeader = ({ setGoSearch }) => {
 
     // 새로운 검색어를 맨 앞으로 저장
     window.localStorage.setItem(
-      'searchKeyword',
+      searchKeyword,
       JSON.stringify([value, ...local]),
     )
     setGoSearch(true)
@@ -78,7 +80,7 @@ const SearchHeader = ({ setGoSearch }) => {
     <div>
       <div className="w-full flex items-center overflow-hidden bg-white z-40">
         <div className="w-full h-16 max-w-[600px] px-5 flex items-center">
-          <BackOn className="w-7" onClick={() => navigate(-1)} />
+          <BackOn size="24" onClick={() => navigate(-1)} />
           <div className="w-full h-fit overflow-hidden flex ml-3 items-center">
             {focus && (
               <input
@@ -95,8 +97,8 @@ const SearchHeader = ({ setGoSearch }) => {
               />
             )}
           </div>
-          <div className="flex justify-center items-center gap-2">
-            <SearchIcon onClick={onFocusHandler} className="w-7" />
+          <div className="flex justify-center items-center gap-3">
+            <SearchIcon onClick={onFocusHandler} size="30" />
             <CartIcon />
           </div>
         </div>

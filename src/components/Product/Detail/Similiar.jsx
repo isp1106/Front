@@ -5,7 +5,10 @@ import HeartIcon from '../../common/HeartIcon'
 const Similiar = () => {
   return (
     <div className="pl-5">
-      <h4 className="font-bold my-4">비슷한 상품</h4>
+      <div className="flex justify-between pr-5 items-center">
+        <h4 className="font-bold my-4">비슷한 상품</h4>
+        <span className="text-sm text-black-600 font-medium">더보기</span>
+      </div>
       <div className="flex gap-5 overflow-x-scroll">
         {detailProducts.similiar.map((item, idx) => (
           <div key={idx}>
@@ -16,7 +19,7 @@ const Similiar = () => {
               }}
             ></div>
             <div className="flex justify-between items-center mt-1 px-2">
-              <span className="text-sm font-bold">{item.brnad}</span>
+              <span className="text-sm font-bold">{item.brand}</span>
               <HeartIcon size="15" off={item.liked} />
             </div>
             <div className="text-[10px] text-black-800 truncate w-[125px] px-2 mt-2">

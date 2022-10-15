@@ -1,12 +1,7 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { apiSlice } from '../api/apiSlice'
 
-export const refundApi = createApi({
-  reducerPath: 'refundApi',
-  // baseQuery,
+export const refundApi = apiSlice.injectEndpoints({
   tagTypes: ['Refunds'],
-  baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_BASE_URL,
-  }),
   endpoints: (builder) => ({
     //환불 상품 불러오기
     getRefundItems: builder.query({

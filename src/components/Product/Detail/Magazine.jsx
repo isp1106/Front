@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { detailProducts } from '../../../dummy/detail'
 
 const Relation = () => {
