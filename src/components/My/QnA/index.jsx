@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import TabList from '../../common/TabList'
 import QnAList from './QnAList'
 import QnABtn from './QnABtn'
-import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
+import { useGetQuestionsQuery } from '../../../store/api/questionApiSlice'
 import ErrorCom from '../../common/ErrorCom'
 import Loading from '../../layout/Loading'
 const tablist = ['답변완료', '미답변']

@@ -7,7 +7,7 @@ import QnABtn from './QnABtn'
 import Modal from '../../common/Modal'
 import CloseIcon from '../../common/CloseIcon'
 import useModalControl from '../../../hook/useModalControl'
-import { useAddQuestionMutation } from '../../../store/api/questionSlice'
+import { useAddQuestionMutation } from '../../../store/api/questionApiSlice'
 import { Outlet } from 'react-router-dom'
 
 const index = () => {

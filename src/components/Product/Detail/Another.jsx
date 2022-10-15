@@ -2,8 +2,8 @@ import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { detailProducts } from '../../../dummy/detail'
 import HeartIcon from '../../common/HeartIcon'
-import { useGetProductQuery } from '../../../store/api/productSlice'
-import { useGetProductsQuery } from '../../../store/api/productSlice'
+import { useGetProductQuery } from '../../../store/api/productApiSlice'
+import { useGetProductsQuery } from '../../../store/api/productApiSlice'
 
 const Another = () => {
   const params = useParams()

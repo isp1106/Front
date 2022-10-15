@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetProductQuery } from '../../../store/api/productSlice'
+import { useGetProductQuery } from '../../../store/api/productApiSlice'
 import MainSlide from './MainSlide'
 import Explanation from './Explanation'
 import DetailDesc from './DetailDesc'

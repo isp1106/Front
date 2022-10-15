@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import ErrorCom from '../../common/ErrorCom'
-import { useGetProductQuery } from '../../../store/api/productSlice'
+import { useGetProductQuery } from '../../../store/api/productApiSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   setSecletedOption,
