@@ -6,9 +6,12 @@ import MyPossession from './MyPossession'
 import MyNav from './MyNav'
 import Guest from './Guest'
 import Button from '../../common/Button'
+import { useCookies } from 'react-cookie'
+
 const index = () => {
   // api (useEffect async await)
-  const token = localStorage.getItem('accessToken')
+  const [cookies, setCookie, removeCookie] = useCookies()
+  const token = cookies.accessToken
   const logoutHandler = () => {
     //로그아웃 api작성 예정
     console.log('logout!!')
@@ -17,7 +20,7 @@ const index = () => {
     <>
       <Header />
       <div className="pt-16 pb-2 mb-8 mt-2">
-        {token ? (
+        {!token ? (
           <Guest />
         ) : (
           <>
