@@ -25,7 +25,8 @@ const HeaderLink = ({ searchNone }) => {
         currentPath !== '/' &&
         !currentPath.includes('-list') &&
         !currentPath.includes('/like') &&
-        !currentPath.includes('/order') && (
+        !currentPath.includes('/order') &&
+        !currentPath.includes('/recent-view') && (
           <div className="pl-2">
             <HomeIcon
               size="24"

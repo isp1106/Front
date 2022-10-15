@@ -11,20 +11,16 @@ import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
 import { addCartItems } from '../../../store/slices/cartSlice'
 import { useCookies } from 'react-cookie'
 
-const NextBtn = ({ list, kakaoShareBtn }) => {
+const DetailBtn = ({ list, kakaoShareBtn }) => {
+  const [cookies, setCookie, removeCookie] = useCookies([])
+  const token = cookies.accessToken
   const [isOpen, setIsOpen] = useState(false)
   const [buyProduct, setBuyProduct] = useState(false)
   const [addCartItem] = useAddCartItemMutation()
   const navigate = useNavigate()
-  const [cookies, setCookie, removeCookie] = useCookies()
-  const token = cookies.accessToken
   const salePrice = parseInt(list.price * (1 - list.sale / 100))
   const items = useSelector((state) => state.product)
   const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   createKakaoButton()
-  // }, [window.location.href])
 
   const createKakaoButton = () => {
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근 가능
@@ -194,4 +190,4 @@ const NextBtn = ({ list, kakaoShareBtn }) => {
   )
 }
 
-export default NextBtn
+export default DetailBtn

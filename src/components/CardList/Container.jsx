@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Card from './Card'
-import product from '~/dummy/dummy/product.json'
+import NoList from './NoList'
 
-function Container({ list, search }) {
+function Container({ list, pt = 'pt-52' }) {
   return (
-    <div className={search ? '' : 'pt-52'}>
-      <div className="w-full grid grid-cols-2 gap-[2px]">
-        {list && list.map((item, idx) => <Card key={idx} data={item} />)}
-      </div>
+    <div className={`${pt}`}>
+      {list && list.length > 0 ? (
+        <div className="w-full grid grid-cols-2 gap-[2px]">
+          {list.map((item, idx) => (
+            <Card key={idx} data={item} />
+          ))}
+        </div>
+      ) : (
+        <div className="pt-28">
+          <NoList title={'최근 본 상품이 없습니다'} />
+        </div>
+      )}
     </div>
   )
 }

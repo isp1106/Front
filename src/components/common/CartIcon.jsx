@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CartIcon } from '/public/assets/bag.svg'
 import { useGetCartItemsQuery } from '../../store/api/cartApiSlice'
-import { cartItems as list } from '../../dummy/cart'
+import { cartItems } from '../../dummy/cart'
 import { useSelector } from 'react-redux'
 import { useCookies } from 'react-cookie'
 

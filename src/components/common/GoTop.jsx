@@ -14,7 +14,7 @@ const GoTop = () => {
 
   useEffect(() => {
     const handleShowButton = () => {
-      if (window.scrollY > 2000) {
+      if (window.scrollY > 3000) {
         setShowButton(true)
       } else {
         setShowButton(false)

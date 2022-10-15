@@ -97,7 +97,7 @@ const SearchHeader = ({ setGoSearch }) => {
               />
             )}
           </div>
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-3">
             <SearchIcon onClick={onFocusHandler} size="30" />
             <CartIcon />
           </div>
