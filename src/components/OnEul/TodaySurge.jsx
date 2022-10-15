@@ -44,13 +44,13 @@ const TodaySurge = ({ category }) => {
                   <span className="text-sm">{liked}</span>
                 </div>
                 <div
-                  className="w-[calc((100vw-2px)/2)] h-[calc((100vw)/2)] bg-cover after:content('') after:block bg-center"
+                  className="w-[calc(100vw/2)] h-[calc((100vw)/2)] bg-cover after:content('') after:block bg-center"
                   style={{
                     backgroundImage: `url(${imgUrl})`,
                   }}
                 ></div>
               </div>
-              <div className="w-[calc((100vw-2px)/2)] flex px-5 py-3.5 border-y-2 border-primary text-primary text-sm">
+              <div className=" flex px-5 py-3.5 border-y-2 border-primary text-primary text-sm">
                 <div
                   className="w-[39px] h-[39px] bg-cover rounded-lg mr-3.5"
                   style={{
