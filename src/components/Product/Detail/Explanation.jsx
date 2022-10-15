@@ -11,7 +11,7 @@ const Explanation = ({ list }) => {
     setOpen((prev) => !prev)
   }
   //리뷰호출
-  const { brand, productName, price, sale, star = 4.5 } = list
+  const { brand, productName, price, sale, star } = list
   const params = useParams()
   const { data: questionCount } = useGetProductReviewsCountQuery(params.id)
   return (
@@ -33,10 +33,9 @@ const Explanation = ({ list }) => {
             }}
           ></div>
           <span className="text-black-600 text-xs underline">
-            {/* {!questionCount
+            {!questionCount
               ? '작성된 리뷰가 없습니다.'
-              : `{questionCount}개의 리뷰보기`} */}
-            2개의 리뷰보기
+              : `{questionCount}개의 리뷰보기`}
           </span>
         </div>
         <div className="flex items-end mt-2">
@@ -55,19 +54,6 @@ const Explanation = ({ list }) => {
           </div>
         </div>
       </div>
-      {/* <div className="border-b border-black-200 pl-5 pr-5 pb-4 ">
-        <p className="font-bold mt-5 my-4">컬러</p>
-        <div className="flex gap-4 ">
-          {color.map((item, idx) => (
-            <img
-              src={item}
-              key={idx}
-              width="90px"
-              className={cls(idx === 0 && 'border border-primary')}
-            />
-          ))}
-        </div>
-      </div> */}
       <Coupon>
         <span className="mr-5 text-primary font-bold">40%</span>
         <span className="mr-1 font-bold">

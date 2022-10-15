@@ -6,7 +6,7 @@ import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 import { useCookies } from 'react-cookie'
 
 const ShippingInfo = () => {
-  const [cookies, setCookie, removeCookie] = useCookies([])
+  const [cookies, setCookie, removeCookie] = useCookies()
   const token = cookies.accessToken
   const [open, setOpen] = useState(true)
   const toggleBtn = () => {

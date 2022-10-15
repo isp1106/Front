@@ -9,7 +9,7 @@ const DetailDesc = ({ list }) => {
   }
   return (
     <div className="px-5">
-      <div className={cls('overflow-hidden ', open ? '' : 'h-[3000px]')}>
+      <div className={cls('overflow-hidden ', open ? '' : 'h-[2000px]')}>
         {list.map((item, idx) => (
           <img src={item} key={idx} />
         ))}

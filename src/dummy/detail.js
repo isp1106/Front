@@ -89,29 +89,31 @@ export const detailProducts = {
     reviews: [
       {
         id: 1,
-        imgUrl: [
+        images: [
           'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
           'https://ifh.cc/g/GFBkp0.png',
           'https://ifh.cc/g/G85L5x.png',
           'https://ifh.cc/g/G85L5x.png',
         ],
-        userId: 'onuel12356',
-        desc: '두껍고 따뜻하고 색깔도 화면과 같아요. 사이즈도 넉넉하고 어던옷과 입어도 잘 매치됩니다. 세일해서 저렴하고 구매했어요!',
+        member: 'onuel12356',
+        content:
+          '두껍고 따뜻하고 색깔도 화면과 같아요. 사이즈도 넉넉하고 어던옷과 입어도 잘 매치됩니다. 세일해서 저렴하고 구매했어요!',
         star: 4.5,
-        date: '2022-04-21',
+        createdDate: '2022-04-21',
       },
       {
-        id: 1,
-        imgUrl: [
+        id: 2,
+        images: [
           'https://ifh.cc/g/GFBkp0.png',
           'https://image.msscdn.net/display/images/usersnap/2022/09/19/0773f97ca12448f8ac8966b3137777e3_main.jpg',
           'https://ifh.cc/g/G85L5x.png',
           'https://ifh.cc/g/G85L5x.png',
         ],
-        userId: 'onuel12356',
-        desc: '데일리로 입기 편한 티셔츠예요 완전 귀엽습니다. 너무 젊은 브랜드 아닐까 생각했지만 귀여우니 그냥 입으려고요',
+        member: 'onuel12356',
+        content:
+          '데일리로 입기 편한 티셔츠예요 완전 귀엽습니다. 너무 젊은 브랜드 아닐까 생각했지만 귀여우니 그냥 입으려고요',
         star: 4,
-        date: '2022-04-21',
+        createdDate: '2022-04-21',
       },
     ],
   },
