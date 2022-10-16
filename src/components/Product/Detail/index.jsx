@@ -74,7 +74,7 @@ const Detail = () => {
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <SubContent />
             <DetailBtn list={list} kakaoShareBtn={kakaoShare} />
-            <GoTop />
+            <GoTop height="3000" />
           </div>
         )
       )}

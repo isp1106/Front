@@ -10,7 +10,7 @@ const Magazine = () => {
       <div className="pt-[54px] pb-[66px]">
         <Main />
       </div>
-      <GoTop />
+      <GoTop height="1000" />
     </>
   )
 }

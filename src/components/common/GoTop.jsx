@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { cls } from '../../utils'
 import BackIcon from './BackIcon'
 
-const GoTop = () => {
+const GoTop = ({ height }) => {
   const [showButton, setShowButton] = useState(false)
 
   const scrollToTop = () => {
@@ -14,7 +14,7 @@ const GoTop = () => {
 
   useEffect(() => {
     const handleShowButton = () => {
-      if (window.scrollY > 3000) {
+      if (window.scrollY > height) {
         setShowButton(true)
       } else {
         setShowButton(false)
