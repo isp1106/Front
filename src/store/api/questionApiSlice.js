@@ -5,8 +5,16 @@ export const questionApi = apiSlice.injectEndpoints({
     getQuestions: builder.query({
       query: () => 'customers/questions',
     }),
+    // getQuestion: builder.query({
+    //   query: (id) => `customers/questions/${id}`,
+    // }),
     getQuestion: builder.query({
-      query: (id) => `customers/questions/${id}`,
+      query: (id) => {
+        return {
+          url: `/customers/questions/products/${id}/questions`,
+          method: 'GET',
+        }
+      },
     }),
     getMyQuestions: builder.query({
       query: () => 'customers/questions/my',
