@@ -5,9 +5,6 @@ export const questionApi = apiSlice.injectEndpoints({
     getQuestions: builder.query({
       query: () => 'customers/questions',
     }),
-    // getQuestion: builder.query({
-    //   query: (id) => `customers/questions/${id}`,
-    // }),
     getQuestion: builder.query({
       query: (id) => {
         return {
@@ -18,6 +15,9 @@ export const questionApi = apiSlice.injectEndpoints({
     }),
     getMyQuestions: builder.query({
       query: () => 'customers/questions/my',
+    }),
+    getMyDetailQuestion: builder.query({
+      query: (id) => `customers/questions/${id}`,
     }),
     addQuestion: builder.mutation({
       query: (data) => {
@@ -36,4 +36,5 @@ export const {
   useGetQuestionQuery,
   useGetMyQuestionsQuery,
   useAddQuestionMutation,
+  useGetMyDetailQuestionQuery,
 } = questionApi
