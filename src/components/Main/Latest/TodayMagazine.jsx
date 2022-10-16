@@ -1,24 +1,25 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ReactComponent as LikeWhiteIcon } from '/public/assets/like-white.svg'
+import { magazineWoman } from '../../../dummy/main'
+import HeartIcon from '../../common/HeartIcon'
 const TodayMagazine = () => {
   const navigate = useNavigate()
   const [like, setLike] = useState(false)
-
+  const item = magazineWoman[0]
   return (
     <div
       className="w-[9.563em]"
       //추후 id 값 넣기
-      onClick={() => navigate('/magazine/${id}')}
+      onClick={() => navigate(`/magazine/${item.id}`)}
     >
       <div className="absolute bottom-12">
-        <img src="https://ifh.cc/g/KC4trp.png" className=" w-[150px]" />
-        <button
+        <img src={item.cover} className=" w-[150px]" />
+        <div
           className="absolute top-4 right-4"
-          onClick={() => navigate('/magazine/1')}
+          onClick={() => navigate(`/magazine/${item.id}`)}
         >
-          {like ? <LikeWhiteIcon /> : <LikeWhiteIcon />}
-        </button>
+          <HeartIcon size="23px" fill="#ffffff" off={!item.liked} />
+        </div>
       </div>
     </div>
   )

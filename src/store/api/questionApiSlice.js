@@ -1,15 +1,23 @@
-import { apiSlice } from '../api/apiSlice'
+import { apiSlice } from './apiSlice'
 
 export const questionApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getQuestions: builder.query({
       query: () => 'customers/questions',
     }),
+    // getQuestion: builder.query({
+    //   query: (id) => `customers/questions/${id}`,
+    // }),
     getQuestion: builder.query({
-      query: (id) => `customers/questions/${id}`,
+      query: (id) => {
+        return {
+          url: `/customers/questions/products/${id}/questions`,
+          method: 'GET',
+        }
+      },
     }),
     getMyQuestions: builder.query({
-      query: () => `customers​/questions​/my`,
+      query: () => 'customers/questions/my',
     }),
     addQuestion: builder.mutation({
       query: (data) => {

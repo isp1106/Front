@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '~/components/CardList/Container'
-import { useGetSimpleProductsQuery } from '../../store/api/productSlice'
+import { useGetSimpleProductsQuery } from '../../store/api/productApiSlice'
 import Loading from '../layout/Loading'
 import Category from './Category'
 import NotFoundPage from '~/pages/NotFoundPage'
@@ -16,7 +16,6 @@ function RecentView() {
     isError,
   } = useGetSimpleProductsQuery(queryString)
   console.log(recentList)
-  const local = JSON.parse(localStorage.getItem(recentViewProduct))
   return (
     <div>
       <Category />

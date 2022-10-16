@@ -1,7 +1,7 @@
 import React from 'react'
 import { detailProducts } from '../../../dummy/detail'
 import { useParams } from 'react-router-dom'
-import { useGetProductQuery } from '../../../store/api/productSlice'
+import { useGetProductQuery } from '../../../store/api/productApiSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
 const ProductCard = () => {

@@ -22,10 +22,6 @@ const DetailBtn = ({ list, kakaoShareBtn }) => {
   const items = useSelector((state) => state.product)
   const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   createKakaoButton()
-  // }, [window.location.href])
-
   const createKakaoButton = () => {
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근 가능
     if (window.Kakao) {

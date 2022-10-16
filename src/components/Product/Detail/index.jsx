@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetProductQuery } from '../../../store/api/productSlice'
+import { useGetProductQuery } from '../../../store/api/productApiSlice'
 import MainSlide from './MainSlide'
 import Explanation from './Explanation'
 import DetailDesc from './DetailDesc'
@@ -74,7 +74,7 @@ const Detail = () => {
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <SubContent />
             <DetailBtn list={list} kakaoShareBtn={kakaoShare} />
-            <GoTop />
+            <GoTop height="3000" />
           </div>
         )
       )}
