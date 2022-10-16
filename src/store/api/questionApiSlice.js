@@ -9,7 +9,7 @@ export const questionApi = apiSlice.injectEndpoints({
       query: (id) => `customers/questions/${id}`,
     }),
     getMyQuestions: builder.query({
-      query: () => `customers​/questions​/my`,
+      query: () => 'customers/questions/my',
     }),
     addQuestion: builder.mutation({
       query: (data) => {
