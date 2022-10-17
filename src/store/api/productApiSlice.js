@@ -15,7 +15,7 @@ export const productApi = apiSlice.injectEndpoints({
       }),
     }),
     getTagItems: builder.query({
-      query: (tag) => `/products/${tag}`,
+      query: (tag) => `/tags/${tag}`,
     }),
   }),
 })
