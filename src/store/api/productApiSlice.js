@@ -14,14 +14,8 @@ export const productApi = apiSlice.injectEndpoints({
         method: 'POST',
       }),
     }),
-    getLikedList: builder.query({
-      query: () => ({
-        url: '/favorites',
-      }),
-    }),
-    addLike: builder.mutation({
-      url: '/favorites',
-      method: 'POST',
+    getTagItems: builder.query({
+      query: (tag) => `/tags/${tag}`,
     }),
   }),
 })
@@ -30,5 +24,5 @@ export const {
   useGetProductsQuery,
   useGetProductQuery,
   useGetSimpleProductsQuery,
-  useAddLikedListMutation,
+  useGetTagItemsQuery,
 } = productApi

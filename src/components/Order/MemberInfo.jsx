@@ -11,7 +11,7 @@ const MemberInfo = () => {
         문제가 계속되는 경우 고객센터로 문의주세요.
       </div>
     )
-  if (isLoading) return <sapn>로딩중</sapn>
+  if (isLoading) return <span>로딩중</span>
   const {
     username,
     email,

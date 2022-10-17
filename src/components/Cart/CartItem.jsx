@@ -58,7 +58,10 @@ const CartItem = ({ item, onCheckedHandler }) => {
 
           <div className="mt-8 text-primary">{stock}개 남음</div>
         </div>
-        <div className="pr-5" onClick={() => deleteCartItem(productId)}>
+        <div
+          className="pr-5"
+          onClick={() => deleteCartItem({ product_id: productId })}
+        >
           <svg
             width="14"
             height="14"

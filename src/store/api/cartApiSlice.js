@@ -28,11 +28,14 @@ export const cartApi = apiSlice.injectEndpoints({
       invalidatesTags: ['Cart'],
     }),
     changeCount: builder.mutation({
-      query: (data) => ({
-        url: 'carts',
-        method: 'POST',
-        body: data,
-      }),
+      query: (data) => {
+        console.log(data)
+        return {
+          url: 'carts',
+          method: 'POST',
+          body: data,
+        }
+      },
       invalidatesTags: ['Cart'],
     }),
   }),
