@@ -1,5 +1,4 @@
 import React from 'react'
-import './index.css'
 import {
   oneulBestList,
   oneulLastestList,
@@ -29,14 +28,14 @@ const TodaySurge = ({ category }) => {
   return (
     <div className="mt-10">
       <h4 className="pl-5 font-bold mb-5 text-xl">오늘의 {title}</h4>
-      <div className="product__list">
+      <div className="w-[calc(100vw-2px)] grid grid-cols-2">
         {list.map(
           (
             { imgUrl, brandurl, brand, price, discount, userId, liked },
             index,
           ) => (
             <div
-              className="w-full  [&:nth-child(2n)]:border-l-2 border-primary box-content overflow-hidden"
+              className="w-full [&:first-child]:border-t-2 [&:nth-child(2)]:border-t-2  [&:nth-child(2n)]:border-l-2 border-primary box-content overflow-hidden"
               key={index}
             >
               <div className="flex relative justify-center align-items-center">
@@ -44,11 +43,14 @@ const TodaySurge = ({ category }) => {
                   <HeartIcon fill="#ffffff" size="22" />
                   <span className="text-sm">{liked}</span>
                 </div>
-                <div className="w-full bg-cover justify-center after:content('') after:block ">
-                  <img src={imgUrl} alt={userId} />
-                </div>
+                <div
+                  className="w-[calc(100vw/2)] h-[calc((100vw)/2)] bg-cover after:content('') after:block bg-center"
+                  style={{
+                    backgroundImage: `url(${imgUrl})`,
+                  }}
+                ></div>
               </div>
-              <div className="flex px-5 py-3.5 border-y-2 border-primary text-primary text-sm">
+              <div className=" flex px-5 py-3.5 border-y-2 border-primary text-primary text-sm">
                 <div
                   className="w-[39px] h-[39px] bg-cover rounded-lg mr-3.5"
                   style={{

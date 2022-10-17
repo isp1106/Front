@@ -1,7 +1,7 @@
 import React from 'react'
 import { detailProducts } from '../../../dummy/detail'
 import { useParams } from 'react-router-dom'
-import { useGetQuestionQuery } from '../../../store/api/questionSlice'
+import { useGetQuestionQuery } from '../../../store/api/questionApiSlice'
 
 const Inquiry = () => {
   const { id } = useParams()

@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import TabList from '../../common/TabList'
 import QnAList from './QnAList'
 import QnABtn from './QnABtn'
-import { useGetQuestionsQuery } from '../../../store/api/questionSlice'
+import { useGetMyQuestionsQuery } from '../../../store/api/questionApiSlice'
 import ErrorCom from '../../common/ErrorCom'
 import Loading from '../../layout/Loading'
 const tablist = ['답변완료', '미답변']
 
 const index = () => {
-  const { data: questions, isLoading, isError } = useGetQuestionsQuery()
+  const { data: questions, isLoading, isError } = useGetMyQuestionsQuery()
   const answerYes = questions?.filter((item) => !item.answerYn)
   const answerNo = questions?.filter((item) => !!item.answerYn)
   const [select, setSelect] = useState(tablist[0])

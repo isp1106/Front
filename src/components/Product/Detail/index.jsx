@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetProductQuery } from '../../../store/api/productSlice'
+import { useGetProductQuery } from '../../../store/api/productApiSlice'
+import { useGetFavoriteItemsQuery } from '../../../store/api/favoriteApiSlice'
 import MainSlide from './MainSlide'
 import Explanation from './Explanation'
 import DetailDesc from './DetailDesc'
@@ -10,7 +11,6 @@ import DetailBtn from './DetailBtn'
 import Brand from './Brand'
 import Loading from '../../layout/Loading'
 import ErrorCom from '../../common/ErrorCom'
-import { useDispatch } from 'react-redux'
 import GoTop from '../../common/GoTop'
 
 const Detail = () => {
@@ -74,7 +74,7 @@ const Detail = () => {
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <SubContent />
             <DetailBtn list={list} kakaoShareBtn={kakaoShare} />
-            <GoTop />
+            <GoTop height="3000" />
           </div>
         )
       )}
