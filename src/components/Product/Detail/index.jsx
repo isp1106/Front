@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetProductQuery } from '../../../store/api/productApiSlice'
+import { useGetFavoriteItemsQuery } from '../../../store/api/favoriteApiSlice'
 import MainSlide from './MainSlide'
 import Explanation from './Explanation'
 import DetailDesc from './DetailDesc'
@@ -10,7 +11,6 @@ import DetailBtn from './DetailBtn'
 import Brand from './Brand'
 import Loading from '../../layout/Loading'
 import ErrorCom from '../../common/ErrorCom'
-import { useDispatch } from 'react-redux'
 import GoTop from '../../common/GoTop'
 
 const Detail = () => {

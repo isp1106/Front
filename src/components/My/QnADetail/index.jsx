@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetQuestionQuery } from '../../../store/api/questionApiSlice'
+import { useGetMyDetailQuestionQuery } from '../../../store/api/questionApiSlice'
 import Card from '../QnA/Card'
 import Content from './Content'
 import Answer from './Answer'
@@ -9,7 +9,11 @@ import Loading from '../../layout/Loading'
 
 const index = () => {
   const params = useParams()
-  const { data: list, isLoading, isError } = useGetQuestionQuery(params.id)
+  const {
+    data: list,
+    isLoading,
+    isError,
+  } = useGetMyDetailQuestionQuery(params.id)
   return (
     <>
       {isLoading ? (
