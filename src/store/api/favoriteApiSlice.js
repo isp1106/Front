@@ -3,7 +3,6 @@ import { apiSlice } from '../api/apiSlice'
 export const favoriteApi = apiSlice.injectEndpoints({
   tagTypes: ['Favorites'],
   endpoints: (builder) => ({
-    //카드 상품 불러오기
     getFavoriteItems: builder.query({
       query: () => 'favorites',
       providesTags: (result, error, arg) =>
