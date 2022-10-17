@@ -12,7 +12,10 @@ const CountBtn = ({ id, count }) => {
   const changeCountHandler = (e) => {
     if (counter + e * 1 < 1) return
     setCounter(counter + e * 1)
-    changeCount(counter + e * 1)
+    changeCount({
+      product_id: id,
+      count: counter + e * 1,
+    })
   }
 
   return (
