@@ -1,6 +1,5 @@
 // 프론트에서 저장할 부분
 import { createSlice } from '@reduxjs/toolkit'
-import { useNavigate } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 const cookie = new Cookies()
 const authSlice = createSlice({
@@ -14,11 +13,9 @@ const authSlice = createSlice({
       cookie.set('refreshToken', refreshToken, { path: '/' })
     },
     logOut: (state, action) => {
-      const navigate = useNavigate()
       state.user = null
       cookie.remove('accessToken')
       cookie.remove('refreshToken')
-      navigate(0) // 새로고침
     },
   },
 })

@@ -9,16 +9,18 @@ import Button from '../../common/Button'
 import { useCookies } from 'react-cookie'
 import { useDispatch } from 'react-redux'
 import { logOut } from '../../../store/slices/authSlice'
+import { useNavigate } from 'react-router-dom'
 
 const index = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   // api (useEffect async await)
   const [cookies, setCookie, removeCookie] = useCookies()
   const token = cookies.accessToken
   const logoutHandler = () => {
-    //로그아웃 api작성 예정
-    // console.log('logout!!')
     dispatch(logOut())
+    navigate(0) // 쿠키 삭제 적용을 위한 새로고침
   }
   return (
     <>
