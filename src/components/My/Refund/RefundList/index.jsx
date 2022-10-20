@@ -39,7 +39,7 @@ const RefundList = () => {
         <Header fill="#000">
           <div className="text-center">취소/교환/환불내역</div>
         </Header>
-        <div className="pt-[54px] overflow-y-scroll">
+        <div className="pt-[64px] overflow-y-scroll">
           {list.map((item) => {
             return <RefundListCard item={item} key={item.id} />
           })}

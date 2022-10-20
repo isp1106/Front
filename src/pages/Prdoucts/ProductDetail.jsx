@@ -5,7 +5,7 @@ const ProductDetail = () => {
   return (
     <>
       <Header />
-      <div className="pt-[54px]">
+      <div className="pt-[64px]">
         <Detail />
       </div>
     </>

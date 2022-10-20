@@ -15,9 +15,9 @@ export const Category = () => {
   const { pathname } = useLocation()
 
   return (
-    <div className="fixed w-full max-w-[600px] z-10 overflow-hidden bg-white">
-      <div className="flex justify-between items-center mx-5 h-16">
-        <div className="text-xl font-bold">
+    <div className="z-[120] fixed w-full max-w-[600px] overflow-hidden bg-white">
+      <div className=" flex justify-between items-center mx-5 h-16">
+        <div className=" text-xl font-bold">
           {pathname === '/recent-view' ? '최근 본 상품' : '찜'}
         </div>
         <HeaderLink />

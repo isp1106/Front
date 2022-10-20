@@ -3,7 +3,7 @@ import React from 'react'
 const NavBox = ({ status }) => {
   const types = Object.keys(status)
   return (
-    <div className="pt-[54px] text-center">
+    <div className="pt-[64px] text-center">
       <div className="border-t border-b border-primary mt-[38px]">
         <ul className="flex justify-around">
           {types.map((item, idx) => (

@@ -15,7 +15,7 @@ const Main = () => {
   return (
     <>
       <Header />
-      <div className="pt-[54px]">
+      <div className="pt-[64px]">
         <TopSwiper />
         <Lastest />
         <Magazine category={category} />

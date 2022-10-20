@@ -7,7 +7,7 @@ const Magazine = () => {
   return (
     <>
       <Header />
-      <div className="pt-[54px] pb-[66px]">
+      <div className="pt-[64px] pb-[66px]">
         <Main />
       </div>
       <GoTop height="1000" />
