@@ -17,7 +17,7 @@ const Inquiry = () => {
           <span className="text-sm text-black-600 font-medium">Q&A쓰기</span>
         </div>
         <div>
-          {!list ? (
+          {list?.length === 0 ? (
             <div className="pt-5 px-5 text-xs text-black-600">
               아직 등록된 상품 문의가 없습니다.
             </div>

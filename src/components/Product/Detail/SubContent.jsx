@@ -9,12 +9,12 @@ import ExchangeRefund from './ExchangeRefund'
 import SellerInfo from './SellerInfo'
 import Similiar from './Similiar'
 
-const SubContent = () => {
+const SubContent = ({ list }) => {
   return (
     <>
       <Snap />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
-      <Similiar />
+      <Similiar tag={list.tags} />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
       <Another />
       <div className="w-full h-[10px] bg-white-200 my-8"></div>
