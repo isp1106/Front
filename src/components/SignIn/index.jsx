@@ -51,14 +51,16 @@ const SignIn = () => {
         throw new Error('아이디와 패스워드를 입력해주세요.')
       }
     } catch (error) {
-      if (!error?.originalStatus) {
-        setErrMsg('No Server Response')
+      if (error?.originalStatus === 403) {
+        setErrMsg('Forbidden')
       } else if (error.originalStatus === 400) {
         setErrMsg('Missing Username or Password')
       } else if (error.originalStatus === 401) {
         setErrMsg('Unauthorized')
       } else if (error.originalStatus === 500) {
         setErrMsg('회원가입을 해주세요.')
+      } else if (!error?.originalStatus) {
+        setErrMsg('No Server Response')
       } else {
         setErrMsg('Login Failed')
       }
