@@ -73,6 +73,7 @@ const SignIn = () => {
         <h3 className="text-black-800 mb-[34px]">오늘의 상점에서 만나보세요</h3>
         {isError && <div className="text-red-500">{errMsg}</div>}
         <Input
+          tabIndex="1"
           state="아이디"
           name="id"
           onChangeHandler={onChangeHandler}
@@ -81,6 +82,7 @@ const SignIn = () => {
           type="text"
         />
         <Input
+          tabIndex="2"
           state="비밀번호"
           name="pw"
           onChangeHandler={onChangeHandler}
@@ -89,6 +91,7 @@ const SignIn = () => {
           type="password"
         />
         <Button
+          tabIndex="3"
           classprop="bg-primary text-white"
           disabled={!invalidInput}
           onClick={loginHandler}
