@@ -27,8 +27,8 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
         url: '/auth/reissue',
         method: 'POST',
         body: {
-          accessToken: cookies.remove('accessToken'),
-          refreshToken: cookies.remove('refreshToken'),
+          accessToken: cookies.get('accessToken'),
+          refreshToken: cookies.get('refreshToken'),
         },
       },
       api,
