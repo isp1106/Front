@@ -6,14 +6,17 @@ import Coupon from '../common/Coupon'
 import PayWay from './PayWay'
 import TotalPrice from './TotalPrice'
 import OrderBtn from './OrderBtn'
+import { useCookies } from 'react-cookie'
+
 // productid로 조회
 
 const index = () => {
+  const [cookies, setCookie, removeCookie] = useCookies()
+  const token = cookies.accessToken
   const { state } = useLocation()
-
   return (
     <>
-      <ShippingInfo />
+      <ShippingInfo isMember={Boolean(token)} />
       <ProductInfo items={state} />
       <Coupon />
       <PayWay />

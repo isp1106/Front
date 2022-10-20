@@ -3,11 +3,8 @@ import { cls } from '../../utils'
 import MemberInfo from './MemberInfo'
 import UserInfo from '../../pages/SignUp/UserInfo'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
-import { useCookies } from 'react-cookie'
 
-const ShippingInfo = () => {
-  const [cookies, setCookie, removeCookie] = useCookies()
-  const token = cookies.accessToken
+const ShippingInfo = ({ isMember }) => {
   const [open, setOpen] = useState(true)
   const toggleBtn = () => {
     setOpen((prev) => !prev)
@@ -23,7 +20,8 @@ const ShippingInfo = () => {
             className={cls('mr-5', open ? 'rotate-90' : '-rotate-90')}
           />
         </div>
-        {open && <>{token ? <MemberInfo /> : <UserInfo />}</>}
+        {/* {open && <>{isMember ? <MemberInfo /> : <UserInfo />}</>} */}
+        <UserInfo />
       </div>
     </>
   )

@@ -15,7 +15,6 @@ function RecentView() {
     isLoading,
     isError,
   } = useGetSimpleProductsQuery(queryString)
-  console.log(recentList)
   return (
     <div>
       <Category />

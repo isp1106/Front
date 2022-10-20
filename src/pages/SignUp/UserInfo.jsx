@@ -5,27 +5,49 @@ import { useLocation } from 'react-router-dom'
 import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
 import '~/animate.css'
+import { useCookies } from 'react-cookie'
+import { useGetUserInfoQuery } from '../../store/api/userApiSlice'
 const EMAIL_REGEX =
   /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
 
 const UserInfo = () => {
   const { state, pathname } = useLocation()
-
+  const [cookies, setCookie, removeCookie] = useCookies()
+  const token = cookies.accessToken
   const [inputValue, setInputValue] = useState({
-    ...state,
     email: '',
     firstName: '',
     lastName: '',
-    firstNameRuby: '',
-    lastNameRuby: '',
-    telNum: '',
-    postNum: '',
-    address: '',
-    detail: '',
+    furiganaFirst: '',
+    furiganaLast: '',
+    phoneNumber: '',
+    address: {
+      city: '',
+      street: '',
+      zipcode: '',
+    },
   })
   const [disabled, setDisabled] = useState(false)
   const [openPost, setOpenPost] = useState(false)
   const [animation, setAnimation] = useState('')
+  const { data, isError, isLoading, isSuccess } = useGetUserInfoQuery()
+  console.log('state', state)
+  console.log('data', data)
+  useEffect(() => {
+    if (token) {
+      setInputValue({
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        furiganaFirst: data.furiganaFirst,
+        furiganaLast: data.furiganaLast,
+        phoneNumber: data.phoneNumber.slice(-12),
+        address: { ...data.address },
+      })
+
+      console.log('inputValue', inputValue)
+    }
+  }, [])
 
   const onClick = () => {
     //여기 너 회원가입 로직
@@ -69,13 +91,16 @@ const UserInfo = () => {
 
   const [alret, setAlret] = useState({
     email: null,
+    firstName: null,
     lastName: null,
     firstNameRuby: null,
     lastNameRuby: null,
-    telNum: null,
-    postNum: null,
-    address: null,
-    detail: null,
+    phoneNumber: null,
+    address: {
+      city: null,
+      street: null,
+      zipcode: null,
+    },
   })
 
   const checkRegex = (inputId) => {
@@ -99,10 +124,14 @@ const UserInfo = () => {
 
   useEffect(() => {
     inputValue.email !== '' &&
+      inputValue.firstName !== '' &&
       inputValue.lastName !== '' &&
-      inputValue.firstNameRuby !== '' &&
-      inputValue.telNum !== '' &&
-      inputValue.postNum !== '' &&
+      inputValue.furiganaFirst !== '' &&
+      inputValue.furiganaLast !== '' &&
+      inputValue.phoneNumber !== '' &&
+      inputValue.address.city !== '' &&
+      inputValue.address.street !== '' &&
+      inputValue.address.zipcode !== '' &&
       setDisabled(true)
   }, [alret])
 
@@ -174,24 +203,24 @@ const UserInfo = () => {
           </label>
           <div className="flex">
             <input
-              name="firstNameRuby"
-              value={inputValue['firstNameRuby']}
+              name="furiganaFirst"
+              value={inputValue['furiganaFirst']}
               onChange={ChangeHandler}
-              onBlur={() => checkRegex('firstNameRuby')}
+              onBlur={() => checkRegex('furiganaFirst')}
               placeholder="성"
               className="pl-3 w-full h-[3rem] flex-initial box-border w- py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded mr-[0.813rem]"
             />
             <input
-              name="lastNameRuby"
-              value={inputValue['lastNameRuby']}
-              onBlur={() => checkRegex('lastNameRuby')}
+              name="furiganaLast"
+              value={inputValue['furiganaLast']}
+              onBlur={() => checkRegex('furiganaLast')}
               onChange={ChangeHandler}
               placeholder="이름"
               className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
-            {alert.firstNameRuby} {alert.lastNameRuby}
+            {alert.furiganaFirst} {alert.furiganaLast}
           </p>
 
           <label
@@ -206,26 +235,29 @@ const UserInfo = () => {
               name="tel"
               className="text-black-400 p-[0.625rem] pr-[1.5rem] h-[3rem] flex-initial box-border text-[0.875rem] transition shadow-white border border-neutral-200 rounded bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
             >
-              {telOptions &&
+              {!token ? (
                 telOptions.map((option) => {
                   return (
                     <option value={option} key={option}>
                       {option}
                     </option>
                   )
-                })}
+                })
+              ) : (
+                <option>{data?.phoneNumber.slice(0, 10)}</option>
+              )}
             </select>
             <span className="mx-[0.625rem] text-black-200"> - </span>
             <input
-              name="telNum"
+              name="phoneNumber"
               onChange={ChangeHandler}
-              value={inputValue['telNum']}
-              onBlur={() => checkRegex('telNum')}
+              value={inputValue['phoneNumber']}
+              onBlur={() => checkRegex('phoneNumber')}
               className="pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] text-[0.875rem] transition shadow-white border border-neutral-200 rounded"
             />
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
-            {alert.telNum}
+            {alert.phoneNumber}
           </p>
 
           <label
@@ -258,8 +290,8 @@ const UserInfo = () => {
           </label>
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
-              name="postNum"
-              value={inputValue['postNum']}
+              name="address['zipcode']"
+              value={inputValue.address.zipcode}
               onChange={ChangeHandler}
               onBlur={() => checkRegex('postNum')}
               placeholder="우편번호를 검색해 주세요."
@@ -293,14 +325,14 @@ const UserInfo = () => {
             )}
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
-            {alert.postNum}
+            {/* {alert.address.zipcode} */}
           </p>
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
-              name="address"
-              value={inputValue['address']}
+              name="address.city"
+              value={inputValue.address.city}
               onChange={ChangeHandler}
-              onBlur={() => checkRegex('address')}
+              // onBlur={() => checkRegex('address')}
               placeholder="주소를 입력 해 주세요."
               className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
@@ -308,10 +340,10 @@ const UserInfo = () => {
 
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
-              name="detail"
-              value={inputValue['detail']}
+              name="address.street"
+              value={inputValue.address.street}
               onChange={ChangeHandler}
-              onBlur={() => checkRegex('detail')}
+              // onBlur={() => checkRegex('detail')}
               placeholder="상세 주소를 입력 해 주세요."
               className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
