@@ -8,7 +8,7 @@ const Latest = () => {
         오늘의 추천 매거진
       </h2>
       <div className="bg-primary flex flex-col items-end pr-[1.875rem]">
-        <h3 className="text-[2rem] text-white mt-7">スタイル</h3>
+        <h3 className="text-[2rem] text-white mt-7">オヌル</h3>
         <p className="text-xs text-white w-[10.5rem] text-right mt-2 leading-[17px]">
           오늘의 추천 매거진은
           <br />
