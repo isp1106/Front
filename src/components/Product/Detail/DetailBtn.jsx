@@ -117,7 +117,6 @@ const DetailBtn = ({ list, kakaoShareBtn }) => {
     const script = document.createElement('script')
     script.src = 'https://developers.kakao.com/sdk/kakao.js'
     script.async = true
-    console.log('script', script)
     document.body.appendChild(script)
 
     return () => document.body.removeChild(script)
