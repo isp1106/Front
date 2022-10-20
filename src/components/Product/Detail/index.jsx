@@ -56,6 +56,8 @@ const Detail = () => {
     )
   }, [])
 
+  console.log()
+
   return (
     <>
       {isLoading ? (
@@ -68,9 +70,12 @@ const Detail = () => {
             <MainSlide list={list.detailThumbList} />
             <Explanation list={list} />
             <Brand list={list} />
-            <DetailDesc list={list.detailList} />
+            {list?.tags.includes('의류') && (
+              <DetailDesc list={list.detailList} />
+            )}
+
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
-            <Relation />
+            <Relation list={list} />
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
             <SubContent />
             <DetailBtn list={list} kakaoShareBtn={kakaoShare} />
