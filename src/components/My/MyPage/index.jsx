@@ -7,14 +7,18 @@ import MyNav from './MyNav'
 import Guest from './Guest'
 import Button from '../../common/Button'
 import { useCookies } from 'react-cookie'
+import { useDispatch } from 'react-redux'
+import { logOut } from '../../../store/slices/authSlice'
 
 const index = () => {
+  const dispatch = useDispatch()
   // api (useEffect async await)
   const [cookies, setCookie, removeCookie] = useCookies()
   const token = cookies.accessToken
   const logoutHandler = () => {
     //로그아웃 api작성 예정
-    console.log('logout!!')
+    // console.log('logout!!')
+    dispatch(logOut())
   }
   return (
     <>
@@ -28,7 +32,7 @@ const index = () => {
             <Process />
             <MyPossession />
             <Button
-              onClick={logoutHandler}
+              onClick={() => logoutHandler()}
               classprop="text-sm mx-5 mt-9 mb-5 bg-primary text-white"
             >
               로그아웃
