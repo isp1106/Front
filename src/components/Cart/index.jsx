@@ -3,9 +3,11 @@ import Header from '../layout/Header'
 import CartItem from './CartItem'
 import Total from './Total'
 import CartBtn from './CartBtn'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ cartItems }) => {
   const [checkedItems, setCheckedItems] = useState(cartItems)
+  const navigate = useNavigate()
 
   const onCheckedHandler = (item) => {
     checkedItems.includes(item)
