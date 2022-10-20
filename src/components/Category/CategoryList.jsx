@@ -57,6 +57,10 @@ function CategoryList({ topCG, subCG }) {
     setSelectSub(tag)
     navigate(`/category/${topCG}/${tag}`)
   }
+  const onChangelastTags = (tag) => {
+    setSelectLast(tag)
+    navigate(`/category/${topCG}/${tag}`)
+  }
 
   return (
     <div className="fixed top-16 w-full max-w-[600px] overflow-hidden bg-white z-50">
@@ -85,7 +89,7 @@ function CategoryList({ topCG, subCG }) {
                 'mr-7 last:mr-0 whitespace-nowrap text-xs delay-100 duration-200',
                 selectLast === last && 'text-primary',
               )}
-              onClick={() => navigate(`/category/${topCG}/${last}`)}
+              onClick={() => onChangelastTags(last)}
             >
               {last}
             </div>
