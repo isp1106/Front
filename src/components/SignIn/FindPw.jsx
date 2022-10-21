@@ -41,9 +41,6 @@ const FindPw = () => {
           placeholder="아이디를 입력해주세요."
           className="px-3 border-none h-[3rem] flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
         />
-        <button className="absolute right-[0.625rem] w-[5.438rem] h-[1.563rem] text-xs border border-primary text-primary rounded font-medium">
-          중복확인
-        </button>
       </div>
       <Email onChange={onChangeHandler} alret={alret} />
       <NextBtn onClick={onClick} disabled={id && EMAIL_REGEX.test(email)}>
