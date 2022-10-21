@@ -16,7 +16,26 @@ export const authApiSlice = apiSlice.injectEndpoints({
         body: { ...credentials },
       }),
     }),
+    findID: builder.mutation({
+      query: (credentials) => ({
+        url: '/sendUsername',
+        method: 'POST',
+        body: { ...credentials },
+      }),
+    }),
+    findPW: builder.mutation({
+      query: (credentials) => ({
+        url: '/newPwd',
+        method: 'POST',
+        body: { ...credentials },
+      }),
+    }),
   }),
 })
 
-export const { useLoginMutation, useSignupMutation } = authApiSlice
+export const {
+  useLoginMutation,
+  useSignupMutation,
+  useFindIDMutation,
+  useFindPWMutation,
+} = authApiSlice
