@@ -6,26 +6,29 @@ import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
 import '~/animate.css'
 import { useSignupMutation } from '../../store/api/authApiSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { resetInfo, changeInfo } from '../../store/slices/shippingInfoSlice'
 const EMAIL_REGEX =
   /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
 
 const UserInfo = () => {
+  const dispatch = useDispatch()
   const { state, pathname } = useLocation()
+  console.log('state', state)
   const telOptions = ['Japan(+81)', 'Korea(+82)']
   const [signup, { isloding, isError }] = useSignupMutation()
-  const [inputValue, setInputValue] = useState({
-    ...state,
-    email: '',
-    firstName: '',
-    lastName: '',
-    furiganaFirst: '',
-    furiganaLast: '',
-    phoneNumber: '',
-    zipcode: '',
-    city: '',
-    street: '',
-    country: telOptions[0],
+  const inputValue = useSelector((state) => state.shippingInfo)
+  const [alret, setAlret] = useState({
+    email: null,
+    lastName: null,
+    furiganaFirst: null,
+    furiganaLast: null,
+    phoneNumber: null,
+    zipcode: null,
+    city: null,
+    street: null,
   })
+
   const [disabled, setDisabled] = useState(false)
   const [openPost, setOpenPost] = useState(false)
   const [animation, setAnimation] = useState('')
@@ -34,8 +37,8 @@ const UserInfo = () => {
   const onClick = async () => {
     try {
       await signup({
-        username: inputValue.id,
-        password: inputValue.pw,
+        username: state.id,
+        password: state.pw,
         email: inputValue.email,
         role: null,
         firstName: inputValue.firstName,
@@ -56,12 +59,36 @@ const UserInfo = () => {
     }
   }
 
+  const checkRegex = (inputId) => {
+    if (inputId === 'email') {
+      EMAIL_REGEX.test(inputValue.email)
+        ? setAlret({
+            ...alert,
+            email: '',
+          })
+        : setAlret({
+            ...alret,
+            email: '올바르지 않은 이메일입니다.',
+          })
+    } else {
+      setAlret({
+        ...alret,
+        [inputId]: '필수 입력값입니다.',
+      })
+    }
+  }
+
   const ChangeHandler = useCallback((e) => {
     const { name, value } = e.target
-    setInputValue({
-      ...inputValue,
-      [name]: value,
-    })
+    // setInputValue({
+    //   ...inputValue,
+    //   [name]: value,
+    // })
+    dispatch(changeInfo({ name, value }))
+    setTimeout(() => {
+      console.log(inputValue)
+    }, 1000)
+    checkRegex(name)
   })
 
   const onOpenHandler = () => {
@@ -83,42 +110,9 @@ const UserInfo = () => {
   }
 
   const onCompleteHandler = (data) => {
-    setInputValue({
-      ...inputValue,
-      zipcode: data.zonecode,
-      city: data.roadAddress,
-    })
+    dispatch(changeInfo({ name: 'zipcode', value: data.zonecode }))
+    dispatch(changeInfo({ name: 'city', value: data.roadAddress }))
     onCloseHandler()
-  }
-
-  const [alret, setAlret] = useState({
-    email: null,
-    lastName: null,
-    furiganaFirst: null,
-    furiganaLast: null,
-    phoneNumber: null,
-    zipcode: null,
-    city: null,
-    street: null,
-  })
-
-  const checkRegex = (inputId) => {
-    if (inputId === 'email') {
-      EMAIL_REGEX.test(inputValue.email)
-        ? setAlret({
-            ...alert,
-            email: '',
-          })
-        : setAlret({
-            ...alret,
-            email: '올바르지 않은 이메일입니다.',
-          })
-    } else {
-      setAlret({
-        ...alret,
-        [inputId]: '필수 입력값입니다.',
-      })
-    }
   }
 
   useEffect(() => {
@@ -130,9 +124,6 @@ const UserInfo = () => {
       setDisabled(true)
   }, [alret])
 
-  useEffect(() => {
-    console.log(inputValue)
-  }, [inputValue])
   return (
     <div>
       <div className="info">
@@ -262,7 +253,7 @@ const UserInfo = () => {
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
               name="zipcode"
-              value={inputValue['zipcode']}
+              value={inputValue.zipcode}
               onChange={ChangeHandler}
               onBlur={() => checkRegex('zipcode')}
               placeholder="우편번호를 검색해 주세요."
@@ -301,7 +292,7 @@ const UserInfo = () => {
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
               name="city"
-              value={inputValue['city']}
+              value={inputValue.city}
               onChange={ChangeHandler}
               onBlur={() => checkRegex('city')}
               placeholder="주소를 입력 해 주세요."
