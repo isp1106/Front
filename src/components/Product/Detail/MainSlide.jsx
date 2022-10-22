@@ -4,7 +4,7 @@ import SwiperCore, { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { detailProducts } from '../../../dummy/detail'
-
+// import 'swiper/css'
 const MainSlide = ({ list }) => {
   return (
     <Swiper

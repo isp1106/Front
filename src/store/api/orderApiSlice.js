@@ -3,12 +3,26 @@ import { apiSlice } from '../api/apiSlice'
 export const orderApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     addOrders: builder.mutation({
-      query: (id) => ({
-        url: `orders/${id}`,
-        method: 'POST',
-      }),
+      query: (data) => {
+        console.log(data)
+        return {
+          url: `orders`,
+          method: 'POST',
+          data: data,
+        }
+      },
+    }),
+    guestAddInfo: builder.mutation({
+      query: (data) => {
+        console.log(data)
+        return {
+          url: 'orders',
+          method: 'POST',
+          data: data,
+        }
+      },
     }),
   }),
 })
 
-export const { useAddOrdersMutation } = orderApi
+export const { useAddOrdersMutation, useGuestAddInfoMutation } = orderApi

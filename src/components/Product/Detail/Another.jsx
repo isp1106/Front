@@ -40,7 +40,7 @@ const Another = () => {
                     {sale} %
                   </span>
                   <span className="text-sm font-bold">
-                    {parseInt((price * (100 - sale)) / 100)} ¥
+                    {parseInt((price * (100 - sale)) / 100).toLocaleString()} ¥
                   </span>
                 </div>
                 <HeartIcon size="15" off={!liked} />

@@ -8,7 +8,7 @@ const Order = () => {
       <Header className="border-b border-black-100">
         <div className="text-center ml-[26px]">결제</div>
       </Header>
-      <div className="pt-[55px]">
+      <div className="pt-[65px]">
         <OrderPage />
       </div>
     </div>
