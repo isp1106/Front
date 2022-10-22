@@ -22,7 +22,6 @@ export const shippingInfoSlice = createSlice({
     },
     changeInfo(state, action) {
       const { value, name } = action.payload
-      console.log('value:', typeof value, 'name:', typeof name)
       return (state = {
         ...state,
         [name]: value,

@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useCallback, useEffect, useMemo } from 'react'
 import DaumPostcodeEmbed from 'react-daum-postcode'
 import { useNavigate, useLocation } from 'react-router-dom'
 import NextBtn from '../../components/common/NextBtn'
@@ -8,15 +7,16 @@ import '~/animate.css'
 import { useSignupMutation } from '../../store/api/authApiSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { resetInfo, changeInfo } from '../../store/slices/shippingInfoSlice'
+import ErrorCom from '../../components/common/ErrorCom'
+import Loader from '../../components/layout/Loader'
 const EMAIL_REGEX =
   /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
 
 const UserInfo = () => {
   const dispatch = useDispatch()
   const { state, pathname } = useLocation()
-  console.log('state', state)
   const telOptions = ['Japan(+81)', 'Korea(+82)']
-  const [signup, { isloding, isError }] = useSignupMutation()
+  const [signup, { isLoading, isError }] = useSignupMutation()
   const inputValue = useSelector((state) => state.shippingInfo)
   const [alret, setAlret] = useState({
     email: null,
@@ -118,6 +118,10 @@ const UserInfo = () => {
       setDisabled(true)
   }, [alret])
 
+  if (isError)
+    return <ErrorCom Contents={'회원가입에 실패했습니다 다시 시도해 주세요'} />
+  if (isLoading) return <Loader />
+
   return (
     <div>
       <div className="info">
@@ -203,7 +207,6 @@ const UserInfo = () => {
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
             {alert.furiganaFirst} {alert.furiganaLast}
           </p>
-
           <label
             htmlFor="loginJoinMembershipTel"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -237,7 +240,6 @@ const UserInfo = () => {
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
             {alert.phoneNumber}
           </p>
-
           <label
             htmlFor="loginJoinMembershipzipcodeber"
             className="inline-block font-bold leading-4 mb-8 mt-9"
@@ -247,7 +249,7 @@ const UserInfo = () => {
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
               name="zipcode"
-              value={inputValue.zipcode}
+              value={inputValue['zipcode']}
               onChange={ChangeHandler}
               onBlur={() => checkRegex('zipcode')}
               placeholder="우편번호를 검색해 주세요."
