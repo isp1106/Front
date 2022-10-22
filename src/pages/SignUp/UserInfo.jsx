@@ -1,57 +1,59 @@
 import React, { useState, useCallback } from 'react'
 import { useEffect } from 'react'
 import DaumPostcodeEmbed from 'react-daum-postcode'
-import { useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import NextBtn from '../../components/common/NextBtn'
 import Title from '../../components/SignUp/Title'
 import '~/animate.css'
-import { useCookies } from 'react-cookie'
-import { useGetUserInfoQuery } from '../../store/api/userApiSlice'
+import { useSignupMutation } from '../../store/api/authApiSlice'
 const EMAIL_REGEX =
   /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
 
 const UserInfo = () => {
   const { state, pathname } = useLocation()
-  const [cookies, setCookie, removeCookie] = useCookies()
-  const token = cookies.accessToken
+  const telOptions = ['Japan(+81)', 'Korea(+82)']
+  const [signup, { isloding, isError }] = useSignupMutation()
   const [inputValue, setInputValue] = useState({
+    ...state,
     email: '',
     firstName: '',
     lastName: '',
     furiganaFirst: '',
     furiganaLast: '',
     phoneNumber: '',
-    address: {
-      city: '',
-      street: '',
-      zipcode: '',
-    },
+    zipcode: '',
+    city: '',
+    street: '',
+    country: telOptions[0],
   })
   const [disabled, setDisabled] = useState(false)
   const [openPost, setOpenPost] = useState(false)
   const [animation, setAnimation] = useState('')
-  const { data, isError, isLoading, isSuccess } = useGetUserInfoQuery()
-  console.log('state', state)
-  console.log('data', data)
-  useEffect(() => {
-    if (token) {
-      setInputValue({
-        email: data.email,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        furiganaFirst: data.furiganaFirst,
-        furiganaLast: data.furiganaLast,
-        phoneNumber: data.phoneNumber.slice(-12),
-        address: { ...data.address },
+  const navigate = useNavigate()
+
+  const onClick = async () => {
+    try {
+      await signup({
+        username: inputValue.id,
+        password: inputValue.pw,
+        email: inputValue.email,
+        role: null,
+        firstName: inputValue.firstName,
+        lastName: inputValue.lastName,
+        phoneNumber: inputValue.country + inputValue.phoneNumber,
+        address: {
+          city: inputValue.city,
+          street: inputValue.street,
+          zipcode: inputValue.zipcode,
+        },
+        furiganaFirst: inputValue.furiganaFirst,
+        furiganaLast: inputValue.furiganaLast,
       })
-
-      console.log('inputValue', inputValue)
+    } catch (error) {
+      alert(error.data.msg)
+    } finally {
+      navigate('/')
     }
-  }, [])
-
-  const onClick = () => {
-    //여기 너 회원가입 로직
-    console.log('회원가입 했다!')
   }
 
   const ChangeHandler = useCallback((e) => {
@@ -83,24 +85,21 @@ const UserInfo = () => {
   const onCompleteHandler = (data) => {
     setInputValue({
       ...inputValue,
-      postNum: data.zonecode,
-      address: data.roadAddress,
+      zipcode: data.zonecode,
+      city: data.roadAddress,
     })
     onCloseHandler()
   }
 
   const [alret, setAlret] = useState({
     email: null,
-    firstName: null,
     lastName: null,
-    firstNameRuby: null,
-    lastNameRuby: null,
+    furiganaFirst: null,
+    furiganaLast: null,
     phoneNumber: null,
-    address: {
-      city: null,
-      street: null,
-      zipcode: null,
-    },
+    zipcode: null,
+    city: null,
+    street: null,
   })
 
   const checkRegex = (inputId) => {
@@ -124,22 +123,19 @@ const UserInfo = () => {
 
   useEffect(() => {
     inputValue.email !== '' &&
-      inputValue.firstName !== '' &&
       inputValue.lastName !== '' &&
       inputValue.furiganaFirst !== '' &&
-      inputValue.furiganaLast !== '' &&
       inputValue.phoneNumber !== '' &&
-      inputValue.address.city !== '' &&
-      inputValue.address.street !== '' &&
-      inputValue.address.zipcode !== '' &&
+      inputValue.zipcode !== '' &&
       setDisabled(true)
   }, [alret])
 
-  const telOptions = ['Japan(+81)', 'Korea(+82)']
-  const nationOptions = ['Japan(JP/JPN)', 'Korea(KR/KOR)']
+  useEffect(() => {
+    console.log(inputValue)
+  }, [inputValue])
   return (
     <div>
-      <div className="info px-5">
+      <div className="info">
         {pathname.includes('/signup') && (
           <>
             <Title title="정보" text="입력" />
@@ -232,20 +228,17 @@ const UserInfo = () => {
           <div className="flex items-center">
             <select
               onChange={ChangeHandler}
-              name="tel"
+              name="country"
               className="text-black-400 p-[0.625rem] pr-[1.5rem] h-[3rem] flex-initial box-border text-[0.875rem] transition shadow-white border border-neutral-200 rounded bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
             >
-              {!token ? (
+              {telOptions &&
                 telOptions.map((option) => {
                   return (
                     <option value={option} key={option}>
                       {option}
                     </option>
                   )
-                })
-              ) : (
-                <option>{data?.phoneNumber.slice(0, 10)}</option>
-              )}
+                })}
             </select>
             <span className="mx-[0.625rem] text-black-200"> - </span>
             <input
@@ -261,39 +254,17 @@ const UserInfo = () => {
           </p>
 
           <label
-            htmlFor="loginJoinMembershipNation"
-            className="inline-block font-bold leading-4 mb-8 mt-9"
-          >
-            국가
-          </label>
-          <div className="flex">
-            <select
-              name="nation"
-              onChange={ChangeHandler}
-              className="text-black-400 pl-3 w-full h-[3rem] flex-initial box-border py-[0.75rem] rounded text-[0.875rem] transition shadow-white border border-neutral-200 bg-[url('/public/assets/select_down.svg')] bg-no-repeat bg-[center_right_0.625rem]"
-            >
-              {nationOptions &&
-                nationOptions.map((option) => {
-                  return (
-                    <option value={option} key={option}>
-                      {option}
-                    </option>
-                  )
-                })}
-            </select>
-          </div>
-          <label
-            htmlFor="loginJoinMembershipPostNumber"
+            htmlFor="loginJoinMembershipzipcodeber"
             className="inline-block font-bold leading-4 mb-8 mt-9"
           >
             주소
           </label>
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
-              name="address['zipcode']"
-              value={inputValue.address.zipcode}
+              name="zipcode"
+              value={inputValue['zipcode']}
               onChange={ChangeHandler}
-              onBlur={() => checkRegex('postNum')}
+              onBlur={() => checkRegex('zipcode')}
               placeholder="우편번호를 검색해 주세요."
               className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
@@ -325,14 +296,14 @@ const UserInfo = () => {
             )}
           </div>
           <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">
-            {/* {alert.address.zipcode} */}
+            {alert.zipcode}
           </p>
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
-              name="address.city"
-              value={inputValue.address.city}
+              name="city"
+              value={inputValue['city']}
               onChange={ChangeHandler}
-              // onBlur={() => checkRegex('address')}
+              onBlur={() => checkRegex('city')}
               placeholder="주소를 입력 해 주세요."
               className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
@@ -340,10 +311,10 @@ const UserInfo = () => {
 
           <div className="mb-3 relative flex box-border border border-neutral-200 rounded items-center border-box">
             <input
-              name="address.street"
-              value={inputValue.address.street}
+              name="street"
+              value={inputValue['street']}
               onChange={ChangeHandler}
-              // onBlur={() => checkRegex('detail')}
+              onBlur={() => checkRegex('street')}
               placeholder="상세 주소를 입력 해 주세요."
               className="px-3 h-[3rem] border-none flex-initial box-border w-full py-[0.75rem] rounded text-[0.875rem] transition shadow-white"
             />
