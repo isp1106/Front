@@ -4,6 +4,7 @@ import Title from '../../components/SignUp/Title'
 import NextBtn from '../../components/common/NextBtn'
 import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import useInputValue from '../../hook/useInputValue'
+import { useCheckEmailMutation } from '../../store/api/authApiSlice'
 const ID_REGEX = new RegExp('^[a-z0-9_-]{6,11}$')
 
 const SignUpIdForm = () => {
@@ -11,7 +12,7 @@ const SignUpIdForm = () => {
   const [alret, setAlret] = useState('')
   const [disabled, setDisabled] = useState(false)
   const [active, setActive, onFocusHandler] = useInputValue()
-
+  const [checkEmail] = useCheckEmailMutation()
   const onBlurHandler = (e) => {
     setActive(false)
     setInputValue('')
@@ -19,6 +20,10 @@ const SignUpIdForm = () => {
 
   const ChangeHandler = (e) => {
     setInputValue(e.target.value)
+  }
+
+  const doubleCheck = () => {
+    checkEmail(inputValue)
   }
 
   const checkRegex = () => {
@@ -60,7 +65,10 @@ const SignUpIdForm = () => {
           </div>
         </div>
         <p className="mt-[8px] font-[11px] text-red-600 text-[12px]">{alret}</p>
-        <Button classprop=" border border-black-100 mt-6 gap-2">
+        <Button
+          classprop=" border border-black-100 mt-6 gap-2"
+          onClick={doubleCheck}
+        >
           중복확인
         </Button>
         <NextBtn next="pwform" inputValue={inputValue} disabled={disabled}>

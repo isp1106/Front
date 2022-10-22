@@ -55,7 +55,8 @@ const UserInfo = () => {
     } catch (error) {
       alert(error.data.msg)
     } finally {
-      navigate('/')
+      navigate('/signup/finish')
+      dispatch(resetInfo())
     }
   }
 
@@ -80,14 +81,7 @@ const UserInfo = () => {
 
   const ChangeHandler = useCallback((e) => {
     const { name, value } = e.target
-    // setInputValue({
-    //   ...inputValue,
-    //   [name]: value,
-    // })
     dispatch(changeInfo({ name, value }))
-    setTimeout(() => {
-      console.log(inputValue)
-    }, 1000)
     checkRegex(name)
   })
 

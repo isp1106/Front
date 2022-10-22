@@ -16,7 +16,18 @@ export const authApiSlice = apiSlice.injectEndpoints({
         body: { ...credentials },
       }),
     }),
+    checkEmail: builder.mutation({
+      query: (body) => {
+        console.log(body)
+        return {
+          url: '/checkEmail',
+          method: 'PUT',
+          body: body,
+        }
+      },
+    }),
   }),
 })
 
-export const { useLoginMutation, useSignupMutation } = authApiSlice
+export const { useLoginMutation, useSignupMutation, useCheckEmailMutation } =
+  authApiSlice
