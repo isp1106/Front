@@ -74,8 +74,8 @@ const DetailBtn = ({ list, kakaoShareBtn }) => {
       dispatch(addCartItems({ ...list, ...items }))
     }
     addCartItem({
-      product_id: list.productId,
-      count: items.count,
+      product_id: list['productId'],
+      count: items['count'],
     })
     // dispatch(resetCount())
   }
