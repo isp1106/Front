@@ -68,129 +68,84 @@ function App() {
   }, [])
   return (
     <>
-      {loading ? (
-        <LoadingPage />
-      ) : (
-        <div className="pb-[70px]">
-          <CookiesProvider>
-            <Provider store={store}>
-              <Routes>
+      <div className="pb-[70px]">
+        <CookiesProvider>
+          <Provider store={store}>
+            <Routes>
+              {loading ? (
+                <Route path="/" element={<LoadingPage />} />
+              ) : (
                 <Route path="/" element={<Home />} />
-                <Route path="/event" element={<EventDetail />} />
-                <Route path="/category" element={<Category />}>
-                  <Route index element={<MainCategory />} />
-                  <Route path=":topCG/:subCG" element={<CategoryFashion />} />
+              )}
+              <Route path="/event" element={<EventDetail />} />
+              <Route path="/category" element={<Category />}>
+                <Route index element={<MainCategory />} />
+                <Route path=":topCG/:subCG" element={<CategoryFashion />} />
+              </Route>
+              <Route path="/oneul" element={<Oneul />} />
+              <Route path="/like" element={<Like />}>
+                <Route path="" element={<Liked />} />
+              </Route>
+              <Route path="recent-view" element={<RecentView />} />
+              <Route path="/my" element={<MyPage />}>
+                <Route index element={<MyPageComp />} />
+                <Route path="review" element={<MyReview />}>
+                  <Route index element={<MyReviewComp />} />
+                  <Route path="write" element={<MyReviewWrite />} />
                 </Route>
-                <Route path="/oneul" element={<Oneul />} />
-                <Route path="/like" element={<Like />}>
-                  <Route path="" element={<Liked />} />
+                <Route path="order-list" element={<OrderPage />}>
+                  <Route index element={<OrderList />} />
+                  <Route path=":id" element={<OrderDetail />} />
                 </Route>
-                <Route path="recent-view" element={<RecentView />} />
-                <Route path="/my" element={<MyPage />}>
-                  <Route index element={<MyPageComp />} />
-                  <Route path="review" element={<MyReview />}>
-                    <Route index element={<MyReviewComp />} />
-                    <Route path="write" element={<MyReviewWrite />} />
-                  </Route>
-                  <Route path="order-list" element={<OrderPage />}>
-                    <Route index element={<OrderList />} />
-                    <Route path=":id" element={<OrderDetail />} />
-                  </Route>
-                  <Route path="qna" element={<QnA />}>
-                    <Route index element={<QnAComp />} />
-                    <Route path=":id" element={<QnADetail />} />
-                    <Route path="write" element={<QnAWrite />} />
-                  </Route>
-                  <Route path="edit-user-info" element={<UserEditInfo />} />
-                  <Route path="refund-list" element={<Refund />}>
-                    <Route index element={<RefundListPage />} />
-                    <Route path=":refundId" element={<RefundDetailPage />} />
-                  </Route>
+                <Route path="qna" element={<QnA />}>
+                  <Route index element={<QnAComp />} />
+                  <Route path=":id" element={<QnADetail />} />
+                  <Route path="write" element={<QnAWrite />} />
                 </Route>
-                <Route path="order-check" element={<OrderCheck />} />
-                <Route path="recent-view" element={<Liked />} />
-                <Route path="/notice" element={<Notice />} />
-                <Route path="/faq" element={<Faq />} />
-                <Route path="/login" element={<LoginIndex />}>
-                  <Route index element={<Login />} />
-                  <Route path="findIdPw" element={<FindIDPw />} />
+                <Route path="edit-user-info" element={<UserEditInfo />} />
+                <Route path="refund-list" element={<Refund />}>
+                  <Route index element={<RefundListPage />} />
+                  <Route path=":refundId" element={<RefundDetailPage />} />
                 </Route>
-                <Route path="/product/:id" element={<ProductDetail />} />
-                <Route path="/oneul/detail" element={<SnapDetail />} />
-                <Route path="/magazine/:id" element={<MagazineDetail />} />
-                <Route path="/signup" element={<SignUp />}>
-                  <Route path="" element={<TermService />} />
-                  <Route path="idform" element={<SignUpId />} />
-                  <Route path="pwform" element={<SignUpPw />} />
-                  <Route path="infoform" element={<UserInfo />} />
-                  <Route path="finish" element={<Finish />} />
-                </Route>
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/search" element={<Search />}>
-                  <Route path="" element={<BeforeSearch />} />
-                  <Route path=":search" element={<AfterSearch />} />
-                </Route>
-                <Route path="/order" element={<OrderMain />}>
-                  <Route path="" element={<Order />} />
-                  <Route path="completed" element={<CompletedOrder />} />
-                </Route>
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-              {!currentPath.includes('/signup') &&
-                currentPath !== '/login' &&
-                !currentPath.includes('/cart') &&
-                !currentPath.includes('/product') && <NavBottom />}
-            </Provider>
-          </CookiesProvider>
-        </div>
-      )}
+              </Route>
+              <Route path="order-check" element={<OrderCheck />} />
+              <Route path="recent-view" element={<Liked />} />
+              <Route path="/notice" element={<Notice />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/login" element={<LoginIndex />}>
+                <Route index element={<Login />} />
+                <Route path="findIdPw" element={<FindIDPw />} />
+              </Route>
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/oneul/detail" element={<SnapDetail />} />
+              <Route path="/magazine/:id" element={<MagazineDetail />} />
+              <Route path="/signup" element={<SignUp />}>
+                <Route path="" element={<TermService />} />
+                <Route path="idform" element={<SignUpId />} />
+                <Route path="pwform" element={<SignUpPw />} />
+                <Route path="infoform" element={<UserInfo />} />
+                <Route path="finish" element={<Finish />} />
+              </Route>
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/search" element={<Search />}>
+                <Route path="" element={<BeforeSearch />} />
+                <Route path=":search" element={<AfterSearch />} />
+              </Route>
+              <Route path="/order" element={<OrderMain />}>
+                <Route path="" element={<Order />} />
+                <Route path="completed" element={<CompletedOrder />} />
+              </Route>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+            {!currentPath.includes('/signup') &&
+              currentPath !== '/login' &&
+              !currentPath.includes('/cart') &&
+              !currentPath.includes('/product') && <NavBottom />}
+          </Provider>
+        </CookiesProvider>
+      </div>
     </>
   )
 }
 
 export default App
-
-// <<<<<<< HEAD
-//     <div className="pb-[75px]">
-//       <CookiesProvider>
-//         <Provider store={store}>
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/category" element={<Category />} />
-//             <Route path="/oneul" element={<Oneul />} />
-//             {/* 로그인이후에 접근할 수 있는 페이지 */}
-//             <Route element={<RequireAuth />}>
-//               <Route path="/like" element={<Like />} />
-//               <Route path="/my" element={<My />}>
-//                 <Route path="" element={<MyPage />} />
-//                 <Route path="review" element={<MyReview />} />
-//                 <Route path="review/write" element={<MyReviewWrite />} />
-//                 <Route path="qna" element={<QnA />}>
-//                   <Route path="" element={<QnAComp />} />
-//                   <Route path=":id" element={<QnADetail />} />
-//                   <Route path="write" element={<QnAWrite />} />
-//                 </Route>
-//               </Route>
-//             </Route>
-//             <Route path="/login" element={<Login />} />
-//             <Route path="/product" element={<Product />} />
-//             <Route path="/product/:id" element={<ProductDetail />} />
-//             <Route path="/oneul/detail" element={<SnapDetail />} />
-//             <Route path="/magazine/:id" element={<MagazineDetail />} />
-//             <Route path="/signup" element={<SignUp />}>
-//               <Route path="" element={<TermService />} />
-//               <Route path="idform" element={<SignUpId />} />
-//               <Route path="pwform" element={<SignUpPw />} />
-//               <Route path="infoform" element={<UserInfo />} />
-//               <Route path="finish" element={<Finish />} />
-//             </Route>
-//             <Route path="/cart" element={<Cart />} />
-//             <Route path="/search" element={<Search />} />
-//             <Route path="/order" element={<Order />} />
-//           </Routes>
-//           {!currentPath.includes('/signup') &&
-//             !currentPath.includes('/detail') &&
-//             !currentPath.includes('/cart') && <NavBottom />}
-//         </Provider>
-//       </CookiesProvider>
-// =======

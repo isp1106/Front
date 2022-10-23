@@ -29,7 +29,6 @@ export const cartApi = apiSlice.injectEndpoints({
     }),
     changeCount: builder.mutation({
       query: (data) => {
-        console.log(data)
         return {
           url: 'carts',
           method: 'POST',
