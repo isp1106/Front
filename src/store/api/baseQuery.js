@@ -20,15 +20,15 @@ export const baseQuery = fetchBaseQuery({
 export const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions)
 
-  if (result?.error?.originalStatus === 403) {
+  if (result?.error?.originalStatus === 401) {
     console.log('sending refresh token')
     const refreshResult = await baseQuery(
       {
         url: '/auth/reissue',
         method: 'POST',
         body: {
-          accessToken: cookies.remove('accessToken'),
-          refreshToken: cookies.remove('refreshToken'),
+          accessToken: cookies.get('accessToken'),
+          refreshToken: cookies.get('refreshToken'),
         },
       },
       api,

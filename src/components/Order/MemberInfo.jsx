@@ -63,10 +63,10 @@ const MemberInfo = () => {
         <div className="inline-block font-bold leading-4 mb-5">전화번호</div>
         <div className="flex gap-[13px]">
           <div className="flex-grow px-[10px] h-[3rem] flex box-border border border-neutral-200 rounded items-center text-sm">
-            {country}
+            {phoneNumber.slice(0, 10)}
           </div>
           <div className="flex-grow px-[10px] h-[3rem] flex box-border border border-neutral-200 rounded items-center text-sm">
-            {phoneNumber}
+            {phoneNumber.slice(10)}
           </div>
         </div>
       </div>

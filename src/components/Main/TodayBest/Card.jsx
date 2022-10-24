@@ -34,7 +34,7 @@ const Card = ({ product, active }) => {
         </div>
         <div className="text-xl text-black-100 font-bold mt-1.5">
           <span className="text-primary mr-2.5">{sale}%</span>
-          {price} ¥
+          {parseInt((price * (100 - sale)) / 100).toLocaleString()} ¥
         </div>
         {active ? (
           <div className="absolute flex right-1 bottom-0 gap-3">

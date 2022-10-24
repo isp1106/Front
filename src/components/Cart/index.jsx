@@ -3,9 +3,11 @@ import Header from '../layout/Header'
 import CartItem from './CartItem'
 import Total from './Total'
 import CartBtn from './CartBtn'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ cartItems }) => {
   const [checkedItems, setCheckedItems] = useState(cartItems)
+  const navigate = useNavigate()
 
   const onCheckedHandler = (item) => {
     checkedItems.includes(item)
@@ -18,7 +20,7 @@ const Cart = ({ cartItems }) => {
       <Header>
         <div className="text-center ml-[27px]">장바구니</div>
       </Header>
-      <div className="pt-[54px] ">
+      <div className="pt-[64px] ">
         <div className="flex justify-between px-5 my-[14px]">
           <div className="text-black-400 text-xs">
             전체 {cartItems.length}개

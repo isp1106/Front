@@ -1,11 +1,11 @@
 import React from 'react'
-import { useMemo } from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { CATEGORY } from '~/dummy/constantsfix'
 import { cls } from '../../utils'
 import SelectFilter from './SelectFilter'
+import { useNavigate } from 'react-router-dom'
 
 function CategoryList({ topCG, subCG }) {
   const [selectTop, setSelectTop] = useState(topCG)
@@ -15,7 +15,7 @@ function CategoryList({ topCG, subCG }) {
   const [lastCategoryList, setLastSubCategoryList] = useState([])
   const userGender = useSelector((state) => state.user).gender
   const setCategory = JSON.parse(JSON.stringify(CATEGORY))
-
+  const navigate = useNavigate()
   // 랜더링과 동시에 코트매틱 category에서 '브랜드' 리스트 삭제 (한번만 실행)
   useEffect(() => {
     setCategory.map((top) => {
@@ -53,6 +53,15 @@ function CategoryList({ topCG, subCG }) {
     })
   }, [selectSub, subCategoryList])
 
+  const onChangeTags = (tag) => {
+    setSelectSub(tag)
+    navigate(`/category/${topCG}/${tag}`)
+  }
+  const onChangelastTags = (tag) => {
+    setSelectLast(tag)
+    navigate(`/category/${topCG}/${tag}`)
+  }
+
   return (
     <div className="fixed top-16 w-full max-w-[600px] overflow-hidden bg-white z-50">
       <div className="px-5 flex overflow-x-auto h-[50px] items-center border-black border-b text-xl text-black-400">
@@ -65,7 +74,7 @@ function CategoryList({ topCG, subCG }) {
                 selectSub === sub.name &&
                   'relative font-bold text-black-100 after:border-b-[3px] after:border-black after:absolute after:-bottom-3 after:w-full after:left-0 hover:cursor-pointer',
               )}
-              onClick={() => setSelectSub(sub.name)}
+              onClick={() => onChangeTags(sub.name)}
             >
               {sub.name}
             </div>
@@ -80,7 +89,7 @@ function CategoryList({ topCG, subCG }) {
                 'mr-7 last:mr-0 whitespace-nowrap text-xs delay-100 duration-200',
                 selectLast === last && 'text-primary',
               )}
-              onClick={() => setSelectLast(last)}
+              onClick={() => onChangelastTags(last)}
             >
               {last}
             </div>

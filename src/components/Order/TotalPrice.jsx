@@ -23,7 +23,11 @@ const TotalPrice = ({ items }) => {
           <span className="text-primary">결제금액</span>
           <span>
             {items
-              ?.reduce((acc, cur) => cur.price * cur.count + acc, 0)
+              ?.reduce(
+                (acc, cur) =>
+                  ((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
+                0,
+              )
               .toLocaleString()}
             ¥
           </span>

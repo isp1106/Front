@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-input:focus::-webkit-input-placeholder,
+/* input:focus::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -27,4 +27,4 @@ textarea:focus::-moz-placeholder {
 input:focus:-ms-input-placeholder,
 textarea:focus:-ms-input-placeholder {
   color: transparent;
-}
+} */

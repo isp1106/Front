@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useAddCartItemMutation } from '../../../store/api/cartApiSlice'
 import { addCartItems } from '../../../store/slices/cartSlice'
 import { useCookies } from 'react-cookie'
+import { resetCount } from '../../../store/slices/productSlice'
 
 const DetailBtn = ({ list, kakaoShareBtn }) => {
   const [cookies, setCookie, removeCookie] = useCookies([])
@@ -73,9 +74,10 @@ const DetailBtn = ({ list, kakaoShareBtn }) => {
       dispatch(addCartItems({ ...list, ...items }))
     }
     addCartItem({
-      product_id: list.productId,
-      count: items.count,
+      product_id: list['productId'],
+      count: items['count'],
     })
+    // dispatch(resetCount())
   }
 
   const onClickHandler = () => {
@@ -118,6 +120,7 @@ const DetailBtn = ({ list, kakaoShareBtn }) => {
     script.src = 'https://developers.kakao.com/sdk/kakao.js'
     script.async = true
     document.body.appendChild(script)
+
     return () => document.body.removeChild(script)
   }, [dispatch])
   return (

@@ -12,6 +12,7 @@ import Brand from './Brand'
 import Loading from '../../layout/Loading'
 import ErrorCom from '../../common/ErrorCom'
 import GoTop from '../../common/GoTop'
+import SizeDetail from './SizeDetail'
 
 const Detail = () => {
   const { id } = useParams()
@@ -68,11 +69,15 @@ const Detail = () => {
             <MainSlide list={list.detailThumbList} />
             <Explanation list={list} />
             <Brand list={list} />
+
             <DetailDesc list={list.detailList} />
+            {list?.tags.includes('의류') && (
+              <SizeDetail list={list.detailList} />
+            )}
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
-            <Relation />
+            <Relation list={list} />
             <div className="w-full h-[10px] bg-white-200 my-8"></div>
-            <SubContent />
+            <SubContent list={list} />
             <DetailBtn list={list} kakaoShareBtn={kakaoShare} />
             <GoTop height="3000" />
           </div>

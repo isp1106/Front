@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
 import { ReactComponent as GoBackIcon } from '/public/assets/back-on.svg'
 import { cls } from '../../utils'
-
 const payway = ['신용/체크카드', '무통장입금', '애플페이', '라인페이']
 
-const PayWay = () => {
+const PayWay = ({ select, onClick }) => {
   const [open, setOpen] = useState(false)
-  const [select, setSelect] = useState(payway[0])
   const toggleBtn = () => {
     setOpen((prev) => !prev)
   }
-  const selectHandler = (item) => {
-    setSelect(item)
-  }
+
   return (
     <div className="border-b border-primary">
       <div className="flex px-5  " onClick={toggleBtn}>
@@ -36,7 +32,7 @@ const PayWay = () => {
                   ? 'bg-point text-white-200 '
                   : 'bg-white-200 text-black-800 ',
               )}
-              onClick={() => selectHandler(item)}
+              onClick={() => onClick(item)}
             >
               {item}
             </div>

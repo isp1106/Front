@@ -3,11 +3,18 @@ import { cls } from '../../utils'
 import { useNavigate } from 'react-router-dom'
 import { useAddOrdersMutation } from '../../store/api/orderApiSlice'
 
-const OrderBtn = ({ items }) => {
+const OrderBtn = ({ items, select }) => {
   const navigate = useNavigate()
   const [addOrders] = useAddOrdersMutation()
+  const products = items.map((item) => {
+    return {
+      product_id: item.productId,
+      count: item.count,
+    }
+  })
+  const [product] = products
   const paynowHandler = (id) => {
-    addOrders(id)
+    addOrders({ ...product, select })
     navigate('/order/completed', { state: items })
   }
   const [item] = items
@@ -24,12 +31,16 @@ const OrderBtn = ({ items }) => {
           개
         </span>
         <div className="w-[1px] h-[18px] bg-white"></div>
-        <span className="px-1">
+        <div className="px-1">
           {items
-            ?.reduce((acc, cur) => cur.price * cur.count + acc, 0)
-            .toLocaleString()}{' '}
-          ¥ 결제하기
-        </span>
+            ?.reduce(
+              (acc, cur) =>
+                ((cur.price * (100 - cur.sale)) / 100) * cur.count + acc,
+              0,
+            )
+            .toLocaleString()}
+          ¥<span className="pl-3">결제하기</span>
+        </div>
       </div>
     </div>
   )

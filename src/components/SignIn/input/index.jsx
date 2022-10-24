@@ -4,6 +4,7 @@ import { ReactComponent as ClearIcon } from '/public/assets/clear.svg'
 import { cls } from '../../../utils'
 
 const Input = ({
+  tabIndex,
   state,
   name,
   onChangeHandler,
@@ -33,12 +34,17 @@ const Input = ({
           name={name}
           className={cls('text-sm input ', active && 'active')}
           onClick={inputHandler}
-          onChange={onChangeHandler}
           value={value}
           type={type}
+          autoFocus={true}
+          tabIndex={tabIndex}
+          onChange={onChangeHandler}
         />
         {active && <ClearIcon width="20px" onClick={inputBlurHandler} />}
-        <label className={cls('text-xs label ', active && 'active')}>
+        <label
+          onClick={inputHandler}
+          className={cls('text-xs label ', active && 'active')}
+        >
           {state}
         </label>
       </div>
